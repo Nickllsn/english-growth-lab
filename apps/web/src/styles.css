@@ -1,0 +1,44 @@
+:root {
+  color: #e5e7eb;
+  background: #111827;
+  font-family: Inter, "Segoe UI", sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.welcome {
+  width: min(720px, calc(100% - 2rem));
+  margin: 20vh auto 0;
+}
+
+.eyebrow {
+  color: #6ee7b7;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 0.3rem 0 1rem;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 0.95;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #111827;
+    background: #f8fafc;
+  }
+
+  .eyebrow {
+    color: #047857;
+  }
+}

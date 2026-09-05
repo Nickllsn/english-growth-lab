@@ -1,0 +1,20 @@
+{
+  "name": "english-growth-lab",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm run dev -w @egl/api\" \"npm run dev -w @egl/web\"",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
