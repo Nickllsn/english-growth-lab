@@ -3,10 +3,13 @@ import { resolve } from "node:path";
 import { ZodError } from "zod";
 import { EntryStore, InvalidEntryFileError } from "./entries/entry-store.js";
 import { loadRoadmap } from "./roadmap/roadmap-store.js";
+import { openStatsCache } from "./stats/stats-cache.js";
 
 export interface AppOptions {
   roadmapPath?: string;
   entriesDir?: string;
+  databasePath?: string;
+  today?: () => string;
 }
 
 export function createApp(options: AppOptions = {}): Express {
@@ -16,6 +19,19 @@ export function createApp(options: AppOptions = {}): Express {
   const entryStore = new EntryStore(
     options.entriesDir ?? resolve(process.cwd(), "../../data/entries")
   );
+  const databasePath =
+    options.databasePath ?? resolve(process.cwd(), "../../data/learning.db");
+  const today =
+    options.today ?? (() => new Date().toLocaleDateString("en-CA"));
+
+  const synchronizeStats = async () => {
+    const cache = await openStatsCache(databasePath);
+    try {
+      cache.rebuild(await entryStore.list());
+    } finally {
+      cache.close();
+    }
+  };
 
   app.use(express.json());
   app.get("/api/health", (_request, response) => {
@@ -87,7 +103,9 @@ export function createApp(options: AppOptions = {}): Express {
     }
 
     try {
-      response.json(await entryStore.save(request.body));
+      const entry = await entryStore.save(request.body);
+      await synchronizeStats();
+      response.json(entry);
     } catch (error) {
       if (error instanceof ZodError) {
         response.status(400).json({
@@ -104,6 +122,24 @@ export function createApp(options: AppOptions = {}): Express {
         error: {
           code: "ENTRY_WRITE_FAILED",
           message: "学习记录保存失败"
+        }
+      });
+    }
+  });
+  app.get("/api/progress", async (_request, response) => {
+    try {
+      await synchronizeStats();
+      const cache = await openStatsCache(databasePath);
+      try {
+        response.json(cache.read(today()));
+      } finally {
+        cache.close();
+      }
+    } catch {
+      response.status(500).json({
+        error: {
+          code: "PROGRESS_UNAVAILABLE",
+          message: "进度统计暂时不可用"
         }
       });
     }
