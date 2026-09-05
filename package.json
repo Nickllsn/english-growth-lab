@@ -12,9 +12,11 @@
     "dev": "concurrently -k -n api,web -c blue,green \"npm run dev -w @egl/api\" \"npm run dev -w @egl/web\"",
     "test": "npm run test --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "build": "npm run build --workspaces --if-present"
+    "build": "npm run build --workspaces --if-present",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "concurrently": "^9.2.0"
   }
 }
