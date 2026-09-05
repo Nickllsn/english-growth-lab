@@ -1,0 +1,244 @@
+{
+  "days": [
+    {
+      "day": 1,
+      "week": 1,
+      "theme": "Linux 性能全景",
+      "source": { "name": "Brendan Gregg", "url": "https://www.brendangregg.com/blog/", "difficulty": 4 },
+      "focus": "建立 CPU、内存、磁盘和网络的性能分析地图",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 2,
+      "week": 1,
+      "theme": "CPU 瓶颈",
+      "source": { "name": "Brendan Gregg", "url": "https://www.brendangregg.com/linuxperf.html", "difficulty": 4 },
+      "focus": "理解利用率、饱和度与真实瓶颈",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 3,
+      "week": 1,
+      "theme": "内存与分配",
+      "source": { "name": "InfoQ", "url": "https://www.infoq.com/performance-scalability/", "difficulty": 3 },
+      "focus": "学习内存压力、分配与延迟表达",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 4,
+      "week": 1,
+      "theme": "磁盘 IO",
+      "source": { "name": "Brendan Gregg", "url": "https://www.brendangregg.com/linuxperf.html", "difficulty": 4 },
+      "focus": "区分延迟、吞吐和队列问题",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 5,
+      "week": 1,
+      "theme": "perf 与火焰图",
+      "source": { "name": "Brendan Gregg", "url": "https://www.brendangregg.com/flamegraphs.html", "difficulty": 4 },
+      "focus": "用英文复述采样、调用栈和热点",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 6,
+      "week": 1,
+      "theme": "eBPF 可观测性",
+      "source": { "name": "InfoQ", "url": "https://www.infoq.com/ebpf/", "difficulty": 4 },
+      "focus": "理解内核可观测与低开销诊断",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 7,
+      "week": 1,
+      "theme": "Linux 性能周复盘",
+      "source": { "name": "InfoQ", "url": "https://www.infoq.com/performance-scalability/", "difficulty": 3 },
+      "focus": "比较三种性能工具并总结适用场景",
+      "suggestedMinutes": { "reading": 8, "listening": 7, "output": 15 }
+    },
+    {
+      "day": 8,
+      "week": 2,
+      "theme": "架构与系统边界",
+      "source": { "name": "ByteByteGo", "url": "https://blog.bytebytego.com/", "difficulty": 2 },
+      "focus": "识别组件职责、接口和依赖",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 9,
+      "week": 2,
+      "theme": "分布式系统取舍",
+      "source": { "name": "InfoQ", "url": "https://www.infoq.com/distributed-systems/", "difficulty": 4 },
+      "focus": "练习 consistency、availability 与 trade-off",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 10,
+      "week": 2,
+      "theme": "缓存与数据流",
+      "source": { "name": "ByteByteGo", "url": "https://blog.bytebytego.com/", "difficulty": 2 },
+      "focus": "描述缓存策略、失效和一致性",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 11,
+      "week": 2,
+      "theme": "可靠性工程",
+      "source": { "name": "InfoQ", "url": "https://www.infoq.com/reliability/", "difficulty": 3 },
+      "focus": "理解 resilience、failure mode 与 recovery",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 12,
+      "week": 2,
+      "theme": "工程效率",
+      "source": { "name": "The Pragmatic Engineer", "url": "https://newsletter.pragmaticengineer.com/", "difficulty": 3 },
+      "focus": "从代码扩展到团队交付和反馈循环",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 13,
+      "week": 2,
+      "theme": "平台工程",
+      "source": { "name": "The Pragmatic Engineer", "url": "https://newsletter.pragmaticengineer.com/", "difficulty": 3 },
+      "focus": "理解内部平台、开发体验和规模化",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 14,
+      "week": 2,
+      "theme": "架构周复盘",
+      "source": { "name": "InfoQ", "url": "https://www.infoq.com/architecture-design/", "difficulty": 3 },
+      "focus": "用一个系统案例解释关键架构取舍",
+      "suggestedMinutes": { "reading": 8, "listening": 7, "output": 15 }
+    },
+    {
+      "day": 15,
+      "week": 3,
+      "theme": "AI 基础设施",
+      "source": { "name": "MIT Technology Review", "url": "https://www.technologyreview.com/topic/artificial-intelligence/", "difficulty": 3 },
+      "focus": "理解模型之外的计算、数据和部署问题",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 16,
+      "week": 3,
+      "theme": "AI 与工程实践",
+      "source": { "name": "The Pragmatic Engineer", "url": "https://newsletter.pragmaticengineer.com/", "difficulty": 3 },
+      "focus": "分析 AI 如何改变软件交付",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 17,
+      "week": 3,
+      "theme": "科技如何改变社会",
+      "source": { "name": "MIT Technology Review", "url": "https://www.technologyreview.com/", "difficulty": 3 },
+      "focus": "从实现细节扩展到影响与风险",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 18,
+      "week": 3,
+      "theme": "真实工程讨论",
+      "source": { "name": "Hacker News", "url": "https://news.ycombinator.com/", "difficulty": 3 },
+      "focus": "提取评论中的同意、反驳和经验表达",
+      "suggestedMinutes": { "reading": 15, "listening": 5, "output": 10 }
+    },
+    {
+      "day": 19,
+      "week": 3,
+      "theme": "工程取舍与证据",
+      "source": { "name": "Hacker News", "url": "https://news.ycombinator.com/", "difficulty": 3 },
+      "focus": "区分观点、证据和假设",
+      "suggestedMinutes": { "reading": 15, "listening": 5, "output": 10 }
+    },
+    {
+      "day": 20,
+      "week": 3,
+      "theme": "跨领域科技主题",
+      "source": { "name": "MIT Technology Review", "url": "https://www.technologyreview.com/", "difficulty": 3 },
+      "focus": "选择机器人、生物科技、能源或气候主题",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 21,
+      "week": 3,
+      "theme": "AI 与科技周复盘",
+      "source": { "name": "Hacker News", "url": "https://news.ycombinator.com/", "difficulty": 3 },
+      "focus": "比较文章主张与社区反应",
+      "suggestedMinutes": { "reading": 8, "listening": 7, "output": 15 }
+    },
+    {
+      "day": 22,
+      "week": 4,
+      "theme": "商业模式与技术",
+      "source": { "name": "Stratechery", "url": "https://stratechery.com/", "difficulty": 4 },
+      "focus": "连接技术能力、客户价值和收入模式",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 23,
+      "week": 4,
+      "theme": "平台战略",
+      "source": { "name": "Stratechery", "url": "https://stratechery.com/", "difficulty": 4 },
+      "focus": "理解聚合、分发和平台力量",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 24,
+      "week": 4,
+      "theme": "公司与竞争",
+      "source": { "name": "Stratechery", "url": "https://stratechery.com/", "difficulty": 4 },
+      "focus": "分析公司为何采取某种技术策略",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 25,
+      "week": 4,
+      "theme": "产品与真实问题",
+      "source": { "name": "Paul Graham Essays", "url": "https://paulgraham.com/articles.html", "difficulty": 4 },
+      "focus": "从真实痛点而非点子出发思考产品",
+      "suggestedMinutes": { "reading": 15, "listening": 5, "output": 10 }
+    },
+    {
+      "day": 26,
+      "week": 4,
+      "theme": "创业与有价值的工作",
+      "source": { "name": "Paul Graham Essays", "url": "https://paulgraham.com/articles.html", "difficulty": 4 },
+      "focus": "提炼创造价值和选择问题的原则",
+      "suggestedMinutes": { "reading": 15, "listening": 5, "output": 10 }
+    },
+    {
+      "day": 27,
+      "week": 4,
+      "theme": "决策与思维模型",
+      "source": { "name": "Farnam Street", "url": "https://fs.blog/", "difficulty": 3 },
+      "focus": "练习 inversion、incentives 和 opportunity cost",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 28,
+      "week": 4,
+      "theme": "长期思维",
+      "source": { "name": "Farnam Street", "url": "https://fs.blog/", "difficulty": 3 },
+      "focus": "理解复利、二阶思考和长期决策",
+      "suggestedMinutes": { "reading": 12, "listening": 8, "output": 10 }
+    },
+    {
+      "day": 29,
+      "week": 4,
+      "theme": "技术到社会的理解链",
+      "source": { "name": "MIT Technology Review", "url": "https://www.technologyreview.com/", "difficulty": 3 },
+      "focus": "串联技术、产品、公司、行业与社会影响",
+      "suggestedMinutes": { "reading": 10, "listening": 8, "output": 12 }
+    },
+    {
+      "day": 30,
+      "week": 4,
+      "theme": "30 天最终综合",
+      "source": { "name": "Farnam Street", "url": "https://fs.blog/", "difficulty": 3 },
+      "focus": "回顾变化、形成英文观点并设计下一阶段",
+      "suggestedMinutes": { "reading": 5, "listening": 5, "output": 20 }
+    }
+  ]
+}
