@@ -3,11 +3,13 @@ import { resolve } from "node:path";
 import { ZodError } from "zod";
 import { EntryStore, InvalidEntryFileError } from "./entries/entry-store.js";
 import { loadRoadmap } from "./roadmap/roadmap-store.js";
+import { ReviewStore } from "./reviews/review-store.js";
 import { openStatsCache } from "./stats/stats-cache.js";
 
 export interface AppOptions {
   roadmapPath?: string;
   entriesDir?: string;
+  reviewsDir?: string;
   databasePath?: string;
   today?: () => string;
 }
@@ -18,6 +20,9 @@ export function createApp(options: AppOptions = {}): Express {
     options.roadmapPath ?? resolve(process.cwd(), "../../content/roadmap.json");
   const entryStore = new EntryStore(
     options.entriesDir ?? resolve(process.cwd(), "../../data/entries")
+  );
+  const reviewStore = new ReviewStore(
+    options.reviewsDir ?? resolve(process.cwd(), "../../outputs")
   );
   const databasePath =
     options.databasePath ?? resolve(process.cwd(), "../../data/learning.db");
@@ -140,6 +145,56 @@ export function createApp(options: AppOptions = {}): Express {
         error: {
           code: "PROGRESS_UNAVAILABLE",
           message: "进度统计暂时不可用"
+        }
+      });
+    }
+  });
+  app.get("/api/reviews", async (_request, response) => {
+    try {
+      response.json({ reviews: await reviewStore.list() });
+    } catch {
+      response.status(500).json({
+        error: {
+          code: "REVIEWS_UNAVAILABLE",
+          message: "每周复盘暂时不可用"
+        }
+      });
+    }
+  });
+  app.put("/api/reviews/:week", async (request, response) => {
+    if (
+      typeof request.body !== "object" ||
+      request.body === null ||
+      request.body.week !== request.params.week
+    ) {
+      response.status(400).json({
+        error: {
+          code: "VALIDATION_ERROR",
+          message: "路径周次与复盘周次必须一致",
+          fields: { week: ["路径周次与复盘周次必须一致"] }
+        }
+      });
+      return;
+    }
+
+    try {
+      response.json(await reviewStore.save(request.body));
+    } catch (error) {
+      if (error instanceof ZodError) {
+        response.status(400).json({
+          error: {
+            code: "VALIDATION_ERROR",
+            message: "请检查填写内容",
+            fields: error.flatten().fieldErrors
+          }
+        });
+        return;
+      }
+
+      response.status(500).json({
+        error: {
+          code: "REVIEW_WRITE_FAILED",
+          message: "每周复盘保存失败"
         }
       });
     }
