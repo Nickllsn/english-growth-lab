@@ -1,0 +1,67 @@
+{
+  "date": "2026-09-06",
+  "roadmapDay": 1,
+  "topic": "Linux 性能全景",
+  "material": {
+    "title": "Why I joined OpenAI",
+    "url": "https://www.brendangregg.com/blog/2026-02-07/why-i-joined-openai.html",
+    "source": "Brendan Gregg"
+  },
+  "readingMinutes": 60,
+  "listeningMinutes": 0,
+  "understanding": 4,
+  "expressions": [
+    {
+      "text": "The scale is extreme and the growth is mind-boggling.",
+      "meaning": "<非正式>令人难以置信的，令人惊异的",
+      "usedInSummary": false
+    },
+    {
+      "text": "While she was cutting my hair – which takes a while – she told me about her many uses of ChatGPT. (I, of course, was a captive audience.)",
+      "meaning": "被迫留在某个地方，无法离开，因此被迫听取所说的话的人或人群。",
+      "usedInSummary": false
+    },
+    {
+      "text": "She was worried about a friend who was travelling in a far-away city, with little timezone overlap when they could chat",
+      "meaning": "两地时差大，很难有聊天的时间。",
+      "usedInSummary": false
+    },
+    {
+      "text": "Now my hairstylist, who recognized ChatGPT as a brand more readily than she did Intel, was praising the technology and teaching me about it. I stood on the street after my haircut and let sink in how big this was, how this technology has become an essential aide for so many, how I could lead performance efforts and help save the planet.",
+      "meaning": "现在，我的发型师比她对英特尔更早地意识到ChatGPT是一个品牌，她正在称赞这项技术，并向我讲解它的内容。剪完头发后，我站在街上，深深感受到这有多么重大——这项技术已成为许多人不可或缺的助手，而我也可以引领表演工作，帮助拯救地球。",
+      "usedInSummary": false
+    },
+    {
+      "text": "It's nice to work on something big that many people recognize and appreciate. I felt this when working at Netflix, and I'd been missing that human connection when I changed jobs. But there are other factors to consider beyond a well-known product: what's my role, who am I doing it with, and what is the compensation?",
+      "meaning": "从事一个被许多人认可和欣赏的大型项目，感觉非常棒。我在Netflix工作时就有这种感受，而换工作后，我也一直怀念那种人与人之间的联系。但除了知名的产品之外，还有其他因素需要考虑：我的角色是什么？我是在和谁一起完成工作的？以及薪酬如何？",
+      "usedInSummary": false
+    },
+    {
+      "text": "fast-paced code changes",
+      "meaning": "代码迭代速度飞快",
+      "usedInSummary": false
+    },
+    {
+      "text": "a well known figure in computer performance",
+      "meaning": "计算机性能领域的知名人物",
+      "usedInSummary": false
+    },
+    {
+      "text": "SciFi",
+      "meaning": "science fiction",
+      "usedInSummary": false
+    },
+    {
+      "text": "Multi-org strategy",
+      "meaning": "多组织策略,本质上是一个企业架构治理决策：当公司在 Salesforce 这类 SaaS 平台上运行时，决定是用一个统一实例服务全公司，还是拆成多个独立实例，分别服务于不同地区、业务单元或职能，并定义好这些实例之间如何交互、数据如何流转、治理与合规如何统一维护。",
+      "usedInSummary": false
+    },
+    {
+      "text": "It took months to wrap up my prior job and start at OpenAI, so I was due for another haircut.",
+      "meaning": "我花了数月时间结束上一份工作并加入OpenAI，所以是时候换个新发型了。",
+      "usedInSummary": false
+    }
+  ],
+  "summary": "Brendan did not believe AI, but he decided to join OpenAI after a haircut, because he awared that there are so many people to use AI tools in daily life.\nNot only Brendan, his previous colleague, and many other figure in performance engineering already joined AI company.\nThe AI company need performance engineering to reduce cost, and they can increase resources investment to improve UserExperience of AI product.",
+  "completedAt": "2026-09-06T11:05:12.062Z"
+}
