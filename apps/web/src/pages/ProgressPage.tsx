@@ -13,6 +13,15 @@ import {
   type ProgressState
 } from "../progress/store";
 
+function readFile(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result ?? ""));
+    reader.onerror = () => reject(reader.error ?? new Error("这个文件不是学习进度"));
+    reader.readAsText(file);
+  });
+}
+
 export function ProgressPage({ today = shanghaiToday() }: { today?: string }) {
   const [progress, setProgress] = useState<ProgressState>(loadProgress);
   const [message, setMessage] = useState("");
@@ -38,7 +47,7 @@ export function ProgressPage({ today = shanghaiToday() }: { today?: string }) {
   const importFile = async (file: File | undefined) => {
     if (!file) return;
     try {
-      update(parseProgress(await file.text()));
+      update(parseProgress(await readFile(file)));
       setMessage("进度已导入");
     } catch {
       setMessage("这个文件不是学习进度");
@@ -78,6 +87,7 @@ export function ProgressPage({ today = shanghaiToday() }: { today?: string }) {
           </label>
         </div>
         {message && <p className="success-message">{message}</p>}
+        <p className="save-note">导出的 english-progress.json 里有打卡 slots，也有每周复盘 reviews。导入会写回下面的复盘框。</p>
       </section>
       {weeks.map((week) => (
         <section className="panel" key={week.id}>
@@ -94,6 +104,26 @@ export function ProgressPage({ today = shanghaiToday() }: { today?: string }) {
               复制复盘
             </button>
           </div>
+          <label className="review-field">
+            {week.id} 复盘
+            <textarea
+              aria-label={`${week.id} 复盘`}
+              onChange={(event) => {
+                const text = event.target.value;
+                setProgress((current) => {
+                  const next = {
+                    ...current,
+                    reviews: { ...current.reviews, [week.id]: text }
+                  };
+                  saveProgress(next);
+                  return next;
+                });
+              }}
+              placeholder="用英语写。不要写公司机密。"
+              rows={6}
+              value={progress.reviews[week.id] ?? ""}
+            />
+          </label>
           <pre className="markdown-output">{weekMarkdown(week, progress)}</pre>
         </section>
       ))}
