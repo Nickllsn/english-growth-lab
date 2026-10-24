@@ -421,9 +421,9 @@
           "links": [
             {
               "title": "Linux Systems Performance 幻灯片",
-              "url": "https://www.brendangregg.com/Slides/LISA2019_Linux_Systems_Performance/",
+              "url": "https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_slides_gregg.pdf",
               "formats": ["text"],
-              "note": "只看目录和 observability 那几页，不读完整套片子。"
+              "note": "原站打不开。这是 USENIX 上的同一场 PDF。只看目录和 observability 那几页。"
             }
           ]
         },
@@ -538,9 +538,9 @@
           "links": [
             {
               "title": "USE Method",
-              "url": "https://www.brendangregg.com/usemethod.html",
+              "url": "https://web.archive.org/web/20250106073356/https://www.brendangregg.com/usemethod.html",
               "formats": ["text"],
-              "note": "下一周午休要读的页面。今天只看第一屏。"
+              "note": "原站打不开。这是同一篇文章的存档。先读页面上的学习文本，再看存档第一屏。"
             }
           ]
         },

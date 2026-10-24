@@ -15,4 +15,19 @@ describe("published weeks", () => {
     });
     expect(weeks.flatMap((week) => week.days.filter((day) => day.kind === "study"))).toHaveLength(10);
   });
+
+  it("does not send Gregg readings to the host that fails to finish loading", () => {
+    const urls = weeks.flatMap((week) => week.days.flatMap((day) => day.slots.flatMap((slot) => slot.links.map((link) => link.url))));
+
+    expect(urls).toContain(
+      "https://web.archive.org/web/20250106073356/https://www.brendangregg.com/usemethod.html"
+    );
+    expect(urls).toContain(
+      "https://web.archive.org/web/20261014044803/https://www.brendangregg.com/linuxperf.html"
+    );
+    expect(urls).toContain(
+      "https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_slides_gregg.pdf"
+    );
+    expect(urls.some((url) => url.startsWith("https://www.brendangregg.com/"))).toBe(false);
+  });
 });

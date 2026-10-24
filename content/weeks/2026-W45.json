@@ -45,9 +45,9 @@
           "links": [
             {
               "title": "Linux Performance",
-              "url": "https://www.brendangregg.com/linuxperf.html",
+              "url": "https://web.archive.org/web/20261014044803/https://www.brendangregg.com/linuxperf.html",
               "formats": ["text"],
-              "note": "这是索引页。只挑 5 个工具，不从头读到尾。"
+              "note": "原站打不开。这是同一页的存档。只挑 5 个工具，不从头读到尾。"
             }
           ]
         },
@@ -139,9 +139,9 @@
           "links": [
             {
               "title": "The USE Method",
-              "url": "https://www.brendangregg.com/usemethod.html",
+              "url": "https://web.archive.org/web/20250106073356/https://www.brendangregg.com/usemethod.html",
               "formats": ["text"],
-              "note": "读定义和 Linux 磁盘那一小节就停。"
+              "note": "原站打不开。先读页面上的学习文本，再用存档核对定义和 Linux 磁盘那一小节。"
             }
           ]
         },
@@ -233,9 +233,9 @@
           "links": [
             {
               "title": "Linux Performance 里的磁盘工具",
-              "url": "https://www.brendangregg.com/linuxperf.html",
+              "url": "https://web.archive.org/web/20261014044803/https://www.brendangregg.com/linuxperf.html",
               "formats": ["text"],
-              "note": "搜索 iostat。只读磁盘那一组工具的名字。"
+              "note": "原站打不开。在存档里搜索 iostat，只读磁盘那一组工具的名字。"
             }
           ]
         },
@@ -421,9 +421,9 @@
           "links": [
             {
               "title": "再看 USE Method 的定义",
-              "url": "https://www.brendangregg.com/usemethod.html",
+              "url": "https://web.archive.org/web/20250106073356/https://www.brendangregg.com/usemethod.html",
               "formats": ["text"],
-              "note": "只用它核对 utilization 和 saturation，不新开主题。"
+              "note": "用存档核对 utilization 和 saturation，不新开主题。"
             }
           ]
         },

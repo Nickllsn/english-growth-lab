@@ -136,7 +136,7 @@ export const pageReadings: Record<string, PageReading> = {
       "Use the method in this order: utilization, saturation, errors. Then name the resource: CPU, disk, or network."
     ]
   },
-  "https://www.brendangregg.com/Slides/LISA2019_Linux_Systems_Performance/": {
+  "https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_slides_gregg.pdf": {
     label: studyLabel,
     keywords: ["observability", "methodologies", "benchmarking", "profiling", "tracing", "tuning"],
     paragraphs: [
@@ -148,7 +148,7 @@ export const pageReadings: Record<string, PageReading> = {
       "The order is the lesson: observe, choose a method, measure, then tune. Do not start at tuning."
     ]
   },
-  "https://www.brendangregg.com/usemethod.html": {
+  "https://web.archive.org/web/20250106073356/https://www.brendangregg.com/usemethod.html": {
     label: studyLabel,
     keywords: ["utilization", "saturation", "errors", "CPU", "disk", "network", "queue"],
     paragraphs: [
@@ -160,7 +160,7 @@ export const pageReadings: Record<string, PageReading> = {
       "A disk can show moderate utilization and a long queue. In that case saturation, not the busy percentage, explains the latency."
     ]
   },
-  "https://www.brendangregg.com/linuxperf.html": {
+  "https://web.archive.org/web/20261014044803/https://www.brendangregg.com/linuxperf.html": {
     label: studyLabel,
     keywords: ["vmstat", "mpstat", "iostat", "question", "CPU", "disk"],
     paragraphs: [
