@@ -22,6 +22,7 @@ export default defineConfig({
     }
   },
   server: {
+    allowedHosts: [".trycloudflare.com"],
     fs: {
       allow: [workspaceRoot]
     },
