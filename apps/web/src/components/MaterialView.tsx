@@ -21,6 +21,12 @@ export function MaterialView({ link, showCaptions = false }: { link: MaterialLin
       {reading && (
         <div className="page-reading">
           <h3>{reading.label}</h3>
+          {reading.keywords.length > 0 && (
+            <p className="keyword-line">
+              <span>关键词</span>
+              {reading.keywords.join(" · ")}
+            </p>
+          )}
           {reading.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
