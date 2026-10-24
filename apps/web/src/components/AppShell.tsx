@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const links = [
   { to: "/", label: "今日" },
+  { to: "/week", label: "本周" },
   { to: "/progress", label: "进度" },
-  { to: "/outputs", label: "输出" },
   { to: "/roadmap", label: "路线" }
 ];
 
@@ -16,7 +16,7 @@ export function AppShell({ children }: PropsWithChildren) {
           <p className="logo-mark">EGL</p>
           <h1 className="logo-name">English Growth Lab</h1>
           <p className="logo-tagline">
-            每天阅读、倾听、表达，留下看得见的进步。
+            每天四段：早听、午读、晚听、回家跟读。
           </p>
         </div>
         <nav aria-label="主导航">

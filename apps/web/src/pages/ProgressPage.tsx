@@ -1,82 +1,102 @@
-import { useEffect, useState } from "react";
-import {
-  getEntries,
-  getProgress,
-  type DailyEntry,
-  type ProgressStats
-} from "../api/client";
+import { useState } from "react";
+import { weeks } from "../content/load";
+import { shanghaiToday } from "../content/schedule";
 import { MetricCard } from "../components/MetricCard";
 import { StreakCalendar } from "../components/StreakCalendar";
-import { UnderstandingChart } from "../components/UnderstandingChart";
+import {
+  completedDates,
+  currentStreak,
+  loadProgress,
+  parseProgress,
+  saveProgress,
+  weekMarkdown,
+  type ProgressState
+} from "../progress/store";
 
-export function ProgressPage() {
-  const [stats, setStats] = useState<ProgressStats | null>(null);
-  const [entries, setEntries] = useState<DailyEntry[]>([]);
-  const [error, setError] = useState("");
+export function ProgressPage({ today = shanghaiToday() }: { today?: string }) {
+  const [progress, setProgress] = useState<ProgressState>(loadProgress);
+  const [message, setMessage] = useState("");
+  const done = completedDates(weeks, progress);
+  const studyDays = weeks.flatMap((week) => week.days.filter((day) => day.kind === "study"));
+  const finishedStudyDays = studyDays.filter((day) => done.has(day.date)).length;
 
-  useEffect(() => {
-    let active = true;
-    void Promise.all([getProgress(), getEntries()])
-      .then(([nextStats, nextEntries]) => {
-        if (!active) return;
-        setStats(nextStats);
-        setEntries(nextEntries);
-      })
-      .catch(() => {
-        if (active) setError("进度加载失败，请刷新重试");
-      });
-    return () => {
-      active = false;
-    };
-  }, []);
+  const update = (next: ProgressState) => {
+    setProgress(next);
+    saveProgress(next);
+  };
 
-  if (error) return <p className="error-message">{error}</p>;
-  if (!stats) return <p>正在整理你的学习进度…</p>;
+  const exportFile = () => {
+    const blob = new Blob([JSON.stringify(progress, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "english-progress.json";
+    link.click();
+    URL.revokeObjectURL(url);
+  };
 
-  const completedDates = new Set(
-    entries.filter((entry) => entry.completedAt).map((entry) => entry.date)
-  );
+  const importFile = async (file: File | undefined) => {
+    if (!file) return;
+    try {
+      update(parseProgress(await file.text()));
+      setMessage("进度已导入");
+    } catch {
+      setMessage("这个文件不是学习进度");
+    }
+  };
 
   return (
     <section className="page">
       <header className="page-header">
         <div>
-          <p className="eyebrow">PROGRESS</p>
-          <h1>一点点，正在变成很多</h1>
-          <p>每个数字都来自你真正读过、听过和写下的内容。</p>
+          <p className="eyebrow">只统计已发布的周</p>
+          <h1>进度</h1>
+          <p>完成是指当天每个时段都打了卡。记录只在这台浏览器里。</p>
         </div>
       </header>
-
       <div className="metric-grid">
-        <MetricCard
-          label="当前连续"
-          value={`连续 ${stats.currentStreak} 天`}
-          detail={`最长 ${stats.longestStreak} 天`}
-        />
-        <MetricCard
-          label="30 天路线"
-          value={`完成 ${stats.completionRate}%`}
-          detail={`${stats.completedDays} / 30 天`}
-        />
-        <MetricCard
-          label="累计投入"
-          value={`${stats.totalMinutes} 分钟`}
-          detail={`阅读 ${stats.readingMinutes} · 听力 ${stats.listeningMinutes}`}
-        />
-        <MetricCard
-          label="英文输出"
-          value={`${stats.englishWordCount} 个词`}
-          detail={`已积累 ${stats.expressionCount} 条可复用表达`}
-        />
-        <MetricCard
-          label="表达积累"
-          value={`${stats.expressionCount} 个表达`}
-          detail={`已复用 ${stats.reusedExpressionCount} 次`}
-        />
+        <MetricCard detail="学习日" label="已完成" value={`${finishedStudyDays} / ${studyDays.length}`} />
+        <MetricCard detail="含周末，中断就重新计" label="连续天数" value={`${currentStreak(done, today)} 天`} />
       </div>
-
-      <StreakCalendar completedDates={completedDates} />
-      <UnderstandingChart data={stats.weeklyUnderstanding} />
+      <StreakCalendar completedDates={done} today={today} />
+      <section className="panel">
+        <div className="section-heading">
+          <h2>换设备</h2>
+        </div>
+        <div className="button-row">
+          <button className="primary-button" onClick={exportFile} type="button">
+            导出进度
+          </button>
+          <label className="secondary-button file-button">
+            导入进度
+            <input
+              accept="application/json"
+              aria-label="导入进度"
+              onChange={(event) => void importFile(event.target.files?.[0])}
+              type="file"
+            />
+          </label>
+        </div>
+        {message && <p className="success-message">{message}</p>}
+      </section>
+      {weeks.map((week) => (
+        <section className="panel" key={week.id}>
+          <div className="section-heading">
+            <h2>{week.title}</h2>
+            <button
+              className="secondary-button"
+              onClick={() => {
+                void navigator.clipboard?.writeText(weekMarkdown(week, progress));
+                setMessage(`已复制 ${week.id} 的复盘`);
+              }}
+              type="button"
+            >
+              复制复盘
+            </button>
+          </div>
+          <pre className="markdown-output">{weekMarkdown(week, progress)}</pre>
+        </section>
+      ))}
     </section>
   );
 }

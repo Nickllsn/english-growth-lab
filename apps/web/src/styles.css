@@ -657,3 +657,148 @@ textarea {
     min-height: auto;
   }
 }
+
+.slot-switch,
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.slot-chip,
+.material-link,
+.task-list,
+.day-index,
+.step-list,
+.chunk-list,
+.shadow-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slot-chip {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.slot-chip.active {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  color: var(--primary-strong);
+}
+
+.step-list,
+.task-list,
+.day-index,
+.chunk-list,
+.shadow-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.step-list {
+  padding-left: 1.2rem;
+  list-style: decimal;
+}
+
+.day-index li,
+.chunk-list li,
+.material-link {
+  display: grid;
+  gap: 4px;
+}
+
+.day-index span,
+.chunk-list span,
+.material-link small,
+.save-note,
+.speak-prompt {
+  color: var(--text-muted);
+}
+
+.material-list,
+.week-days {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.material-link {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-muted);
+  text-decoration: none;
+}
+
+.material-link strong,
+.chunk-list strong {
+  color: var(--text);
+}
+
+.shadow-box {
+  margin-top: 18px;
+}
+
+.shadow-line {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--surface-muted);
+}
+
+.shadow-line.active {
+  background: var(--primary-soft);
+  color: var(--text);
+}
+
+.done-toggle,
+.review-field {
+  display: flex;
+  margin-top: 18px;
+}
+
+.review-field {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.review-field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.file-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.file-button input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.day-card summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+
+.day-card section + section {
+  margin-top: 18px;
+}
+
+.save-note {
+  margin-top: 12px;
+}

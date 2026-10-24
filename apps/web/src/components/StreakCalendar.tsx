@@ -1,19 +1,21 @@
 interface StreakCalendarProps {
   completedDates: Set<string>;
+  today: string;
 }
 
-function recentDates(count: number): string[] {
+function recentDates(today: string, count: number): string[] {
+  const [year, month, day] = today.split("-").map(Number);
+  const start = new Date(Date.UTC(year, month - 1, day));
   const dates: string[] = [];
-  const current = new Date();
   for (let offset = count - 1; offset >= 0; offset -= 1) {
-    const date = new Date(current);
-    date.setDate(current.getDate() - offset);
-    dates.push(date.toLocaleDateString("en-CA"));
+    const date = new Date(start);
+    date.setUTCDate(start.getUTCDate() - offset);
+    dates.push(date.toISOString().slice(0, 10));
   }
   return dates;
 }
 
-export function StreakCalendar({ completedDates }: StreakCalendarProps) {
+export function StreakCalendar({ completedDates, today }: StreakCalendarProps) {
   return (
     <section className="panel">
       <div className="section-heading">
@@ -24,7 +26,7 @@ export function StreakCalendar({ completedDates }: StreakCalendarProps) {
         <span>{completedDates.size} 天已完成</span>
       </div>
       <div className="streak-calendar">
-        {recentDates(30).map((date) => {
+        {recentDates(today, 30).map((date) => {
           const completed = completedDates.has(date);
           return (
             <span
