@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { weeks } from "../content/load";
 import { nextWeek, previousStudyDays, resolveSession, shanghaiToday, weekdayLabel } from "../content/schedule";
-import type { MaterialLink, SlotPlan, StudyDay, WeekPack } from "../content/types";
+import type { SlotPlan, StudyDay, WeekPack } from "../content/types";
+import { MaterialView } from "../components/MaterialView";
 import { ShadowTrainer } from "../components/ShadowTrainer";
 import { loadProgress, saveProgress, toggleSlot, type ProgressState } from "../progress/store";
 
@@ -202,7 +203,11 @@ function DayPanel({
             <li key={step}>{step}</li>
           ))}
         </ol>
-        <MaterialLinks links={slot.links} />
+        <div className="material-list">
+          {slot.links.map((link) => (
+            <MaterialView key={link.url + link.title} link={link} showCaptions={slot.id === "evening"} />
+          ))}
+        </div>
         {slot.id === "preview" && following && (
           <ol className="day-index">
             {following.days
@@ -251,21 +256,6 @@ function DayPanel({
       </article>
       <p className="save-note">打卡保存在这台浏览器。换手机或公司电脑时，到进度页导出再导入。</p>
     </>
-  );
-}
-
-function MaterialLinks({ links }: { links: MaterialLink[] }) {
-  if (links.length === 0) return null;
-  return (
-    <div className="material-list">
-      {links.map((link) => (
-        <a className="material-link" href={link.url} key={link.url + link.title} rel="noreferrer" target="_blank">
-          <strong>{link.title}</strong>
-          <span>{link.formats.join(" · ")}</span>
-          <small>{link.note}</small>
-        </a>
-      ))}
-    </div>
   );
 }
 

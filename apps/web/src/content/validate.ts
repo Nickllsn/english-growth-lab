@@ -1,3 +1,4 @@
+import { pageReadings } from "./page-text";
 import type { StudyDay, WeekPack } from "./types";
 
 const STUDY_SLOTS = ["morning", "noon", "evening", "home"] as const;
@@ -60,6 +61,7 @@ export function validateWeek(week: WeekPack): string[] {
       for (const link of slot.links) {
         if (!link.url.startsWith("https://")) at(`${day.date} 链接需要 https`);
         if (link.formats.length === 0) at(`${day.date} ${link.title} 缺少格式`);
+        if (!pageReadings[link.url]) at(`${day.date} 缺少页面文本：${link.url}`);
       }
     }
 

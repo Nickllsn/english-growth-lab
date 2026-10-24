@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { weeks } from "../content/load";
 import { resolveSession, shanghaiToday, weekdayLabel } from "../content/schedule";
+import { MaterialView } from "../components/MaterialView";
 import type { StudyDay } from "../content/types";
 
 export function WeekPage({ today = shanghaiToday() }: { today?: string }) {
@@ -63,11 +64,7 @@ function DayCard({ day, open }: { day: StudyDay; open: boolean }) {
             ))}
           </ol>
           {slot.links.map((link) => (
-            <a className="material-link" href={link.url} key={link.url + link.title} rel="noreferrer" target="_blank">
-              <strong>{link.title}</strong>
-              <span>{link.formats.join(" · ")}</span>
-              <small>{link.note}</small>
-            </a>
+            <MaterialView key={link.url + link.title} link={link} showCaptions={slot.id === "evening"} />
           ))}
         </section>
       ))}

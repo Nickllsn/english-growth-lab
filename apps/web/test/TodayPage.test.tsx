@@ -20,6 +20,21 @@ describe("TodayPage", () => {
     expect(screen.getByRole("link", { name: /用英语介绍你自己/ })).toBeInTheDocument();
   });
 
+  it("shows the video and its study text on the page", () => {
+    render(
+      <MemoryRouter>
+        <TodayPage today="2026-10-27" />
+      </MemoryRouter>
+    );
+
+    fireEvent.click(screen.getByRole("tab", { name: "晚听" }));
+    expect(screen.getByTitle(/英文字幕/)).toHaveAttribute(
+      "src",
+      expect.stringContaining("cc_load_policy=1")
+    );
+    expect(screen.getByText(/A database stores each row as bytes on a disk/)).toBeInTheDocument();
+  });
+
   it("checks off the morning listen on the first study day", () => {
     render(
       <MemoryRouter>
@@ -29,6 +44,8 @@ describe("TodayPage", () => {
 
     expect(screen.getByRole("heading", { name: "用英语介绍你自己" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /6 Minute English/ })).toBeInTheDocument();
+    expect(screen.getByText(/这一集的逐字稿属于 BBC/)).toBeInTheDocument();
+    expect(screen.getByText("I have been working as a software engineer for eight years.")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("checkbox", { name: "这一段做完了" }));
 
     expect(localStorage.getItem("egl.progress.v1")).toContain("morning");
