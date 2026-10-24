@@ -9,7 +9,8 @@
     "npm": ">=10"
   },
   "scripts": {
-    "dev": "concurrently -k -n api,web -c blue,green \"npm run dev -w @egl/api\" \"npm run dev -w @egl/web\"",
+    "dev": "npm run dev -w @egl/web",
+    "dev:api": "npm run dev -w @egl/api",
     "test": "npm run test --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",

@@ -1,0 +1,566 @@
+{
+  "id": "2026-W45",
+  "title": "Linux 性能英语",
+  "phase": "第 1 个月 · 重建基础",
+  "startsOn": "2026-11-02",
+  "endsOn": "2026-11-08",
+  "goal": "能用英语讲清延迟、吞吐、USE 方法，以及你会怎么开始看一个 I/O 问题。",
+  "days": [
+    {
+      "date": "2026-11-02",
+      "kind": "study",
+      "theme": "性能地图",
+      "objective": "听懂 Gregg 讲解的下一段，并能说出 observability 是先看清系统。",
+      "speakPrompt": "How do you start a performance investigation?",
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 20,
+          "place": "早高峰地铁",
+          "title": "听 12 到 24 分钟",
+          "steps": [
+            "从 12 分钟听到 24 分钟，不看字幕。",
+            "如果已经听完视频，就重听最清楚的 10 分钟。",
+            "到站前说一句：He is showing how to observe the system."
+          ],
+          "links": [
+            {
+              "title": "Linux Systems Performance，从 12 分钟开始",
+              "url": "https://www.youtube.com/watch?v=fhBHvsi0Ql0&t=720s",
+              "formats": ["text", "audio", "video"],
+              "note": "还是 Brendan Gregg 这一场。早上不要打开字幕。"
+            }
+          ]
+        },
+        {
+          "id": "noon",
+          "minutes": 20,
+          "place": "公司午休",
+          "title": "在工具页上找 5 个命令",
+          "steps": [
+            "打开 Linux performance 工具页，只找和磁盘、CPU 有关的 5 个命令。",
+            "每个命令用英语说它回答什么问题，不要抄手册。",
+            "读今天的词块。"
+          ],
+          "links": [
+            {
+              "title": "Linux Performance",
+              "url": "https://web.archive.org/web/20261014044803/https://www.brendangregg.com/linuxperf.html",
+              "formats": ["text"],
+              "note": "原站打不开。这是同一页的存档。只挑 5 个工具，不从头读到尾。"
+            }
+          ]
+        },
+        {
+          "id": "evening",
+          "minutes": 20,
+          "place": "晚高峰地铁",
+          "title": "字幕重听 12 到 24 分钟",
+          "steps": [
+            "打开英文字幕，重听早上那一段。",
+            "记下 3 个你能跟着说的工具名。",
+            "回答：他要你先看工具，还是先看问题？"
+          ],
+          "links": [
+            {
+              "title": "带字幕重听",
+              "url": "https://www.youtube.com/watch?v=fhBHvsi0Ql0&t=720s",
+              "formats": ["text", "audio", "video"],
+              "note": "字幕只用来核对没听清的句子。"
+            }
+          ]
+        },
+        {
+          "id": "home",
+          "minutes": 15,
+          "place": "到家跟读",
+          "title": "跟读怎么开始排查",
+          "steps": [
+            "逐句跟读两遍。",
+            "用你自己的一个真实现象替换第一句，不要提公司机密。",
+            "不看稿回答今天的问题。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [
+        { "text": "I start with the symptom, not the tool.", "meaning": "我从现象开始，而不是从工具开始。" },
+        { "text": "Observability tells me what the system is doing.", "meaning": "可观测性告诉我系统正在做什么。" },
+        { "text": "CPU utilization can be misleading.", "meaning": "CPU 利用率可能误导人。" },
+        { "text": "I need the latency distribution.", "meaning": "我需要延迟的分布。" },
+        { "text": "A checklist keeps the investigation short.", "meaning": "清单让排查保持短。" },
+        { "text": "Let me check the disk before I guess.", "meaning": "我先看磁盘，再去猜。" }
+      ],
+      "shadow": [
+        "I do not start by picking a tool.",
+        "I start with the symptom.",
+        "Then I ask where the time goes.",
+        "Observability shows the work, the wait, and the errors.",
+        "A high CPU number is not always the bottleneck.",
+        "I want the latency, not just the average."
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "kind": "study",
+      "theme": "USE 方法",
+      "objective": "能解释 utilization、saturation、errors，并各举一个存储例子。",
+      "speakPrompt": "What does the USE method check?",
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 20,
+          "place": "早高峰地铁",
+          "title": "听 24 到 36 分钟",
+          "steps": [
+            "从 24 分钟听到 36 分钟，不看字幕。",
+            "视频如果更短，就重听方法论那一段。",
+            "听到 utilization 或 saturation 就在心里重复。"
+          ],
+          "links": [
+            {
+              "title": "Linux Systems Performance，从 24 分钟开始",
+              "url": "https://www.youtube.com/watch?v=fhBHvsi0Ql0&t=1440s",
+              "formats": ["text", "audio", "video"],
+              "note": "还是这场演讲。听大约 12 分钟。"
+            }
+          ]
+        },
+        {
+          "id": "noon",
+          "minutes": 20,
+          "place": "公司午休",
+          "title": "读 USE 的三个词",
+          "steps": [
+            "只读 Utilization、Saturation、Errors 的定义。",
+            "给磁盘各写一个例子：忙、排队、出错。",
+            "读今天的词块。"
+          ],
+          "links": [
+            {
+              "title": "The USE Method",
+              "url": "https://web.archive.org/web/20250106073356/https://www.brendangregg.com/usemethod.html",
+              "formats": ["text"],
+              "note": "原站打不开。先读页面上的学习文本，再用存档核对定义和 Linux 磁盘那一小节。"
+            }
+          ]
+        },
+        {
+          "id": "evening",
+          "minutes": 20,
+          "place": "晚高峰地铁",
+          "title": "对照字幕",
+          "steps": [
+            "打开字幕，重听早上那一段。",
+            "用三个英语词总结：utilization, saturation, errors。",
+            "说一个你工作里见过的排队例子，不要提机密。"
+          ],
+          "links": [
+            {
+              "title": "带字幕重听",
+              "url": "https://www.youtube.com/watch?v=fhBHvsi0Ql0&t=1440s",
+              "formats": ["text", "audio", "video"],
+              "note": "晚高峰不换新视频。"
+            }
+          ]
+        },
+        {
+          "id": "home",
+          "minutes": 15,
+          "place": "到家跟读",
+          "title": "跟读 USE",
+          "steps": [
+            "逐句跟读。",
+            "把 disk 换成你更熟悉的一种资源再讲一遍。",
+            "不看稿回答今天的问题。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [
+        { "text": "Utilization is how busy a resource is.", "meaning": "利用率是资源有多忙。" },
+        { "text": "Saturation means work is waiting.", "meaning": "饱和是指工作在排队。" },
+        { "text": "Errors are the failures, not the slowness.", "meaning": "错误是失败，不是变慢。" },
+        { "text": "A queue can grow while utilization looks fine.", "meaning": "利用率看起来正常时，队列仍可能变长。" },
+        { "text": "I check the disk, the CPU, and the network.", "meaning": "我检查磁盘、CPU 和网络。" },
+        { "text": "The method stops me from guessing.", "meaning": "这个方法让我不再瞎猜。" }
+      ],
+      "shadow": [
+        "The USE method checks every resource.",
+        "Utilization asks how busy it is.",
+        "Saturation asks who is waiting.",
+        "Errors ask what failed.",
+        "A disk can be saturated before it is one hundred percent busy.",
+        "I name the resource before I name the fix."
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "study",
+      "theme": "延迟、吞吐和 IOPS",
+      "objective": "四个词不要混：latency、throughput、IOPS、tail latency。",
+      "speakPrompt": "What is the difference between latency and throughput?",
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 20,
+          "place": "早高峰地铁",
+          "title": "听磁盘和 HDD、SSD",
+          "steps": [
+            "从 12 分钟开始听约 12 分钟，不看字幕。",
+            "只区分 spinning disk 和 SSD。",
+            "用一句英语说随机 I/O 为什么更贵。"
+          ],
+          "links": [
+            {
+              "title": "How databases store tables on disk，从 12 分钟开始",
+              "url": "https://www.youtube.com/watch?v=DbxddGtHl70&t=720s",
+              "formats": ["text", "audio", "video"],
+              "note": "Hussein Nasser。如果后面不是磁盘，就重听前 12 分钟里讲 HDD 和 SSD 的部分。"
+            }
+          ]
+        },
+        {
+          "id": "noon",
+          "minutes": 20,
+          "place": "公司午休",
+          "title": "把四个词写成四句",
+          "steps": [
+            "看工具页里和 iostat 有关的一行，找到 await 或 latency。",
+            "用今天的词块各造一个你工作里的例子。",
+            "确认 tail latency 不是平均值。"
+          ],
+          "links": [
+            {
+              "title": "Linux Performance 里的磁盘工具",
+              "url": "https://web.archive.org/web/20261014044803/https://www.brendangregg.com/linuxperf.html",
+              "formats": ["text"],
+              "note": "原站打不开。在存档里搜索 iostat，只读磁盘那一组工具的名字。"
+            }
+          ]
+        },
+        {
+          "id": "evening",
+          "minutes": 20,
+          "place": "晚高峰地铁",
+          "title": "字幕再听",
+          "steps": [
+            "打开字幕，重听早上那一段。",
+            "听到 random 或 sequential 就重复。",
+            "回答：latency 量的是时间，还是次数？"
+          ],
+          "links": [
+            {
+              "title": "带字幕重听",
+              "url": "https://www.youtube.com/watch?v=DbxddGtHl70&t=720s",
+              "formats": ["text", "audio", "video"],
+              "note": "晚上用字幕核对 random I/O 和 sequential I/O。"
+            }
+          ]
+        },
+        {
+          "id": "home",
+          "minutes": 15,
+          "place": "到家跟读",
+          "title": "跟读四个定义",
+          "steps": [
+            "逐句跟读。",
+            "打乱顺序提问自己。",
+            "不看稿回答今天的问题。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [
+        { "text": "Latency is how long one I/O waits.", "meaning": "延迟是一次 I/O 等了多久。" },
+        { "text": "Throughput is the bytes we move.", "meaning": "吞吐是我们搬了多少字节。" },
+        { "text": "IOPS counts the operations.", "meaning": "IOPS 数的是操作次数。" },
+        { "text": "Tail latency is the slow outliers.", "meaning": "长尾延迟是那些特别慢的请求。" },
+        { "text": "Random I/O is more expensive on a spinning disk.", "meaning": "在机械盘上，随机 I/O 更贵。" },
+        { "text": "Queue depth changes the latency.", "meaning": "队列深度会改变延迟。" }
+      ],
+      "shadow": [
+        "Latency is time.",
+        "Throughput is volume.",
+        "IOPS is a count of operations.",
+        "An average can hide the slow requests.",
+        "Tail latency is what users feel.",
+        "A deep queue can raise latency."
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "kind": "study",
+      "theme": "page cache 和 direct I/O",
+      "objective": "说清普通读写经过 page cache，O_DIRECT 会绕过它。",
+      "speakPrompt": "What is the difference between buffered I/O and direct I/O?",
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 20,
+          "place": "早高峰地铁",
+          "title": "重听最清楚的 12 分钟",
+          "steps": [
+            "重听 Gregg 演讲的前 12 分钟，不看字幕。",
+            "这次只听和观察系统有关的句子。",
+            "说一句：I need a measurement before I choose direct I/O."
+          ],
+          "links": [
+            {
+              "title": "Linux Systems Performance 开头",
+              "url": "https://www.youtube.com/watch?v=fhBHvsi0Ql0",
+              "formats": ["text", "audio", "video"],
+              "note": "熟悉的声音。今天用它保持听力，新概念放在午休读。"
+            }
+          ]
+        },
+        {
+          "id": "noon",
+          "minutes": 20,
+          "place": "公司午休",
+          "title": "读 page cache 的第一屏",
+          "steps": [
+            "只读第一段，读到 O_DIRECT 为止。",
+            "用英语写两句：buffered I/O 走哪里，direct I/O 绕过什么。",
+            "读今天的词块。"
+          ],
+          "links": [
+            {
+              "title": "Page Cache",
+              "url": "https://docs.kernel.org/mm/page_cache.html",
+              "formats": ["text"],
+              "note": "内核文档。只读开头，不读 Folios 后面的实现。"
+            }
+          ]
+        },
+        {
+          "id": "evening",
+          "minutes": 20,
+          "place": "晚高峰地铁",
+          "title": "字幕确认 O_DIRECT 没听错",
+          "steps": [
+            "打开字幕再听前 12 分钟。",
+            "午休的两句在心里讲一遍。",
+            "回答：mmap 和普通读，会不会走 page cache？"
+          ],
+          "links": [
+            {
+              "title": "带字幕重听开头",
+              "url": "https://www.youtube.com/watch?v=fhBHvsi0Ql0",
+              "formats": ["text", "audio", "video"],
+              "note": "视频不讲 page cache 的每一句。用它练耳朵，定义以午休文档为准。"
+            }
+          ]
+        },
+        {
+          "id": "home",
+          "minutes": 15,
+          "place": "到家跟读",
+          "title": "跟读两条 I/O 路径",
+          "steps": [
+            "逐句跟读。",
+            "用手比划两条路径：进缓存，绕过缓存。",
+            "不看稿回答今天的问题。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [
+        { "text": "Buffered I/O goes through the page cache.", "meaning": "带缓存的 I/O 会经过 page cache。" },
+        { "text": "Direct I/O bypasses the page cache.", "meaning": "Direct I/O 绕过 page cache。" },
+        { "text": "O_DIRECT does not make every workload faster.", "meaning": "O_DIRECT 不会让每种负载都更快。" },
+        { "text": "The cache can hide the disk latency.", "meaning": "缓存会把磁盘延迟藏起来。" },
+        { "text": "A cache miss reaches the device.", "meaning": "缓存未命中才会到设备。" },
+        { "text": "I measure both paths before I choose.", "meaning": "两条路径我都量过再选。" }
+      ],
+      "shadow": [
+        "A normal read fills the page cache.",
+        "The next read may never touch the disk.",
+        "Direct I/O skips that cache.",
+        "That can help a database that caches data itself.",
+        "It can also make a small read slower.",
+        "I compare the two paths with a measurement."
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "kind": "study",
+      "theme": "讲一条 I/O 排查",
+      "objective": "按七步把一个读延迟变高的故事讲完。用你自己的经历，去掉机密。",
+      "speakPrompt": "Explain how you diagnose an I/O performance problem.",
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 20,
+          "place": "早高峰地铁",
+          "title": "听力小测",
+          "steps": [
+            "重听 Gregg 前 12 分钟，不看字幕，也不暂停。",
+            "听完写下你记住的 5 个英语词。下车再写。",
+            "这 5 个词晚上要讲进排查故事里。"
+          ],
+          "links": [
+            {
+              "title": "Linux Systems Performance 开头",
+              "url": "https://www.youtube.com/watch?v=fhBHvsi0Ql0",
+              "formats": ["text", "audio", "video"],
+              "note": "同一段，当作本周听力测验。"
+            }
+          ]
+        },
+        {
+          "id": "noon",
+          "minutes": 20,
+          "place": "公司午休",
+          "title": "把七步写成关键词",
+          "steps": [
+            "按 symptom、hypothesis、measurement、bottleneck、root cause、fix、verification 写 7 个关键词。",
+            "每个词配今天的一个词块。",
+            "复习周二的 USE 三个词。"
+          ],
+          "links": [
+            {
+              "title": "再看 USE Method 的定义",
+              "url": "https://web.archive.org/web/20250106073356/https://www.brendangregg.com/usemethod.html",
+              "formats": ["text"],
+              "note": "用存档核对 utilization 和 saturation，不新开主题。"
+            }
+          ]
+        },
+        {
+          "id": "evening",
+          "minutes": 20,
+          "place": "晚高峰地铁",
+          "title": "把听到的词放进七步",
+          "steps": [
+            "打开字幕，只听你早上没听清的 5 分钟。",
+            "把早上记的词放进七步里的某一步。",
+            "在心里讲 1 分钟，不追求完整。"
+          ],
+          "links": [
+            {
+              "title": "带字幕听没听清的部分",
+              "url": "https://www.youtube.com/watch?v=fhBHvsi0Ql0",
+              "formats": ["text", "audio", "video"],
+              "note": "只补洞，不把整场再听一遍。"
+            }
+          ]
+        },
+        {
+          "id": "home",
+          "minutes": 20,
+          "place": "到家跟读",
+          "title": "讲完整条链",
+          "steps": [
+            "先跟读下面的句子。",
+            "再用不看稿的方式讲一个读延迟变高的故事。",
+            "不要说出公司名、客户名和未公开数据。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [
+        { "text": "The symptom was high read latency.", "meaning": "现象是读延迟变高。" },
+        { "text": "My hypothesis was a saturated disk.", "meaning": "我的假设是磁盘饱和了。" },
+        { "text": "The measurement showed a long queue.", "meaning": "测量显示队列很长。" },
+        { "text": "The bottleneck was the storage device.", "meaning": "瓶颈是存储设备。" },
+        { "text": "The root cause was random I/O.", "meaning": "根因是随机 I/O。" },
+        { "text": "I verified the fix with the same measurement.", "meaning": "我用同一种测量确认修复有效。" }
+      ],
+      "shadow": [
+        "Read latency went up.",
+        "I did not guess the fix.",
+        "I asked whether the disk was busy or waiting.",
+        "The queue was long, so the disk was saturated.",
+        "The reads were random.",
+        "I changed the access pattern.",
+        "Then I measured the latency again."
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "kind": "weekend",
+      "theme": "预习还没发布的下一周",
+      "objective": "如果下一周已经在页面上，就试听；如果还没有，就复习这一周的跟读稿。",
+      "slots": [
+        {
+          "id": "preview",
+          "minutes": 40,
+          "place": "周六",
+          "title": "先看下一周在不在",
+          "steps": [
+            "打开路线页。如果 11 月 9 日那一周已经发布，就点开每个视频听 2 分钟。",
+            "如果还没有，把这一周 5 篇跟读稿各讲一遍。",
+            "记下仍然说错的句子。"
+          ],
+          "links": [
+            {
+              "title": "本周演讲，方便复习",
+              "url": "https://www.youtube.com/watch?v=fhBHvsi0Ql0",
+              "formats": ["text", "audio", "video"],
+              "note": "没有新材料时，只重听前 2 分钟。"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "minutes": 20,
+          "place": "周六",
+          "title": "听自己的排查录音",
+          "steps": [
+            "听周五的录音。",
+            "标出停顿超过两秒的地方。",
+            "周日只改这几个地方。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Say the seven-step chain once."
+    },
+    {
+      "date": "2026-11-08",
+      "kind": "weekend",
+      "theme": "写完性能英语复盘",
+      "objective": "用四句英语留下这一周：我能区分哪些词，我还听不懂哪里。",
+      "slots": [
+        {
+          "id": "preview",
+          "minutes": 20,
+          "place": "周日",
+          "title": "补 2 分钟试听或再讲一遍",
+          "steps": [
+            "下一周如果已发布，补上没听的 2 分钟。",
+            "如果没发布，把七步链再讲一遍。",
+            "不新开论文或会议视频。"
+          ],
+          "links": [
+            {
+              "title": "Page Cache 第一屏",
+              "url": "https://docs.kernel.org/mm/page_cache.html",
+              "formats": ["text"],
+              "note": "只看第一段，用来确认 direct I/O 那句还记得。"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "minutes": 30,
+          "place": "周日",
+          "title": "四句英语",
+          "steps": [
+            "latency、throughput、IOPS、tail latency 各一句。",
+            "USE 三个词各一句里挑一句写下来。",
+            "写我还听不懂的一个地方。",
+            "保存到进度页，并导出一份。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Explain latency, throughput, and tail latency."
+    }
+  ]
+}

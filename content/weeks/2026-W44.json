@@ -1,0 +1,566 @@
+{
+  "id": "2026-W44",
+  "title": "自我介绍与分布式存储",
+  "phase": "第 1 个月 · 重建基础",
+  "startsOn": "2026-10-26",
+  "endsOn": "2026-11-01",
+  "goal": "周五晚上能不看稿讲 5 分钟：你是谁、你做什么、什么是分布式存储、什么是 Ceph。",
+  "days": [
+    {
+      "date": "2026-10-26",
+      "kind": "study",
+      "theme": "用英语介绍你自己",
+      "objective": "先适应清楚的口语，再记住 6 个能直接用于自我介绍的句子。",
+      "speakPrompt": "Tell me about yourself.",
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 20,
+          "place": "早高峰地铁",
+          "title": "泛听一遍",
+          "steps": [
+            "不看文本，把这一集听完。听不懂就让它过去。",
+            "立刻再听一遍，只记重复出现的说法。",
+            "到站前在心里用一句英语回答：What was this about?"
+          ],
+          "links": [
+            {
+              "title": "6 Minute English: What should you eat for a better night’s sleep?",
+              "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261022",
+              "formats": ["text", "audio", "video"],
+              "note": "约 6 分钟。页面上有视频、音频和文本，地铁上优先听。"
+            }
+          ]
+        },
+        {
+          "id": "noon",
+          "minutes": 20,
+          "place": "公司午休",
+          "title": "读句型，记词块",
+          "steps": [
+            "先读页面上的六句英语，再决定要不要打开 BBC 原文。",
+            "每个句子出声读一遍。",
+            "用其中两句改成你自己的工作，写在备忘录里。"
+          ],
+          "links": [
+            {
+              "title": "同一集的文本",
+              "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261022",
+              "formats": ["text", "audio", "video"],
+              "note": "午休只读页面上的 Introduction 和词汇，不抄整篇。"
+            }
+          ]
+        },
+        {
+          "id": "evening",
+          "minutes": 20,
+          "place": "晚高峰地铁",
+          "title": "带着问题再听",
+          "steps": [
+            "再听同一集。这次可以看页面，但先听 1 分钟再看。",
+            "听完回答：他们讨论的是饮食还是某一种药？",
+            "用今天的句型在心里说两句你自己的工作。"
+          ],
+          "links": [
+            {
+              "title": "再听 6 Minute English",
+              "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261022",
+              "formats": ["text", "audio", "video"],
+              "note": "还是这一集。晚高峰不换新材料。"
+            }
+          ]
+        },
+        {
+          "id": "home",
+          "minutes": 15,
+          "place": "到家跟读",
+          "title": "跟读自我介绍",
+          "steps": [
+            "每句读两遍：第一遍看句子，第二遍只看第一眼。",
+            "六句连起来讲一遍。",
+            "最后不看句子，回答今天的问题。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [
+        { "text": "I have been working as a software engineer for eight years.", "meaning": "我做软件工程师八年了。" },
+        { "text": "I mainly focus on distributed storage.", "meaning": "我主要做分布式存储。" },
+        { "text": "My main responsibility is to keep data reliable.", "meaning": "我的主要职责是保证数据可靠。" },
+        { "text": "One of the challenges is tail latency.", "meaning": "其中一个难点是长尾延迟。" },
+        { "text": "Let me walk you through my background.", "meaning": "我介绍一下我的经历。" },
+        { "text": "I am learning to explain this work in English.", "meaning": "我在学着用英语讲这份工作。" }
+      ],
+      "shadow": [
+        "I have been a software engineer for eight years.",
+        "I work on distributed storage.",
+        "My team stores data across many machines.",
+        "I care about reliability and performance.",
+        "One hard part is finding the real bottleneck.",
+        "I am learning to explain this work in English."
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "kind": "study",
+      "theme": "讲清你的工作",
+      "objective": "把磁盘上的数据布局，说成你每天在做的存储工作。",
+      "speakPrompt": "What do you do as a software engineer?",
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 20,
+          "place": "早高峰地铁",
+          "title": "听磁盘怎么存数据",
+          "steps": [
+            "只听前 12 分钟，不看字幕。",
+            "听完用一句英语说：他在解释数据放在磁盘的哪里。",
+            "剩下的时间把这 12 分钟再听一遍。"
+          ],
+          "links": [
+            {
+              "title": "How Do Databases Store Tables on Disk?",
+              "url": "https://www.youtube.com/watch?v=DbxddGtHl70",
+              "formats": ["text", "audio", "video"],
+              "note": "Hussein Nasser，语速清楚。文本用英文字幕，早上先不要打开。"
+            }
+          ]
+        },
+        {
+          "id": "noon",
+          "minutes": 20,
+          "place": "公司午休",
+          "title": "读 Ceph 里有哪些角色",
+          "steps": [
+            "只读页面上的表格和 How Data Is Placed。",
+            "找出 Monitor、Manager、OSD 各做一件什么事。",
+            "把今天的词块出声读一遍。"
+          ],
+          "links": [
+            {
+              "title": "The Parts of a Ceph Cluster",
+              "url": "https://docs.ceph.com/en/latest/start/ceph-cluster-components/",
+              "formats": ["text"],
+              "note": "官方文档，免费。午休读文字，不看别的章节。"
+            }
+          ]
+        },
+        {
+          "id": "evening",
+          "minutes": 20,
+          "place": "晚高峰地铁",
+          "title": "打开字幕再听前 12 分钟",
+          "steps": [
+            "打开英文字幕，再听前 12 分钟。",
+            "记下 3 个你能听清的存储词。",
+            "到站前回答：HDD 和 SSD 在他的解释里有什么不同？"
+          ],
+          "links": [
+            {
+              "title": "同一段，打开英文字幕",
+              "url": "https://www.youtube.com/watch?v=DbxddGtHl70",
+              "formats": ["text", "audio", "video"],
+              "note": "字幕就是这段视频的文本。仍然只听到 12 分钟。"
+            }
+          ]
+        },
+        {
+          "id": "home",
+          "minutes": 15,
+          "place": "到家跟读",
+          "title": "跟读工作介绍",
+          "steps": [
+            "逐句跟读两遍。",
+            "把 Monitor 和 OSD 两句换成你自己的说法。",
+            "不看稿回答今天的问题。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [
+        { "text": "I have been working on storage systems.", "meaning": "我一直在做存储系统。" },
+        { "text": "My main responsibility is the I/O path.", "meaning": "我主要负责 I/O 路径。" },
+        { "text": "A monitor keeps the cluster map.", "meaning": "Monitor 保存集群地图。" },
+        { "text": "An OSD stores objects on a disk.", "meaning": "OSD 把对象存在磁盘上。" },
+        { "text": "The bottleneck turned out to be the disk.", "meaning": "瓶颈最后是磁盘。" },
+        { "text": "I mainly focus on reliability and recovery.", "meaning": "我主要关注可靠性和恢复。" }
+      ],
+      "shadow": [
+        "I am a storage engineer.",
+        "I have been working on this for eight years.",
+        "We store data on many disks.",
+        "A monitor tracks the cluster.",
+        "An OSD stores the objects.",
+        "My job is to keep reads and writes reliable."
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "kind": "study",
+      "theme": "什么是分布式存储",
+      "objective": "用六句英语说明：数据在很多机器上，没有单点，坏一块盘还能读。",
+      "speakPrompt": "What is distributed storage?",
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 20,
+          "place": "早高峰地铁",
+          "title": "听 Ceph 介绍的前 12 分钟",
+          "steps": [
+            "不看字幕，从开头听到 12 分钟。",
+            "只抓三个词：object、block、file。",
+            "用一句英语说这三种接口。"
+          ],
+          "links": [
+            {
+              "title": "Ceph Intro and Architectural Overview",
+              "url": "https://www.youtube.com/watch?v=7I9uxoEhUdY",
+              "formats": ["text", "audio", "video"],
+              "note": "约 37 分钟，今天只听前 12 分钟。字幕留到晚上。"
+            }
+          ]
+        },
+        {
+          "id": "noon",
+          "minutes": 20,
+          "place": "公司午休",
+          "title": "读数据怎么放置",
+          "steps": [
+            "重读 Ceph 组件页的 How Data Is Placed。",
+            "用自己的话写出 pool、PG、CRUSH 各是什么。写不对就再读那一节。",
+            "读今天的词块。"
+          ],
+          "links": [
+            {
+              "title": "How Data Is Placed",
+              "url": "https://docs.ceph.com/en/latest/start/ceph-cluster-components/",
+              "formats": ["text"],
+              "note": "还是昨天那一页，今天只读放置数据的那一节。"
+            }
+          ]
+        },
+        {
+          "id": "evening",
+          "minutes": 20,
+          "place": "晚高峰地铁",
+          "title": "看字幕听 12 到 20 分钟",
+          "steps": [
+            "从 12 分钟听到 20 分钟，打开英文字幕。",
+            "听完回答：客户端要不要问一个中心节点数据在哪？",
+            "如果这段太难，回到前 3 分钟重听。"
+          ],
+          "links": [
+            {
+              "title": "Ceph 介绍，从 12 分钟开始",
+              "url": "https://www.youtube.com/watch?v=7I9uxoEhUdY&t=720s",
+              "formats": ["text", "audio", "video"],
+              "note": "听大约 8 分钟。听完可以把前 12 分钟再听一遍。"
+            }
+          ]
+        },
+        {
+          "id": "home",
+          "minutes": 15,
+          "place": "到家跟读",
+          "title": "跟读分布式存储",
+          "steps": [
+            "逐句跟读。",
+            "合上屏幕，讲给一个新同事听。",
+            "卡住就只看当前这一句。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [
+        { "text": "Data is spread across many machines.", "meaning": "数据分散在很多机器上。" },
+        { "text": "There is no single point of failure.", "meaning": "没有单点故障。" },
+        { "text": "Clients calculate where an object lives.", "meaning": "客户端自己算出对象在哪。" },
+        { "text": "A placement group maps objects to disks.", "meaning": "PG 把对象映射到磁盘。" },
+        { "text": "Replication keeps a copy on another disk.", "meaning": "副本放在另一块盘上。" },
+        { "text": "The cluster can recover by itself.", "meaning": "集群可以自己恢复。" }
+      ],
+      "shadow": [
+        "Distributed storage keeps data on many machines.",
+        "One disk can fail, and the data is still readable.",
+        "Ceph stores objects, blocks, and files.",
+        "Clients do not ask a central server for the location.",
+        "CRUSH calculates the location.",
+        "That is why the cluster can grow."
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "kind": "study",
+      "theme": "什么是 Ceph",
+      "objective": "能讲清 RADOS、CRUSH、副本和再平衡，不背定义表。",
+      "speakPrompt": "What is Ceph?",
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 20,
+          "place": "早高峰地铁",
+          "title": "继续听 Ceph，20 到 32 分钟",
+          "steps": [
+            "从 20 分钟听到 32 分钟，先不看字幕。",
+            "听到 architecture、replica、recovery 就在心里重复一遍。",
+            "用一句英语说你听到的一个组件。"
+          ],
+          "links": [
+            {
+              "title": "Ceph 介绍，从 20 分钟开始",
+              "url": "https://www.youtube.com/watch?v=7I9uxoEhUdY&t=1200s",
+              "formats": ["text", "audio", "video"],
+              "note": "如果视频在这之前结束，就重听你最清楚的 8 分钟。"
+            }
+          ]
+        },
+        {
+          "id": "noon",
+          "minutes": 20,
+          "place": "公司午休",
+          "title": "读 CRUSH 和 RADOS",
+          "steps": [
+            "只读 CRUSH Algorithm 和 RADOS 两节。",
+            "各写一句英语，不翻译整页。",
+            "读今天的词块，并把 OSD、MON 说出来。"
+          ],
+          "links": [
+            {
+              "title": "Ceph Technology",
+              "url": "https://ceph.io/en/discover/technology/",
+              "formats": ["text"],
+              "note": "官方介绍。只读 CRUSH 和 RADOS，不读整站。"
+            }
+          ]
+        },
+        {
+          "id": "evening",
+          "minutes": 20,
+          "place": "晚高峰地铁",
+          "title": "字幕对照早上那一段",
+          "steps": [
+            "打开字幕，重听早上那 12 分钟。",
+            "每听到一个组件名字，就停 5 秒，用英语说它做什么。",
+            "回答：CRUSH 避免了什么问题？"
+          ],
+          "links": [
+            {
+              "title": "带字幕重听",
+              "url": "https://www.youtube.com/watch?v=7I9uxoEhUdY&t=1200s",
+              "formats": ["text", "audio", "video"],
+              "note": "字幕用来核对早上没听清的句子。"
+            }
+          ]
+        },
+        {
+          "id": "home",
+          "minutes": 15,
+          "place": "到家跟读",
+          "title": "跟读 What is Ceph",
+          "steps": [
+            "逐句跟读两遍。",
+            "打乱顺序再讲一遍。",
+            "不看稿回答 What is Ceph?"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [
+        { "text": "Ceph provides object, block, and file storage.", "meaning": "Ceph 同时提供对象、块和文件存储。" },
+        { "text": "RADOS is the object store underneath.", "meaning": "RADOS 是底下的对象存储。" },
+        { "text": "CRUSH avoids a central lookup table.", "meaning": "CRUSH 不需要中心查找表。" },
+        { "text": "Replication copies an object to more disks.", "meaning": "副本把对象复制到更多磁盘。" },
+        { "text": "Recovery rebuilds data after a disk fails.", "meaning": "磁盘坏了以后，恢复会把数据重建出来。" },
+        { "text": "Rebalancing moves data when the cluster changes.", "meaning": "集群变化时，再平衡会搬数据。" }
+      ],
+      "shadow": [
+        "Ceph is a distributed storage system.",
+        "It serves objects, blocks, and files.",
+        "RADOS stores the objects.",
+        "CRUSH decides which disks keep an object.",
+        "Monitors keep the cluster map.",
+        "OSDs store, replicate, and recover the data."
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "kind": "study",
+      "theme": "不看稿复述这一周",
+      "objective": "用一段清楚的性能讲解做听力测验，晚上把这一周讲出来。",
+      "speakPrompt": "Explain your work to a new teammate.",
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 20,
+          "place": "早高峰地铁",
+          "title": "听 Gregg 的前 12 分钟",
+          "steps": [
+            "不看字幕，只听前 12 分钟。",
+            "这是语速清楚的讲解，不是论文演讲。听不懂工具名没有关系。",
+            "到站前说出你听到的两个性能词。"
+          ],
+          "links": [
+            {
+              "title": "LISA19 - Linux Systems Performance",
+              "url": "https://www.youtube.com/watch?v=fhBHvsi0Ql0",
+              "formats": ["text", "audio", "video"],
+              "note": "Brendan Gregg，USENIX 频道。今天只听开头 12 分钟。字幕晚上再用。"
+            }
+          ]
+        },
+        {
+          "id": "noon",
+          "minutes": 20,
+          "place": "公司午休",
+          "title": "复习本周词块",
+          "steps": [
+            "先看幻灯片标题，确认他讲了 observability 和 methodologies。",
+            "把本周词块里不熟的 8 个重新读出声。",
+            "写 4 个关键词：problem、cause、change、result。周五晚上按这个顺序讲。"
+          ],
+          "links": [
+            {
+              "title": "Linux Systems Performance 幻灯片",
+              "url": "https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_slides_gregg.pdf",
+              "formats": ["text"],
+              "note": "原站打不开。这是 USENIX 上的同一场 PDF。只看目录和 observability 那几页。"
+            }
+          ]
+        },
+        {
+          "id": "evening",
+          "minutes": 20,
+          "place": "晚高峰地铁",
+          "title": "字幕核对前 12 分钟",
+          "steps": [
+            "打开英文字幕，重听前 12 分钟。",
+            "听到 utilization、latency、throughput 就重复一遍。",
+            "用一句英语回答：What was this talk about?"
+          ],
+          "links": [
+            {
+              "title": "带字幕重听开头",
+              "url": "https://www.youtube.com/watch?v=fhBHvsi0Ql0",
+              "formats": ["text", "audio", "video"],
+              "note": "仍然只听 12 分钟。后面的工具细节下周再用。"
+            }
+          ]
+        },
+        {
+          "id": "home",
+          "minutes": 20,
+          "place": "到家跟读",
+          "title": "录音 5 分钟",
+          "steps": [
+            "先跟读下面的句子。",
+            "然后不看稿讲 5 分钟。可以录在手机里。",
+            "不要说出公司机密、客户名或未公开事故。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [
+        { "text": "The real bottleneck is not always the CPU.", "meaning": "真正的瓶颈不一定是 CPU。" },
+        { "text": "Latency is the time one operation waits.", "meaning": "延迟是一次操作等待的时间。" },
+        { "text": "Throughput is how much work finishes.", "meaning": "吞吐是完成了多少工作。" },
+        { "text": "I start with the symptom.", "meaning": "我从现象开始。" },
+        { "text": "Then I form a hypothesis.", "meaning": "然后我提出一个假设。" },
+        { "text": "Let me walk you through what I found.", "meaning": "我讲一下我发现了什么。" }
+      ],
+      "shadow": [
+        "I have worked on distributed storage for eight years.",
+        "Ceph keeps objects on many disks.",
+        "CRUSH calculates the location.",
+        "Monitors keep the map, and OSDs store the data.",
+        "When a disk fails, the cluster recovers.",
+        "The hard part is tail latency.",
+        "I look for the real bottleneck before I change anything."
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "kind": "weekend",
+      "theme": "预习下一周，起草复盘",
+      "objective": "确认下一周每个视频都能打开，并写下这周还说不出来的地方。",
+      "slots": [
+        {
+          "id": "preview",
+          "minutes": 40,
+          "place": "周六",
+          "title": "预习 11 月 2 日那一周",
+          "steps": [
+            "打开下一周每个学习日的视频，确认手机上能播放。",
+            "只读每一天的目标，圈出不认识的词。",
+            "每个视频只听前 2 分钟，不查词。"
+          ],
+          "links": [
+            {
+              "title": "下一周会继续用的 Gregg 演讲",
+              "url": "https://www.youtube.com/watch?v=fhBHvsi0Ql0&t=720s",
+              "formats": ["text", "audio", "video"],
+              "note": "从 12 分钟开始听 2 分钟就停。"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "minutes": 30,
+          "place": "周六",
+          "title": "起草本周复盘",
+          "steps": [
+            "听一遍周五的 5 分钟录音。",
+            "写下三件还说不顺的事。",
+            "先别改句子，周日再写成英语。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "What can I explain now?"
+    },
+    {
+      "date": "2026-11-01",
+      "kind": "weekend",
+      "theme": "听完预习，写完复盘",
+      "objective": "补完 2 分钟试听，并用英语留下这周的四句话。",
+      "slots": [
+        {
+          "id": "preview",
+          "minutes": 30,
+          "place": "周日",
+          "title": "补完试听",
+          "steps": [
+            "把周六没听的 2 分钟补上。",
+            "每个视频仍然只听 2 分钟。",
+            "如果某个链接打不开，记在复盘里，下周换时段再试。"
+          ],
+          "links": [
+            {
+              "title": "USE Method",
+              "url": "https://web.archive.org/web/20250106073356/https://www.brendangregg.com/usemethod.html",
+              "formats": ["text"],
+              "note": "原站打不开。这是同一篇文章的存档。先读页面上的学习文本，再看存档第一屏。"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "minutes": 30,
+          "place": "周日",
+          "title": "写成四句英语",
+          "steps": [
+            "我现在能讲清什么。",
+            "我还听不懂什么。",
+            "我真正用了哪个词块。",
+            "用四句英语解释 Ceph。写完留在进度页。"
+          ],
+          "links": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Explain Ceph in four sentences."
+    }
+  ]
+}

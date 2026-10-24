@@ -1,105 +1,58 @@
-import { useEffect, useMemo, useState } from "react";
-import {
-  getEntries,
-  getRoadmap,
-  type DailyEntry,
-  type RoadmapDay
-} from "../api/client";
+import { Link } from "react-router-dom";
+import { curriculum, weeks } from "../content/load";
+import { resolveSession, shanghaiToday } from "../content/schedule";
 
-const weekNames: Record<number, string> = {
-  1: "Linux 与性能",
-  2: "工程与架构",
-  3: "AI、科技与工程讨论",
-  4: "商业、产品与思维"
-};
-
-export function RoadmapPage() {
-  const [days, setDays] = useState<RoadmapDay[]>([]);
-  const [entries, setEntries] = useState<DailyEntry[]>([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    let active = true;
-    void Promise.all([getRoadmap(), getEntries()])
-      .then(([nextDays, nextEntries]) => {
-        if (!active) return;
-        setDays(nextDays);
-        setEntries(nextEntries);
-      })
-      .catch(() => {
-        if (active) setError("学习路线加载失败，请刷新重试");
-      });
-    return () => {
-      active = false;
-    };
-  }, []);
-
-  const completedDays = useMemo(
-    () =>
-      new Set(
-        entries
-          .filter((entry) => entry.completedAt)
-          .map((entry) => entry.roadmapDay)
-      ),
-    [entries]
-  );
-  const currentDay = Math.min(completedDays.size + 1, 30);
-
-  if (error) return <p className="error-message">{error}</p>;
-  if (!days.length) return <p>正在展开 30 天学习路线…</p>;
+export function RoadmapPage({ today = shanghaiToday() }: { today?: string }) {
+  const session = resolveSession(today, weeks);
 
   return (
     <section className="page">
       <header className="page-header">
         <div>
-          <p className="eyebrow">ROADMAP</p>
-          <h1>从技术出发，走向更大的世界</h1>
-          <p>四周逐步扩大视野；每天只需完成一个清晰的小闭环。</p>
+          <p className="eyebrow">找工作优先 · 不先刷雅思</p>
+          <h1>十二个月路线</h1>
+          <p>{curriculum.audience}</p>
         </div>
       </header>
-
-      {[1, 2, 3, 4].map((week) => (
-        <section className="roadmap-week" key={week}>
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">STAGE {week}</p>
-              <h2>第 {week} 周</h2>
-            </div>
-            <span>{weekNames[week]}</span>
-          </div>
-          <div className="roadmap-grid">
-            {days
-              .filter((day) => day.week === week)
-              .map((day) => {
-                const state = completedDays.has(day.day)
-                  ? "已完成"
-                  : day.day === currentDay
-                    ? "当前任务"
-                    : "未开始";
-                return (
-                  <article
-                    aria-label={`DAY ${day.day}：${state}`}
-                    className={`roadmap-card ${state === "已完成" ? "completed" : ""} ${state === "当前任务" ? "current" : ""}`}
-                    key={day.day}
-                  >
-                    <div className="output-meta">
-                      <span>DAY {day.day}</span>
-                      <span>{state}</span>
-                    </div>
-                    <h3>{day.theme}</h3>
-                    <p>{day.focus}</p>
-                    <footer>
-                      <a href={day.source.url} target="_blank" rel="noreferrer">
-                        {day.source.name}
-                      </a>
-                      <span>难度 {day.source.difficulty} / 5</span>
-                    </footer>
-                  </article>
-                );
-              })}
-          </div>
-        </section>
-      ))}
+      <section className="panel">
+        <h2>每周怎么过</h2>
+        <ul className="step-list">
+          {curriculum.rhythm.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+      <div className="roadmap-grid">
+        {curriculum.phases.map((phase) => (
+          <article className="roadmap-card" key={phase.id}>
+            <p className="eyebrow">{phase.when}</p>
+            <h3>{phase.title}</h3>
+            <p>{phase.goal}</p>
+            <p>{phase.materials}</p>
+          </article>
+        ))}
+      </div>
+      <section className="panel">
+        <div className="section-heading">
+          <h2>已经排好的周</h2>
+          <span>当前 {session.week.id}</span>
+        </div>
+        <ul className="day-index">
+          {weeks.map((week) => (
+            <li key={week.id}>
+              <Link to={`/week?focus=${week.startsOn}`}>
+                {week.id} {week.title}
+              </Link>
+              <span>
+                {week.startsOn} 到 {week.endsOn}。{week.goal}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p>
+          下一周要在周五放进 content/weeks，周六才能预习。材料用免费链接，当天凑齐文本、音频和视频；跟读稿是原创短句，不复制演讲全文。
+        </p>
+      </section>
     </section>
   );
 }

@@ -1,0 +1,54 @@
+{
+  "timezone": "Asia/Shanghai",
+  "audience": "工作 8 年的分布式存储工程师。大学英语四级，目标是一年后能不靠翻译读懂本专业资料、讲清自己的项目，并完成一轮英文技术面试。",
+  "rhythm": [
+    "周一到周五：早地铁 20 分钟听，午休 20 分钟读，晚地铁 20 分钟再听，到家跟读 10 到 20 分钟。",
+    "周六和周日：预习下一周的材料，并写完本周复盘。",
+    "新的一周要在周五进入仓库，周六才能预习。",
+    "通勤只听语速清楚的讲解。会议演讲和论文等听得懂清楚讲解之后再加。"
+  ],
+  "phases": [
+    {
+      "id": "m1",
+      "title": "第 1 个月 · 重建基础",
+      "when": "2026-10-26 起的四周",
+      "goal": "高频句型能脱口而出，听得懂清楚的技术讲解，能用英语讲自己的工作和 Ceph。",
+      "materials": "BBC 6 Minute English、Hussein Nasser、Ceph 文档、Brendan Gregg 的清楚讲解。不听 USENIX 论文演讲。"
+    },
+    {
+      "id": "m2",
+      "title": "第 2 个月 · 技术英语",
+      "when": "第 5 到 8 周",
+      "goal": "用英语解释 LSM、RocksDB 和 Raft，每天仍有跟读。",
+      "materials": "RocksDB 官方讲解、Martin Kleppmann 的 Raft 课、Ceph 文档。一次只精听 1 到 3 分钟难片段。"
+    },
+    {
+      "id": "m3",
+      "title": "第 3 个月 · 性能英语",
+      "when": "第 9 到 12 周",
+      "goal": "能按 symptom、hypothesis、measurement、root cause 讲一条 I/O 问题。",
+      "materials": "Brendan Gregg、内核文档里的 page cache 和 block layer 短节。"
+    },
+    {
+      "id": "m4",
+      "title": "第 4 到 6 个月 · 读和讲",
+      "when": "第 4 个月起",
+      "goal": "英文技术笔记和 10 分钟演讲。io_uring、block layer、存储。",
+      "materials": "Linux 内核文档、io_uring 短讲、Ceph 和 RocksDB 设计笔记。FAST 一次只听 3 分钟。"
+    },
+    {
+      "id": "m7",
+      "title": "第 7 到 9 个月 · 求职英语",
+      "when": "第 7 个月起",
+      "goal": "30 秒到 10 分钟自我介绍、10 个行为面试故事、分布式存储设计英语。",
+      "materials": "自己的项目经历。招聘官电话和边写代码边说单独练。不写公司机密。"
+    },
+    {
+      "id": "m10",
+      "title": "第 10 到 12 个月 · 模拟面试",
+      "when": "第 10 个月起",
+      "goal": "能完成一轮存储方向英文面试：项目深挖、系统设计、行为问题。",
+      "materials": "全英文技术材料。多人会议和日常闲聊仍按 18 到 24 个月准备。"
+    }
+  ]
+}
