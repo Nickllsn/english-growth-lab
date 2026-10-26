@@ -61,7 +61,9 @@ export function validateWeek(week: WeekPack): string[] {
       for (const link of slot.links) {
         if (!link.url.startsWith("https://")) at(`${day.date} 链接需要 https`);
         if (link.formats.length === 0) at(`${day.date} ${link.title} 缺少格式`);
-        if (!pageReadings[link.url]) at(`${day.date} 缺少页面文本：${link.url}`);
+        const reading = pageReadings[link.url];
+        if (!reading) at(`${day.date} 缺少页面文本：${link.url}`);
+        else if (!/^[a-z0-9-]+\.mp3$/.test(reading.audio)) at(`${day.date} 朗读文件名无效：${link.url}`);
       }
     }
 

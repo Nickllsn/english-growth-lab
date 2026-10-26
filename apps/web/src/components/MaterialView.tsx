@@ -31,6 +31,15 @@ export function MaterialView({ link, showCaptions = false }: { link: MaterialLin
             <p key={paragraph}>{paragraph}</p>
           ))}
           {reading.attribution && <p className="attribution">{reading.attribution}</p>}
+          <div className="narration">
+            <span>英文朗读</span>
+            <audio
+              aria-label="英文朗读"
+              controls
+              preload="none"
+              src={`${import.meta.env.BASE_URL}audio/${reading.audio}`}
+            />
+          </div>
         </div>
       )}
       <a className="material-link" href={link.url} rel="noreferrer" target="_blank">

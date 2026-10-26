@@ -1,0 +1,17 @@
+{
+  "self-intro.mp3": "dc342207836e84a8cfadf0363aa750e895546031462baaccd010bb97182cd8bd",
+  "disk-rows.mp3": "4fd63f4bf348ca7ea1d53a113804e8e3abacd9d58ed2f48b8d8017190556ed4a",
+  "sequential-io.mp3": "7dfbc3280e8ffe51f2ca097e5a25c780d855d1f5a47bd5234d79aa5e75a4dc16",
+  "ceph-parts.mp3": "15b6db8f345a708b4cfd880da6977f67478d3c9ff13a2b8588b4922fe4a11108",
+  "ceph-interfaces.mp3": "c9a768225f623ce9ee53bbf0ad70215a96fe39b8943ccc428b035d875d9fda1d",
+  "crush-location.mp3": "e1c5a73d2e0ff1aebd76e9cc067ab4db3aed505c5027a357768e4d32833cc942",
+  "replication.mp3": "33c9c12533c31c5fdfa2c3a252007597dd6e51399c4f07c7a945fececa541b5e",
+  "ceph-rados.mp3": "4c0b167ff6e0e935160ceff591b4af780913c5be935c4776e09ee8415b84c9a4",
+  "observe-first.mp3": "8b3f3ce0d4b8e1df6063775a5c062168b8353543daa1d899cf8a2dd7104a6d0a",
+  "work-waiting-errors.mp3": "d4f75eb05a175d6d0a16388a8cef82e6df6cf94ea7e2491a1debbb479f02324d",
+  "use-checks.mp3": "472288c0ce33e11dc17e3308c7e1903520488c01daf9e85cd4348c452631d84b",
+  "methodologies.mp3": "ca2a28cae69955454bab80e9fa38c5744031c46d03224295f948386f97fc5939",
+  "use-definitions.mp3": "b8093426073d528aa972cf6c1856148e674db6d362e8705ff5b11f967705a92a",
+  "linux-commands.mp3": "d22d35effd6d16a510d8423c280e0a494921a7f3725832cb450ee03e804ce227",
+  "page-cache.mp3": "d79c78e7714b14990eea48eddccb0e3ece61113d2b9027e7483e7ba041cb5dd7"
+}
