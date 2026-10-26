@@ -3,6 +3,11 @@ export interface PageReading {
   keywords: string[];
   paragraphs: string[];
   attribution?: string;
+  audio: string;
+}
+
+export function englishNarration(paragraphs: string[]): string {
+  return paragraphs.filter((paragraph) => !/[\u4e00-\u9fff]/.test(paragraph)).join("\n\n");
 }
 
 const studyLabel = "学习文本";
@@ -11,6 +16,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261022": {
     label: studyLabel,
     keywords: ["software engineer", "eight years", "distributed storage", "responsibility", "tail latency", "background"],
+    audio: "self-intro.mp3",
     paragraphs: [
       "这一集的逐字稿属于 BBC，页面里不转载，也不按它的话题改写。听力只用它练耳朵。下面这篇是今天要读、要说的自我介绍。",
       "I have been working as a software engineer for eight years. Let me walk you through my background.",
@@ -23,6 +29,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://www.youtube.com/watch?v=DbxddGtHl70": {
     label: studyLabel,
     keywords: ["row", "bytes", "block", "spinning disk", "SSD", "sector"],
+    audio: "disk-rows.mp3",
     paragraphs: [
       "播放器里可以打开英文字幕。下面按这段的关键词重写，不照搬原片的句子和例子。",
       "A database stores each row as bytes on a disk. A row is the logical record you insert. Bytes are the physical bits the device actually keeps.",
@@ -35,6 +42,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://www.youtube.com/watch?v=DbxddGtHl70&t=720s": {
     label: studyLabel,
     keywords: ["sequential I/O", "random I/O", "latency", "throughput", "queue"],
+    audio: "sequential-io.mp3",
     paragraphs: [
       "从 12 分钟看起。下面是同一批关键词的学习文本，不是字幕改写。",
       "Sequential I/O reads the next bytes. The device stays in the same neighborhood, so a spinning disk does not move the head for every row. Random I/O jumps around. Each jump can cost a seek.",
@@ -47,6 +55,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://docs.ceph.com/en/latest/start/ceph-cluster-components/": {
     label: studyLabel,
     keywords: ["monitor", "manager", "OSD", "pool", "placement group", "CRUSH", "quorum"],
+    audio: "ceph-parts.mp3",
     paragraphs: [
       "A Ceph cluster runs a few programs on one or more machines. You do not have to remember every daemon. Start with monitor, manager, and OSD.",
       "A monitor keeps the maps of the cluster. Those maps say which daemons exist and where data is allowed to live. Clients and other daemons use the maps to find each other. Monitors also check one another. If too many monitors are down, they lose quorum, and the cluster stops serving new work.",
@@ -60,6 +69,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://www.youtube.com/watch?v=7I9uxoEhUdY": {
     label: studyLabel,
     keywords: ["object", "block", "file", "cluster"],
+    audio: "ceph-interfaces.mp3",
     paragraphs: [
       "只看前 12 分钟。下面不是逐字稿，是这三种接口的学习文本。",
       "Ceph can serve objects, blocks, and files from one cluster. The cluster is the set of machines and disks. The three words are three ways for a client to ask for the same stored data.",
@@ -71,6 +81,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://www.youtube.com/watch?v=7I9uxoEhUdY&t=720s": {
     label: studyLabel,
     keywords: ["client", "location", "central server", "CRUSH"],
+    audio: "crush-location.mp3",
     paragraphs: [
       "从 12 分钟看到大约 20 分钟。学习文本只覆盖“位置是算出来的”这一点。",
       "The client can calculate where an object lives. It knows the cluster map and the placement rule. It does not ask one central server for every location.",
@@ -82,6 +93,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://www.youtube.com/watch?v=7I9uxoEhUdY&t=1200s": {
     label: studyLabel,
     keywords: ["replication", "recovery", "rebalancing", "disk failure"],
+    audio: "replication.mp3",
     paragraphs: [
       "从 20 分钟看起。这段的关键词是副本、恢复和再平衡。",
       "Replication stores another copy on a different disk. One copy is not enough, because a disk failure would lose the only bytes. The placement rule tries to put copies on different hosts, not only on different folders of the same machine.",
@@ -93,6 +105,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://ceph.io/en/discover/technology/": {
     label: studyLabel,
     keywords: ["RADOS", "CRUSH", "object", "block", "file"],
+    audio: "ceph-rados.mp3",
     paragraphs: [
       "Ceph gives you object storage, block storage, and a file system from one cluster. Those are the services a client sees.",
       "RADOS is the object store under those three interfaces. Block images and files are still stored as objects in RADOS. If you can explain RADOS, you can explain why the three services share one placement and recovery path.",
@@ -105,6 +118,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://www.youtube.com/watch?v=fhBHvsi0Ql0": {
     label: studyLabel,
     keywords: ["observability", "bottleneck", "latency", "throughput", "CPU"],
+    audio: "observe-first.mp3",
     paragraphs: [
       "只看前 12 分钟。下面不是这场演讲的逐字稿，是同一批性能关键词的学习文本。",
       "Start by observing the system. Do not start by guessing the fix. Observability means you can see the work, the waiting, and the errors while the machine is running.",
@@ -116,6 +130,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://www.youtube.com/watch?v=fhBHvsi0Ql0&t=720s": {
     label: studyLabel,
     keywords: ["observability", "work", "waiting", "errors", "checklist", "tool"],
+    audio: "work-waiting-errors.mp3",
     paragraphs: [
       "从 12 分钟看到大约 24 分钟。学习文本讲的是“先看见，再选工具”。",
       "Observability shows the work, the waiting, and the errors. Work is what the resource is doing. Waiting is who is stuck behind it. Errors are failures, not just slowness.",
@@ -127,6 +142,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://www.youtube.com/watch?v=fhBHvsi0Ql0&t=1440s": {
     label: studyLabel,
     keywords: ["utilization", "saturation", "errors", "method"],
+    audio: "use-checks.mp3",
     paragraphs: [
       "从 24 分钟看起。这段对应 USE 这三个检查。",
       "A method is a way to stop guessing. Without a method, every incident becomes a search for the tool you used last time.",
@@ -139,6 +155,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_slides_gregg.pdf": {
     label: studyLabel,
     keywords: ["observability", "methodologies", "benchmarking", "profiling", "tracing", "tuning"],
+    audio: "methodologies.mp3",
     paragraphs: [
       "幻灯片原文不转载。这里只用这一讲的六个关键词，把顺序讲清楚。",
       "Observability comes first. You look before you change anything. If you cannot see utilization, saturation, and errors, a later change is a guess.",
@@ -151,6 +168,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://web.archive.org/web/20250106073356/https://www.brendangregg.com/usemethod.html": {
     label: studyLabel,
     keywords: ["utilization", "saturation", "errors", "CPU", "disk", "network", "queue"],
+    audio: "use-definitions.mp3",
     paragraphs: [
       "USE 方法页面的原文不转载。下面用相同关键词写成今天的阅读。",
       "Utilization: how busy is this resource? For a CPU, look at idle time and what the busy time is spent on. For a disk, look at how much of the time the device is active. For a network link, look at how much of its capacity is in use.",
@@ -163,6 +181,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://web.archive.org/web/20261014044803/https://www.brendangregg.com/linuxperf.html": {
     label: studyLabel,
     keywords: ["vmstat", "mpstat", "iostat", "question", "CPU", "disk"],
+    audio: "linux-commands.mp3",
     paragraphs: [
       "工具清单的原文不转载。先写问题，再找一个能回答它的命令。",
       "vmstat and mpstat talk about the CPU. vmstat is a wide first look: runnable tasks, idle time, and memory pressure. mpstat can split that CPU time by core, so one hot core is not hidden by an idle average.",
@@ -174,6 +193,7 @@ export const pageReadings: Record<string, PageReading> = {
   "https://docs.kernel.org/mm/page_cache.html": {
     label: studyLabel,
     keywords: ["page cache", "O_DIRECT", "mmap", "buffered I/O", "cache miss"],
+    audio: "page-cache.mp3",
     paragraphs: [
       "The page cache is the primary way that the user and the rest of the kernel interact with filesystems. It can be bypassed (e.g. with O_DIRECT), but normal reads, writes and mmaps go through the page cache.",
       "Buffered I/O is the normal path. The first read brings pages into the page cache. A later read of the same pages can return from memory and never touch the device. That is why a second run of a benchmark is often faster, and why the disk can look idle while the application is still reading.",

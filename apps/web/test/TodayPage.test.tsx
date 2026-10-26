@@ -34,6 +34,7 @@ describe("TodayPage", () => {
     );
     expect(screen.getByText(/A database stores each row as bytes on a disk/)).toBeInTheDocument();
     expect(screen.getByText(/row · bytes · block/)).toBeInTheDocument();
+    expect(screen.getByLabelText("英文朗读")).toHaveAttribute("src", expect.stringContaining("audio/disk-rows.mp3"));
   });
 
   it("checks off the morning listen on the first study day", () => {

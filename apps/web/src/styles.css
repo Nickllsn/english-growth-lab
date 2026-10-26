@@ -848,3 +848,16 @@ textarea {
   color: var(--text);
   font-weight: 650;
 }
+
+.narration {
+  display: grid;
+  gap: 6px;
+  margin-top: 4px;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+
+.narration audio {
+  width: 100%;
+}
