@@ -4,6 +4,7 @@ import { shanghaiToday } from "./content/schedule";
 import { ProgressPage } from "./pages/ProgressPage";
 import { RoadmapPage } from "./pages/RoadmapPage";
 import { TodayPage } from "./pages/TodayPage";
+import { VocabPage } from "./pages/VocabPage";
 import { WeekPage } from "./pages/WeekPage";
 
 function RoutedToday() {
@@ -23,6 +24,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<RoutedToday />} />
           <Route path="/week" element={<RoutedWeek />} />
+          <Route path="/vocab" element={<VocabPage />} />
           <Route path="/progress" element={<ProgressPage />} />
           <Route path="/roadmap" element={<RoadmapPage />} />
         </Routes>

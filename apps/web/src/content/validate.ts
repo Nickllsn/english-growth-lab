@@ -1,6 +1,7 @@
 import { pageReadings } from "./page-text";
-import type { StudyDay, WeekPack } from "./types";
+import type { StudyDay, VocabKind, WeekPack } from "./types";
 
+const VOCAB_KINDS: VocabKind[] = ["word", "phrase", "pattern"];
 const STUDY_SLOTS = ["morning", "noon", "evening", "home"] as const;
 const WEEKEND_SLOTS = ["preview", "review"] as const;
 const FORMATS = ["text", "audio", "video"] as const;
@@ -21,6 +22,13 @@ function addDays(iso: string, days: number): string {
   const date = new Date(Date.UTC(year, month - 1, day));
   date.setUTCDate(date.getUTCDate() + days);
   return date.toISOString().slice(0, 10);
+}
+
+function contentWords(text: string): string[] {
+  return text
+    .toLowerCase()
+    .split(/[^a-z0-9'-]+/)
+    .filter((word) => word.length >= 3);
 }
 
 function dayFormats(day: StudyDay): Set<string> {
@@ -64,6 +72,40 @@ export function validateWeek(week: WeekPack): string[] {
         const reading = pageReadings[link.url];
         if (!reading) at(`${day.date} 缺少页面文本：${link.url}`);
         else if (!/^[a-z0-9-]+\.mp3$/.test(reading.audio)) at(`${day.date} 朗读文件名无效：${link.url}`);
+      }
+    }
+
+    const seenText = new Map<string, string>();
+    for (const slot of day.slots) {
+      const vocab = slot.vocab ?? [];
+      const listening = day.kind === "study" && (slot.id === "morning" || slot.id === "noon" || slot.id === "evening");
+      if (!listening && vocab.length > 0) at(`${day.date} ${slot.id} 不该有词汇`);
+      if (listening && vocab.length < 8) at(`${day.date} ${slot.id} 词汇太少`);
+      if (listening) {
+        const kinds = new Set(vocab.map((item) => item.kind));
+        for (const kind of VOCAB_KINDS) {
+          if (!kinds.has(kind)) at(`${day.date} ${slot.id} 词汇需要包含${kind}`);
+        }
+      }
+      const seen = new Set<string>();
+      for (const item of vocab) {
+        if (seen.has(item.id)) at(`${day.date} ${slot.id} 词汇编号重复：${item.id}`);
+        seen.add(item.id);
+        const previous = seenText.get(item.id);
+        if (previous && previous !== item.text) at(`${day.date} 同一个编号对应了不同的词：${item.id}`);
+        seenText.set(item.id, item.text);
+        if (!item.id.startsWith(`${day.date}-`)) at(`${day.date} 词汇编号要以日期开头：${item.id}`);
+        if (!VOCAB_KINDS.includes(item.kind)) at(`${day.date} 词汇类型无效：${item.text}`);
+        if (item.level !== 1 && item.level !== 2 && item.level !== 3) at(`${day.date} 难度无效：${item.text}`);
+        if (item.text.split(/\s+/).length > 6) at(`${day.date} 词汇太长：${item.text}`);
+        if (!/[\u4e00-\u9fff]/.test(item.meaning)) at(`${day.date} 词汇缺少中文：${item.text}`);
+        if (/[\u4e00-\u9fff]/.test(item.example)) at(`${day.date} 例句要是英语：${item.text}`);
+        if (item.example.split(/\s+/).length > 18) at(`${day.date} 例句太长：${item.text}`);
+        if (!item.source.trim()) at(`${day.date} 词汇缺少来源：${item.text}`);
+        const example = item.example.toLowerCase();
+        for (const word of contentWords(item.text)) {
+          if (!example.includes(word)) at(`${day.date} 例句没有用到 ${item.text}`);
+        }
       }
     }
 

@@ -14,11 +14,24 @@ export interface SlotPlan {
   title: string;
   steps: string[];
   links: MaterialLink[];
+  vocab: VocabItem[];
 }
 
 export interface Chunk {
   text: string;
   meaning: string;
+}
+
+export type VocabKind = "word" | "phrase" | "pattern";
+
+export interface VocabItem {
+  id: string;
+  kind: VocabKind;
+  text: string;
+  meaning: string;
+  example: string;
+  source: string;
+  level: 1 | 2 | 3;
 }
 
 export interface StudyDay {

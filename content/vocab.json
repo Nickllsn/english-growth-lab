@@ -1,0 +1,2800 @@
+{
+  "2026-10-26": {
+    "morning": [
+      {
+        "id": "2026-10-26-morning-nutrients",
+        "kind": "word",
+        "text": "nutrients",
+        "meaning": "身体维持机能所需的营养成分",
+        "example": "Fruit gives you nutrients that candy does not.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-supplements",
+        "kind": "word",
+        "text": "supplements",
+        "meaning": "用来补充日常饮食的营养片",
+        "example": "Sleep ads often sell supplements.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-saturated-fats",
+        "kind": "phrase",
+        "text": "saturated fats",
+        "meaning": "饱和脂肪，这一集把它和睡眠放在一起讲",
+        "example": "Cheese has more saturated fats than rice.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-deep-sleep",
+        "kind": "phrase",
+        "text": "deep sleep",
+        "meaning": "深睡眠，身体真正休息的阶段",
+        "example": "A short nap does not replace deep sleep.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-feed-information",
+        "kind": "phrase",
+        "text": "feed information",
+        "meaning": "持续不断地提供信息",
+        "example": "The lab can feed information into one long study.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-magic-bullet",
+        "kind": "phrase",
+        "text": "magic bullet",
+        "meaning": "并不存在的一招见效办法",
+        "example": "There is no magic bullet for a slow disk.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 3
+      },
+      {
+        "id": "2026-10-26-morning-long-term",
+        "kind": "phrase",
+        "text": "long-term",
+        "meaning": "长期的",
+        "example": "A long-term study watches the same people for years.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 1
+      },
+      {
+        "id": "2026-10-26-morning-associated",
+        "kind": "pattern",
+        "text": "associated with",
+        "meaning": "与某件事有关，常跟在 be 后面",
+        "example": "A long queue is associated with slow reads.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 1
+      },
+      {
+        "id": "2026-10-26-morning-link-between",
+        "kind": "pattern",
+        "text": "the link between … and …",
+        "meaning": "两者之间的联系",
+        "example": "I see the link between diet and sleep.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 1
+      },
+      {
+        "id": "2026-10-26-morning-less-about",
+        "kind": "pattern",
+        "text": "less about … more about …",
+        "meaning": "与其说是前者，不如说是后者",
+        "example": "The result is less about one food and more about sleep.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 1
+      }
+    ],
+    "noon": [
+      {
+        "id": "2026-10-26-morning-nutrients",
+        "kind": "word",
+        "text": "nutrients",
+        "meaning": "身体维持机能所需的营养成分",
+        "example": "Fruit gives you nutrients that candy does not.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-supplements",
+        "kind": "word",
+        "text": "supplements",
+        "meaning": "用来补充日常饮食的营养片",
+        "example": "Sleep ads often sell supplements.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-saturated-fats",
+        "kind": "phrase",
+        "text": "saturated fats",
+        "meaning": "饱和脂肪，这一集把它和睡眠放在一起讲",
+        "example": "Cheese has more saturated fats than rice.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-deep-sleep",
+        "kind": "phrase",
+        "text": "deep sleep",
+        "meaning": "深睡眠，身体真正休息的阶段",
+        "example": "A short nap does not replace deep sleep.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-feed-information",
+        "kind": "phrase",
+        "text": "feed information",
+        "meaning": "持续不断地提供信息",
+        "example": "The lab can feed information into one long study.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-magic-bullet",
+        "kind": "phrase",
+        "text": "magic bullet",
+        "meaning": "并不存在的一招见效办法",
+        "example": "There is no magic bullet for a slow disk.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 3
+      },
+      {
+        "id": "2026-10-26-morning-long-term",
+        "kind": "phrase",
+        "text": "long-term",
+        "meaning": "长期的",
+        "example": "A long-term study watches the same people for years.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 1
+      },
+      {
+        "id": "2026-10-26-morning-associated",
+        "kind": "pattern",
+        "text": "associated with",
+        "meaning": "与某件事有关，常跟在 be 后面",
+        "example": "A long queue is associated with slow reads.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 1
+      },
+      {
+        "id": "2026-10-26-morning-link-between",
+        "kind": "pattern",
+        "text": "the link between … and …",
+        "meaning": "两者之间的联系",
+        "example": "I see the link between diet and sleep.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 1
+      },
+      {
+        "id": "2026-10-26-morning-less-about",
+        "kind": "pattern",
+        "text": "less about … more about …",
+        "meaning": "与其说是前者，不如说是后者",
+        "example": "The result is less about one food and more about sleep.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 1
+      }
+    ],
+    "evening": [
+      {
+        "id": "2026-10-26-morning-nutrients",
+        "kind": "word",
+        "text": "nutrients",
+        "meaning": "身体维持机能所需的营养成分",
+        "example": "Fruit gives you nutrients that candy does not.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-supplements",
+        "kind": "word",
+        "text": "supplements",
+        "meaning": "用来补充日常饮食的营养片",
+        "example": "Sleep ads often sell supplements.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-saturated-fats",
+        "kind": "phrase",
+        "text": "saturated fats",
+        "meaning": "饱和脂肪，这一集把它和睡眠放在一起讲",
+        "example": "Cheese has more saturated fats than rice.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-deep-sleep",
+        "kind": "phrase",
+        "text": "deep sleep",
+        "meaning": "深睡眠，身体真正休息的阶段",
+        "example": "A short nap does not replace deep sleep.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-feed-information",
+        "kind": "phrase",
+        "text": "feed information",
+        "meaning": "持续不断地提供信息",
+        "example": "The lab can feed information into one long study.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 2
+      },
+      {
+        "id": "2026-10-26-morning-magic-bullet",
+        "kind": "phrase",
+        "text": "magic bullet",
+        "meaning": "并不存在的一招见效办法",
+        "example": "There is no magic bullet for a slow disk.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 3
+      },
+      {
+        "id": "2026-10-26-morning-long-term",
+        "kind": "phrase",
+        "text": "long-term",
+        "meaning": "长期的",
+        "example": "A long-term study watches the same people for years.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 1
+      },
+      {
+        "id": "2026-10-26-morning-associated",
+        "kind": "pattern",
+        "text": "associated with",
+        "meaning": "与某件事有关，常跟在 be 后面",
+        "example": "A long queue is associated with slow reads.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 1
+      },
+      {
+        "id": "2026-10-26-morning-link-between",
+        "kind": "pattern",
+        "text": "the link between … and …",
+        "meaning": "两者之间的联系",
+        "example": "I see the link between diet and sleep.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 1
+      },
+      {
+        "id": "2026-10-26-morning-less-about",
+        "kind": "pattern",
+        "text": "less about … more about …",
+        "meaning": "与其说是前者，不如说是后者",
+        "example": "The result is less about one food and more about sleep.",
+        "source": "BBC 这一集的词汇和逐字稿",
+        "level": 1
+      }
+    ]
+  },
+  "2026-10-27": {
+    "morning": [
+      {
+        "id": "2026-10-27-morning-sector",
+        "kind": "word",
+        "text": "sector",
+        "meaning": "扇区，磁盘上很小的一段",
+        "example": "The head has to reach the right sector.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-10-27-morning-integer",
+        "kind": "word",
+        "text": "integer",
+        "meaning": "整数",
+        "example": "This integer still needs four bytes.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-morning-metadata",
+        "kind": "word",
+        "text": "metadata",
+        "meaning": "描述数据在哪里的那些信息",
+        "example": "The database keeps metadata for each row.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-morning-adjacent",
+        "kind": "word",
+        "text": "adjacent",
+        "meaning": "紧挨着的",
+        "example": "The next row is adjacent to the last one.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-10-27-morning-primary-key",
+        "kind": "phrase",
+        "text": "primary key",
+        "meaning": "主键，用来确定唯一一行",
+        "example": "The primary key identifies one row.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-morning-spinning-disk",
+        "kind": "phrase",
+        "text": "spinning disk",
+        "meaning": "靠旋转寻道的机械盘",
+        "example": "A spinning disk moves before it reads.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-morning-for-granted",
+        "kind": "pattern",
+        "text": "take … for granted",
+        "meaning": "把某件事当成理所当然",
+        "example": "I take a fast disk for granted until it fails.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-10-27-morning-the-moment",
+        "kind": "pattern",
+        "text": "the moment …",
+        "meaning": "一……就",
+        "example": "The moment the block is full, a new one starts.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 1
+      }
+    ],
+    "noon": [
+      {
+        "id": "2026-10-27-noon-daemon",
+        "kind": "word",
+        "text": "daemon",
+        "meaning": "在后台一直跑的服务进程",
+        "example": "A monitor is one daemon in the cluster.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 3
+      },
+      {
+        "id": "2026-10-27-noon-redundancy",
+        "kind": "word",
+        "text": "redundancy",
+        "meaning": "冗余，多留一份以免单点失效",
+        "example": "Three monitors give you redundancy.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-noon-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "使用率",
+        "example": "The manager tracks storage utilization.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-noon-replicate",
+        "kind": "word",
+        "text": "replicate",
+        "meaning": "做副本",
+        "example": "An OSD can replicate an object onto another disk.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-noon-rebalance",
+        "kind": "word",
+        "text": "rebalance",
+        "meaning": "成员变化后重新摆放数据",
+        "example": "The cluster can rebalance after a new disk arrives.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-noon-placement-group",
+        "kind": "phrase",
+        "text": "placement group",
+        "meaning": "放置组",
+        "example": "A placement group is a bucket of object names.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 3
+      },
+      {
+        "id": "2026-10-27-noon-lookup-table",
+        "kind": "phrase",
+        "text": "lookup table",
+        "meaning": "集中查位置的那张表",
+        "example": "Nothing keeps a central lookup table.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-noon-heartbeat",
+        "kind": "phrase",
+        "text": "heartbeat",
+        "meaning": "心跳，用来发现对方已经不回答",
+        "example": "A missing heartbeat means the OSD stopped answering.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 3
+      },
+      {
+        "id": "2026-10-27-noon-metadata-server",
+        "kind": "phrase",
+        "text": "metadata server",
+        "meaning": "保存文件系统元数据的服务",
+        "example": "A metadata server stores the directory listing.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 3
+      },
+      {
+        "id": "2026-10-27-noon-orchestration",
+        "kind": "word",
+        "text": "orchestration",
+        "meaning": "把服务的部署和调度管起来",
+        "example": "The manager modules handle orchestration.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 3
+      },
+      {
+        "id": "2026-10-27-noon-as-many-as",
+        "kind": "pattern",
+        "text": "as many as",
+        "meaning": "多达，用来给出数量上限或规模",
+        "example": "A pool may need as many as three copies.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 1
+      },
+      {
+        "id": "2026-10-27-noon-crush",
+        "kind": "phrase",
+        "text": "CRUSH",
+        "meaning": "计算对象该放在哪些盘上的算法，不是动词压碎",
+        "example": "CRUSH calculates which OSDs store that group.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 3
+      }
+    ],
+    "evening": [
+      {
+        "id": "2026-10-27-morning-sector",
+        "kind": "word",
+        "text": "sector",
+        "meaning": "扇区，磁盘上很小的一段",
+        "example": "The head has to reach the right sector.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-10-27-morning-integer",
+        "kind": "word",
+        "text": "integer",
+        "meaning": "整数",
+        "example": "This integer still needs four bytes.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-morning-metadata",
+        "kind": "word",
+        "text": "metadata",
+        "meaning": "描述数据在哪里的那些信息",
+        "example": "The database keeps metadata for each row.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-morning-adjacent",
+        "kind": "word",
+        "text": "adjacent",
+        "meaning": "紧挨着的",
+        "example": "The next row is adjacent to the last one.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-10-27-morning-primary-key",
+        "kind": "phrase",
+        "text": "primary key",
+        "meaning": "主键，用来确定唯一一行",
+        "example": "The primary key identifies one row.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-morning-spinning-disk",
+        "kind": "phrase",
+        "text": "spinning disk",
+        "meaning": "靠旋转寻道的机械盘",
+        "example": "A spinning disk moves before it reads.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-27-morning-for-granted",
+        "kind": "pattern",
+        "text": "take … for granted",
+        "meaning": "把某件事当成理所当然",
+        "example": "I take a fast disk for granted until it fails.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-10-27-morning-the-moment",
+        "kind": "pattern",
+        "text": "the moment …",
+        "meaning": "一……就",
+        "example": "The moment the block is full, a new one starts.",
+        "source": "Hussein 字幕，前 12 分钟",
+        "level": 1
+      }
+    ]
+  },
+  "2026-10-28": {
+    "morning": [
+      {
+        "id": "2026-10-28-morning-proprietary",
+        "kind": "word",
+        "text": "proprietary",
+        "meaning": "厂商专有的，不开放",
+        "example": "Proprietary hardware locks you to one vendor.",
+        "source": "Ceph 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-morning-scalable",
+        "kind": "word",
+        "text": "scalable",
+        "meaning": "可以继续扩大规模的",
+        "example": "A scalable store grows by adding machines.",
+        "source": "Ceph 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-morning-cluster",
+        "kind": "word",
+        "text": "cluster",
+        "meaning": "集群",
+        "example": "One disk can die and the cluster still serves reads.",
+        "source": "Ceph 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-10-28-morning-gateway",
+        "kind": "word",
+        "text": "gateway",
+        "meaning": "网关，外面的请求从这里进来",
+        "example": "The gateway turns an HTTP call into an object.",
+        "source": "Ceph 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-morning-protocol",
+        "kind": "word",
+        "text": "protocol",
+        "meaning": "双方约定的通信方式",
+        "example": "The client and the gateway share one protocol.",
+        "source": "Ceph 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-morning-open-source",
+        "kind": "phrase",
+        "text": "open source",
+        "meaning": "开源",
+        "example": "The project is open source, so you can read the code.",
+        "source": "Ceph 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-morning-scale-out",
+        "kind": "phrase",
+        "text": "scale out",
+        "meaning": "横向扩展，加机器而不是把一台机器做大",
+        "example": "They scale out by adding disks.",
+        "source": "Ceph 字幕，前 12 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-10-28-morning-not-just",
+        "kind": "pattern",
+        "text": "not just … but …",
+        "meaning": "不只是前者，而是后者",
+        "example": "It is not just one disk but a whole cluster.",
+        "source": "Ceph 字幕，前 12 分钟",
+        "level": 1
+      }
+    ],
+    "noon": [
+      {
+        "id": "2026-10-28-noon-daemon",
+        "kind": "word",
+        "text": "daemon",
+        "meaning": "在后台一直跑的服务进程",
+        "example": "A monitor is one daemon in the cluster.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 3
+      },
+      {
+        "id": "2026-10-28-noon-redundancy",
+        "kind": "word",
+        "text": "redundancy",
+        "meaning": "冗余，多留一份以免单点失效",
+        "example": "Three monitors give you redundancy.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-noon-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "使用率",
+        "example": "The manager tracks storage utilization.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-noon-replicate",
+        "kind": "word",
+        "text": "replicate",
+        "meaning": "做副本",
+        "example": "An OSD can replicate an object onto another disk.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-noon-rebalance",
+        "kind": "word",
+        "text": "rebalance",
+        "meaning": "成员变化后重新摆放数据",
+        "example": "The cluster can rebalance after a new disk arrives.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-noon-placement-group",
+        "kind": "phrase",
+        "text": "placement group",
+        "meaning": "放置组",
+        "example": "A placement group is a bucket of object names.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 3
+      },
+      {
+        "id": "2026-10-28-noon-lookup-table",
+        "kind": "phrase",
+        "text": "lookup table",
+        "meaning": "集中查位置的那张表",
+        "example": "Nothing keeps a central lookup table.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-noon-heartbeat",
+        "kind": "phrase",
+        "text": "heartbeat",
+        "meaning": "心跳，用来发现对方已经不回答",
+        "example": "A missing heartbeat means the OSD stopped answering.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 3
+      },
+      {
+        "id": "2026-10-28-noon-metadata-server",
+        "kind": "phrase",
+        "text": "metadata server",
+        "meaning": "保存文件系统元数据的服务",
+        "example": "A metadata server stores the directory listing.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 3
+      },
+      {
+        "id": "2026-10-28-noon-orchestration",
+        "kind": "word",
+        "text": "orchestration",
+        "meaning": "把服务的部署和调度管起来",
+        "example": "The manager modules handle orchestration.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 3
+      },
+      {
+        "id": "2026-10-28-noon-as-many-as",
+        "kind": "pattern",
+        "text": "as many as",
+        "meaning": "多达，用来给出数量上限或规模",
+        "example": "A pool may need as many as three copies.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 1
+      },
+      {
+        "id": "2026-10-28-noon-crush",
+        "kind": "phrase",
+        "text": "CRUSH",
+        "meaning": "计算对象该放在哪些盘上的算法，不是动词压碎",
+        "example": "CRUSH calculates which OSDs store that group.",
+        "source": "链接文档：Ceph cluster components",
+        "level": 3
+      }
+    ],
+    "evening": [
+      {
+        "id": "2026-10-28-evening-metadata",
+        "kind": "word",
+        "text": "metadata",
+        "meaning": "目录、属性和位置这类描述信息",
+        "example": "The metadata says which file this name points to.",
+        "source": "Ceph 字幕，12 到 20 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-evening-hypervisor",
+        "kind": "word",
+        "text": "hypervisor",
+        "meaning": "跑虚拟机的那一层",
+        "example": "The hypervisor asks for a block device.",
+        "source": "Ceph 字幕，12 到 20 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-10-28-evening-kernel",
+        "kind": "word",
+        "text": "kernel",
+        "meaning": "内核",
+        "example": "The kernel still has to read the bytes.",
+        "source": "Ceph 字幕，12 到 20 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-evening-placement-group",
+        "kind": "phrase",
+        "text": "placement group",
+        "meaning": "放置组，一批对象算出同一组盘",
+        "example": "One placement group lands on the same OSDs.",
+        "source": "Ceph 字幕，12 到 20 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-10-28-evening-block-device",
+        "kind": "phrase",
+        "text": "block device",
+        "meaning": "块设备，用起来像一块盘",
+        "example": "A virtual machine often wants a block device.",
+        "source": "Ceph 字幕，12 到 20 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-evening-file-system",
+        "kind": "phrase",
+        "text": "file system",
+        "meaning": "文件系统",
+        "example": "This file system stores directories as metadata.",
+        "source": "Ceph 字幕，12 到 20 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-28-evening-crush",
+        "kind": "phrase",
+        "text": "CRUSH",
+        "meaning": "决定对象落在哪些盘上的算法，不是动词压碎",
+        "example": "CRUSH picks the disks for one placement group.",
+        "source": "Ceph 字幕，12 到 20 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-10-28-evening-matter-of-fact",
+        "kind": "pattern",
+        "text": "as a matter of fact",
+        "meaning": "事实上",
+        "example": "The copy is elsewhere, as a matter of fact.",
+        "source": "Ceph 字幕，12 到 20 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-10-28-evening-the-way-that",
+        "kind": "pattern",
+        "text": "the way that",
+        "meaning": "……的方式",
+        "example": "The way that it places data is by calculation.",
+        "source": "Ceph 字幕，12 到 20 分钟",
+        "level": 1
+      }
+    ]
+  },
+  "2026-10-29": {
+    "morning": [
+      {
+        "id": "2026-10-29-morning-compression",
+        "kind": "word",
+        "text": "compression",
+        "meaning": "压缩",
+        "example": "Compression saves space and costs CPU.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-morning-algorithm",
+        "kind": "word",
+        "text": "algorithm",
+        "meaning": "算法",
+        "example": "This algorithm chooses a disk for each object.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-morning-snapshot",
+        "kind": "word",
+        "text": "snapshot",
+        "meaning": "某一时刻的快照",
+        "example": "A snapshot keeps the image from that moment.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-morning-metadata",
+        "kind": "word",
+        "text": "metadata",
+        "meaning": "描述对象和权限的信息",
+        "example": "The request fails when the metadata is missing.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-morning-authentication",
+        "kind": "word",
+        "text": "authentication",
+        "meaning": "身份认证",
+        "example": "Authentication checks who is allowed to read.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-morning-pseudo-random",
+        "kind": "phrase",
+        "text": "pseudo-random",
+        "meaning": "看起来像随机，其实由规则算出来",
+        "example": "The placement looks pseudo-random.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 3
+      },
+      {
+        "id": "2026-10-29-morning-whether-or-not",
+        "kind": "pattern",
+        "text": "whether or not",
+        "meaning": "是不是，无论哪种都要判断",
+        "example": "Check whether the disk is down or not.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 1
+      },
+      {
+        "id": "2026-10-29-morning-not-just",
+        "kind": "pattern",
+        "text": "not just",
+        "meaning": "不只是",
+        "example": "You can not just copy one disk and stop.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 1
+      }
+    ],
+    "noon": [
+      {
+        "id": "2026-10-29-noon-scalability",
+        "kind": "word",
+        "text": "scalability",
+        "meaning": "可扩展性",
+        "example": "The design is judged by its scalability.",
+        "source": "链接文档：Ceph Technology",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-noon-replication",
+        "kind": "word",
+        "text": "replication",
+        "meaning": "副本复制",
+        "example": "Replication keeps another copy on a different disk.",
+        "source": "链接文档：Ceph Technology",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-noon-unified",
+        "kind": "word",
+        "text": "unified",
+        "meaning": "统一在同一套系统里的",
+        "example": "Object, block, and file share one unified store.",
+        "source": "链接文档：Ceph Technology",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-noon-autonomic",
+        "kind": "word",
+        "text": "autonomic",
+        "meaning": "能自己完成放置和恢复的",
+        "example": "The store is autonomic: it places data without a central table.",
+        "source": "链接文档：Ceph Technology",
+        "level": 3
+      },
+      {
+        "id": "2026-10-29-noon-erasure",
+        "kind": "word",
+        "text": "erasure",
+        "meaning": "纠删，用校验代替完整副本",
+        "example": "Erasure coding can use less space than full copies.",
+        "source": "链接文档：Ceph Technology",
+        "level": 3
+      },
+      {
+        "id": "2026-10-29-noon-interoperability",
+        "kind": "word",
+        "text": "interoperability",
+        "meaning": "能和其他系统对接",
+        "example": "The gateway is sold on its interoperability.",
+        "source": "链接文档：Ceph Technology",
+        "level": 3
+      },
+      {
+        "id": "2026-10-29-noon-tiering",
+        "kind": "word",
+        "text": "tiering",
+        "meaning": "分层，热数据和冷数据分开放",
+        "example": "Cache tiering keeps hot data on faster disks.",
+        "source": "链接文档：Ceph Technology",
+        "level": 3
+      },
+      {
+        "id": "2026-10-29-noon-thinly-provisioned",
+        "kind": "phrase",
+        "text": "thinly provisioned",
+        "meaning": "按实际写入分配空间，而不是一开始占满",
+        "example": "The image is thinly provisioned.",
+        "source": "链接文档：Ceph Technology",
+        "level": 3
+      },
+      {
+        "id": "2026-10-29-noon-disaster-recovery",
+        "kind": "phrase",
+        "text": "disaster recovery",
+        "meaning": "灾难恢复",
+        "example": "A remote copy is there for disaster recovery.",
+        "source": "链接文档：Ceph Technology",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-noon-snapshot",
+        "kind": "word",
+        "text": "snapshot",
+        "meaning": "快照",
+        "example": "A snapshot can be the start of a clone.",
+        "source": "链接文档：Ceph Technology",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-noon-take-advantage",
+        "kind": "pattern",
+        "text": "take advantage of",
+        "meaning": "利用",
+        "example": "Clients take advantage of the same placement rule.",
+        "source": "链接文档：Ceph Technology",
+        "level": 1
+      }
+    ],
+    "evening": [
+      {
+        "id": "2026-10-29-morning-compression",
+        "kind": "word",
+        "text": "compression",
+        "meaning": "压缩",
+        "example": "Compression saves space and costs CPU.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-morning-algorithm",
+        "kind": "word",
+        "text": "algorithm",
+        "meaning": "算法",
+        "example": "This algorithm chooses a disk for each object.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-morning-snapshot",
+        "kind": "word",
+        "text": "snapshot",
+        "meaning": "某一时刻的快照",
+        "example": "A snapshot keeps the image from that moment.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-morning-metadata",
+        "kind": "word",
+        "text": "metadata",
+        "meaning": "描述对象和权限的信息",
+        "example": "The request fails when the metadata is missing.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-morning-authentication",
+        "kind": "word",
+        "text": "authentication",
+        "meaning": "身份认证",
+        "example": "Authentication checks who is allowed to read.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-10-29-morning-pseudo-random",
+        "kind": "phrase",
+        "text": "pseudo-random",
+        "meaning": "看起来像随机，其实由规则算出来",
+        "example": "The placement looks pseudo-random.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 3
+      },
+      {
+        "id": "2026-10-29-morning-whether-or-not",
+        "kind": "pattern",
+        "text": "whether or not",
+        "meaning": "是不是，无论哪种都要判断",
+        "example": "Check whether the disk is down or not.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 1
+      },
+      {
+        "id": "2026-10-29-morning-not-just",
+        "kind": "pattern",
+        "text": "not just",
+        "meaning": "不只是",
+        "example": "You can not just copy one disk and stop.",
+        "source": "Ceph 字幕，20 分钟之后",
+        "level": 1
+      }
+    ]
+  },
+  "2026-10-30": {
+    "morning": [
+      {
+        "id": "2026-10-30-morning-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "使用率，资源有多忙",
+        "example": "High utilization means the CPU is busy.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-saturation",
+        "kind": "word",
+        "text": "saturation",
+        "meaning": "饱和，新的工作已经在排队",
+        "example": "CPU saturation means tasks are waiting to run.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-latency",
+        "kind": "word",
+        "text": "latency",
+        "meaning": "一次操作等多久",
+        "example": "The latency of one request became much smaller.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-contention",
+        "kind": "word",
+        "text": "contention",
+        "meaning": "争用，多个任务抢同一资源",
+        "example": "Lock contention can raise the latency.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-migrate",
+        "kind": "word",
+        "text": "migrate",
+        "meaning": "迁到另一套环境",
+        "example": "They migrate one service onto the new host.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-10-30-morning-load-average",
+        "kind": "phrase",
+        "text": "load average",
+        "meaning": "负载均值",
+        "example": "A rising load average means work is piling up.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-context-switch",
+        "kind": "phrase",
+        "text": "context switch",
+        "meaning": "上下文切换",
+        "example": "A context switch moves the CPU to another task.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-hit-ratio",
+        "kind": "phrase",
+        "text": "hit ratio",
+        "meaning": "命中率",
+        "example": "A poor hit ratio sends more reads out to memory.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-too-good",
+        "kind": "pattern",
+        "text": "too good to be true",
+        "meaning": "好得不像真的",
+        "example": "That speedup looks too good to be true.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-10-30-morning-whereas",
+        "kind": "pattern",
+        "text": "whereas",
+        "meaning": "而，用来对比两件事",
+        "example": "Server A was busy whereas server B was idle.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      }
+    ],
+    "noon": [
+      {
+        "id": "2026-10-30-noon-observability",
+        "kind": "word",
+        "text": "observability",
+        "meaning": "可观测性",
+        "example": "Observability is one of the six facets.",
+        "source": "链接文档：LISA 幻灯片",
+        "level": 3
+      },
+      {
+        "id": "2026-10-30-noon-benchmarking",
+        "kind": "word",
+        "text": "benchmarking",
+        "meaning": "基准测试",
+        "example": "Benchmarking without a real workload can mislead you.",
+        "source": "链接文档：LISA 幻灯片",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-noon-profiling",
+        "kind": "word",
+        "text": "profiling",
+        "meaning": "剖析",
+        "example": "Profiling shows where the CPU time went.",
+        "source": "链接文档：LISA 幻灯片",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-noon-tracing",
+        "kind": "word",
+        "text": "tracing",
+        "meaning": "跟踪",
+        "example": "Tracing follows events that a sample can miss.",
+        "source": "链接文档：LISA 幻灯片",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-noon-tuning",
+        "kind": "word",
+        "text": "tuning",
+        "meaning": "调优",
+        "example": "Tuning is the last facet, not the first.",
+        "source": "链接文档：LISA 幻灯片",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-noon-methodology",
+        "kind": "word",
+        "text": "methodology",
+        "meaning": "方法",
+        "example": "Pick one methodology before you open a tool.",
+        "source": "链接文档：LISA 幻灯片",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-noon-saturation",
+        "kind": "word",
+        "text": "saturation",
+        "meaning": "饱和",
+        "example": "Saturation is the queue, not the busy percentage.",
+        "source": "链接文档：LISA 幻灯片",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-noon-latency",
+        "kind": "word",
+        "text": "latency",
+        "meaning": "延迟",
+        "example": "Latency answers how long one operation waited.",
+        "source": "链接文档：LISA 幻灯片",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-noon-flame-graph",
+        "kind": "phrase",
+        "text": "flame graph",
+        "meaning": "火焰图",
+        "example": "A flame graph is one way to read a profile.",
+        "source": "链接文档：LISA 幻灯片",
+        "level": 3
+      },
+      {
+        "id": "2026-10-30-noon-page-cache",
+        "kind": "phrase",
+        "text": "page cache",
+        "meaning": "页缓存",
+        "example": "A benchmark can hit the page cache and look too fast.",
+        "source": "链接文档：LISA 幻灯片",
+        "level": 3
+      },
+      {
+        "id": "2026-10-30-noon-root-cause",
+        "kind": "phrase",
+        "text": "root cause",
+        "meaning": "根因",
+        "example": "Name the root cause while the benchmark still runs.",
+        "source": "链接文档：LISA 幻灯片",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-noon-while",
+        "kind": "pattern",
+        "text": "while …",
+        "meaning": "在……的同时",
+        "example": "Read the counters while the benchmark runs.",
+        "source": "链接文档：LISA 幻灯片",
+        "level": 1
+      }
+    ],
+    "evening": [
+      {
+        "id": "2026-10-30-morning-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "使用率，资源有多忙",
+        "example": "High utilization means the CPU is busy.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-saturation",
+        "kind": "word",
+        "text": "saturation",
+        "meaning": "饱和，新的工作已经在排队",
+        "example": "CPU saturation means tasks are waiting to run.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-latency",
+        "kind": "word",
+        "text": "latency",
+        "meaning": "一次操作等多久",
+        "example": "The latency of one request became much smaller.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-contention",
+        "kind": "word",
+        "text": "contention",
+        "meaning": "争用，多个任务抢同一资源",
+        "example": "Lock contention can raise the latency.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-migrate",
+        "kind": "word",
+        "text": "migrate",
+        "meaning": "迁到另一套环境",
+        "example": "They migrate one service onto the new host.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-10-30-morning-load-average",
+        "kind": "phrase",
+        "text": "load average",
+        "meaning": "负载均值",
+        "example": "A rising load average means work is piling up.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-context-switch",
+        "kind": "phrase",
+        "text": "context switch",
+        "meaning": "上下文切换",
+        "example": "A context switch moves the CPU to another task.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-hit-ratio",
+        "kind": "phrase",
+        "text": "hit ratio",
+        "meaning": "命中率",
+        "example": "A poor hit ratio sends more reads out to memory.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-10-30-morning-too-good",
+        "kind": "pattern",
+        "text": "too good to be true",
+        "meaning": "好得不像真的",
+        "example": "That speedup looks too good to be true.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-10-30-morning-whereas",
+        "kind": "pattern",
+        "text": "whereas",
+        "meaning": "而，用来对比两件事",
+        "example": "Server A was busy whereas server B was idle.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      }
+    ]
+  },
+  "2026-11-02": {
+    "morning": [
+      {
+        "id": "2026-11-02-morning-page-cache",
+        "kind": "phrase",
+        "text": "page cache",
+        "meaning": "页缓存，读过的文件页留在内存里",
+        "example": "The page cache can answer the next read from memory.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-11-02-morning-buffer-cache",
+        "kind": "phrase",
+        "text": "buffer cache",
+        "meaning": "缓冲区缓存",
+        "example": "The buffer cache sits next to the page cache.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-11-02-morning-since-boot",
+        "kind": "phrase",
+        "text": "since boot",
+        "meaning": "从这次开机累计到现在",
+        "example": "This counter has been increasing since boot.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-morning-free-memory",
+        "kind": "phrase",
+        "text": "free memory",
+        "meaning": "空闲内存",
+        "example": "Free memory dropped, but much of it was cache.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-morning-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "使用率",
+        "example": "I read utilization before I install a tool.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-morning-panic",
+        "kind": "word",
+        "text": "panic",
+        "meaning": "内核恐慌，系统已经无法继续",
+        "example": "A kernel panic stops the host.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-11-02-morning-breakdown",
+        "kind": "word",
+        "text": "breakdown",
+        "meaning": "分解开来看",
+        "example": "The breakdown shows which state used the CPU.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-11-02-morning-load-average",
+        "kind": "phrase",
+        "text": "load average",
+        "meaning": "负载均值",
+        "example": "I read the load average before I install anything.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-morning-whereas",
+        "kind": "pattern",
+        "text": "whereas",
+        "meaning": "而，用来对比",
+        "example": "The CPU was idle whereas the disk stayed busy.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 1
+      }
+    ],
+    "noon": [
+      {
+        "id": "2026-11-02-noon-observability",
+        "kind": "word",
+        "text": "observability",
+        "meaning": "系统在跑的时候，你能不能看见它",
+        "example": "Observability comes before any tuning.",
+        "source": "链接文档：Linux Performance",
+        "level": 3
+      },
+      {
+        "id": "2026-11-02-noon-benchmarking",
+        "kind": "word",
+        "text": "benchmarking",
+        "meaning": "做基准测试",
+        "example": "Benchmarking compares a change under a known load.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-noon-profiling",
+        "kind": "word",
+        "text": "profiling",
+        "meaning": "剖析时间花在哪里",
+        "example": "Profiling shows which function used the CPU.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-noon-tracing",
+        "kind": "word",
+        "text": "tracing",
+        "meaning": "跟着事件走",
+        "example": "Tracing follows one slow request.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-noon-tuning",
+        "kind": "word",
+        "text": "tuning",
+        "meaning": "在测量之后做的调整",
+        "example": "Tuning comes after the measurement.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-noon-latency",
+        "kind": "word",
+        "text": "latency",
+        "meaning": "延迟",
+        "example": "The post is about scheduler latency.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-noon-methodology",
+        "kind": "word",
+        "text": "methodology",
+        "meaning": "分析方法",
+        "example": "The talk covers one methodology and six facets.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-noon-off-cpu",
+        "kind": "phrase",
+        "text": "off-CPU",
+        "meaning": "不在 CPU 上执行、而在等待的那段时间",
+        "example": "Off-CPU time is time spent waiting.",
+        "source": "链接文档：Linux Performance",
+        "level": 3
+      },
+      {
+        "id": "2026-11-02-noon-bpftrace",
+        "kind": "word",
+        "text": "bpftrace",
+        "meaning": "用小程序做动态观测的工具",
+        "example": "bpftrace can trace one kernel event.",
+        "source": "链接文档：Linux Performance",
+        "level": 3
+      },
+      {
+        "id": "2026-11-02-noon-ftrace",
+        "kind": "word",
+        "text": "ftrace",
+        "meaning": "内核里自带的跟踪机制",
+        "example": "ftrace has been in the kernel for years.",
+        "source": "链接文档：Linux Performance",
+        "level": 3
+      },
+      {
+        "id": "2026-11-02-noon-checklist",
+        "kind": "word",
+        "text": "checklist",
+        "meaning": "排查时按顺序看的清单",
+        "example": "A checklist keeps an incident short.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-noon-whether-or-not",
+        "kind": "pattern",
+        "text": "whether … or not",
+        "meaning": "无论是不是",
+        "example": "The list helps whether you are in a hurry or not.",
+        "source": "链接文档：Linux Performance",
+        "level": 1
+      }
+    ],
+    "evening": [
+      {
+        "id": "2026-11-02-morning-page-cache",
+        "kind": "phrase",
+        "text": "page cache",
+        "meaning": "页缓存，读过的文件页留在内存里",
+        "example": "The page cache can answer the next read from memory.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-11-02-morning-buffer-cache",
+        "kind": "phrase",
+        "text": "buffer cache",
+        "meaning": "缓冲区缓存",
+        "example": "The buffer cache sits next to the page cache.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-11-02-morning-since-boot",
+        "kind": "phrase",
+        "text": "since boot",
+        "meaning": "从这次开机累计到现在",
+        "example": "This counter has been increasing since boot.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-morning-free-memory",
+        "kind": "phrase",
+        "text": "free memory",
+        "meaning": "空闲内存",
+        "example": "Free memory dropped, but much of it was cache.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-morning-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "使用率",
+        "example": "I read utilization before I install a tool.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-morning-panic",
+        "kind": "word",
+        "text": "panic",
+        "meaning": "内核恐慌，系统已经无法继续",
+        "example": "A kernel panic stops the host.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-11-02-morning-breakdown",
+        "kind": "word",
+        "text": "breakdown",
+        "meaning": "分解开来看",
+        "example": "The breakdown shows which state used the CPU.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-11-02-morning-load-average",
+        "kind": "phrase",
+        "text": "load average",
+        "meaning": "负载均值",
+        "example": "I read the load average before I install anything.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-02-morning-whereas",
+        "kind": "pattern",
+        "text": "whereas",
+        "meaning": "而，用来对比",
+        "example": "The CPU was idle whereas the disk stayed busy.",
+        "source": "Gregg 字幕，12 到 24 分钟",
+        "level": 1
+      }
+    ]
+  },
+  "2026-11-03": {
+    "morning": [
+      {
+        "id": "2026-11-03-morning-methodology",
+        "kind": "word",
+        "text": "methodology",
+        "meaning": "一套可以重复用的方法",
+        "example": "A methodology stops the investigation from wandering.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-profiling",
+        "kind": "word",
+        "text": "profiling",
+        "meaning": "看时间花在程序的哪里",
+        "example": "Profiling shows where CPU time goes.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-benchmark",
+        "kind": "word",
+        "text": "benchmark",
+        "meaning": "基准测试",
+        "example": "One benchmark can hide a warm cache.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-workload",
+        "kind": "word",
+        "text": "workload",
+        "meaning": "工作负载",
+        "example": "The workload on the lab machine was not the real one.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "使用率",
+        "example": "High utilization is not yet the cause.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-saturation",
+        "kind": "word",
+        "text": "saturation",
+        "meaning": "饱和",
+        "example": "Saturation starts when requests wait in a queue.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-flame-graph",
+        "kind": "phrase",
+        "text": "flame graph",
+        "meaning": "火焰图",
+        "example": "A flame graph shows where the CPU time went.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-11-03-morning-tcpdump",
+        "kind": "phrase",
+        "text": "tcpdump",
+        "meaning": "抓网络包的工具，字幕里听成了 tcp dump",
+        "example": "I skip tcpdump when the host is already saturated.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-11-03-morning-root-cause",
+        "kind": "phrase",
+        "text": "root cause",
+        "meaning": "根因",
+        "example": "Find the root cause while the benchmark runs.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-in-fact",
+        "kind": "pattern",
+        "text": "in fact",
+        "meaning": "事实上",
+        "example": "The tool looked idle, but in fact it was waiting.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 1
+      }
+    ],
+    "noon": [
+      {
+        "id": "2026-11-03-noon-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "有多忙",
+        "example": "Utilization asks how busy this resource is.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-noon-saturation",
+        "kind": "word",
+        "text": "saturation",
+        "meaning": "有没有工作在排队",
+        "example": "Saturation asks whether work is waiting.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-noon-bottleneck",
+        "kind": "word",
+        "text": "bottleneck",
+        "meaning": "瓶颈",
+        "example": "A long queue points at the bottleneck.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-noon-throughput",
+        "kind": "word",
+        "text": "throughput",
+        "meaning": "一段时间内完成多少",
+        "example": "A limit on throughput can come from the network.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-noon-latency",
+        "kind": "word",
+        "text": "latency",
+        "meaning": "延迟",
+        "example": "Queueing shows up as latency.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-noon-checklist",
+        "kind": "word",
+        "text": "checklist",
+        "meaning": "检查清单",
+        "example": "The method builds a checklist for each resource.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-noon-methodology",
+        "kind": "word",
+        "text": "methodology",
+        "meaning": "一套固定的分析方法",
+        "example": "USE is one methodology for any system.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-noon-degrade",
+        "kind": "word",
+        "text": "degrade",
+        "meaning": "性能变差",
+        "example": "Some resources degrade when they stay too busy.",
+        "source": "链接文档：USE Method",
+        "level": 1
+      },
+      {
+        "id": "2026-11-03-noon-stall",
+        "kind": "word",
+        "text": "stall",
+        "meaning": "停住，工作进行不下去",
+        "example": "A stalled CPU is waiting, not computing.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-noon-overflow",
+        "kind": "word",
+        "text": "overflow",
+        "meaning": "溢出，装不下了",
+        "example": "A counter can overflow and wrap around.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-noon-high-utilization",
+        "kind": "phrase",
+        "text": "high utilization",
+        "meaning": "高使用率",
+        "example": "High utilization can still hide a queue.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-noon-leading-to",
+        "kind": "pattern",
+        "text": "leading to",
+        "meaning": "从而导致",
+        "example": "A full queue is leading to higher latency.",
+        "source": "链接文档：USE Method",
+        "level": 1
+      }
+    ],
+    "evening": [
+      {
+        "id": "2026-11-03-morning-methodology",
+        "kind": "word",
+        "text": "methodology",
+        "meaning": "一套可以重复用的方法",
+        "example": "A methodology stops the investigation from wandering.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-profiling",
+        "kind": "word",
+        "text": "profiling",
+        "meaning": "看时间花在程序的哪里",
+        "example": "Profiling shows where CPU time goes.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-benchmark",
+        "kind": "word",
+        "text": "benchmark",
+        "meaning": "基准测试",
+        "example": "One benchmark can hide a warm cache.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-workload",
+        "kind": "word",
+        "text": "workload",
+        "meaning": "工作负载",
+        "example": "The workload on the lab machine was not the real one.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "使用率",
+        "example": "High utilization is not yet the cause.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-saturation",
+        "kind": "word",
+        "text": "saturation",
+        "meaning": "饱和",
+        "example": "Saturation starts when requests wait in a queue.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-flame-graph",
+        "kind": "phrase",
+        "text": "flame graph",
+        "meaning": "火焰图",
+        "example": "A flame graph shows where the CPU time went.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-11-03-morning-tcpdump",
+        "kind": "phrase",
+        "text": "tcpdump",
+        "meaning": "抓网络包的工具，字幕里听成了 tcp dump",
+        "example": "I skip tcpdump when the host is already saturated.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 3
+      },
+      {
+        "id": "2026-11-03-morning-root-cause",
+        "kind": "phrase",
+        "text": "root cause",
+        "meaning": "根因",
+        "example": "Find the root cause while the benchmark runs.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-03-morning-in-fact",
+        "kind": "pattern",
+        "text": "in fact",
+        "meaning": "事实上",
+        "example": "The tool looked idle, but in fact it was waiting.",
+        "source": "Gregg 字幕，24 到 36 分钟",
+        "level": 1
+      }
+    ]
+  },
+  "2026-11-04": {
+    "morning": [
+      {
+        "id": "2026-11-04-morning-endurance",
+        "kind": "word",
+        "text": "endurance",
+        "meaning": "还能承受多少次写入",
+        "example": "Drive endurance drops when the same cells are rewritten.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 1
+      },
+      {
+        "id": "2026-11-04-morning-corrupt",
+        "kind": "word",
+        "text": "corrupt",
+        "meaning": "损坏的",
+        "example": "A corrupt sector can break one read.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 1
+      },
+      {
+        "id": "2026-11-04-morning-rebalance",
+        "kind": "word",
+        "text": "rebalance",
+        "meaning": "重新调整结构，使它恢复平衡",
+        "example": "The index has to rebalance after many inserts.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-morning-append",
+        "kind": "word",
+        "text": "append",
+        "meaning": "只在末尾追加，不回头改旧位置",
+        "example": "An append-only tree writes at the end.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-morning-shelf-life",
+        "kind": "phrase",
+        "text": "shelf life",
+        "meaning": "还能用多久",
+        "example": "Rewrite traffic shortens the shelf life of an SSD.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-morning-data-structure",
+        "kind": "phrase",
+        "text": "data structure",
+        "meaning": "数据结构",
+        "example": "The index is a data structure that moves as you insert.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-morning-b-tree",
+        "kind": "phrase",
+        "text": "B-tree",
+        "meaning": "一种会随插入而重排的索引",
+        "example": "A B-tree splits when a node is full.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 3
+      },
+      {
+        "id": "2026-11-04-morning-log-structured",
+        "kind": "phrase",
+        "text": "log-structured",
+        "meaning": "按日志方式只追加的",
+        "example": "A log-structured tree avoids rewriting old pages.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 3
+      },
+      {
+        "id": "2026-11-04-morning-in-place",
+        "kind": "phrase",
+        "text": "in place",
+        "meaning": "就在原位置上改",
+        "example": "An update in place rewrites the same page.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-morning-even-if",
+        "kind": "pattern",
+        "text": "even if",
+        "meaning": "即使",
+        "example": "The tree still moves even if you only append.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 1
+      }
+    ],
+    "noon": [
+      {
+        "id": "2026-11-04-noon-observability",
+        "kind": "word",
+        "text": "observability",
+        "meaning": "系统在跑的时候，你能不能看见它",
+        "example": "Observability comes before any tuning.",
+        "source": "链接文档：Linux Performance",
+        "level": 3
+      },
+      {
+        "id": "2026-11-04-noon-benchmarking",
+        "kind": "word",
+        "text": "benchmarking",
+        "meaning": "做基准测试",
+        "example": "Benchmarking compares a change under a known load.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-noon-profiling",
+        "kind": "word",
+        "text": "profiling",
+        "meaning": "剖析时间花在哪里",
+        "example": "Profiling shows which function used the CPU.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-noon-tracing",
+        "kind": "word",
+        "text": "tracing",
+        "meaning": "跟着事件走",
+        "example": "Tracing follows one slow request.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-noon-tuning",
+        "kind": "word",
+        "text": "tuning",
+        "meaning": "在测量之后做的调整",
+        "example": "Tuning comes after the measurement.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-noon-latency",
+        "kind": "word",
+        "text": "latency",
+        "meaning": "延迟",
+        "example": "The post is about scheduler latency.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-noon-methodology",
+        "kind": "word",
+        "text": "methodology",
+        "meaning": "分析方法",
+        "example": "The talk covers one methodology and six facets.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-noon-off-cpu",
+        "kind": "phrase",
+        "text": "off-CPU",
+        "meaning": "不在 CPU 上执行、而在等待的那段时间",
+        "example": "Off-CPU time is time spent waiting.",
+        "source": "链接文档：Linux Performance",
+        "level": 3
+      },
+      {
+        "id": "2026-11-04-noon-bpftrace",
+        "kind": "word",
+        "text": "bpftrace",
+        "meaning": "用小程序做动态观测的工具",
+        "example": "bpftrace can trace one kernel event.",
+        "source": "链接文档：Linux Performance",
+        "level": 3
+      },
+      {
+        "id": "2026-11-04-noon-ftrace",
+        "kind": "word",
+        "text": "ftrace",
+        "meaning": "内核里自带的跟踪机制",
+        "example": "ftrace has been in the kernel for years.",
+        "source": "链接文档：Linux Performance",
+        "level": 3
+      },
+      {
+        "id": "2026-11-04-noon-checklist",
+        "kind": "word",
+        "text": "checklist",
+        "meaning": "排查时按顺序看的清单",
+        "example": "A checklist keeps an incident short.",
+        "source": "链接文档：Linux Performance",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-noon-whether-or-not",
+        "kind": "pattern",
+        "text": "whether … or not",
+        "meaning": "无论是不是",
+        "example": "The list helps whether you are in a hurry or not.",
+        "source": "链接文档：Linux Performance",
+        "level": 1
+      }
+    ],
+    "evening": [
+      {
+        "id": "2026-11-04-morning-endurance",
+        "kind": "word",
+        "text": "endurance",
+        "meaning": "还能承受多少次写入",
+        "example": "Drive endurance drops when the same cells are rewritten.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 1
+      },
+      {
+        "id": "2026-11-04-morning-corrupt",
+        "kind": "word",
+        "text": "corrupt",
+        "meaning": "损坏的",
+        "example": "A corrupt sector can break one read.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 1
+      },
+      {
+        "id": "2026-11-04-morning-rebalance",
+        "kind": "word",
+        "text": "rebalance",
+        "meaning": "重新调整结构，使它恢复平衡",
+        "example": "The index has to rebalance after many inserts.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-morning-append",
+        "kind": "word",
+        "text": "append",
+        "meaning": "只在末尾追加，不回头改旧位置",
+        "example": "An append-only tree writes at the end.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-morning-shelf-life",
+        "kind": "phrase",
+        "text": "shelf life",
+        "meaning": "还能用多久",
+        "example": "Rewrite traffic shortens the shelf life of an SSD.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-morning-data-structure",
+        "kind": "phrase",
+        "text": "data structure",
+        "meaning": "数据结构",
+        "example": "The index is a data structure that moves as you insert.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-morning-b-tree",
+        "kind": "phrase",
+        "text": "B-tree",
+        "meaning": "一种会随插入而重排的索引",
+        "example": "A B-tree splits when a node is full.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 3
+      },
+      {
+        "id": "2026-11-04-morning-log-structured",
+        "kind": "phrase",
+        "text": "log-structured",
+        "meaning": "按日志方式只追加的",
+        "example": "A log-structured tree avoids rewriting old pages.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 3
+      },
+      {
+        "id": "2026-11-04-morning-in-place",
+        "kind": "phrase",
+        "text": "in place",
+        "meaning": "就在原位置上改",
+        "example": "An update in place rewrites the same page.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 2
+      },
+      {
+        "id": "2026-11-04-morning-even-if",
+        "kind": "pattern",
+        "text": "even if",
+        "meaning": "即使",
+        "example": "The tree still moves even if you only append.",
+        "source": "Hussein 字幕，12 分钟之后",
+        "level": 1
+      }
+    ]
+  },
+  "2026-11-05": {
+    "morning": [
+      {
+        "id": "2026-11-05-morning-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "使用率，资源有多忙",
+        "example": "High utilization means the CPU is busy.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-saturation",
+        "kind": "word",
+        "text": "saturation",
+        "meaning": "饱和，新的工作已经在排队",
+        "example": "CPU saturation means tasks are waiting to run.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-latency",
+        "kind": "word",
+        "text": "latency",
+        "meaning": "一次操作等多久",
+        "example": "The latency of one request became much smaller.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-contention",
+        "kind": "word",
+        "text": "contention",
+        "meaning": "争用，多个任务抢同一资源",
+        "example": "Lock contention can raise the latency.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-migrate",
+        "kind": "word",
+        "text": "migrate",
+        "meaning": "迁到另一套环境",
+        "example": "They migrate one service onto the new host.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-11-05-morning-load-average",
+        "kind": "phrase",
+        "text": "load average",
+        "meaning": "负载均值",
+        "example": "A rising load average means work is piling up.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-context-switch",
+        "kind": "phrase",
+        "text": "context switch",
+        "meaning": "上下文切换",
+        "example": "A context switch moves the CPU to another task.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-hit-ratio",
+        "kind": "phrase",
+        "text": "hit ratio",
+        "meaning": "命中率",
+        "example": "A poor hit ratio sends more reads out to memory.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-too-good",
+        "kind": "pattern",
+        "text": "too good to be true",
+        "meaning": "好得不像真的",
+        "example": "That speedup looks too good to be true.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-11-05-morning-whereas",
+        "kind": "pattern",
+        "text": "whereas",
+        "meaning": "而，用来对比两件事",
+        "example": "Server A was busy whereas server B was idle.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      }
+    ],
+    "noon": [
+      {
+        "id": "2026-11-05-noon-page-cache",
+        "kind": "phrase",
+        "text": "page cache",
+        "meaning": "页缓存",
+        "example": "The page cache keeps file pages in memory.",
+        "source": "链接文档：Page Cache",
+        "level": 3
+      },
+      {
+        "id": "2026-11-05-noon-bypass",
+        "kind": "word",
+        "text": "bypass",
+        "meaning": "绕过",
+        "example": "The cache can be bypassed for some reads.",
+        "source": "链接文档：Page Cache",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-noon-filesystem",
+        "kind": "word",
+        "text": "filesystem",
+        "meaning": "文件系统",
+        "example": "Most file reads reach a filesystem through this cache.",
+        "source": "链接文档：Page Cache",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-noon-interact",
+        "kind": "word",
+        "text": "interact",
+        "meaning": "相互作用、打交道",
+        "example": "User programs interact with files through the cache.",
+        "source": "链接文档：Page Cache",
+        "level": 1
+      },
+      {
+        "id": "2026-11-05-noon-folio",
+        "kind": "word",
+        "text": "folio",
+        "meaning": "页缓存里内存管理的单位",
+        "example": "A folio is the unit inside the page cache.",
+        "source": "链接文档：Page Cache",
+        "level": 3
+      },
+      {
+        "id": "2026-11-05-noon-mmap",
+        "kind": "word",
+        "text": "mmap",
+        "meaning": "把文件映射进地址空间",
+        "example": "A normal mmap still uses the page cache.",
+        "source": "链接文档：Page Cache",
+        "level": 3
+      },
+      {
+        "id": "2026-11-05-noon-o-direct",
+        "kind": "phrase",
+        "text": "O_DIRECT",
+        "meaning": "绕过页缓存的打开标志",
+        "example": "O_DIRECT bypasses the page cache.",
+        "source": "链接文档：Page Cache",
+        "level": 3
+      },
+      {
+        "id": "2026-11-05-noon-memory-management",
+        "kind": "phrase",
+        "text": "memory management",
+        "meaning": "内存管理",
+        "example": "The folio is a unit of memory management.",
+        "source": "链接文档：Page Cache",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-noon-the-way-that",
+        "kind": "pattern",
+        "text": "the way that",
+        "meaning": "……的方式",
+        "example": "The page cache is the way that a normal read starts.",
+        "source": "链接文档：Page Cache",
+        "level": 1
+      },
+      {
+        "id": "2026-11-05-noon-can-be-bypassed",
+        "kind": "pattern",
+        "text": "can be bypassed",
+        "meaning": "可以被绕过",
+        "example": "This path can be bypassed for one special read.",
+        "source": "链接文档：Page Cache",
+        "level": 2
+      }
+    ],
+    "evening": [
+      {
+        "id": "2026-11-05-morning-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "使用率，资源有多忙",
+        "example": "High utilization means the CPU is busy.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-saturation",
+        "kind": "word",
+        "text": "saturation",
+        "meaning": "饱和，新的工作已经在排队",
+        "example": "CPU saturation means tasks are waiting to run.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-latency",
+        "kind": "word",
+        "text": "latency",
+        "meaning": "一次操作等多久",
+        "example": "The latency of one request became much smaller.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-contention",
+        "kind": "word",
+        "text": "contention",
+        "meaning": "争用，多个任务抢同一资源",
+        "example": "Lock contention can raise the latency.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-migrate",
+        "kind": "word",
+        "text": "migrate",
+        "meaning": "迁到另一套环境",
+        "example": "They migrate one service onto the new host.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-11-05-morning-load-average",
+        "kind": "phrase",
+        "text": "load average",
+        "meaning": "负载均值",
+        "example": "A rising load average means work is piling up.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-context-switch",
+        "kind": "phrase",
+        "text": "context switch",
+        "meaning": "上下文切换",
+        "example": "A context switch moves the CPU to another task.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-hit-ratio",
+        "kind": "phrase",
+        "text": "hit ratio",
+        "meaning": "命中率",
+        "example": "A poor hit ratio sends more reads out to memory.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-05-morning-too-good",
+        "kind": "pattern",
+        "text": "too good to be true",
+        "meaning": "好得不像真的",
+        "example": "That speedup looks too good to be true.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-11-05-morning-whereas",
+        "kind": "pattern",
+        "text": "whereas",
+        "meaning": "而，用来对比两件事",
+        "example": "Server A was busy whereas server B was idle.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      }
+    ]
+  },
+  "2026-11-06": {
+    "morning": [
+      {
+        "id": "2026-11-06-morning-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "使用率，资源有多忙",
+        "example": "High utilization means the CPU is busy.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-saturation",
+        "kind": "word",
+        "text": "saturation",
+        "meaning": "饱和，新的工作已经在排队",
+        "example": "CPU saturation means tasks are waiting to run.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-latency",
+        "kind": "word",
+        "text": "latency",
+        "meaning": "一次操作等多久",
+        "example": "The latency of one request became much smaller.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-contention",
+        "kind": "word",
+        "text": "contention",
+        "meaning": "争用，多个任务抢同一资源",
+        "example": "Lock contention can raise the latency.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-migrate",
+        "kind": "word",
+        "text": "migrate",
+        "meaning": "迁到另一套环境",
+        "example": "They migrate one service onto the new host.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-11-06-morning-load-average",
+        "kind": "phrase",
+        "text": "load average",
+        "meaning": "负载均值",
+        "example": "A rising load average means work is piling up.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-context-switch",
+        "kind": "phrase",
+        "text": "context switch",
+        "meaning": "上下文切换",
+        "example": "A context switch moves the CPU to another task.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-hit-ratio",
+        "kind": "phrase",
+        "text": "hit ratio",
+        "meaning": "命中率",
+        "example": "A poor hit ratio sends more reads out to memory.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-too-good",
+        "kind": "pattern",
+        "text": "too good to be true",
+        "meaning": "好得不像真的",
+        "example": "That speedup looks too good to be true.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-11-06-morning-whereas",
+        "kind": "pattern",
+        "text": "whereas",
+        "meaning": "而，用来对比两件事",
+        "example": "Server A was busy whereas server B was idle.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      }
+    ],
+    "noon": [
+      {
+        "id": "2026-11-06-noon-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "有多忙",
+        "example": "Utilization asks how busy this resource is.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-noon-saturation",
+        "kind": "word",
+        "text": "saturation",
+        "meaning": "有没有工作在排队",
+        "example": "Saturation asks whether work is waiting.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-noon-bottleneck",
+        "kind": "word",
+        "text": "bottleneck",
+        "meaning": "瓶颈",
+        "example": "A long queue points at the bottleneck.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-noon-throughput",
+        "kind": "word",
+        "text": "throughput",
+        "meaning": "一段时间内完成多少",
+        "example": "A limit on throughput can come from the network.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-noon-latency",
+        "kind": "word",
+        "text": "latency",
+        "meaning": "延迟",
+        "example": "Queueing shows up as latency.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-noon-checklist",
+        "kind": "word",
+        "text": "checklist",
+        "meaning": "检查清单",
+        "example": "The method builds a checklist for each resource.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-noon-methodology",
+        "kind": "word",
+        "text": "methodology",
+        "meaning": "一套固定的分析方法",
+        "example": "USE is one methodology for any system.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-noon-degrade",
+        "kind": "word",
+        "text": "degrade",
+        "meaning": "性能变差",
+        "example": "Some resources degrade when they stay too busy.",
+        "source": "链接文档：USE Method",
+        "level": 1
+      },
+      {
+        "id": "2026-11-06-noon-stall",
+        "kind": "word",
+        "text": "stall",
+        "meaning": "停住，工作进行不下去",
+        "example": "A stalled CPU is waiting, not computing.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-noon-overflow",
+        "kind": "word",
+        "text": "overflow",
+        "meaning": "溢出，装不下了",
+        "example": "A counter can overflow and wrap around.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-noon-high-utilization",
+        "kind": "phrase",
+        "text": "high utilization",
+        "meaning": "高使用率",
+        "example": "High utilization can still hide a queue.",
+        "source": "链接文档：USE Method",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-noon-leading-to",
+        "kind": "pattern",
+        "text": "leading to",
+        "meaning": "从而导致",
+        "example": "A full queue is leading to higher latency.",
+        "source": "链接文档：USE Method",
+        "level": 1
+      }
+    ],
+    "evening": [
+      {
+        "id": "2026-11-06-morning-utilization",
+        "kind": "word",
+        "text": "utilization",
+        "meaning": "使用率，资源有多忙",
+        "example": "High utilization means the CPU is busy.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-saturation",
+        "kind": "word",
+        "text": "saturation",
+        "meaning": "饱和，新的工作已经在排队",
+        "example": "CPU saturation means tasks are waiting to run.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-latency",
+        "kind": "word",
+        "text": "latency",
+        "meaning": "一次操作等多久",
+        "example": "The latency of one request became much smaller.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-contention",
+        "kind": "word",
+        "text": "contention",
+        "meaning": "争用，多个任务抢同一资源",
+        "example": "Lock contention can raise the latency.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-migrate",
+        "kind": "word",
+        "text": "migrate",
+        "meaning": "迁到另一套环境",
+        "example": "They migrate one service onto the new host.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-11-06-morning-load-average",
+        "kind": "phrase",
+        "text": "load average",
+        "meaning": "负载均值",
+        "example": "A rising load average means work is piling up.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-context-switch",
+        "kind": "phrase",
+        "text": "context switch",
+        "meaning": "上下文切换",
+        "example": "A context switch moves the CPU to another task.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-hit-ratio",
+        "kind": "phrase",
+        "text": "hit ratio",
+        "meaning": "命中率",
+        "example": "A poor hit ratio sends more reads out to memory.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 2
+      },
+      {
+        "id": "2026-11-06-morning-too-good",
+        "kind": "pattern",
+        "text": "too good to be true",
+        "meaning": "好得不像真的",
+        "example": "That speedup looks too good to be true.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      },
+      {
+        "id": "2026-11-06-morning-whereas",
+        "kind": "pattern",
+        "text": "whereas",
+        "meaning": "而，用来对比两件事",
+        "example": "Server A was busy whereas server B was idle.",
+        "source": "Gregg 字幕，前 12 分钟",
+        "level": 1
+      }
+    ]
+  }
+}

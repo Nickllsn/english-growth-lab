@@ -1,14 +1,21 @@
-import type { WeekPack } from "../content/types";
+import type { VocabItem, WeekPack } from "../content/types";
 
 const STORAGE_KEY = "egl.progress.v1";
 
 export interface ProgressState {
   slots: Record<string, string[]>;
   reviews: Record<string, string>;
+  known: string[];
+  unknown: string[];
 }
 
 export function emptyProgress(): ProgressState {
-  return { slots: {}, reviews: {} };
+  return { slots: {}, reviews: {}, known: [], unknown: [] };
+}
+
+function stringList(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  return value.filter((item): item is string => typeof item === "string");
 }
 
 export function loadProgress(): ProgressState {
@@ -18,7 +25,9 @@ export function loadProgress(): ProgressState {
     const parsed = JSON.parse(raw) as Partial<ProgressState>;
     return {
       slots: parsed.slots ?? {},
-      reviews: parsed.reviews ?? {}
+      reviews: parsed.reviews ?? {},
+      known: stringList(parsed.known),
+      unknown: stringList(parsed.unknown)
     };
   } catch {
     return emptyProgress();
@@ -37,6 +46,19 @@ export function toggleSlot(state: ProgressState, date: string, slotId: string): 
     ...state,
     slots: { ...state.slots, [date]: [...current] }
   };
+}
+
+export function setMark(state: ProgressState, id: string, mark: "known" | "unknown"): ProgressState {
+  const known = new Set(state.known);
+  const unknown = new Set(state.unknown);
+  const already = mark === "known" ? known.has(id) : unknown.has(id);
+  known.delete(id);
+  unknown.delete(id);
+  if (!already) {
+    if (mark === "known") known.add(id);
+    else unknown.add(id);
+  }
+  return { ...state, known: [...known], unknown: [...unknown] };
 }
 
 export function isComplete(required: string[], done: string[] | undefined): boolean {
@@ -85,7 +107,17 @@ export function weekMarkdown(week: WeekPack, state: ProgressState): string {
     lines.push(`- ${day.date} ${day.theme}：${marks}`);
   }
   lines.push("", "## 周末复盘", "", state.reviews[week.id]?.trim() || "（还没写）", "");
+  lines.push("## 还不认识", "");
+  const missed = unknownItems(week, state);
+  if (missed.length === 0) lines.push("（没有标记不认识）", "");
+  else missed.forEach((item) => lines.push(`- ${item.text}：${item.meaning}`));
+  lines.push("");
   return lines.join("\n");
+}
+
+export function unknownItems(week: WeekPack, state: ProgressState): VocabItem[] {
+  const unknown = new Set(state.unknown);
+  return week.days.flatMap((day) => day.slots.flatMap((slot) => slot.vocab.filter((item) => unknown.has(item.id))));
 }
 
 export function parseProgress(raw: string): ProgressState {
@@ -93,5 +125,10 @@ export function parseProgress(raw: string): ProgressState {
   if (!parsed.slots || !parsed.reviews) {
     throw new Error("这个文件不是学习进度");
   }
-  return { slots: parsed.slots, reviews: parsed.reviews };
+  return {
+    slots: parsed.slots,
+    reviews: parsed.reviews,
+    known: stringList(parsed.known),
+    unknown: stringList(parsed.unknown)
+  };
 }

@@ -1,16 +1,34 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { weeks } from "../content/load";
+import { allVocab, weeks } from "../content/load";
 import { resolveSession, shanghaiToday, weekdayLabel } from "../content/schedule";
 import { MaterialView } from "../components/MaterialView";
-import type { StudyDay } from "../content/types";
+import { VocabList } from "../components/VocabList";
+import type { SlotPlan, StudyDay } from "../content/types";
+import { loadProgress, saveProgress, setMark, type ProgressState } from "../progress/store";
+
+const catalog = allVocab();
+
+const slotLabel: Record<SlotPlan["id"], string> = {
+  morning: "早听",
+  noon: "午读",
+  evening: "晚听",
+  home: "跟读",
+  preview: "预习",
+  review: "复盘"
+};
 
 export function WeekPage({ today = shanghaiToday() }: { today?: string }) {
   const session = resolveSession(today, weeks);
   const [params] = useSearchParams();
   const focus = params.get("focus");
   const [weekId, setWeekId] = useState(session.week.id);
+  const [progress, setProgress] = useState<ProgressState>(loadProgress);
   const week = useMemo(() => weeks.find((item) => item.id === weekId) ?? session.week, [session.week, weekId]);
+
+  useEffect(() => {
+    saveProgress(progress);
+  }, [progress]);
 
   return (
     <section className="page">
@@ -33,14 +51,33 @@ export function WeekPage({ today = shanghaiToday() }: { today?: string }) {
       </header>
       <div className="week-days">
         {week.days.map((day) => (
-          <DayCard day={day} key={day.date} open={day.date === (focus ?? today)} />
+          <DayCard
+            day={day}
+            key={day.date}
+            known={progress.known}
+            onMark={(id, mark) => setProgress((current) => setMark(current, id, mark))}
+            open={day.date === (focus ?? today)}
+            unknown={progress.unknown}
+          />
         ))}
       </div>
     </section>
   );
 }
 
-function DayCard({ day, open }: { day: StudyDay; open: boolean }) {
+function DayCard({
+  day,
+  open,
+  known,
+  unknown,
+  onMark
+}: {
+  day: StudyDay;
+  open: boolean;
+  known: string[];
+  unknown: string[];
+  onMark: (id: string, mark: "known" | "unknown") => void;
+}) {
   const detailsRef = useRef<HTMLDetailsElement>(null);
 
   useEffect(() => {
@@ -56,8 +93,19 @@ function DayCard({ day, open }: { day: StudyDay; open: boolean }) {
       {day.slots.map((slot) => (
         <section key={slot.id}>
           <h2>
-            {slot.place} · {slot.minutes} 分钟 · {slot.title}
+            {slotLabel[slot.id]} · {slot.place} · {slot.minutes} 分钟 · {slot.title}
           </h2>
+          {slot.vocab.length > 0 && (
+            <VocabList
+              catalog={catalog}
+              heading={`${slotLabel[slot.id]} · 进阶重点`}
+              items={slot.vocab}
+              known={known}
+              onMark={onMark}
+              showNote={slot.id === "morning"}
+              unknown={unknown}
+            />
+          )}
           <ol className="step-list">
             {slot.steps.map((step) => (
               <li key={step}>{step}</li>
