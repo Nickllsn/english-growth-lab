@@ -83,64 +83,6 @@
           "links": []
         }
       ],
-      "vocab": [
-        {
-          "id": "2026-11-02-trace",
-          "kind": "word",
-          "text": "trace",
-          "meaning": "跟踪并记下系统里发生的事件",
-          "example": "I trace the slow path and ignore the rest.",
-          "source": "Gregg 字幕，12 到 24 分钟"
-        },
-        {
-          "id": "2026-11-02-bpf",
-          "kind": "word",
-          "text": "BPF",
-          "meaning": "在内核里跑很小的观测程序的机制",
-          "example": "BPF can trace a live kernel with less risk.",
-          "source": "Gregg 字幕，12 到 24 分钟"
-        },
-        {
-          "id": "2026-11-02-production",
-          "kind": "word",
-          "text": "production",
-          "meaning": "线上环境，正在给真实用户服务",
-          "example": "I will not try a new tool on a production server.",
-          "source": "Gregg 字幕，12 到 24 分钟"
-        },
-        {
-          "id": "2026-11-02-page-cache",
-          "kind": "phrase",
-          "text": "page cache",
-          "meaning": "页缓存，读过的文件留在内存里",
-          "example": "The page cache can answer the next read from memory.",
-          "source": "Gregg 字幕，12 到 24 分钟"
-        },
-        {
-          "id": "2026-11-02-since-boot",
-          "kind": "phrase",
-          "text": "since boot",
-          "meaning": "从这次开机一直累计到现在",
-          "example": "This counter has been increasing since boot.",
-          "source": "Gregg 字幕，12 到 24 分钟"
-        },
-        {
-          "id": "2026-11-02-in-fact",
-          "kind": "pattern",
-          "text": "in fact",
-          "meaning": "事实上，用来改口",
-          "example": "The host looked fine, but in fact the queue was long.",
-          "source": "Gregg 字幕，12 到 24 分钟"
-        },
-        {
-          "id": "2026-11-02-even-though",
-          "kind": "pattern",
-          "text": "even though",
-          "meaning": "尽管",
-          "example": "The CPU was idle even though the disk stayed busy.",
-          "source": "Gregg 字幕，12 到 24 分钟"
-        }
-      ],
       "chunks": [
         { "text": "I start with the symptom, not the tool.", "meaning": "我从现象开始，而不是从工具开始。" },
         { "text": "Observability tells me what the system is doing.", "meaning": "可观测性告诉我系统正在做什么。" },
@@ -233,64 +175,6 @@
             "不看稿回答今天的问题。"
           ],
           "links": []
-        }
-      ],
-      "vocab": [
-        {
-          "id": "2026-11-03-utilization",
-          "kind": "word",
-          "text": "utilization",
-          "meaning": "使用率，资源有多忙",
-          "example": "High utilization means the resource is busy.",
-          "source": "Gregg 字幕，24 到 36 分钟"
-        },
-        {
-          "id": "2026-11-03-saturation",
-          "kind": "word",
-          "text": "saturation",
-          "meaning": "饱和，工作已经排上队",
-          "example": "Saturation starts when requests wait in a queue.",
-          "source": "Gregg 字幕，24 到 36 分钟"
-        },
-        {
-          "id": "2026-11-03-benchmark",
-          "kind": "word",
-          "text": "benchmark",
-          "meaning": "基准测试",
-          "example": "An empty-machine benchmark can hide a real queue.",
-          "source": "Gregg 字幕，24 到 36 分钟"
-        },
-        {
-          "id": "2026-11-03-flame-graph",
-          "kind": "phrase",
-          "text": "flame graph",
-          "meaning": "火焰图，用来看 CPU 时间花在哪个函数",
-          "example": "A flame graph shows where the CPU time went.",
-          "source": "Gregg 字幕，24 到 36 分钟"
-        },
-        {
-          "id": "2026-11-03-tcpdump",
-          "kind": "phrase",
-          "text": "tcpdump",
-          "meaning": "抓网络包的工具，字幕里听成了 tcp dump",
-          "example": "I skip tcpdump when the host is already saturated.",
-          "source": "Gregg 字幕，24 到 36 分钟"
-        },
-        {
-          "id": "2026-11-03-rather-than",
-          "kind": "pattern",
-          "text": "rather than",
-          "meaning": "而不是",
-          "example": "I watch three numbers rather than every column.",
-          "source": "Gregg 字幕，24 到 36 分钟"
-        },
-        {
-          "id": "2026-11-03-such-as",
-          "kind": "pattern",
-          "text": "such as",
-          "meaning": "例如，用来举一类东西",
-          "example": "I check resources such as CPU, memory, and disk.",
-          "source": "Gregg 字幕，24 到 36 分钟"
         }
       ],
       "chunks": [
@@ -387,64 +271,6 @@
           "links": []
         }
       ],
-      "vocab": [
-        {
-          "id": "2026-11-04-flush",
-          "kind": "word",
-          "text": "flush",
-          "meaning": "把改过的数据写回磁盘",
-          "example": "A commit will flush the dirty block to disk.",
-          "source": "Hussein 字幕，12 分钟之后"
-        },
-        {
-          "id": "2026-11-04-endurance",
-          "kind": "word",
-          "text": "endurance",
-          "meaning": "耐久度，介质还能承受多少次写入",
-          "example": "Drive endurance drops when the same cells are rewritten.",
-          "source": "Hussein 字幕，12 分钟之后"
-        },
-        {
-          "id": "2026-11-04-sector",
-          "kind": "word",
-          "text": "sector",
-          "meaning": "扇区，磁盘上很小的一段存储",
-          "example": "One bad sector can fail a single read.",
-          "source": "Hussein 字幕，12 分钟之后"
-        },
-        {
-          "id": "2026-11-04-entire-block",
-          "kind": "phrase",
-          "text": "entire block",
-          "meaning": "整个数据块，不能只改其中一个字节",
-          "example": "The drive rewrites an entire block for a tiny change.",
-          "source": "Hussein 字幕，12 分钟之后"
-        },
-        {
-          "id": "2026-11-04-b-tree",
-          "kind": "phrase",
-          "text": "B-tree",
-          "meaning": "一种索引结构，插入多了就会重新整理",
-          "example": "A B-tree keeps its shape by splitting full nodes.",
-          "source": "Hussein 字幕，12 分钟之后"
-        },
-        {
-          "id": "2026-11-04-depend-on",
-          "kind": "pattern",
-          "text": "depend on",
-          "meaning": "取决于",
-          "example": "How long a drive lasts will depend on the write rate.",
-          "source": "Hussein 字幕，12 分钟之后"
-        },
-        {
-          "id": "2026-11-04-no-longer",
-          "kind": "pattern",
-          "text": "no longer",
-          "meaning": "不再",
-          "example": "The old page layout is no longer a good fit.",
-          "source": "Hussein 字幕，12 分钟之后"
-        }
-      ],
       "chunks": [
         { "text": "Latency is how long one I/O waits.", "meaning": "延迟是一次 I/O 等了多久。" },
         { "text": "Throughput is the bytes we move.", "meaning": "吞吐是我们搬了多少字节。" },
@@ -537,64 +363,6 @@
             "不看稿回答今天的问题。"
           ],
           "links": []
-        }
-      ],
-      "vocab": [
-        {
-          "id": "2026-11-05-cache",
-          "kind": "word",
-          "text": "cache",
-          "meaning": "把刚用过的数据留在更快的地方",
-          "example": "A cache keeps the last read close to the CPU.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-11-05-latency",
-          "kind": "word",
-          "text": "latency",
-          "meaning": "延迟，一次操作要等多久",
-          "example": "I write down the latency of one read.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-11-05-thread",
-          "kind": "word",
-          "text": "thread",
-          "meaning": "线程，进程里可以轮流占用 CPU 的执行线索",
-          "example": "Each thread gets the CPU only for a short turn.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-11-05-context-switch",
-          "kind": "phrase",
-          "text": "context switch",
-          "meaning": "上下文切换，CPU 改去执行另一个任务",
-          "example": "A context switch costs more when the memory map changes.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-11-05-address-space",
-          "kind": "phrase",
-          "text": "address space",
-          "meaning": "地址空间，一个进程自己能看到的内存范围",
-          "example": "Each process has its own address space.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-11-05-so-that",
-          "kind": "pattern",
-          "text": "so that",
-          "meaning": "以便，为了",
-          "example": "I measure first so that the change has a reason.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-11-05-take-a-look",
-          "kind": "pattern",
-          "text": "take a look",
-          "meaning": "先看一眼，再下结论",
-          "example": "I take a look at the counters before I change a setting.",
-          "source": "Gregg 字幕，前 12 分钟"
         }
       ],
       "chunks": [
@@ -691,64 +459,6 @@
           "links": []
         }
       ],
-      "vocab": [
-        {
-          "id": "2026-11-06-migrate",
-          "kind": "word",
-          "text": "migrate",
-          "meaning": "把系统迁到另一套环境",
-          "example": "I migrate one service only after I measure the old host.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-11-06-vmstat",
-          "kind": "word",
-          "text": "vmstat",
-          "meaning": "看 CPU、内存概况的命令行工具",
-          "example": "I read vmstat before I blame the disk.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-11-06-threefold",
-          "kind": "word",
-          "text": "threefold",
-          "meaning": "三倍地",
-          "example": "A threefold jump still needs a second measurement.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-11-06-performance-issue",
-          "kind": "phrase",
-          "text": "performance issue",
-          "meaning": "性能问题",
-          "example": "Write the performance issue in one sentence first.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-11-06-command-line-tools",
-          "kind": "phrase",
-          "text": "command-line tools",
-          "meaning": "命令行工具",
-          "example": "I learn the command-line tools with a short example.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-11-06-from-to",
-          "kind": "pattern",
-          "text": "from … to …",
-          "meaning": "从一处变到另一处",
-          "example": "Latency moved from two milliseconds to nine.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-11-06-just-because",
-          "kind": "pattern",
-          "text": "just because",
-          "meaning": "仅仅因为",
-          "example": "I do not trust a win just because the platform is new.",
-          "source": "Gregg 字幕，前 12 分钟"
-        }
-      ],
       "chunks": [
         { "text": "The symptom was high read latency.", "meaning": "现象是读延迟变高。" },
         { "text": "My hypothesis was a saturated disk.", "meaning": "我的假设是磁盘饱和了。" },
@@ -805,7 +515,6 @@
           "links": []
         }
       ],
-      "vocab": [],
       "chunks": [],
       "shadow": [],
       "speakPrompt": "Say the seven-step chain once."
@@ -849,7 +558,6 @@
           "links": []
         }
       ],
-      "vocab": [],
       "chunks": [],
       "shadow": [],
       "speakPrompt": "Explain latency, throughput, and tail latency."

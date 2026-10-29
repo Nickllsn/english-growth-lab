@@ -5,11 +5,12 @@ const STORAGE_KEY = "egl.progress.v1";
 export interface ProgressState {
   slots: Record<string, string[]>;
   reviews: Record<string, string>;
+  known: string[];
   unknown: string[];
 }
 
 export function emptyProgress(): ProgressState {
-  return { slots: {}, reviews: {}, unknown: [] };
+  return { slots: {}, reviews: {}, known: [], unknown: [] };
 }
 
 function stringList(value: unknown): string[] {
@@ -25,6 +26,7 @@ export function loadProgress(): ProgressState {
     return {
       slots: parsed.slots ?? {},
       reviews: parsed.reviews ?? {},
+      known: stringList(parsed.known),
       unknown: stringList(parsed.unknown)
     };
   } catch {
@@ -46,11 +48,17 @@ export function toggleSlot(state: ProgressState, date: string, slotId: string): 
   };
 }
 
-export function setUnknown(state: ProgressState, id: string, unknown: boolean): ProgressState {
-  const next = new Set(state.unknown);
-  if (unknown) next.add(id);
-  else next.delete(id);
-  return { ...state, unknown: [...next] };
+export function setMark(state: ProgressState, id: string, mark: "known" | "unknown"): ProgressState {
+  const known = new Set(state.known);
+  const unknown = new Set(state.unknown);
+  const already = mark === "known" ? known.has(id) : unknown.has(id);
+  known.delete(id);
+  unknown.delete(id);
+  if (!already) {
+    if (mark === "known") known.add(id);
+    else unknown.add(id);
+  }
+  return { ...state, known: [...known], unknown: [...unknown] };
 }
 
 export function isComplete(required: string[], done: string[] | undefined): boolean {
@@ -109,7 +117,7 @@ export function weekMarkdown(week: WeekPack, state: ProgressState): string {
 
 export function unknownItems(week: WeekPack, state: ProgressState): VocabItem[] {
   const unknown = new Set(state.unknown);
-  return week.days.flatMap((day) => day.vocab.filter((item) => unknown.has(item.id)));
+  return week.days.flatMap((day) => day.slots.flatMap((slot) => slot.vocab.filter((item) => unknown.has(item.id))));
 }
 
 export function parseProgress(raw: string): ProgressState {
@@ -117,5 +125,10 @@ export function parseProgress(raw: string): ProgressState {
   if (!parsed.slots || !parsed.reviews) {
     throw new Error("这个文件不是学习进度");
   }
-  return { slots: parsed.slots, reviews: parsed.reviews, unknown: stringList(parsed.unknown) };
+  return {
+    slots: parsed.slots,
+    reviews: parsed.reviews,
+    known: stringList(parsed.known),
+    unknown: stringList(parsed.unknown)
+  };
 }

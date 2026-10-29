@@ -14,6 +14,7 @@ export interface SlotPlan {
   title: string;
   steps: string[];
   links: MaterialLink[];
+  vocab: VocabItem[];
 }
 
 export interface Chunk {
@@ -30,6 +31,7 @@ export interface VocabItem {
   meaning: string;
   example: string;
   source: string;
+  level: 1 | 2 | 3;
 }
 
 export interface StudyDay {
@@ -41,7 +43,6 @@ export interface StudyDay {
   chunks: Chunk[];
   shadow: string[];
   speakPrompt: string;
-  vocab: VocabItem[];
 }
 
 export interface WeekPack {

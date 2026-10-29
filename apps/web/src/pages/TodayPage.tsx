@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { weeks } from "../content/load";
+import { allVocab, weeks } from "../content/load";
 import { nextWeek, previousStudyDays, resolveSession, shanghaiToday, weekdayLabel } from "../content/schedule";
 import type { SlotPlan, StudyDay, WeekPack } from "../content/types";
 import { MaterialView } from "../components/MaterialView";
 import { ShadowTrainer } from "../components/ShadowTrainer";
 import { VocabList } from "../components/VocabList";
-import { loadProgress, saveProgress, setUnknown, toggleSlot, type ProgressState } from "../progress/store";
+import { isLikelyUnknown, judgeVocab } from "../progress/predict";
+import { loadProgress, saveProgress, setMark, toggleSlot, type ProgressState } from "../progress/store";
+
+const catalog = allVocab();
 
 const slotLabel: Record<SlotPlan["id"], string> = {
   morning: "早听",
@@ -59,7 +62,7 @@ export function TodayPage({ today = shanghaiToday() }: TodayPageProps) {
           onToggle={(taskId) =>
             setProgress((current) => toggleSlot(current, previewKey(session.week.id), taskId))
           }
-          onVocab={(id, isUnknown) => setProgress((current) => setUnknown(current, id, isUnknown))}
+          onMark={(id, mark) => setProgress((current) => setMark(current, id, mark))}
           progress={progress}
           week={session.week}
         />
@@ -87,8 +90,9 @@ export function TodayPage({ today = shanghaiToday() }: TodayPageProps) {
           }
           onSelect={setSlotId}
           onToggle={(id) => setProgress((current) => toggleSlot(current, day.date, id))}
-          onVocab={(id, isUnknown) => setProgress((current) => setUnknown(current, id, isUnknown))}
+          onMark={(id, mark) => setProgress((current) => setMark(current, id, mark))}
           review={progress.reviews[session.week.id] ?? ""}
+          known={progress.known}
           unknown={progress.unknown}
           slot={activeSlot}
           week={session.week}
@@ -107,13 +111,13 @@ function PreviewPanel({
   daysUntil,
   progress,
   onToggle,
-  onVocab
+  onMark
 }: {
   week: WeekPack;
   daysUntil: number;
   progress: ProgressState;
   onToggle: (taskId: string) => void;
-  onVocab: (id: string, isUnknown: boolean) => void;
+  onMark: (id: string, mark: "known" | "unknown") => void;
 }) {
   const done = new Set(progress.slots[previewKey(week.id)] ?? []);
   const studyDays = week.days.filter((day) => day.kind === "study");
@@ -147,14 +151,9 @@ function PreviewPanel({
           </li>
         ))}
       </ol>
+      <p className="vocab-note">每个时段先列出我猜你可能不认识的说法。标过之后，后面几天会按你点的不认识重估。</p>
       {studyDays.map((day) => (
-        <VocabList
-          heading={`${weekdayLabel(day.date)} · ${day.theme}`}
-          items={day.vocab}
-          key={day.date}
-          onChange={onVocab}
-          unknown={progress.unknown}
-        />
+        <SlotPreviews day={day} key={day.date} onMark={onMark} progress={progress} />
       ))}
     </div>
   );
@@ -169,19 +168,21 @@ function DayPanel({
   onSelect,
   onToggle,
   onReview,
+  known,
   unknown,
-  onVocab
+  onMark
 }: {
   week: WeekPack;
   day: StudyDay;
   slot: SlotPlan;
   done: string[];
   review: string;
+  known: string[];
   unknown: string[];
   onSelect: (slotId: SlotPlan["id"]) => void;
   onToggle: (slotId: string) => void;
   onReview: (text: string) => void;
-  onVocab: (id: string, isUnknown: boolean) => void;
+  onMark: (id: string, mark: "known" | "unknown") => void;
 }) {
   const finished = new Set(done);
   const following = nextWeek(weeks, week);
@@ -205,7 +206,6 @@ function DayPanel({
           </button>
         ))}
       </div>
-      <VocabList items={day.vocab} onChange={onVocab} unknown={unknown} />
       <article className="panel">
         <div className="section-heading">
           <div>
@@ -218,6 +218,16 @@ function DayPanel({
             {finished.size} / {day.slots.length}
           </span>
         </div>
+        {(slot.id === "morning" || slot.id === "noon" || slot.id === "evening") && (
+          <VocabList
+            catalog={catalog}
+            heading={`${slotLabel[slot.id]} · 可能不认识`}
+            items={slot.vocab}
+            known={known}
+            onMark={onMark}
+            unknown={unknown}
+          />
+        )}
         <ol className="step-list">
           {slot.steps.map((step) => (
             <li key={step}>{step}</li>
@@ -243,13 +253,7 @@ function DayPanel({
             {following.days
               .filter((item) => item.kind === "study")
               .map((item) => (
-                <VocabList
-                  heading={`${weekdayLabel(item.date)} · ${item.theme}`}
-                  items={item.vocab}
-                  key={item.date}
-                  onChange={onVocab}
-                  unknown={unknown}
-                />
+                <SlotPreviews day={item} key={item.date} onMark={onMark} progress={{ known, unknown }} />
               ))}
           </>
         )}
@@ -290,6 +294,44 @@ function DayPanel({
       </article>
       <p className="save-note">打卡保存在这台浏览器。换手机或公司电脑时，到进度页导出再导入。</p>
     </>
+  );
+}
+
+function SlotPreviews({
+  day,
+  progress,
+  onMark
+}: {
+  day: StudyDay;
+  progress: Pick<ProgressState, "known" | "unknown">;
+  onMark: (id: string, mark: "known" | "unknown") => void;
+}) {
+  const slots = day.slots.filter((slot) => slot.id === "morning" || slot.id === "noon" || slot.id === "evening");
+  return (
+    <section>
+      <h3>
+        {weekdayLabel(day.date)} · {day.theme}
+      </h3>
+      {slots.map((slot) => {
+        const count = slot.vocab.filter((item) => isLikelyUnknown(judgeVocab(item, progress, catalog))).length;
+        return (
+          <details className="vocab-slot" key={slot.id}>
+            <summary>
+              {slotLabel[slot.id]} · 可能不认识 {count}
+            </summary>
+            <VocabList
+              catalog={catalog}
+              heading=""
+              items={slot.vocab}
+              known={progress.known}
+              onMark={onMark}
+              showNote={false}
+              unknown={progress.unknown}
+            />
+          </details>
+        );
+      })}
+    </section>
   );
 }
 

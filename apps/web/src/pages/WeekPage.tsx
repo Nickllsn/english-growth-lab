@@ -1,11 +1,22 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { weeks } from "../content/load";
+import { allVocab, weeks } from "../content/load";
 import { resolveSession, shanghaiToday, weekdayLabel } from "../content/schedule";
 import { MaterialView } from "../components/MaterialView";
 import { VocabList } from "../components/VocabList";
-import type { StudyDay } from "../content/types";
-import { loadProgress, saveProgress, setUnknown, type ProgressState } from "../progress/store";
+import type { SlotPlan, StudyDay } from "../content/types";
+import { loadProgress, saveProgress, setMark, type ProgressState } from "../progress/store";
+
+const catalog = allVocab();
+
+const slotLabel: Record<SlotPlan["id"], string> = {
+  morning: "早听",
+  noon: "午读",
+  evening: "晚听",
+  home: "跟读",
+  preview: "预习",
+  review: "复盘"
+};
 
 export function WeekPage({ today = shanghaiToday() }: { today?: string }) {
   const session = resolveSession(today, weeks);
@@ -43,7 +54,8 @@ export function WeekPage({ today = shanghaiToday() }: { today?: string }) {
           <DayCard
             day={day}
             key={day.date}
-            onVocab={(id, isUnknown) => setProgress((current) => setUnknown(current, id, isUnknown))}
+            known={progress.known}
+            onMark={(id, mark) => setProgress((current) => setMark(current, id, mark))}
             open={day.date === (focus ?? today)}
             unknown={progress.unknown}
           />
@@ -56,13 +68,15 @@ export function WeekPage({ today = shanghaiToday() }: { today?: string }) {
 function DayCard({
   day,
   open,
+  known,
   unknown,
-  onVocab
+  onMark
 }: {
   day: StudyDay;
   open: boolean;
+  known: string[];
   unknown: string[];
-  onVocab: (id: string, isUnknown: boolean) => void;
+  onMark: (id: string, mark: "known" | "unknown") => void;
 }) {
   const detailsRef = useRef<HTMLDetailsElement>(null);
 
@@ -76,12 +90,22 @@ function DayCard({
         {weekdayLabel(day.date)} {day.date.slice(5)} · {day.theme}
       </summary>
       <p>{day.objective}</p>
-      <VocabList items={day.vocab} onChange={onVocab} unknown={unknown} />
       {day.slots.map((slot) => (
         <section key={slot.id}>
           <h2>
-            {slot.place} · {slot.minutes} 分钟 · {slot.title}
+            {slotLabel[slot.id]} · {slot.place} · {slot.minutes} 分钟 · {slot.title}
           </h2>
+          {slot.vocab.length > 0 && (
+            <VocabList
+              catalog={catalog}
+              heading={`${slotLabel[slot.id]} · 可能不认识`}
+              items={slot.vocab}
+              known={known}
+              onMark={onMark}
+              showNote={slot.id === "morning"}
+              unknown={unknown}
+            />
+          )}
           <ol className="step-list">
             {slot.steps.map((step) => (
               <li key={step}>{step}</li>

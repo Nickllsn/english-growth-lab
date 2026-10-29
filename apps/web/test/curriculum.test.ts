@@ -31,25 +31,33 @@ describe("published weeks", () => {
     expect(urls.some((url) => url.startsWith("https://www.brendangregg.com/"))).toBe(false);
   });
 
-  it("puts a short caption-based set on every study day", () => {
-    const ids = weeks.flatMap((week) => week.days.flatMap((day) => day.vocab.map((item) => item.id)));
-    expect(new Set(ids).size).toBe(ids.length);
+  it("puts a baseline on every morning, noon, and evening slot", () => {
+    const seen = new Map<string, string>();
 
     for (const week of weeks) {
       for (const day of week.days) {
-        if (day.kind === "weekend") {
-          expect(day.vocab).toEqual([]);
-          continue;
-        }
-        expect(day.vocab).toHaveLength(7);
-        expect(new Set(day.vocab.map((item) => item.kind))).toEqual(new Set(["word", "phrase", "pattern"]));
-        for (const item of day.vocab) {
-          expect(item.id.startsWith(day.date)).toBe(true);
-          expect(item.meaning).toMatch(/[\u4e00-\u9fff]/);
-          expect(item.example).not.toMatch(/[\u4e00-\u9fff]/);
-          expect(item.example.split(/\s+/).length).toBeLessThanOrEqual(18);
-          expect(item.text.split(/\s+/).length).toBeLessThanOrEqual(6);
-          expect(item.source.trim().length).toBeGreaterThan(0);
+        for (const slot of day.slots) {
+          const listening = day.kind === "study" && (slot.id === "morning" || slot.id === "noon" || slot.id === "evening");
+          if (!listening) {
+            expect(slot.vocab).toEqual([]);
+            continue;
+          }
+          expect(slot.vocab.length).toBeGreaterThan(7);
+          expect(new Set(slot.vocab.map((item) => item.kind))).toEqual(new Set(["word", "phrase", "pattern"]));
+          const ids = slot.vocab.map((item) => item.id);
+          expect(new Set(ids).size).toBe(ids.length);
+          for (const item of slot.vocab) {
+            expect(item.id.startsWith(`${day.date}-`)).toBe(true);
+            expect([1, 2, 3]).toContain(item.level);
+            expect(item.meaning).toMatch(/[\u4e00-\u9fff]/);
+            expect(item.example).not.toMatch(/[\u4e00-\u9fff]/);
+            expect(item.example.split(/\s+/).length).toBeLessThanOrEqual(18);
+            expect(item.text.split(/\s+/).length).toBeLessThanOrEqual(6);
+            expect(item.source.trim().length).toBeGreaterThan(0);
+            const previous = seen.get(item.id);
+            if (previous) expect(previous).toBe(item.text);
+            seen.set(item.id, item.text);
+          }
         }
       }
     }

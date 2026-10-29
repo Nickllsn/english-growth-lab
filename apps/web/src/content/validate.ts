@@ -75,29 +75,37 @@ export function validateWeek(week: WeekPack): string[] {
       }
     }
 
-    const vocab = day.vocab ?? [];
-    const seen = new Set<string>();
-    if (day.kind === "weekend" && vocab.length > 0) at(`${day.date} 周末不放新的一列词汇`);
-    if (day.kind === "study") {
-      if (vocab.length < 6 || vocab.length > 8) at(`${day.date} 词汇需要 6 到 8 个`);
-      const kinds = new Set(vocab.map((item) => item.kind));
-      for (const kind of VOCAB_KINDS) {
-        if (!kinds.has(kind)) at(`${day.date} 词汇需要包含${kind}`);
+    const seenText = new Map<string, string>();
+    for (const slot of day.slots) {
+      const vocab = slot.vocab ?? [];
+      const listening = day.kind === "study" && (slot.id === "morning" || slot.id === "noon" || slot.id === "evening");
+      if (!listening && vocab.length > 0) at(`${day.date} ${slot.id} 不该有词汇`);
+      if (listening && vocab.length < 8) at(`${day.date} ${slot.id} 词汇太少`);
+      if (listening) {
+        const kinds = new Set(vocab.map((item) => item.kind));
+        for (const kind of VOCAB_KINDS) {
+          if (!kinds.has(kind)) at(`${day.date} ${slot.id} 词汇需要包含${kind}`);
+        }
       }
-    }
-    for (const item of vocab) {
-      if (seen.has(item.id)) at(`${day.date} 词汇编号重复：${item.id}`);
-      seen.add(item.id);
-      if (!item.id.startsWith(`${day.date}-`)) at(`${day.date} 词汇编号要以日期开头：${item.id}`);
-      if (!VOCAB_KINDS.includes(item.kind)) at(`${day.date} 词汇类型无效：${item.text}`);
-      if (item.text.split(/\s+/).length > 6) at(`${day.date} 词汇太长：${item.text}`);
-      if (!/[\u4e00-\u9fff]/.test(item.meaning)) at(`${day.date} 词汇缺少中文：${item.text}`);
-      if (/[\u4e00-\u9fff]/.test(item.example)) at(`${day.date} 例句要是英语：${item.text}`);
-      if (item.example.split(/\s+/).length > 18) at(`${day.date} 例句太长：${item.text}`);
-      if (!item.source.trim()) at(`${day.date} 词汇缺少来源：${item.text}`);
-      const example = item.example.toLowerCase();
-      for (const word of contentWords(item.text)) {
-        if (!example.includes(word)) at(`${day.date} 例句没有用到 ${item.text}`);
+      const seen = new Set<string>();
+      for (const item of vocab) {
+        if (seen.has(item.id)) at(`${day.date} ${slot.id} 词汇编号重复：${item.id}`);
+        seen.add(item.id);
+        const previous = seenText.get(item.id);
+        if (previous && previous !== item.text) at(`${day.date} 同一个编号对应了不同的词：${item.id}`);
+        seenText.set(item.id, item.text);
+        if (!item.id.startsWith(`${day.date}-`)) at(`${day.date} 词汇编号要以日期开头：${item.id}`);
+        if (!VOCAB_KINDS.includes(item.kind)) at(`${day.date} 词汇类型无效：${item.text}`);
+        if (item.level !== 1 && item.level !== 2 && item.level !== 3) at(`${day.date} 难度无效：${item.text}`);
+        if (item.text.split(/\s+/).length > 6) at(`${day.date} 词汇太长：${item.text}`);
+        if (!/[\u4e00-\u9fff]/.test(item.meaning)) at(`${day.date} 词汇缺少中文：${item.text}`);
+        if (/[\u4e00-\u9fff]/.test(item.example)) at(`${day.date} 例句要是英语：${item.text}`);
+        if (item.example.split(/\s+/).length > 18) at(`${day.date} 例句太长：${item.text}`);
+        if (!item.source.trim()) at(`${day.date} 词汇缺少来源：${item.text}`);
+        const example = item.example.toLowerCase();
+        for (const word of contentWords(item.text)) {
+          if (!example.includes(word)) at(`${day.date} 例句没有用到 ${item.text}`);
+        }
       }
     }
 

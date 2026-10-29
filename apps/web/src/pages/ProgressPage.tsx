@@ -87,7 +87,7 @@ export function ProgressPage({ today = shanghaiToday() }: { today?: string }) {
           </label>
         </div>
         {message && <p className="success-message">{message}</p>}
-        <p className="save-note">导出的 english-progress.json 里有打卡 slots、每周复盘 reviews，还有不认识的说法 unknown。导入会写回复盘框和词汇页。</p>
+        <p className="save-note">导出的 english-progress.json 里有打卡 slots、每周复盘 reviews、认识的说法 known，还有不认识的说法 unknown。导入会写回复盘框和词汇页。</p>
       </section>
       {weeks.map((week) => (
         <section className="panel" key={week.id}>

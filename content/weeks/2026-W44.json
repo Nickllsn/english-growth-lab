@@ -83,64 +83,6 @@
           "links": []
         }
       ],
-      "vocab": [
-        {
-          "id": "2026-10-26-struggle",
-          "kind": "word",
-          "text": "struggle",
-          "meaning": "很费力地做某事，常常还做不成",
-          "example": "I struggle to catch every word on the train.",
-          "source": "BBC 这一集"
-        },
-        {
-          "id": "2026-10-26-nutrients",
-          "kind": "word",
-          "text": "nutrients",
-          "meaning": "身体维持健康需要的营养成分",
-          "example": "Fruit gives you nutrients that a cookie does not.",
-          "source": "BBC 这一集"
-        },
-        {
-          "id": "2026-10-26-supplements",
-          "kind": "word",
-          "text": "supplements",
-          "meaning": "营养补充剂，通常做成片剂",
-          "example": "Sleep ads often sell supplements.",
-          "source": "BBC 这一集"
-        },
-        {
-          "id": "2026-10-26-saturated-fats",
-          "kind": "phrase",
-          "text": "saturated fats",
-          "meaning": "饱和脂肪，肉类和奶制品里常见",
-          "example": "This cheese has more saturated fats than rice.",
-          "source": "BBC 这一集"
-        },
-        {
-          "id": "2026-10-26-deep-sleep",
-          "kind": "phrase",
-          "text": "deep sleep",
-          "meaning": "深睡眠，身体真正休息的那段",
-          "example": "A short nap does not replace deep sleep.",
-          "source": "BBC 这一集"
-        },
-        {
-          "id": "2026-10-26-link-between",
-          "kind": "pattern",
-          "text": "the link between … and …",
-          "meaning": "两者之间的联系",
-          "example": "I see the link between queue depth and latency.",
-          "source": "BBC 这一集"
-        },
-        {
-          "id": "2026-10-26-associated-with",
-          "kind": "pattern",
-          "text": "associated with",
-          "meaning": "与某件事相关，常跟在 be 后面",
-          "example": "Busy disks are associated with slow reads.",
-          "source": "BBC 这一集"
-        }
-      ],
       "chunks": [
         { "text": "I have been working as a software engineer for eight years.", "meaning": "我做软件工程师八年了。" },
         { "text": "I mainly focus on distributed storage.", "meaning": "我主要做分布式存储。" },
@@ -233,64 +175,6 @@
             "不看稿回答今天的问题。"
           ],
           "links": []
-        }
-      ],
-      "vocab": [
-        {
-          "id": "2026-10-27-block",
-          "kind": "word",
-          "text": "block",
-          "meaning": "磁盘一次处理的数据块",
-          "example": "The database writes one full block, not a single byte.",
-          "source": "Hussein 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-10-27-bytes",
-          "kind": "word",
-          "text": "bytes",
-          "meaning": "字节",
-          "example": "A small number can still occupy several bytes.",
-          "source": "Hussein 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-10-27-insert",
-          "kind": "word",
-          "text": "insert",
-          "meaning": "插入一条新记录",
-          "example": "An insert adds one new row to the table.",
-          "source": "Hussein 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-10-27-row-number",
-          "kind": "phrase",
-          "text": "row number",
-          "meaning": "行号，用来指出是哪一行",
-          "example": "I can fetch a record from its row number.",
-          "source": "Hussein 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-10-27-primary-key",
-          "kind": "phrase",
-          "text": "primary key",
-          "meaning": "主键，用来唯一找到一行",
-          "example": "The primary key identifies one row.",
-          "source": "Hussein 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-10-27-for-granted",
-          "kind": "pattern",
-          "text": "take … for granted",
-          "meaning": "把某件事当成理所当然",
-          "example": "I take a quiet disk for granted until it fails.",
-          "source": "Hussein 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-10-27-instead-of",
-          "kind": "pattern",
-          "text": "instead of",
-          "meaning": "而不是",
-          "example": "Reads jump around instead of staying sequential.",
-          "source": "Hussein 字幕，前 12 分钟"
         }
       ],
       "chunks": [
@@ -387,64 +271,6 @@
           "links": []
         }
       ],
-      "vocab": [
-        {
-          "id": "2026-10-28-cluster",
-          "kind": "word",
-          "text": "cluster",
-          "meaning": "集群，一组一起干活的机器",
-          "example": "One disk can die and the cluster still serves reads.",
-          "source": "Ceph 字幕，前 20 分钟"
-        },
-        {
-          "id": "2026-10-28-metadata",
-          "kind": "word",
-          "text": "metadata",
-          "meaning": "描述数据的数据，例如名字和位置",
-          "example": "The metadata records where each object lives.",
-          "source": "Ceph 字幕，前 20 分钟"
-        },
-        {
-          "id": "2026-10-28-stripe",
-          "kind": "word",
-          "text": "stripe",
-          "meaning": "把一整块数据切开，分散放到多台机器",
-          "example": "This layer will stripe one volume across many servers.",
-          "source": "Ceph 字幕，前 20 分钟"
-        },
-        {
-          "id": "2026-10-28-block-device",
-          "kind": "phrase",
-          "text": "block device",
-          "meaning": "块设备，用起来像一块磁盘",
-          "example": "The guest system sees a block device.",
-          "source": "Ceph 字幕，前 20 分钟"
-        },
-        {
-          "id": "2026-10-28-single-point",
-          "kind": "phrase",
-          "text": "single point of failure",
-          "meaning": "单点故障，坏了一处就全停",
-          "example": "That design has a single point of failure.",
-          "source": "Ceph 字幕，前 20 分钟"
-        },
-        {
-          "id": "2026-10-28-used-to",
-          "kind": "pattern",
-          "text": "used to",
-          "meaning": "过去常常，现在不一定了",
-          "example": "I used to keep every copy on one machine.",
-          "source": "Ceph 字幕，前 20 分钟"
-        },
-        {
-          "id": "2026-10-28-which-means",
-          "kind": "pattern",
-          "text": "which means",
-          "meaning": "这就表示",
-          "example": "The second copy is current, which means one disk can fail.",
-          "source": "Ceph 字幕，前 20 分钟"
-        }
-      ],
       "chunks": [
         { "text": "Data is spread across many machines.", "meaning": "数据分散在很多机器上。" },
         { "text": "There is no single point of failure.", "meaning": "没有单点故障。" },
@@ -537,64 +363,6 @@
             "不看稿回答 What is Ceph?"
           ],
           "links": []
-        }
-      ],
-      "vocab": [
-        {
-          "id": "2026-10-29-algorithm",
-          "kind": "word",
-          "text": "algorithm",
-          "meaning": "算法",
-          "example": "This algorithm chooses a disk for each object.",
-          "source": "Ceph 字幕，20 分钟之后"
-        },
-        {
-          "id": "2026-10-29-calculate",
-          "kind": "word",
-          "text": "calculate",
-          "meaning": "靠计算得出，不用查一张总表",
-          "example": "The client can calculate the location itself.",
-          "source": "Ceph 字幕，20 分钟之后"
-        },
-        {
-          "id": "2026-10-29-monitor",
-          "kind": "word",
-          "text": "monitor",
-          "meaning": "这里指保存集群状态的监控服务",
-          "example": "A monitor remembers the cluster state.",
-          "source": "Ceph 字幕，20 分钟之后"
-        },
-        {
-          "id": "2026-10-29-placement-group",
-          "kind": "phrase",
-          "text": "placement group",
-          "meaning": "放置组，一批对象走同一组磁盘",
-          "example": "One placement group maps to a small set of disks.",
-          "source": "Ceph 字幕，20 分钟之后"
-        },
-        {
-          "id": "2026-10-29-crush",
-          "kind": "phrase",
-          "text": "CRUSH algorithm",
-          "meaning": "Ceph 用来决定数据放在哪的算法",
-          "example": "The CRUSH algorithm picks the disks on the client.",
-          "source": "Ceph 字幕，20 分钟之后"
-        },
-        {
-          "id": "2026-10-29-based-on",
-          "kind": "pattern",
-          "text": "based on",
-          "meaning": "依据，根据",
-          "example": "The placement is based on rules, not on a phone call.",
-          "source": "Ceph 字幕，20 分钟之后"
-        },
-        {
-          "id": "2026-10-29-figure-out",
-          "kind": "pattern",
-          "text": "figure out",
-          "meaning": "弄清楚",
-          "example": "I can figure out the location without asking another server.",
-          "source": "Ceph 字幕，20 分钟之后"
         }
       ],
       "chunks": [
@@ -691,64 +459,6 @@
           "links": []
         }
       ],
-      "vocab": [
-        {
-          "id": "2026-10-30-container",
-          "kind": "word",
-          "text": "container",
-          "meaning": "容器，把程序隔离起来跑的一种方式",
-          "example": "The program ran inside a container on the same host.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-10-30-perf",
-          "kind": "word",
-          "text": "perf",
-          "meaning": "Linux 上用来观察性能的工具",
-          "example": "I open perf when one CPU stays busy.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-10-30-idle",
-          "kind": "word",
-          "text": "idle",
-          "meaning": "空闲的，没有在干活",
-          "example": "That CPU stayed idle while the disk worked.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-10-30-load-average",
-          "kind": "phrase",
-          "text": "load average",
-          "meaning": "负载均值，大致表示有多少工作在排队",
-          "example": "A rising load average means work is piling up.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-10-30-hit-ratio",
-          "kind": "phrase",
-          "text": "hit ratio",
-          "meaning": "命中率",
-          "example": "A poor hit ratio sends more reads out to memory.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-10-30-too-good",
-          "kind": "pattern",
-          "text": "too good to be true",
-          "meaning": "好得不像是真的",
-          "example": "That speedup looks too good to be true.",
-          "source": "Gregg 字幕，前 12 分钟"
-        },
-        {
-          "id": "2026-10-30-find-out",
-          "kind": "pattern",
-          "text": "find out",
-          "meaning": "查清楚",
-          "example": "I find out the cause only after I have a number.",
-          "source": "Gregg 字幕，前 12 分钟"
-        }
-      ],
       "chunks": [
         { "text": "The real bottleneck is not always the CPU.", "meaning": "真正的瓶颈不一定是 CPU。" },
         { "text": "Latency is the time one operation waits.", "meaning": "延迟是一次操作等待的时间。" },
@@ -805,7 +515,6 @@
           "links": []
         }
       ],
-      "vocab": [],
       "chunks": [],
       "shadow": [],
       "speakPrompt": "What can I explain now?"
@@ -849,7 +558,6 @@
           "links": []
         }
       ],
-      "vocab": [],
       "chunks": [],
       "shadow": [],
       "speakPrompt": "Explain Ceph in four sentences."

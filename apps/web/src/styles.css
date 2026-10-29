@@ -778,6 +778,34 @@ textarea {
   font-size: 0.85rem;
 }
 
+.vocab-badge {
+  justify-self: start;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.vocab-badge.unknown,
+.vocab-badge.predicted-unknown {
+  color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.vocab-badge.known,
+.vocab-badge.predicted-known {
+  color: var(--success);
+  background: var(--success-soft);
+}
+
+.vocab-slot {
+  margin-top: 12px;
+}
+
+.vocab-slot summary {
+  min-height: 44px;
+  cursor: pointer;
+}
+
 .choice-row {
   display: flex;
   flex-wrap: wrap;
