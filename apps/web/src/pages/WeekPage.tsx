@@ -98,7 +98,7 @@ function DayCard({
           {slot.vocab.length > 0 && (
             <VocabList
               catalog={catalog}
-              heading={`${slotLabel[slot.id]} · 可能不认识`}
+              heading={`${slotLabel[slot.id]} · 进阶重点`}
               items={slot.vocab}
               known={known}
               onMark={onMark}

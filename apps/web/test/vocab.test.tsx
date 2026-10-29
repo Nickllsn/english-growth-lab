@@ -20,22 +20,25 @@ describe("caption vocabulary", () => {
     );
 
     expect(screen.getAllByRole("button", { name: / 不认识$/ }).length).toBeGreaterThan(7);
-    expect(screen.getByText("struggle")).toBeInTheDocument();
+    expect(screen.getByText("nutrients")).toBeInTheDocument();
+    expect(screen.queryByText("quality")).not.toBeInTheDocument();
+    expect(screen.queryByText("struggle")).not.toBeInTheDocument();
     expect(screen.getByText(/不是字幕原句/)).toBeInTheDocument();
+    expect(screen.getByText(/接近六级/)).toBeInTheDocument();
     expect(screen.getAllByText("可能不认识").length).toBeGreaterThan(0);
-    expect(screen.getByRole("button", { name: "struggle 认识" })).toHaveAttribute("aria-pressed", "false");
-    expect(screen.getByRole("button", { name: "struggle 不认识" })).toHaveAttribute("aria-pressed", "false");
+    expect(screen.getByRole("button", { name: "nutrients 认识" })).toHaveAttribute("aria-pressed", "false");
+    expect(screen.getByRole("button", { name: "nutrients 不认识" })).toHaveAttribute("aria-pressed", "false");
 
-    fireEvent.click(screen.getByRole("button", { name: "struggle 不认识" }));
+    fireEvent.click(screen.getByRole("button", { name: "nutrients 不认识" }));
 
     const saved = JSON.parse(localStorage.getItem("egl.progress.v1") ?? "{}") as { unknown: string[] };
-    expect(saved.unknown).toContain("2026-10-26-morning-struggle");
-    expect(screen.getByRole("button", { name: "struggle 不认识" })).toHaveAttribute("aria-pressed", "true");
+    expect(saved.unknown).toContain("2026-10-26-morning-nutrients");
+    expect(screen.getByRole("button", { name: "nutrients 不认识" })).toHaveAttribute("aria-pressed", "true");
 
-    fireEvent.click(screen.getByRole("button", { name: "struggle 认识" }));
+    fireEvent.click(screen.getByRole("button", { name: "nutrients 认识" }));
     const cleared = JSON.parse(localStorage.getItem("egl.progress.v1") ?? "{}") as { known: string[]; unknown: string[] };
-    expect(cleared.unknown).not.toContain("2026-10-26-morning-struggle");
-    expect(cleared.known).toContain("2026-10-26-morning-struggle");
+    expect(cleared.unknown).not.toContain("2026-10-26-morning-nutrients");
+    expect(cleared.known).toContain("2026-10-26-morning-nutrients");
   });
 
   it("lets the weekend preview mark next week's items", () => {
@@ -71,7 +74,7 @@ describe("caption vocabulary", () => {
       JSON.stringify({
         slots: {},
         reviews: {},
-        unknown: ["2026-10-26-morning-struggle", "2026-11-02-morning-page-cache"]
+        unknown: ["2026-10-26-morning-nutrients", "2026-11-02-morning-page-cache"]
       })
     );
 
@@ -83,12 +86,12 @@ describe("caption vocabulary", () => {
 
     expect(screen.getByRole("heading", { name: "自我介绍与分布式存储" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Linux 性能英语" })).toBeInTheDocument();
-    expect(screen.getByText("struggle")).toBeInTheDocument();
+    expect(screen.getByText("nutrients")).toBeInTheDocument();
     expect(screen.getByText("page cache")).toBeInTheDocument();
-    expect(screen.queryByText("nutrients")).not.toBeInTheDocument();
+    expect(screen.queryByText("saturated fats")).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("button", { name: "struggle 认识" }));
-    expect(screen.queryByText("struggle")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "nutrients 认识" }));
+    expect(screen.queryByText("nutrients")).not.toBeInTheDocument();
     expect(JSON.parse(localStorage.getItem("egl.progress.v1") ?? "{}")).toMatchObject({
       unknown: ["2026-11-02-morning-page-cache"]
     });
@@ -107,10 +110,10 @@ describe("caption vocabulary", () => {
       slots: {},
       reviews: {},
       known: [],
-      unknown: ["2026-10-26-morning-struggle"]
+      unknown: ["2026-10-26-morning-nutrients"]
     });
     expect(note).toContain("还不认识");
-    expect(note).toContain("struggle");
+    expect(note).toContain("nutrients");
   });
 
   it("estimates a later item after a known and an unknown mark", () => {
@@ -119,8 +122,8 @@ describe("caption vocabulary", () => {
       JSON.stringify({
         slots: {},
         reviews: {},
-        known: ["2026-10-26-morning-struggle"],
-        unknown: ["2026-10-27-noon-quorum"]
+        known: ["2026-10-26-morning-associated"],
+        unknown: ["2026-10-26-morning-magic-bullet"]
       })
     );
 
@@ -136,6 +139,6 @@ describe("caption vocabulary", () => {
     const list = within(morning as HTMLElement);
     expect(list.getByText("nutrients").closest("li")).toHaveTextContent("可能不认识");
     fireEvent.click(list.getByRole("button", { name: "只看可能不认识" }));
-    expect(list.getByText("quality").closest("li")).toHaveTextContent("可能认识");
+    expect(list.getByText("long-term").closest("li")).toHaveTextContent("可能认识");
   });
 });

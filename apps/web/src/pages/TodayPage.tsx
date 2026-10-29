@@ -151,7 +151,7 @@ function PreviewPanel({
           </li>
         ))}
       </ol>
-      <p className="vocab-note">每个时段先列出我猜你可能不认识的说法。标过之后，后面几天会按你点的不认识重估。</p>
+      <p className="vocab-note">每个时段先列出按完整字幕或链接文档估出的进阶重点。标过之后，后面几天会按你点的不认识重估。</p>
       {studyDays.map((day) => (
         <SlotPreviews day={day} key={day.date} onMark={onMark} progress={progress} />
       ))}
@@ -221,7 +221,7 @@ function DayPanel({
         {(slot.id === "morning" || slot.id === "noon" || slot.id === "evening") && (
           <VocabList
             catalog={catalog}
-            heading={`${slotLabel[slot.id]} · 可能不认识`}
+            heading={`${slotLabel[slot.id]} · 进阶重点`}
             items={slot.vocab}
             known={known}
             onMark={onMark}
@@ -317,7 +317,7 @@ function SlotPreviews({
         return (
           <details className="vocab-slot" key={slot.id}>
             <summary>
-              {slotLabel[slot.id]} · 可能不认识 {count}
+              {slotLabel[slot.id]} · 进阶重点 {count}
             </summary>
             <VocabList
               catalog={catalog}

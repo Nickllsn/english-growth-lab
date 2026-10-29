@@ -33,6 +33,22 @@ describe("published weeks", () => {
 
   it("puts a baseline on every morning, noon, and evening slot", () => {
     const seen = new Map<string, string>();
+    const tooBasic = new Set([
+      "quality",
+      "immediately",
+      "struggle",
+      "client",
+      "software",
+      "calculate",
+      "average",
+      "particular",
+      "familiar with",
+      "instead of",
+      "for example",
+      "rather than",
+      "according to",
+      "used to"
+    ]);
 
     for (const week of weeks) {
       for (const day of week.days) {
@@ -54,6 +70,7 @@ describe("published weeks", () => {
             expect(item.example.split(/\s+/).length).toBeLessThanOrEqual(18);
             expect(item.text.split(/\s+/).length).toBeLessThanOrEqual(6);
             expect(item.source.trim().length).toBeGreaterThan(0);
+            expect(tooBasic.has(item.text.toLowerCase())).toBe(false);
             const previous = seen.get(item.id);
             if (previous) expect(previous).toBe(item.text);
             seen.set(item.id, item.text);

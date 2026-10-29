@@ -31,7 +31,7 @@ export function VocabList({
   unknown,
   catalog,
   onMark,
-  heading = "这一时段可能不认识的说法",
+  heading = "这一时段的进阶重点",
   showNote = true
 }: VocabListProps) {
   const [onlyLikely, setOnlyLikely] = useState(true);
@@ -47,7 +47,7 @@ export function VocabList({
       {heading && <h3>{heading}</h3>}
       {showNote && (
         <p className="vocab-note">
-          这一时段里，我猜你可能不认识的说法都列在下面，作为基线。中文和例句是另写的，不是字幕原句。你标过认识或不认识之后，后面的材料会按你标的不认识重估。
+          这些是从这一时段的完整字幕，或链接里的文档挑出的进阶重点，按已经通过四级、接近六级来估。中文和例句是另写的，不是字幕原句。你标过认识或不认识之后，后面的材料会按你标的不认识重估。
         </p>
       )}
       <button
