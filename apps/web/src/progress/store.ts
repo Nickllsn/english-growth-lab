@@ -1,14 +1,20 @@
-import type { WeekPack } from "../content/types";
+import type { VocabItem, WeekPack } from "../content/types";
 
 const STORAGE_KEY = "egl.progress.v1";
 
 export interface ProgressState {
   slots: Record<string, string[]>;
   reviews: Record<string, string>;
+  unknown: string[];
 }
 
 export function emptyProgress(): ProgressState {
-  return { slots: {}, reviews: {} };
+  return { slots: {}, reviews: {}, unknown: [] };
+}
+
+function stringList(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  return value.filter((item): item is string => typeof item === "string");
 }
 
 export function loadProgress(): ProgressState {
@@ -18,7 +24,8 @@ export function loadProgress(): ProgressState {
     const parsed = JSON.parse(raw) as Partial<ProgressState>;
     return {
       slots: parsed.slots ?? {},
-      reviews: parsed.reviews ?? {}
+      reviews: parsed.reviews ?? {},
+      unknown: stringList(parsed.unknown)
     };
   } catch {
     return emptyProgress();
@@ -37,6 +44,13 @@ export function toggleSlot(state: ProgressState, date: string, slotId: string): 
     ...state,
     slots: { ...state.slots, [date]: [...current] }
   };
+}
+
+export function setUnknown(state: ProgressState, id: string, unknown: boolean): ProgressState {
+  const next = new Set(state.unknown);
+  if (unknown) next.add(id);
+  else next.delete(id);
+  return { ...state, unknown: [...next] };
 }
 
 export function isComplete(required: string[], done: string[] | undefined): boolean {
@@ -85,7 +99,17 @@ export function weekMarkdown(week: WeekPack, state: ProgressState): string {
     lines.push(`- ${day.date} ${day.theme}：${marks}`);
   }
   lines.push("", "## 周末复盘", "", state.reviews[week.id]?.trim() || "（还没写）", "");
+  lines.push("## 还不认识", "");
+  const missed = unknownItems(week, state);
+  if (missed.length === 0) lines.push("（没有标记不认识）", "");
+  else missed.forEach((item) => lines.push(`- ${item.text}：${item.meaning}`));
+  lines.push("");
   return lines.join("\n");
+}
+
+export function unknownItems(week: WeekPack, state: ProgressState): VocabItem[] {
+  const unknown = new Set(state.unknown);
+  return week.days.flatMap((day) => day.vocab.filter((item) => unknown.has(item.id)));
 }
 
 export function parseProgress(raw: string): ProgressState {
@@ -93,5 +117,5 @@ export function parseProgress(raw: string): ProgressState {
   if (!parsed.slots || !parsed.reviews) {
     throw new Error("这个文件不是学习进度");
   }
-  return { slots: parsed.slots, reviews: parsed.reviews };
+  return { slots: parsed.slots, reviews: parsed.reviews, unknown: stringList(parsed.unknown) };
 }

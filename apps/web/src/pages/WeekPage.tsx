@@ -3,14 +3,21 @@ import { useSearchParams } from "react-router-dom";
 import { weeks } from "../content/load";
 import { resolveSession, shanghaiToday, weekdayLabel } from "../content/schedule";
 import { MaterialView } from "../components/MaterialView";
+import { VocabList } from "../components/VocabList";
 import type { StudyDay } from "../content/types";
+import { loadProgress, saveProgress, setUnknown, type ProgressState } from "../progress/store";
 
 export function WeekPage({ today = shanghaiToday() }: { today?: string }) {
   const session = resolveSession(today, weeks);
   const [params] = useSearchParams();
   const focus = params.get("focus");
   const [weekId, setWeekId] = useState(session.week.id);
+  const [progress, setProgress] = useState<ProgressState>(loadProgress);
   const week = useMemo(() => weeks.find((item) => item.id === weekId) ?? session.week, [session.week, weekId]);
+
+  useEffect(() => {
+    saveProgress(progress);
+  }, [progress]);
 
   return (
     <section className="page">
@@ -33,14 +40,30 @@ export function WeekPage({ today = shanghaiToday() }: { today?: string }) {
       </header>
       <div className="week-days">
         {week.days.map((day) => (
-          <DayCard day={day} key={day.date} open={day.date === (focus ?? today)} />
+          <DayCard
+            day={day}
+            key={day.date}
+            onVocab={(id, isUnknown) => setProgress((current) => setUnknown(current, id, isUnknown))}
+            open={day.date === (focus ?? today)}
+            unknown={progress.unknown}
+          />
         ))}
       </div>
     </section>
   );
 }
 
-function DayCard({ day, open }: { day: StudyDay; open: boolean }) {
+function DayCard({
+  day,
+  open,
+  unknown,
+  onVocab
+}: {
+  day: StudyDay;
+  open: boolean;
+  unknown: string[];
+  onVocab: (id: string, isUnknown: boolean) => void;
+}) {
   const detailsRef = useRef<HTMLDetailsElement>(null);
 
   useEffect(() => {
@@ -53,6 +76,7 @@ function DayCard({ day, open }: { day: StudyDay; open: boolean }) {
         {weekdayLabel(day.date)} {day.date.slice(5)} · {day.theme}
       </summary>
       <p>{day.objective}</p>
+      <VocabList items={day.vocab} onChange={onVocab} unknown={unknown} />
       {day.slots.map((slot) => (
         <section key={slot.id}>
           <h2>

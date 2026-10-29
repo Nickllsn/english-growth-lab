@@ -671,7 +671,8 @@ textarea {
 .day-index,
 .step-list,
 .chunk-list,
-.shadow-list {
+.shadow-list,
+.vocab-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -697,7 +698,8 @@ textarea {
 .task-list,
 .day-index,
 .chunk-list,
-.shadow-list {
+.shadow-list,
+.vocab-list {
   display: grid;
   gap: 10px;
   margin-top: 16px;
@@ -741,6 +743,61 @@ textarea {
 .material-link strong,
 .chunk-list strong {
   color: var(--text);
+}
+
+.vocab-block {
+  margin-top: 16px;
+}
+
+.vocab-note,
+.vocab-example,
+.vocab-card small {
+  color: var(--text-muted);
+}
+
+.vocab-card {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.vocab-card p {
+  margin: 0;
+}
+
+.vocab-kind {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+  font-size: 0.85rem;
+}
+
+.choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.choice-button {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-muted);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.choice-button[aria-pressed="true"] {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  color: var(--primary-strong);
 }
 
 .shadow-box {

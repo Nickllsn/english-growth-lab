@@ -5,7 +5,8 @@ import { nextWeek, previousStudyDays, resolveSession, shanghaiToday, weekdayLabe
 import type { SlotPlan, StudyDay, WeekPack } from "../content/types";
 import { MaterialView } from "../components/MaterialView";
 import { ShadowTrainer } from "../components/ShadowTrainer";
-import { loadProgress, saveProgress, toggleSlot, type ProgressState } from "../progress/store";
+import { VocabList } from "../components/VocabList";
+import { loadProgress, saveProgress, setUnknown, toggleSlot, type ProgressState } from "../progress/store";
 
 const slotLabel: Record<SlotPlan["id"], string> = {
   morning: "早听",
@@ -58,6 +59,7 @@ export function TodayPage({ today = shanghaiToday() }: TodayPageProps) {
           onToggle={(taskId) =>
             setProgress((current) => toggleSlot(current, previewKey(session.week.id), taskId))
           }
+          onVocab={(id, isUnknown) => setProgress((current) => setUnknown(current, id, isUnknown))}
           progress={progress}
           week={session.week}
         />
@@ -85,7 +87,9 @@ export function TodayPage({ today = shanghaiToday() }: TodayPageProps) {
           }
           onSelect={setSlotId}
           onToggle={(id) => setProgress((current) => toggleSlot(current, day.date, id))}
+          onVocab={(id, isUnknown) => setProgress((current) => setUnknown(current, id, isUnknown))}
           review={progress.reviews[session.week.id] ?? ""}
+          unknown={progress.unknown}
           slot={activeSlot}
           week={session.week}
         />
@@ -102,12 +106,14 @@ function PreviewPanel({
   week,
   daysUntil,
   progress,
-  onToggle
+  onToggle,
+  onVocab
 }: {
   week: WeekPack;
   daysUntil: number;
   progress: ProgressState;
   onToggle: (taskId: string) => void;
+  onVocab: (id: string, isUnknown: boolean) => void;
 }) {
   const done = new Set(progress.slots[previewKey(week.id)] ?? []);
   const studyDays = week.days.filter((day) => day.kind === "study");
@@ -141,6 +147,15 @@ function PreviewPanel({
           </li>
         ))}
       </ol>
+      {studyDays.map((day) => (
+        <VocabList
+          heading={`${weekdayLabel(day.date)} · ${day.theme}`}
+          items={day.vocab}
+          key={day.date}
+          onChange={onVocab}
+          unknown={progress.unknown}
+        />
+      ))}
     </div>
   );
 }
@@ -153,16 +168,20 @@ function DayPanel({
   review,
   onSelect,
   onToggle,
-  onReview
+  onReview,
+  unknown,
+  onVocab
 }: {
   week: WeekPack;
   day: StudyDay;
   slot: SlotPlan;
   done: string[];
   review: string;
+  unknown: string[];
   onSelect: (slotId: SlotPlan["id"]) => void;
   onToggle: (slotId: string) => void;
   onReview: (text: string) => void;
+  onVocab: (id: string, isUnknown: boolean) => void;
 }) {
   const finished = new Set(done);
   const following = nextWeek(weeks, week);
@@ -186,6 +205,7 @@ function DayPanel({
           </button>
         ))}
       </div>
+      <VocabList items={day.vocab} onChange={onVocab} unknown={unknown} />
       <article className="panel">
         <div className="section-heading">
           <div>
@@ -209,16 +229,29 @@ function DayPanel({
           ))}
         </div>
         {slot.id === "preview" && following && (
-          <ol className="day-index">
+          <>
+            <ol className="day-index">
+              {following.days
+                .filter((item) => item.kind === "study")
+                .map((item) => (
+                  <li key={item.date}>
+                    <Link to={`/week?focus=${item.date}`}>{item.theme}</Link>
+                    <span>{item.objective}</span>
+                  </li>
+                ))}
+            </ol>
             {following.days
               .filter((item) => item.kind === "study")
               .map((item) => (
-                <li key={item.date}>
-                  <Link to={`/week?focus=${item.date}`}>{item.theme}</Link>
-                  <span>{item.objective}</span>
-                </li>
+                <VocabList
+                  heading={`${weekdayLabel(item.date)} · ${item.theme}`}
+                  items={item.vocab}
+                  key={item.date}
+                  onChange={onVocab}
+                  unknown={unknown}
+                />
               ))}
-          </ol>
+          </>
         )}
         {slot.id === "preview" && !following && (
           <p>下一周还没发布。先把本周跟读稿再讲一遍，不要改去听会议论文。</p>
@@ -234,6 +267,7 @@ function DayPanel({
             title="本周已经学过的词块"
           />
         )}
+        {slot.id === "review" && <Link to="/vocab">按周查看不认识的说法</Link>}
         {slot.id === "review" && (
           <label className="review-field">
             本周复盘

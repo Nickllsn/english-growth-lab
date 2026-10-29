@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 const links = [
   { to: "/", label: "今日" },
   { to: "/week", label: "本周" },
+  { to: "/vocab", label: "词汇" },
   { to: "/progress", label: "进度" },
   { to: "/roadmap", label: "路线" }
 ];

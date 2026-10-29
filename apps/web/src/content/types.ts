@@ -21,6 +21,17 @@ export interface Chunk {
   meaning: string;
 }
 
+export type VocabKind = "word" | "phrase" | "pattern";
+
+export interface VocabItem {
+  id: string;
+  kind: VocabKind;
+  text: string;
+  meaning: string;
+  example: string;
+  source: string;
+}
+
 export interface StudyDay {
   date: string;
   kind: "study" | "weekend";
@@ -30,6 +41,7 @@ export interface StudyDay {
   chunks: Chunk[];
   shadow: string[];
   speakPrompt: string;
+  vocab: VocabItem[];
 }
 
 export interface WeekPack {
