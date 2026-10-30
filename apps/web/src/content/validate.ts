@@ -80,7 +80,7 @@ export function validateWeek(week: WeekPack): string[] {
       const vocab = slot.vocab ?? [];
       const listening = day.kind === "study" && (slot.id === "morning" || slot.id === "noon" || slot.id === "evening");
       if (!listening && vocab.length > 0) at(`${day.date} ${slot.id} 不该有词汇`);
-      if (listening && vocab.length < 8) at(`${day.date} ${slot.id} 词汇太少`);
+      if (listening && vocab.length < 12) at(`${day.date} ${slot.id} 词汇太少`);
       if (listening) {
         const kinds = new Set(vocab.map((item) => item.kind));
         for (const kind of VOCAB_KINDS) {

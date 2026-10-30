@@ -24,7 +24,7 @@ describe("caption vocabulary", () => {
     expect(screen.queryByText("quality")).not.toBeInTheDocument();
     expect(screen.queryByText("struggle")).not.toBeInTheDocument();
     expect(screen.getByText(/不是字幕原句/)).toBeInTheDocument();
-    expect(screen.getByText(/接近六级/)).toBeInTheDocument();
+    expect(screen.getByText(/托福/)).toBeInTheDocument();
     expect(screen.getAllByText("可能不认识").length).toBeGreaterThan(0);
     expect(screen.getByRole("button", { name: "nutrients 认识" })).toHaveAttribute("aria-pressed", "false");
     expect(screen.getByRole("button", { name: "nutrients 不认识" })).toHaveAttribute("aria-pressed", "false");
