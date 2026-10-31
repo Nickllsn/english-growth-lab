@@ -58,7 +58,7 @@ describe("published weeks", () => {
             expect(slot.vocab).toEqual([]);
             continue;
           }
-          expect(slot.vocab.length).toBeGreaterThan(7);
+          expect(slot.vocab.length).toBeGreaterThan(11);
           expect(new Set(slot.vocab.map((item) => item.kind))).toEqual(new Set(["word", "phrase", "pattern"]));
           const ids = slot.vocab.map((item) => item.id);
           expect(new Set(ids).size).toBe(ids.length);

@@ -151,7 +151,7 @@ function PreviewPanel({
           </li>
         ))}
       </ol>
-      <p className="vocab-note">每个时段先列出按完整字幕或链接文档估出的进阶重点。标过之后，后面几天会按你点的不认识重估。</p>
+      <p className="vocab-note">每个时段先列出按完整字幕或链接文档估出的六级和更高阶重点。标过之后，后面几天会按你点的不认识重估。</p>
       {studyDays.map((day) => (
         <SlotPreviews day={day} key={day.date} onMark={onMark} progress={progress} />
       ))}
