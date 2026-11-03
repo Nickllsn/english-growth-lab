@@ -17,6 +17,12 @@ export interface SlotPlan {
   vocab: VocabItem[];
 }
 
+export interface ListenWindow {
+  episodeId: string;
+  start: number;
+  end: number;
+}
+
 export interface Chunk {
   text: string;
   meaning: string;
@@ -39,6 +45,8 @@ export interface StudyDay {
   kind: "study" | "weekend";
   theme: string;
   objective: string;
+  archived?: boolean;
+  listen?: ListenWindow;
   slots: SlotPlan[];
   chunks: Chunk[];
   shadow: string[];

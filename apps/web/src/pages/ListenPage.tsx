@@ -1,10 +1,20 @@
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { TranscriptPlayer } from "../components/TranscriptPlayer";
 import { changelogEpisodes, findEpisode } from "../content/changelog-episodes";
+import { addTerm, loadProgress, saveProgress, type ProgressState } from "../progress/store";
 
 export function ListenPage() {
   const { episodeId } = useParams();
+  const [params] = useSearchParams();
   const episode = findEpisode(episodeId);
+  const requested = Number(params.get("t") ?? "0");
+  const start = Number.isFinite(requested) && requested > 0 ? requested : 0;
+  const [progress, setProgress] = useState<ProgressState>(loadProgress);
+
+  useEffect(() => {
+    saveProgress(progress);
+  }, [progress]);
 
   if (!episode) {
     return (
@@ -13,9 +23,7 @@ export function ListenPage() {
           <div>
             <p className="eyebrow">Changelog · 点文字跳到音频</p>
             <h1>播客精听</h1>
-            <p>
-              每集只精听 5 到 10 分钟。点一段文字，音频从这段记录的时间开始。先不看字听一遍，再点开没听清的那几段。
-            </p>
+            <p>点一段文字会从对应时间播放。选中不认识的单词或短语，可以加入学习记录。</p>
           </div>
         </header>
         <div className="episode-grid">
@@ -44,7 +52,12 @@ export function ListenPage() {
         </div>
         <Link to="/listen">全部节目</Link>
       </header>
-      <TranscriptPlayer episode={episode} />
+      <TranscriptPlayer
+        episode={episode}
+        onAdd={(draft) => setProgress((current) => addTerm(current, draft))}
+        savedIds={new Set(progress.terms.map((term) => term.id))}
+        start={start}
+      />
     </section>
   );
 }

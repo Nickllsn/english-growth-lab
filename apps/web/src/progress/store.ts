@@ -1,16 +1,47 @@
+import { formatClock } from "../content/parse-transcript";
 import type { VocabItem, WeekPack } from "../content/types";
 
 const STORAGE_KEY = "egl.progress.v1";
+
+export interface LearningTerm {
+  id: string;
+  text: string;
+  episodeId: string;
+  episodeTitle: string;
+  start: number;
+  speaker: string | null;
+  sentence: string;
+  addedAt: string;
+}
+
+export interface TermDraft {
+  text: string;
+  episodeId: string;
+  episodeTitle: string;
+  start: number;
+  speaker: string | null;
+  sentence: string;
+}
 
 export interface ProgressState {
   slots: Record<string, string[]>;
   reviews: Record<string, string>;
   known: string[];
   unknown: string[];
+  terms: LearningTerm[];
 }
 
 export function emptyProgress(): ProgressState {
-  return { slots: {}, reviews: {}, known: [], unknown: [] };
+  return { slots: {}, reviews: {}, known: [], unknown: [], terms: [] };
+}
+
+export function termId(episodeId: string, text: string): string {
+  const normalized = text
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .replace(/^[^a-z0-9]+|[^a-z0-9]+$/g, "");
+  return `${episodeId}:${normalized}`;
 }
 
 function stringList(value: unknown): string[] {
@@ -27,7 +58,8 @@ export function loadProgress(): ProgressState {
       slots: parsed.slots ?? {},
       reviews: parsed.reviews ?? {},
       known: stringList(parsed.known),
-      unknown: stringList(parsed.unknown)
+      unknown: stringList(parsed.unknown),
+      terms: termList(parsed.terms)
     };
   } catch {
     return emptyProgress();
@@ -59,6 +91,30 @@ export function setMark(state: ProgressState, id: string, mark: "known" | "unkno
     else unknown.add(id);
   }
   return { ...state, known: [...known], unknown: [...unknown] };
+}
+
+export function addTerm(state: ProgressState, draft: TermDraft, addedAt = new Date().toISOString()): ProgressState {
+  const id = termId(draft.episodeId, draft.text);
+  if (!id.endsWith(":") && state.terms.some((term) => term.id === id)) return state;
+  if (id.endsWith(":")) return state;
+  return {
+    ...state,
+    terms: [...state.terms, { ...draft, id, addedAt }]
+  };
+}
+
+export function removeTerm(state: ProgressState, id: string): ProgressState {
+  return { ...state, terms: state.terms.filter((term) => term.id !== id) };
+}
+
+export function downloadProgress(progress: ProgressState): void {
+  const blob = new Blob([JSON.stringify(progress, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "english-progress.json";
+  link.click();
+  URL.revokeObjectURL(url);
 }
 
 export function isComplete(required: string[], done: string[] | undefined): boolean {
@@ -108,10 +164,16 @@ export function weekMarkdown(week: WeekPack, state: ProgressState): string {
   }
   lines.push("", "## 周末复盘", "", state.reviews[week.id]?.trim() || "（还没写）", "");
   lines.push("## 还不认识", "");
-  const missed = unknownItems(week, state);
-  if (missed.length === 0) lines.push("（没有标记不认识）", "");
-  else missed.forEach((item) => lines.push(`- ${item.text}：${item.meaning}`));
-  lines.push("");
+  const episodeIds = new Set(week.days.map((day) => day.listen?.episodeId).filter((id): id is string => Boolean(id)));
+  const terms = state.terms.filter((term) => episodeIds.has(term.episodeId));
+  if (terms.length === 0) lines.push("（没有从文字稿加入的生词）", "");
+  else {
+    terms.forEach((term) => {
+      lines.push(`- ${term.text}`);
+      lines.push(`  ${term.episodeTitle} ${formatClock(term.start)}：${term.sentence}`);
+    });
+    lines.push("");
+  }
   return lines.join("\n");
 }
 
@@ -129,6 +191,27 @@ export function parseProgress(raw: string): ProgressState {
     slots: parsed.slots,
     reviews: parsed.reviews,
     known: stringList(parsed.known),
-    unknown: stringList(parsed.unknown)
+    unknown: stringList(parsed.unknown),
+    terms: termList(parsed.terms)
   };
+}
+
+function termList(value: unknown): LearningTerm[] {
+  if (!Array.isArray(value)) return [];
+  return value.filter(isTerm);
+}
+
+function isTerm(value: unknown): value is LearningTerm {
+  if (!value || typeof value !== "object") return false;
+  const term = value as Partial<LearningTerm>;
+  return (
+    typeof term.id === "string" &&
+    typeof term.text === "string" &&
+    typeof term.episodeId === "string" &&
+    typeof term.episodeTitle === "string" &&
+    typeof term.start === "number" &&
+    (term.speaker === null || typeof term.speaker === "string") &&
+    typeof term.sentence === "string" &&
+    typeof term.addedAt === "string"
+  );
 }

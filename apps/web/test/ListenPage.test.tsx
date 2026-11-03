@@ -40,7 +40,7 @@ describe("ListenPage", () => {
       "https://cdn.changelog.com/uploads/podcast/475/the-changelog-475.mp3"
     );
 
-    fireEvent.click(screen.getByRole("button", { name: /跳到 4:02。Matthew Ahrens。Yeah\. I know the hosts/ }));
+    fireEvent.click(screen.getByRole("button", { name: "4:02" }));
 
     expect(audio.currentTime).toBe(242);
     expect(screen.getByRole("button", { name: "4:02" }).closest("li")).toHaveClass("active");

@@ -5,51 +5,37 @@ import { TodayPage } from "../src/pages/TodayPage";
 
 beforeEach(() => {
   localStorage.clear();
+  HTMLMediaElement.prototype.play = () => Promise.resolve();
 });
 
 describe("TodayPage", () => {
-  it("uses the weekend before 26 Oct to preview the first week", () => {
+  it("opens tomorrow's Changelog lesson before 4 Nov", () => {
     render(
       <MemoryRouter>
-        <TodayPage today="2026-10-24" />
+        <TodayPage today="2026-11-03" />
       </MemoryRouter>
     );
 
-    expect(screen.getByRole("heading", { name: "预习 自我介绍与分布式存储" })).toBeInTheDocument();
-    expect(screen.getByText("五个学习日的视频都能打开")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /用英语介绍你自己/ })).toBeInTheDocument();
-  });
-
-  it("shows the video and its study text on the page", () => {
-    render(
-      <MemoryRouter>
-        <TodayPage today="2026-10-27" />
-      </MemoryRouter>
-    );
-
-    fireEvent.click(screen.getByRole("tab", { name: "晚听" }));
-    expect(screen.getByTitle(/英文字幕/)).toHaveAttribute(
+    expect(screen.getByRole("heading", { name: "ZFS 要解决什么" })).toBeInTheDocument();
+    expect(screen.getByText(/新课从 2026-11-04 开始/)).toBeInTheDocument();
+    expect(screen.getByLabelText("Making the ZFS file system 音频")).toHaveAttribute(
       "src",
-      expect.stringContaining("cc_load_policy=1")
+      "https://cdn.changelog.com/uploads/podcast/475/the-changelog-475.mp3"
     );
-    expect(screen.getByText(/A database stores each row as bytes on a disk/)).toBeInTheDocument();
-    expect(screen.getByText(/row · bytes · block/)).toBeInTheDocument();
-    expect(screen.getByLabelText("英文朗读")).toHaveAttribute("src", expect.stringContaining("audio/disk-rows.mp3"));
   });
 
-  it("checks off the morning listen on the first study day", () => {
+  it("checks off the morning listen on the first podcast day", () => {
     render(
       <MemoryRouter>
-        <TodayPage today="2026-10-26" />
+        <TodayPage today="2026-11-04" />
       </MemoryRouter>
     );
 
-    expect(screen.getByRole("heading", { name: "用英语介绍你自己" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /6 Minute English/ })).toBeInTheDocument();
-    expect(screen.getByText(/这一集的逐字稿属于 BBC/)).toBeInTheDocument();
-    expect(screen.getByText(/I have been working as a software engineer for eight years/)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "ZFS 要解决什么" })).toBeInTheDocument();
+    expect(screen.queryByText(/新课从/)).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("checkbox", { name: "这一段做完了" }));
 
+    expect(localStorage.getItem("egl.progress.v1")).toContain("2026-11-04");
     expect(localStorage.getItem("egl.progress.v1")).toContain("morning");
   });
 });

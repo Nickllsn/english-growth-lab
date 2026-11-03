@@ -1,144 +1,74 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import { beforeEach, describe, expect, it } from "vitest";
-import { TodayPage } from "../src/pages/TodayPage";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { ListenPage } from "../src/pages/ListenPage";
 import { VocabPage } from "../src/pages/VocabPage";
-import { WeekPage } from "../src/pages/WeekPage";
-import { parseProgress, weekMarkdown } from "../src/progress/store";
-import { weeks } from "../src/content/load";
+import { acceptSelection } from "../src/content/selection";
+import { addTerm, emptyProgress, termId } from "../src/progress/store";
 
 beforeEach(() => {
   localStorage.clear();
+  HTMLMediaElement.prototype.play = () => Promise.resolve();
 });
 
-describe("caption vocabulary", () => {
-  it("shows the morning baseline and stores a mark", () => {
-    render(
-      <MemoryRouter>
-        <TodayPage today="2026-10-26" />
-      </MemoryRouter>
-    );
-
-    expect(screen.getAllByRole("button", { name: / 不认识$/ }).length).toBeGreaterThan(7);
-    expect(screen.getByText("nutrients")).toBeInTheDocument();
-    expect(screen.queryByText("quality")).not.toBeInTheDocument();
-    expect(screen.queryByText("struggle")).not.toBeInTheDocument();
-    expect(screen.getByText(/不是字幕原句/)).toBeInTheDocument();
-    expect(screen.getByText(/托福/)).toBeInTheDocument();
-    expect(screen.getAllByText("可能不认识").length).toBeGreaterThan(0);
-    expect(screen.getByRole("button", { name: "nutrients 认识" })).toHaveAttribute("aria-pressed", "false");
-    expect(screen.getByRole("button", { name: "nutrients 不认识" })).toHaveAttribute("aria-pressed", "false");
-
-    fireEvent.click(screen.getByRole("button", { name: "nutrients 不认识" }));
-
-    const saved = JSON.parse(localStorage.getItem("egl.progress.v1") ?? "{}") as { unknown: string[] };
-    expect(saved.unknown).toContain("2026-10-26-morning-nutrients");
-    expect(screen.getByRole("button", { name: "nutrients 不认识" })).toHaveAttribute("aria-pressed", "true");
-
-    fireEvent.click(screen.getByRole("button", { name: "nutrients 认识" }));
-    const cleared = JSON.parse(localStorage.getItem("egl.progress.v1") ?? "{}") as { known: string[]; unknown: string[] };
-    expect(cleared.unknown).not.toContain("2026-10-26-morning-nutrients");
-    expect(cleared.known).toContain("2026-10-26-morning-nutrients");
+describe("learning terms", () => {
+  it("keeps a short word or phrase and rejects a sentence", () => {
+    expect(acceptSelection("  checksums, ")).toBe("checksums");
+    expect(acceptSelection("copy-on-write")).toBe("copy-on-write");
+    expect(acceptSelection("the end of the suffering of storage")).toBeNull();
   });
 
-  it("lets the weekend preview mark next week's items", () => {
-    render(
-      <MemoryRouter>
-        <TodayPage today="2026-10-24" />
-      </MemoryRouter>
-    );
+  it("stores the sentence and episode with the selected word", () => {
+    const next = addTerm(emptyProgress(), {
+      text: "checksums",
+      episodeId: "475",
+      episodeTitle: "Making the ZFS file system",
+      start: 242,
+      speaker: "Matthew Ahrens",
+      sentence: "And you need to know that the data is correct, so you need checksums."
+    }, "2026-11-04T02:00:00.000Z");
 
-    fireEvent.click(screen.getAllByRole("button", { name: "nutrients 不认识" })[0]);
-    expect(JSON.parse(localStorage.getItem("egl.progress.v1") ?? "{}")).toMatchObject({
-      unknown: ["2026-10-26-morning-nutrients"]
-    });
+    expect(next.terms[0].id).toBe(termId("475", "checksums"));
+    expect(addTerm(next, next.terms[0]).terms).toHaveLength(1);
   });
 
-  it("shows the week's items before the day starts", () => {
-    render(
-      <MemoryRouter initialEntries={["/week?focus=2026-10-27"]}>
-        <WeekPage today="2026-10-26" />
+  it("adds a selected transcript word and lists it for export", () => {
+    const { unmount } = render(
+      <MemoryRouter initialEntries={["/listen/475"]}>
+        <Routes>
+          <Route path="/listen/:episodeId" element={<ListenPage />} />
+        </Routes>
       </MemoryRouter>
     );
+    const paragraph = screen.getByText(/Yeah\. I know the hosts of that podcast/).closest("div");
+    expect(paragraph).toBeTruthy();
+    const range = {
+      getBoundingClientRect: () => ({ left: 12, bottom: 24, top: 0, right: 40, width: 28, height: 16 })
+    };
+    vi.spyOn(window, "getSelection").mockReturnValue({
+      isCollapsed: false,
+      rangeCount: 1,
+      toString: () => "podcast",
+      anchorNode: paragraph,
+      getRangeAt: () => range,
+      removeAllRanges: () => undefined
+    } as unknown as Selection);
 
-    expect(screen.getAllByText("primary key").length).toBeGreaterThan(0);
-    fireEvent.click(screen.getAllByRole("button", { name: "primary key 不认识" })[0]);
-    expect(JSON.parse(localStorage.getItem("egl.progress.v1") ?? "{}")).toMatchObject({
-      unknown: ["2026-10-27-morning-primary-key"]
-    });
-  });
-
-  it("groups unknown items by week and can clear a mark", () => {
-    localStorage.setItem(
-      "egl.progress.v1",
-      JSON.stringify({
-        slots: {},
-        reviews: {},
-        unknown: ["2026-10-26-morning-nutrients", "2026-11-02-morning-page-cache"]
-      })
-    );
+    fireEvent.pointerUp(paragraph!);
+    fireEvent.click(screen.getByRole("button", { name: "加入不认识" }));
+    unmount();
 
     render(
       <MemoryRouter>
         <VocabPage />
       </MemoryRouter>
     );
-
-    expect(screen.getByRole("heading", { name: "自我介绍与分布式存储" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Linux 性能英语" })).toBeInTheDocument();
-    expect(screen.getByText("nutrients")).toBeInTheDocument();
-    expect(screen.getByText("page cache")).toBeInTheDocument();
-    expect(screen.queryByText("saturated fats")).not.toBeInTheDocument();
-
-    fireEvent.click(screen.getByRole("button", { name: "nutrients 认识" }));
-    expect(screen.queryByText("nutrients")).not.toBeInTheDocument();
-    expect(JSON.parse(localStorage.getItem("egl.progress.v1") ?? "{}")).toMatchObject({
-      unknown: ["2026-11-02-morning-page-cache"]
-    });
-  });
-
-  it("keeps an older progress file and includes unknown items in the week note", () => {
-    expect(parseProgress(JSON.stringify({ slots: { "2026-10-26": ["morning"] }, reviews: {} }))).toEqual({
-      slots: { "2026-10-26": ["morning"] },
-      reviews: {},
-      known: [],
-      unknown: []
-    });
-
-    const week = weeks[0];
-    const note = weekMarkdown(week, {
-      slots: {},
-      reviews: {},
-      known: [],
-      unknown: ["2026-10-26-morning-nutrients"]
-    });
-    expect(note).toContain("还不认识");
-    expect(note).toContain("nutrients");
-  });
-
-  it("estimates a later item after a known and an unknown mark", () => {
-    localStorage.setItem(
-      "egl.progress.v1",
-      JSON.stringify({
-        slots: {},
-        reviews: {},
-        known: ["2026-10-26-morning-associated"],
-        unknown: ["2026-10-26-morning-magic-bullet"]
-      })
-    );
-
-    render(
-      <MemoryRouter>
-        <VocabPage />
-      </MemoryRouter>
-    );
-
-    fireEvent.click(screen.getByRole("button", { name: "可能不认识" }));
-    const morning = screen.getByRole("heading", { name: "周一 10-26 · 早听" }).closest("section");
-    expect(morning).not.toBeNull();
-    const list = within(morning as HTMLElement);
-    expect(list.getByText("nutrients").closest("li")).toHaveTextContent("可能不认识");
-    fireEvent.click(list.getByRole("button", { name: "只看可能不认识" }));
-    expect(list.getByText("long-term").closest("li")).toHaveTextContent("可能认识");
+    expect(screen.getByText("podcast")).toBeInTheDocument();
+    const saved = JSON.parse(localStorage.getItem("egl.progress.v1") ?? "{}") as {
+      terms: { text: string; episodeId: string; sentence: string; start: number }[];
+    };
+    expect(saved.terms[0]).toMatchObject({ text: "podcast", episodeId: "475" });
+    expect(saved.terms[0].sentence.length).toBeGreaterThan(10);
+    expect(saved.terms[0].start).toBeGreaterThan(0);
   });
 });

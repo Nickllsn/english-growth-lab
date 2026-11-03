@@ -1,9 +1,22 @@
 import type { MaterialLink } from "../content/types";
-import { pageReadings, youtubeEmbed } from "../content/page-text";
+
+function youtubeEmbed(url: string): { id: string; start: number } | undefined {
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    return undefined;
+  }
+  const host = parsed.hostname.replace(/^www\./, "");
+  const id = host === "youtu.be" ? parsed.pathname.slice(1) : parsed.searchParams.get("v");
+  if (!id || (host !== "youtube.com" && host !== "youtu.be" && host !== "m.youtube.com")) return undefined;
+  const raw = parsed.searchParams.get("t") ?? parsed.searchParams.get("start") ?? "0";
+  const start = Number(raw.replace(/s$/, ""));
+  return { id, start: Number.isFinite(start) ? start : 0 };
+}
 
 export function MaterialView({ link, showCaptions = false }: { link: MaterialLink; showCaptions?: boolean }) {
   const video = youtubeEmbed(link.url);
-  const reading = pageReadings[link.url];
   const captionFlag = showCaptions ? "1" : "0";
 
   return (
@@ -16,30 +29,6 @@ export function MaterialView({ link, showCaptions = false }: { link: MaterialLin
             src={`https://www.youtube-nocookie.com/embed/${video.id}?start=${video.start}&cc_load_policy=${captionFlag}&cc_lang_pref=en&rel=0`}
             title={`${link.title}，英文字幕`}
           />
-        </div>
-      )}
-      {reading && (
-        <div className="page-reading">
-          <h3>{reading.label}</h3>
-          {reading.keywords.length > 0 && (
-            <p className="keyword-line">
-              <span>关键词</span>
-              {reading.keywords.join(" · ")}
-            </p>
-          )}
-          {reading.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-          {reading.attribution && <p className="attribution">{reading.attribution}</p>}
-          <div className="narration">
-            <span>英文朗读</span>
-            <audio
-              aria-label="英文朗读"
-              controls
-              preload="none"
-              src={`${import.meta.env.BASE_URL}audio/${reading.audio}`}
-            />
-          </div>
         </div>
       )}
       <a className="material-link" href={link.url} rel="noreferrer" target="_blank">

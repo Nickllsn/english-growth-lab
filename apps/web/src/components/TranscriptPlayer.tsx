@@ -1,21 +1,44 @@
 import { useEffect, useRef, useState } from "react";
 import type { ChangelogEpisode } from "../content/changelog-episodes";
 import { activeCueIndex, formatClock, parseTranscript } from "../content/parse-transcript";
+import { acceptSelection, sentenceAround } from "../content/selection";
+import { termId, type TermDraft } from "../progress/store";
 
 const rates = ["0.75", "1", "1.25"];
 
-function cueLabel(start: number, speaker: string | null, text: string): string {
-  const who = speaker ? `${speaker}。` : "";
-  return `跳到 ${formatClock(start)}。${who}${text}`;
+interface SelectionMenu {
+  text: string | null;
+  message: string;
+  x: number;
+  y: number;
+  draft?: TermDraft;
 }
 
-export function TranscriptPlayer({ episode }: { episode: ChangelogEpisode }) {
+export function TranscriptPlayer({
+  episode,
+  start = 0,
+  end,
+  savedIds,
+  onAdd
+}: {
+  episode: ChangelogEpisode;
+  start?: number;
+  end?: number;
+  savedIds?: Set<string>;
+  onAdd?: (draft: TermDraft) => void;
+}) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const activeRef = useRef<HTMLLIElement | null>(null);
   const followRef = useRef(false);
-  const cues = parseTranscript(episode.transcript);
-  const [seconds, setSeconds] = useState(0);
+  const allCues = parseTranscript(episode.transcript);
+  const windowEnd = end ?? Number.POSITIVE_INFINITY;
+  const cues = allCues.filter((cue, index) => {
+    const next = allCues[index + 1]?.start ?? Number.POSITIVE_INFINITY;
+    return cue.start < windowEnd && next > start;
+  });
+  const [seconds, setSeconds] = useState(start);
   const [rate, setRate] = useState("1");
+  const [menu, setMenu] = useState<SelectionMenu | null>(null);
   const active = activeCueIndex(cues, seconds);
 
   useEffect(() => {
@@ -24,19 +47,58 @@ export function TranscriptPlayer({ episode }: { episode: ChangelogEpisode }) {
     node.scrollIntoView({ block: "nearest" });
   }, [active]);
 
-  function seek(start: number) {
+  function seek(time: number) {
     const audio = audioRef.current;
     if (!audio) return;
     followRef.current = true;
     const apply = () => {
-      audio.currentTime = start;
-      setSeconds(start);
+      audio.currentTime = time;
+      setSeconds(time);
       void audio.play()?.catch(() => undefined);
     };
     apply();
     if (audio.readyState < 1) {
       audio.addEventListener("loadedmetadata", apply, { once: true });
     }
+  }
+
+  function capture(paragraph: HTMLElement, cueStart: number, speaker: string | null, sentence: string) {
+    if (!onAdd) return;
+    const selection = window.getSelection();
+    if (!selection || selection.isCollapsed || selection.rangeCount === 0) {
+      setMenu(null);
+      return;
+    }
+    const node = selection.anchorNode;
+    if (!node || (node !== paragraph && !paragraph.contains(node))) return;
+    const chosen = acceptSelection(selection.toString());
+    const rect = selection.getRangeAt(0).getBoundingClientRect();
+    if (!chosen) {
+      setMenu({
+        text: null,
+        message: "只选一个单词或短语，最多 6 个词",
+        x: rect.left,
+        y: rect.bottom
+      });
+      return;
+    }
+    const id = termId(episode.id, chosen);
+    setMenu({
+      text: chosen,
+      message: savedIds?.has(id) ? "已经在学习记录里" : "加入不认识",
+      x: rect.left,
+      y: rect.bottom,
+      draft: savedIds?.has(id)
+        ? undefined
+        : {
+            text: chosen,
+            episodeId: episode.id,
+            episodeTitle: episode.title,
+            start: cueStart,
+            speaker,
+            sentence: sentenceAround(sentence, chosen)
+          }
+    });
   }
 
   return (
@@ -80,9 +142,12 @@ export function TranscriptPlayer({ episode }: { episode: ChangelogEpisode }) {
             followRef.current = false;
           }}
         />
-        <p className="listen-note">
-          点下面某一段文字，就会从这段开头的时间播放。同一个时间下面的几段话，跳到的是这一个时间。文字稿大约每几分钟才标一次。
-        </p>
+        <div className="listen-player-row">
+          <button className="secondary-button" type="button" onClick={() => seek(start)}>
+            从 {formatClock(start)} 播放
+          </button>
+          <p className="listen-note">选中不认识的单词或短语，再点「加入不认识」。</p>
+        </div>
       </div>
       <ol className="cue-list">
         {cues.map((cue, index) => (
@@ -97,20 +162,45 @@ export function TranscriptPlayer({ episode }: { episode: ChangelogEpisode }) {
               {formatClock(cue.start)}
             </button>
             {cue.paragraphs.map((paragraph, paragraphIndex) => (
-              <button
+              <div
                 className="cue-paragraph"
                 key={`${cue.start}-${paragraphIndex}`}
-                type="button"
-                aria-label={cueLabel(cue.start, paragraph.speaker, paragraph.text)}
-                onClick={() => seek(cue.start)}
+                onClick={() => {
+                  const selection = window.getSelection();
+                  if (selection && !selection.isCollapsed) return;
+                  seek(cue.start);
+                }}
+                onPointerUp={(event) =>
+                  capture(event.currentTarget, cue.start, paragraph.speaker, paragraph.text)
+                }
               >
                 {paragraph.speaker && <span className="cue-speaker">{paragraph.speaker}</span>}
                 {paragraph.text}
-              </button>
+              </div>
             ))}
           </li>
         ))}
       </ol>
+      {menu && (
+        <div className="select-menu" style={{ left: menu.x, top: menu.y + 8 }}>
+          {menu.text && <strong>{menu.text}</strong>}
+          {menu.draft ? (
+            <button
+              type="button"
+              onMouseDown={(event) => event.preventDefault()}
+              onClick={() => {
+                if (menu.draft) onAdd?.(menu.draft);
+                setMenu(null);
+                window.getSelection()?.removeAllRanges();
+              }}
+            >
+              {menu.message}
+            </button>
+          ) : (
+            <span>{menu.message}</span>
+          )}
+        </div>
+      )}
       <p className="listen-note attribution">
         文字稿版权归 Changelog Media LLC，按 CC BY-SA 4.0 使用，这里是原文，没有改写。音频由浏览器向 Changelog
         的服务器请求，没有放进这个仓库。

@@ -11,9 +11,9 @@
     {
       "id": "m1",
       "title": "第 1 个月 · 重建基础",
-      "when": "2026-10-26 起的四周",
-      "goal": "高频句型能脱口而出，听得懂清楚的技术讲解，能用英语讲自己的工作和 Ceph。",
-      "materials": "BBC 6 Minute English、Hussein Nasser、Ceph 文档、Brendan Gregg 的清楚讲解。不听 USENIX 论文演讲。"
+      "when": "2026-11-04 起",
+      "goal": "听得懂工程师访谈，能从文字稿里积累自己的生词，并用英语复述一段技术讨论。",
+      "materials": "The Changelog、Ship It、Go Time。每天精听 20 分钟，生词从文字稿里选。不听 USENIX 论文演讲。"
     },
     {
       "id": "m2",
