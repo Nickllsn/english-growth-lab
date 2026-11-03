@@ -50,7 +50,7 @@ export function RoadmapPage({ today = shanghaiToday() }: { today?: string }) {
           ))}
         </ul>
         <p>
-          下一周要在周五放进 content/weeks，周六才能预习。材料用免费链接，当天凑齐文本、音频和视频；跟读稿是原创短句，不复制演讲全文。
+          下一周要在周五放进 content/weeks，周六才能预习。现在的材料是 Changelog 播客：文字稿在页面里，音频从官网播放。生词由你在文字稿里选。
         </p>
       </section>
     </section>

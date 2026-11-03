@@ -13,30 +13,30 @@ describe("ProgressPage", () => {
     localStorage.setItem(
       "egl.progress.v1",
       JSON.stringify({
-        slots: { "2026-10-26": ["morning", "noon", "evening", "home"] },
+        slots: { "2026-11-04": ["morning", "noon", "evening", "home"] },
         reviews: {}
       })
     );
 
-    render(<ProgressPage today="2026-10-26" />);
+    render(<ProgressPage today="2026-11-04" />);
 
-    expect(screen.getByText("1 / 10")).toBeInTheDocument();
+    expect(screen.getByText("1 / 8")).toBeInTheDocument();
     expect(screen.getByText("1 天")).toBeInTheDocument();
-    expect(screen.getByLabelText("2026-10-26：已完成")).toBeInTheDocument();
+    expect(screen.getByLabelText("2026-11-04：已完成")).toBeInTheDocument();
   });
 
   it("edits a week review into the progress json", () => {
-    render(<ProgressPage today="2026-10-31" />);
+    render(<ProgressPage today="2026-11-08" />);
 
-    fireEvent.change(screen.getByRole("textbox", { name: "2026-W44 复盘" }), {
-      target: { value: "I can explain Ceph." }
+    fireEvent.change(screen.getByRole("textbox", { name: "2026-W45 复盘" }), {
+      target: { value: "I can explain ZFS." }
     });
 
     const saved = JSON.parse(localStorage.getItem("egl.progress.v1") ?? "{}") as {
       reviews: Record<string, string>;
     };
-    expect(saved.reviews["2026-W44"]).toBe("I can explain Ceph.");
-    expect(screen.getByRole("textbox", { name: "2026-W44 复盘" })).toHaveValue("I can explain Ceph.");
+    expect(saved.reviews["2026-W45"]).toBe("I can explain ZFS.");
+    expect(screen.getByRole("textbox", { name: "2026-W45 复盘" })).toHaveValue("I can explain ZFS.");
   });
 
   it("restores an imported review into the editor", async () => {
@@ -56,19 +56,19 @@ describe("ProgressPage", () => {
   });
 
   it("shows the progress-page review on Sunday", () => {
-    const { unmount } = render(<ProgressPage today="2026-11-01" />);
-    fireEvent.change(screen.getByRole("textbox", { name: "2026-W44 复盘" }), {
-      target: { value: "I can explain Ceph." }
+    const { unmount } = render(<ProgressPage today="2026-11-08" />);
+    fireEvent.change(screen.getByRole("textbox", { name: "2026-W45 复盘" }), {
+      target: { value: "I can explain ZFS." }
     });
     unmount();
 
     render(
       <MemoryRouter>
-        <TodayPage today="2026-11-01" />
+        <TodayPage today="2026-11-08" />
       </MemoryRouter>
     );
     fireEvent.click(screen.getByRole("tab", { name: "复盘" }));
 
-    expect(screen.getByRole("textbox", { name: "本周复盘" })).toHaveValue("I can explain Ceph.");
+    expect(screen.getByRole("textbox", { name: "本周复盘" })).toHaveValue("I can explain ZFS.");
   });
 });

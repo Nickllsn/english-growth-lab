@@ -1,13 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { allVocab, weeks } from "../content/load";
+import { weeks } from "../content/load";
+import { findEpisode } from "../content/changelog-episodes";
 import { resolveSession, shanghaiToday, weekdayLabel } from "../content/schedule";
 import { MaterialView } from "../components/MaterialView";
-import { VocabList } from "../components/VocabList";
+import { TranscriptPlayer } from "../components/TranscriptPlayer";
 import type { SlotPlan, StudyDay } from "../content/types";
-import { loadProgress, saveProgress, setMark, type ProgressState } from "../progress/store";
-
-const catalog = allVocab();
+import { addTerm, loadProgress, saveProgress, type ProgressState } from "../progress/store";
 
 const slotLabel: Record<SlotPlan["id"], string> = {
   morning: "早听",
@@ -54,10 +53,9 @@ export function WeekPage({ today = shanghaiToday() }: { today?: string }) {
           <DayCard
             day={day}
             key={day.date}
-            known={progress.known}
-            onMark={(id, mark) => setProgress((current) => setMark(current, id, mark))}
+            onAdd={(draft) => setProgress((current) => addTerm(current, draft))}
             open={day.date === (focus ?? today)}
-            unknown={progress.unknown}
+            savedIds={new Set(progress.terms.map((term) => term.id))}
           />
         ))}
       </div>
@@ -68,15 +66,13 @@ export function WeekPage({ today = shanghaiToday() }: { today?: string }) {
 function DayCard({
   day,
   open,
-  known,
-  unknown,
-  onMark
+  savedIds,
+  onAdd
 }: {
   day: StudyDay;
   open: boolean;
-  known: string[];
-  unknown: string[];
-  onMark: (id: string, mark: "known" | "unknown") => void;
+  savedIds: Set<string>;
+  onAdd: (draft: Parameters<typeof addTerm>[1]) => void;
 }) {
   const detailsRef = useRef<HTMLDetailsElement>(null);
 
@@ -90,22 +86,20 @@ function DayCard({
         {weekdayLabel(day.date)} {day.date.slice(5)} · {day.theme}
       </summary>
       <p>{day.objective}</p>
+      {day.listen && findEpisode(day.listen.episodeId) && (
+        <TranscriptPlayer
+          end={day.listen.end}
+          episode={findEpisode(day.listen.episodeId)!}
+          onAdd={onAdd}
+          savedIds={savedIds}
+          start={day.listen.start}
+        />
+      )}
       {day.slots.map((slot) => (
         <section key={slot.id}>
           <h2>
             {slotLabel[slot.id]} · {slot.place} · {slot.minutes} 分钟 · {slot.title}
           </h2>
-          {slot.vocab.length > 0 && (
-            <VocabList
-              catalog={catalog}
-              heading={`${slotLabel[slot.id]} · 进阶重点`}
-              items={slot.vocab}
-              known={known}
-              onMark={onMark}
-              showNote={slot.id === "morning"}
-              unknown={unknown}
-            />
-          )}
           <ol className="step-list">
             {slot.steps.map((step) => (
               <li key={step}>{step}</li>

@@ -1,7 +1,5 @@
-import { pageReadings } from "./page-text";
-import type { StudyDay, VocabKind, WeekPack } from "./types";
+import type { StudyDay, WeekPack } from "./types";
 
-const VOCAB_KINDS: VocabKind[] = ["word", "phrase", "pattern"];
 const STUDY_SLOTS = ["morning", "noon", "evening", "home"] as const;
 const WEEKEND_SLOTS = ["preview", "review"] as const;
 const FORMATS = ["text", "audio", "video"] as const;
@@ -22,13 +20,6 @@ function addDays(iso: string, days: number): string {
   const date = new Date(Date.UTC(year, month - 1, day));
   date.setUTCDate(date.getUTCDate() + days);
   return date.toISOString().slice(0, 10);
-}
-
-function contentWords(text: string): string[] {
-  return text
-    .toLowerCase()
-    .split(/[^a-z0-9'-]+/)
-    .filter((word) => word.length >= 3);
 }
 
 function dayFormats(day: StudyDay): Set<string> {
@@ -58,64 +49,37 @@ export function validateWeek(week: WeekPack): string[] {
       at(`${day.date} 的时段应为 ${expectedSlots.join("、")}`);
     }
 
+    if (day.archived && day.listen) at(`${day.date} 撤下的日子不该再排播客`);
+
     for (const slot of day.slots) {
       if (slot.steps.length < 2) at(`${day.date} ${slot.id} 至少两步`);
-      if (day.kind === "study" && slot.id !== "home" && slot.minutes !== 20) {
+      if (!day.archived && day.kind === "study" && slot.id !== "home" && slot.minutes !== 20) {
         at(`${day.date} ${slot.id} 需要 20 分钟`);
       }
-      if (slot.id === "home" && (slot.minutes < 10 || slot.minutes > 20)) {
+      if (!day.archived && slot.id === "home" && (slot.minutes < 10 || slot.minutes > 20)) {
         at(`${day.date} 跟读需要 10 到 20 分钟`);
       }
+      if ((slot.vocab ?? []).length > 0) at(`${day.date} ${slot.id} 不再预放词表`);
       for (const link of slot.links) {
         if (!link.url.startsWith("https://")) at(`${day.date} 链接需要 https`);
         if (link.formats.length === 0) at(`${day.date} ${link.title} 缺少格式`);
-        const reading = pageReadings[link.url];
-        if (!reading) at(`${day.date} 缺少页面文本：${link.url}`);
-        else if (!/^[a-z0-9-]+\.mp3$/.test(reading.audio)) at(`${day.date} 朗读文件名无效：${link.url}`);
       }
     }
 
-    const seenText = new Map<string, string>();
-    for (const slot of day.slots) {
-      const vocab = slot.vocab ?? [];
-      const listening = day.kind === "study" && (slot.id === "morning" || slot.id === "noon" || slot.id === "evening");
-      if (!listening && vocab.length > 0) at(`${day.date} ${slot.id} 不该有词汇`);
-      if (listening && vocab.length < 12) at(`${day.date} ${slot.id} 词汇太少`);
-      if (listening) {
-        const kinds = new Set(vocab.map((item) => item.kind));
-        for (const kind of VOCAB_KINDS) {
-          if (!kinds.has(kind)) at(`${day.date} ${slot.id} 词汇需要包含${kind}`);
-        }
+    if (day.archived) return;
+
+    if (day.listen) {
+      if (!day.listen.episodeId.trim()) at(`${day.date} 缺少节目`);
+      if (!(day.listen.start < day.listen.end)) at(`${day.date} 收听区间无效`);
+      if (day.shadow.length < 6 || day.shadow.length > 10) at(`${day.date} 跟读稿需要 6 到 10 句`);
+      if (!day.speakPrompt.trim()) at(`${day.date} 缺少开口问题`);
+      if (!dayFormats(day).has("text") || !dayFormats(day).has("audio")) {
+        at(`${day.date} 需要文本和音频`);
       }
-      const seen = new Set<string>();
-      for (const item of vocab) {
-        if (seen.has(item.id)) at(`${day.date} ${slot.id} 词汇编号重复：${item.id}`);
-        seen.add(item.id);
-        const previous = seenText.get(item.id);
-        if (previous && previous !== item.text) at(`${day.date} 同一个编号对应了不同的词：${item.id}`);
-        seenText.set(item.id, item.text);
-        if (!item.id.startsWith(`${day.date}-`)) at(`${day.date} 词汇编号要以日期开头：${item.id}`);
-        if (!VOCAB_KINDS.includes(item.kind)) at(`${day.date} 词汇类型无效：${item.text}`);
-        if (item.level !== 1 && item.level !== 2 && item.level !== 3) at(`${day.date} 难度无效：${item.text}`);
-        if (item.text.split(/\s+/).length > 6) at(`${day.date} 词汇太长：${item.text}`);
-        if (!/[\u4e00-\u9fff]/.test(item.meaning)) at(`${day.date} 词汇缺少中文：${item.text}`);
-        if (/[\u4e00-\u9fff]/.test(item.example)) at(`${day.date} 例句要是英语：${item.text}`);
-        if (item.example.split(/\s+/).length > 18) at(`${day.date} 例句太长：${item.text}`);
-        if (!item.source.trim()) at(`${day.date} 词汇缺少来源：${item.text}`);
-        const example = item.example.toLowerCase();
-        for (const word of contentWords(item.text)) {
-          if (!example.includes(word)) at(`${day.date} 例句没有用到 ${item.text}`);
-        }
-      }
+      return;
     }
 
     if (day.kind === "study") {
-      if (day.chunks.length < 5 || day.chunks.length > 8) {
-        at(`${day.date} 词块需要 5 到 8 个`);
-      }
-      if (day.shadow.length < 6 || day.shadow.length > 10) {
-        at(`${day.date} 跟读稿需要 6 到 10 句`);
-      }
       if (!day.speakPrompt.trim()) at(`${day.date} 缺少开口问题`);
       for (const format of FORMATS) {
         if (!dayFormats(day).has(format)) at(`${day.date} 缺少${format}材料`);

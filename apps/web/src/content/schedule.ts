@@ -69,3 +69,9 @@ export function nextWeek(weeks: WeekPack[], current: WeekPack): WeekPack | undef
 export function previousStudyDays(week: WeekPack, date: string): StudyDay[] {
   return week.days.filter((day) => day.kind === "study" && day.date < date);
 }
+
+export function nextListenDay(weeks: WeekPack[], after: string): StudyDay | undefined {
+  return sortedWeeks(weeks)
+    .flatMap((week) => week.days)
+    .find((day) => day.listen && day.date > after);
+}

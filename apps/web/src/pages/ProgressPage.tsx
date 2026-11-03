@@ -6,6 +6,7 @@ import { StreakCalendar } from "../components/StreakCalendar";
 import {
   completedDates,
   currentStreak,
+  downloadProgress,
   loadProgress,
   parseProgress,
   saveProgress,
@@ -26,7 +27,7 @@ export function ProgressPage({ today = shanghaiToday() }: { today?: string }) {
   const [progress, setProgress] = useState<ProgressState>(loadProgress);
   const [message, setMessage] = useState("");
   const done = completedDates(weeks, progress);
-  const studyDays = weeks.flatMap((week) => week.days.filter((day) => day.kind === "study"));
+  const studyDays = weeks.flatMap((week) => week.days.filter((day) => day.kind === "study" && !day.archived));
   const finishedStudyDays = studyDays.filter((day) => done.has(day.date)).length;
 
   const update = (next: ProgressState) => {
@@ -34,15 +35,7 @@ export function ProgressPage({ today = shanghaiToday() }: { today?: string }) {
     saveProgress(next);
   };
 
-  const exportFile = () => {
-    const blob = new Blob([JSON.stringify(progress, null, 2)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "english-progress.json";
-    link.click();
-    URL.revokeObjectURL(url);
-  };
+  const exportFile = () => downloadProgress(progress);
 
   const importFile = async (file: File | undefined) => {
     if (!file) return;
@@ -87,7 +80,9 @@ export function ProgressPage({ today = shanghaiToday() }: { today?: string }) {
           </label>
         </div>
         {message && <p className="success-message">{message}</p>}
-        <p className="save-note">导出的 english-progress.json 里有打卡 slots、每周复盘 reviews、认识的说法 known，还有不认识的说法 unknown。导入会写回复盘框和词汇页。</p>
+        <p className="save-note">
+          导出的 english-progress.json 里有打卡、复盘，以及 terms。terms 的每一条有你选的词、所在原句 sentence、节目 episodeId、时间 start。把这个文件发回来，就可以按那一句说明用法。
+        </p>
       </section>
       {weeks.map((week) => (
         <section className="panel" key={week.id}>
