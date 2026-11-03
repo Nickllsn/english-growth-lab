@@ -2,6 +2,10 @@ import episode475 from "../../../../content/changelog/the-changelog-475.md?raw";
 import episode592 from "../../../../content/changelog/the-changelog-592.md?raw";
 import episode84 from "../../../../content/changelog/ship-it-84.md?raw";
 import episode156 from "../../../../content/changelog/go-time-156.md?raw";
+import timings475 from "../../../../content/changelog/timings/475.json";
+import timings592 from "../../../../content/changelog/timings/592.json";
+import timings84 from "../../../../content/changelog/timings/shipit-84.json";
+import timings156 from "../../../../content/changelog/timings/gotime-156.json";
 
 export interface ChangelogEpisode {
   id: string;
@@ -13,6 +17,7 @@ export interface ChangelogEpisode {
   audioUrl: string;
   transcriptUrl: string;
   transcript: string;
+  cueStarts?: readonly number[];
 }
 
 export const changelogEpisodes: ChangelogEpisode[] = [
@@ -26,7 +31,8 @@ export const changelogEpisodes: ChangelogEpisode[] = [
     audioUrl: "https://cdn.changelog.com/uploads/podcast/475/the-changelog-475.mp3",
     transcriptUrl:
       "https://github.com/thechangelog/transcripts/blob/master/podcast/the-changelog-475.md",
-    transcript: episode475
+    transcript: episode475,
+    cueStarts: timings475.starts
   },
   {
     id: "592",
@@ -38,7 +44,8 @@ export const changelogEpisodes: ChangelogEpisode[] = [
     audioUrl: "https://cdn.changelog.com/uploads/podcast/592/the-changelog-592.mp3",
     transcriptUrl:
       "https://github.com/thechangelog/transcripts/blob/master/podcast/the-changelog-592.md",
-    transcript: episode592
+    transcript: episode592,
+    cueStarts: timings592.starts
   },
   {
     id: "shipit-84",
@@ -49,7 +56,8 @@ export const changelogEpisodes: ChangelogEpisode[] = [
     pageUrl: "https://changelog.com/shipit/84",
     audioUrl: "https://cdn.changelog.com/uploads/shipit/84/ship-it-84.mp3",
     transcriptUrl: "https://github.com/thechangelog/transcripts/blob/master/shipit/ship-it-84.md",
-    transcript: episode84
+    transcript: episode84,
+    cueStarts: timings84.starts
   },
   {
     id: "gotime-156",
@@ -60,7 +68,8 @@ export const changelogEpisodes: ChangelogEpisode[] = [
     pageUrl: "https://changelog.com/gotime/156",
     audioUrl: "https://cdn.changelog.com/uploads/gotime/156/go-time-156.mp3",
     transcriptUrl: "https://github.com/thechangelog/transcripts/blob/master/gotime/go-time-156.md",
-    transcript: episode156
+    transcript: episode156,
+    cueStarts: timings156.starts
   }
 ];
 

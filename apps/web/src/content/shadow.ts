@@ -18,7 +18,7 @@ function linesFrom(text: string): string[] {
 export function pickShadow(window: ListenWindow): string[] {
   const episode = findEpisode(window.episodeId);
   if (!episode) return [];
-  const cues = parseTranscript(episode.transcript);
+  const cues = parseTranscript(episode.transcript, episode.cueStarts);
   const picked: string[] = [];
   for (let index = 0; index < cues.length; index += 1) {
     const cue = cues[index];

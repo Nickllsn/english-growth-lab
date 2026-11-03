@@ -30,7 +30,7 @@ export function TranscriptPlayer({
   const audioRef = useRef<HTMLAudioElement>(null);
   const activeRef = useRef<HTMLLIElement | null>(null);
   const followRef = useRef(false);
-  const allCues = parseTranscript(episode.transcript);
+  const allCues = parseTranscript(episode.transcript, episode.cueStarts);
   const windowEnd = end ?? Number.POSITIVE_INFINITY;
   const cues = allCues.filter((cue, index) => {
     const next = allCues[index + 1]?.start ?? Number.POSITIVE_INFINITY;
@@ -147,8 +147,7 @@ export function TranscriptPlayer({
             从 {formatClock(start)} 播放
           </button>
           <p className="listen-note">
-            点每段左边的时间才会播放。官方稿只标了少数时间，两段标记之间按这句话的长短估一个开始时间，跳过去会落在这句附近。选中文字不会跳转，最多
-            20 个词，再点「加入不认识」。
+            点每段左边的时间才会播放。每一句的时间对着这句在音频里开始的位置。选中文字不会跳转，最多 20 个词，再点「加入不认识」。
           </p>
         </div>
       </div>

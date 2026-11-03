@@ -42,11 +42,11 @@ function parseParagraph(raw: string): TranscriptParagraph | null {
   return { speaker, text };
 }
 
-interface DraftParagraph extends TranscriptParagraph {
+export interface DraftParagraph extends TranscriptParagraph {
   stamp: number | null;
 }
 
-export function parseTranscript(source: string): TranscriptCue[] {
+export function transcriptDrafts(source: string): DraftParagraph[] {
   const drafts: DraftParagraph[] = [];
   let speaker: string | null = null;
 
@@ -59,7 +59,31 @@ export function parseTranscript(source: string): TranscriptCue[] {
     drafts.push({ ...paragraph, stamp });
   }
 
-  return placeCues(drafts);
+  return drafts;
+}
+
+export function parseTranscript(source: string, alignedStarts?: readonly number[]): TranscriptCue[] {
+  const drafts = transcriptDrafts(source);
+  const starts =
+    alignedStarts && alignedStarts.length === drafts.length
+      ? constrainStarts(alignedStarts)
+      : interpolatedStarts(drafts);
+  return drafts.map((draft, index) => ({
+    start: starts[index],
+    paragraphs: [{ speaker: draft.speaker, text: draft.text }]
+  }));
+}
+
+function constrainStarts(aligned: readonly number[]): number[] {
+  const starts = aligned.map((time) => (Number.isFinite(time) ? time : 0));
+  for (let index = 1; index < starts.length; index += 1) {
+    if (starts[index] <= starts[index - 1]) starts[index] = starts[index - 1] + 0.05;
+  }
+  return starts;
+}
+
+function interpolatedStarts(drafts: DraftParagraph[]): number[] {
+  return placeCues(drafts).map((cue) => cue.start);
 }
 
 function placeCues(drafts: DraftParagraph[]): TranscriptCue[] {

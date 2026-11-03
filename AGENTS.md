@@ -16,4 +16,4 @@
 
 ## Changelog 文字稿
 
-`content/changelog/` 里的 Markdown 是 Changelog Media LLC 的文字稿原文，许可是 CC BY-SA 4.0。页面上保留署名、节目链接和许可链接。不要改这些原文，不要删署名。音频用 Changelog CDN 的地址在浏览器里播放，不要把 mp3 放进仓库。
+`content/changelog/` 里的 Markdown 是 Changelog Media LLC 的文字稿原文，许可是 CC BY-SA 4.0。页面上保留署名、节目链接和许可链接。不要改这些原文，不要删署名。音频用 Changelog CDN 的地址在浏览器里播放，不要把 mp3 放进仓库。`content/changelog/timings/` 里是每一段的开始时间，由 `scripts/transcribe-changelog.py` 和 `scripts/align-changelog.py` 对着公开音频对齐得到。稿里印的时间如果和听到的句子差在一秒半以内，就用印的时间；差得更多就用对齐到的时间。不要手改这些时间，也不要把音频或词级识别结果放进仓库。

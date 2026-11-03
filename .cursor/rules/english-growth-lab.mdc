@@ -9,4 +9,4 @@ alwaysApply: true
 
 不要预生成单词表。生词由学习者在 Changelog 文字稿里选中后写入进度的 terms，并保留原句、节目编号和时间点。解释用法时只根据那一条的原句。
 
-`content/changelog/` 的文字稿是 Changelog Media LLC 的 CC BY-SA 4.0 原文。保留署名和许可，不要改原文，不要把 mp3 放进仓库。
+`content/changelog/` 的文字稿是 Changelog Media LLC 的 CC BY-SA 4.0 原文。保留署名和许可，不要改原文，不要把 mp3 放进仓库。每段开始时间在 `content/changelog/timings/`，由对齐脚本生成，不要手改。
