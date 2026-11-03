@@ -6,7 +6,8 @@ const links = [
   { to: "/week", label: "本周" },
   { to: "/vocab", label: "词汇" },
   { to: "/progress", label: "进度" },
-  { to: "/roadmap", label: "路线" }
+  { to: "/roadmap", label: "路线" },
+  { to: "/listen", label: "播客" }
 ];
 
 export function AppShell({ children }: PropsWithChildren) {

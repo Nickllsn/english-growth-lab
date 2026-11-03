@@ -946,3 +946,144 @@ textarea {
 .narration audio {
   width: 100%;
 }
+
+.listen-layout {
+  display: grid;
+  gap: 14px;
+}
+
+.listen-player {
+  position: sticky;
+  top: 12px;
+  z-index: 3;
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+}
+
+.listen-player-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.listen-player-row p,
+.listen-player-row label {
+  margin: 0;
+}
+
+.listen-player-row select {
+  margin-left: 8px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.listen-player audio {
+  width: 100%;
+}
+
+.listen-note {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.listen-note a {
+  margin-left: 10px;
+}
+
+.cue-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cue {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.cue.active {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.cue-jump,
+.cue-paragraph {
+  border: 0;
+  border-radius: 10px;
+  color: inherit;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cue-jump {
+  width: fit-content;
+  padding: 4px 8px;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+}
+
+.cue-paragraph {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  line-height: 1.65;
+}
+
+.cue-jump:hover,
+.cue-paragraph:hover {
+  background: var(--surface-muted);
+}
+
+.cue-speaker {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.episode-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.episode-card {
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: var(--surface);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+
+.episode-card h2,
+.episode-card p {
+  margin: 0;
+}
+
+.episode-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
