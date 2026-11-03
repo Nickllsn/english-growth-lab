@@ -19,15 +19,20 @@ Still waiting on disk.
 describe("parseTranscript", () => {
   const cues = parseTranscript(sample);
 
-  it("turns timestamped paragraphs into seek points", () => {
-    expect(cues.map((cue) => cue.start)).toEqual([0, 65, 59 * 60 + 32, 3600 + 4 * 60 + 14.03]);
-    expect(cues[0].paragraphs[0]).toEqual({ speaker: "Ada", text: "Hello there." });
-    expect(cues[1].paragraphs).toEqual([
-      { speaker: "Grace", text: "The queue is full." },
-      { speaker: "Grace", text: "Still waiting on disk." }
+  it("gives every spoken turn its own time between the marked stamps", () => {
+    expect(cues.map((cue) => cue.paragraphs[0].text)).toEqual([
+      "Hello there.",
+      "The queue is full.",
+      "Still waiting on disk.",
+      "",
+      "The cache is warm. [laughs]"
     ]);
-    expect(cues[2].paragraphs[0]).toEqual({ speaker: "Jingle", text: "" });
-    expect(cues[3].paragraphs[0].text).toBe("The cache is warm. [laughs]");
+    expect(cues[0].start).toBe(0);
+    expect(cues[1].start).toBe(65);
+    expect(cues[2].start).toBeCloseTo(65 + ((59 * 60 + 32 - 65) * 4) / 8);
+    expect(cues[3].start).toBe(59 * 60 + 32);
+    expect(cues[4].start).toBeCloseTo(3600 + 4 * 60 + 14.03);
+    expect(new Set(cues.map((cue) => cue.start)).size).toBe(cues.length);
   });
 
   it("formats clocks without the fractional seconds", () => {
@@ -41,12 +46,13 @@ describe("parseTranscript", () => {
     const talos = parseTranscript(episode84);
     const gotime = parseTranscript(episode156);
 
-    expect(zfs[1].start).toBe(4 * 60 + 2);
-    expect(zfs.at(-1)?.start).toBe(1 * 3600 + 23 * 60 + 56.1);
-    expect(zfs.length).toBeGreaterThan(20);
+    expect(zfs.some((cue) => cue.start === 4 * 60 + 2)).toBe(true);
+    expect(zfs.some((cue) => Math.abs(cue.start - (1 * 3600 + 23 * 60 + 56.1)) < 0.01)).toBe(true);
+    expect(zfs.length).toBeGreaterThan(100);
     expect(cantrill.length).toBeGreaterThan(30);
     expect(talos.length).toBeGreaterThan(10);
     expect(gotime.some((cue) => cue.start === 59 * 60 + 32)).toBe(true);
-    expect(zfs.every((cue, index) => index === 0 || cue.start >= zfs[index - 1].start)).toBe(true);
+    expect(new Set(zfs.map((cue) => cue.start)).size).toBe(zfs.length);
+    expect(zfs.every((cue, index) => index === 0 || cue.start > zfs[index - 1].start)).toBe(true);
   });
 });

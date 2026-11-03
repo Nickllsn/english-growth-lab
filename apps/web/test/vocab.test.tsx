@@ -15,7 +15,10 @@ describe("learning terms", () => {
   it("keeps a short word or phrase and rejects a sentence", () => {
     expect(acceptSelection("  checksums, ")).toBe("checksums");
     expect(acceptSelection("copy-on-write")).toBe("copy-on-write");
-    expect(acceptSelection("the end of the suffering of storage")).toBeNull();
+    expect(acceptSelection("the end of the suffering of storage")).toBe(
+      "the end of the suffering of storage"
+    );
+    expect(acceptSelection(Array.from({ length: 21 }, () => "word").join(" "))).toBeNull();
   });
 
   it("stores the sentence and episode with the selected word", () => {

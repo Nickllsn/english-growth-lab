@@ -76,7 +76,7 @@ export function TranscriptPlayer({
     if (!chosen) {
       setMenu({
         text: null,
-        message: "只选一个单词或短语，最多 6 个词",
+        message: "请选一个单词或短语，最多 20 个词",
         x: rect.left,
         y: rect.bottom
       });
@@ -146,7 +146,10 @@ export function TranscriptPlayer({
           <button className="secondary-button" type="button" onClick={() => seek(start)}>
             从 {formatClock(start)} 播放
           </button>
-          <p className="listen-note">选中不认识的单词或短语，再点「加入不认识」。</p>
+          <p className="listen-note">
+            点每段左边的时间才会播放。官方稿只标了少数时间，两段标记之间按这句话的长短估一个开始时间，跳过去会落在这句附近。选中文字不会跳转，最多
+            20 个词，再点「加入不认识」。
+          </p>
         </div>
       </div>
       <ol className="cue-list">
@@ -158,18 +161,18 @@ export function TranscriptPlayer({
               if (index === active) activeRef.current = node;
             }}
           >
-            <button className="cue-jump" type="button" onClick={() => seek(cue.start)}>
+            <button
+              aria-label={`播放 ${formatClock(cue.start)}`}
+              className="cue-jump"
+              type="button"
+              onClick={() => seek(cue.start)}
+            >
               {formatClock(cue.start)}
             </button>
             {cue.paragraphs.map((paragraph, paragraphIndex) => (
               <div
                 className="cue-paragraph"
                 key={`${cue.start}-${paragraphIndex}`}
-                onClick={() => {
-                  const selection = window.getSelection();
-                  if (selection && !selection.isCollapsed) return;
-                  seek(cue.start);
-                }}
                 onPointerUp={(event) =>
                   capture(event.currentTarget, cue.start, paragraph.speaker, paragraph.text)
                 }

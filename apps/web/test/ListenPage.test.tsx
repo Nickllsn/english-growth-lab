@@ -40,10 +40,14 @@ describe("ListenPage", () => {
       "https://cdn.changelog.com/uploads/podcast/475/the-changelog-475.mp3"
     );
 
-    fireEvent.click(screen.getByRole("button", { name: "4:02" }));
+    const line = screen.getByText(/Yeah\. I know the hosts of that podcast/);
+    fireEvent.click(line);
+    expect(audio.currentTime).toBe(0);
+
+    fireEvent.click(screen.getByRole("button", { name: "播放 4:02" }));
 
     expect(audio.currentTime).toBe(242);
-    expect(screen.getByRole("button", { name: "4:02" }).closest("li")).toHaveClass("active");
+    expect(screen.getByRole("button", { name: "播放 4:02" }).closest("li")).toHaveClass("active");
     expect(screen.getByText(/Changelog Media LLC/)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "许可" })).toHaveAttribute(
       "href",

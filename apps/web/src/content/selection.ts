@@ -3,9 +3,9 @@ export function acceptSelection(raw: string): string | null {
     .replace(/\s+/g, " ")
     .trim()
     .replace(/^[^A-Za-z0-9]+|[^A-Za-z0-9]+$/g, "");
-  if (!text || text.length > 60) return null;
+  if (!text || text.length > 240) return null;
   const words = text.split(" ");
-  if (words.length > 6) return null;
+  if (words.length > 20) return null;
   if (!words.every((word) => /[A-Za-z]/.test(word))) return null;
   return text;
 }

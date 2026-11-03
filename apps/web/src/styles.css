@@ -1027,16 +1027,15 @@ textarea {
 .cue-paragraph {
   border: 0;
   border-radius: 10px;
-  color: inherit;
   background: transparent;
   text-align: left;
-  cursor: pointer;
 }
 
 .cue-jump {
   width: fit-content;
   padding: 4px 8px;
   color: var(--primary);
+  cursor: pointer;
   font-variant-numeric: tabular-nums;
   font-weight: 800;
 }
@@ -1046,10 +1045,11 @@ textarea {
   width: 100%;
   padding: 8px 10px;
   line-height: 1.65;
+  cursor: text;
+  user-select: text;
 }
 
-.cue-jump:hover,
-.cue-paragraph:hover {
+.cue-jump:hover {
   background: var(--surface-muted);
 }
 
@@ -1116,10 +1116,6 @@ textarea {
   background: var(--primary);
   color: #fff;
   cursor: pointer;
-}
-
-.cue-paragraph {
-  user-select: text;
 }
 
 .term-list {

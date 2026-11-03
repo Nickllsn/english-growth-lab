@@ -18,9 +18,14 @@ function stampSeconds(match: RegExpMatchArray): number {
   return hours * 3600 + minutes * 60 + seconds;
 }
 
-function firstStamp(paragraph: string): number | null {
-  const match = paragraph.match(STAMP);
-  return match ? stampSeconds(match) : null;
+function stampsIn(paragraph: string): number[] {
+  const expression = new RegExp(STAMP.source, "g");
+  return [...paragraph.matchAll(expression)].map((match) => stampSeconds(match));
+}
+
+function wordWeight(text: string): number {
+  const count = text.split(/\s+/).filter(Boolean).length;
+  return Math.max(count, 1);
 }
 
 function parseParagraph(raw: string): TranscriptParagraph | null {
@@ -37,25 +42,85 @@ function parseParagraph(raw: string): TranscriptParagraph | null {
   return { speaker, text };
 }
 
+interface DraftParagraph extends TranscriptParagraph {
+  stamp: number | null;
+}
+
 export function parseTranscript(source: string): TranscriptCue[] {
-  const cues: TranscriptCue[] = [];
-  let current: TranscriptCue | null = null;
+  const drafts: DraftParagraph[] = [];
   let speaker: string | null = null;
 
   for (const raw of source.trim().split(/\n\s*\n/)) {
-    const start: number = firstStamp(raw) ?? current?.start ?? 0;
     const parsed = parseParagraph(raw);
     if (!parsed) continue;
     if (parsed.speaker) speaker = parsed.speaker;
     const paragraph = parsed.speaker ? parsed : { ...parsed, speaker };
-    if (!current || current.start !== start) {
-      current = { start, paragraphs: [] };
-      cues.push(current);
-    }
-    current.paragraphs.push(paragraph);
+    const [stamp = null] = stampsIn(raw);
+    drafts.push({ ...paragraph, stamp });
   }
 
+  return placeCues(drafts);
+}
+
+function placeCues(drafts: DraftParagraph[]): TranscriptCue[] {
+  const anchors = drafts.flatMap((draft, index) => (draft.stamp == null ? [] : [{ index, time: draft.stamp }]));
+  const regions: { from: number; to: number; start: number; end: number }[] = [];
+  const rate = speakingSecondsPerWord(drafts, anchors);
+
+  if (anchors.length === 0) {
+    const words = drafts.reduce((sum, draft) => sum + wordWeight(draft.text), 0);
+    regions.push({ from: 0, to: drafts.length, start: 0, end: words * rate });
+  } else {
+    if (anchors[0].index > 0) {
+      regions.push({ from: 0, to: anchors[0].index, start: 0, end: anchors[0].time });
+    }
+    anchors.forEach((anchor, index) => {
+      const next = anchors[index + 1];
+      const from = anchor.index;
+      const to = next ? next.index : drafts.length;
+      const words = drafts.slice(from, to).reduce((sum, draft) => sum + wordWeight(draft.text), 0);
+      regions.push({
+        from,
+        to,
+        start: anchor.time,
+        end: next ? next.time : anchor.time + words * rate
+      });
+    });
+  }
+
+  const cues = regions.flatMap((region) => placeRegion(drafts.slice(region.from, region.to), region.start, region.end));
+  for (let index = 1; index < cues.length; index += 1) {
+    if (cues[index].start <= cues[index - 1].start) cues[index].start = cues[index - 1].start + 0.05;
+  }
   return cues;
+}
+
+function speakingSecondsPerWord(
+  drafts: DraftParagraph[],
+  anchors: { index: number; time: number }[]
+): number {
+  if (anchors.length < 2) return 0.4;
+  const words = drafts
+    .slice(anchors[0].index, anchors[anchors.length - 1].index)
+    .reduce((sum, draft) => sum + wordWeight(draft.text), 0);
+  const seconds = anchors[anchors.length - 1].time - anchors[0].time;
+  if (words <= 0 || seconds <= 0) return 0.4;
+  return seconds / words;
+}
+
+function placeRegion(drafts: DraftParagraph[], start: number, end: number): TranscriptCue[] {
+  const weights = drafts.map((draft) => wordWeight(draft.text));
+  const total = weights.reduce((sum, weight) => sum + weight, 0) || 1;
+  const span = Math.max(end - start, 0);
+  let spoken = 0;
+  return drafts.map((draft, index) => {
+    const at = draft.stamp == null ? start + (spoken / total) * span : draft.stamp;
+    spoken += weights[index];
+    return {
+      start: at,
+      paragraphs: [{ speaker: draft.speaker, text: draft.text }]
+    };
+  });
 }
 
 export function formatClock(seconds: number): string {
