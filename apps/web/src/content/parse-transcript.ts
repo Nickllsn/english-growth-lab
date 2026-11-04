@@ -157,6 +157,11 @@ export function formatClock(seconds: number): string {
   return `${minutes}:${padded}`;
 }
 
+export function segmentStop(cues: TranscriptCue[], end: number | undefined): number | null {
+  if (end == null || !Number.isFinite(end)) return null;
+  return cues.find((cue) => cue.start >= end)?.start ?? end;
+}
+
 export function activeCueIndex(cues: TranscriptCue[], seconds: number): number {
   let index = 0;
   for (let i = 0; i < cues.length; i += 1) {

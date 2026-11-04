@@ -5,7 +5,7 @@ import episode475 from "../../../content/changelog/the-changelog-475.md?raw";
 import episode592 from "../../../content/changelog/the-changelog-592.md?raw";
 import timings475 from "../../../content/changelog/timings/475.json";
 import timings156 from "../../../content/changelog/timings/gotime-156.json";
-import { formatClock, parseTranscript } from "../src/content/parse-transcript";
+import { formatClock, parseTranscript, segmentStop } from "../src/content/parse-transcript";
 
 const sample = `**Ada:** Hello there.
 
@@ -77,6 +77,11 @@ describe("parseTranscript", () => {
     expect(startOf("Wow.")).toBeGreaterThan(306);
     expect(startOf("Wow.")).toBeLessThan(309);
     expect(cues.every((cue, index) => index === 0 || cue.start > cues[index - 1].start)).toBe(true);
+    const stop = segmentStop(cues, 1200);
+    const lastShown = cues.filter((cue) => cue.start < 1200).at(-1);
+    expect(stop).toBe(cues[cues.indexOf(lastShown!) + 1]?.start ?? 1200);
+    expect(stop).toBeGreaterThanOrEqual(1200);
+    expect(segmentStop(cues, undefined)).toBeNull();
   });
 
   it("follows the spoken words when a printed timestamp has drifted", () => {
