@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { ChangelogEpisode } from "../content/changelog-episodes";
-import { activeCueIndex, formatClock, parseTranscript } from "../content/parse-transcript";
+import { activeCueIndex, formatClock, parseTranscript, segmentStop } from "../content/parse-transcript";
 import { acceptSelection, sentenceAround } from "../content/selection";
 import { termId, type TermDraft } from "../progress/store";
 
@@ -32,6 +32,8 @@ export function TranscriptPlayer({
   const followRef = useRef(false);
   const allCues = parseTranscript(episode.transcript, episode.cueStarts);
   const windowEnd = end ?? Number.POSITIVE_INFINITY;
+  const stopAt = segmentStop(allCues, end);
+  const heldRef = useRef(false);
   const cues = allCues.filter((cue, index) => {
     const next = allCues[index + 1]?.start ?? Number.POSITIVE_INFINITY;
     return cue.start < windowEnd && next > start;
@@ -47,9 +49,23 @@ export function TranscriptPlayer({
     node.scrollIntoView({ block: "nearest" });
   }, [active]);
 
+  function holdAtBoundary(audio: HTMLAudioElement) {
+    if (stopAt == null) return;
+    if (audio.currentTime < stopAt - 0.2) {
+      heldRef.current = false;
+      return;
+    }
+    if (!heldRef.current && audio.currentTime >= stopAt) {
+      heldRef.current = true;
+      audio.pause();
+      if (audio.currentTime > stopAt) audio.currentTime = stopAt;
+    }
+  }
+
   function seek(time: number) {
     const audio = audioRef.current;
     if (!audio) return;
+    if (stopAt == null || time < stopAt) heldRef.current = false;
     followRef.current = true;
     const apply = () => {
       audio.currentTime = time;
@@ -133,8 +149,14 @@ export function TranscriptPlayer({
           controls
           preload="metadata"
           src={episode.audioUrl}
-          onTimeUpdate={(event) => setSeconds(event.currentTarget.currentTime)}
-          onSeeked={(event) => setSeconds(event.currentTarget.currentTime)}
+          onTimeUpdate={(event) => {
+            holdAtBoundary(event.currentTarget);
+            setSeconds(event.currentTarget.currentTime);
+          }}
+          onSeeked={(event) => {
+            holdAtBoundary(event.currentTarget);
+            setSeconds(event.currentTarget.currentTime);
+          }}
           onPlay={() => {
             followRef.current = true;
           }}
@@ -147,7 +169,7 @@ export function TranscriptPlayer({
             从 {formatClock(start)} 播放
           </button>
           <p className="listen-note">
-            点每段左边的时间才会播放。每一句的时间对着这句在音频里开始的位置。选中文字不会跳转，最多 20 个词，再点「加入不认识」。
+            点每段左边的时间才会播放。每一句的时间对着这句在音频里开始的位置。这段文字稿播完会自动暂停，要接着听后面再按播放。选中文字不会跳转，最多 20 个词，再点「加入不认识」。
           </p>
         </div>
       </div>
