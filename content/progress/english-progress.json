@@ -1,0 +1,198 @@
+{
+  "slots": {},
+  "reviews": {},
+  "known": [],
+  "unknown": [],
+  "terms": [
+    {
+      "text": "have you here",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 177.96,
+      "speaker": "Adam Stacoviak",
+      "sentence": "Matt, I'm a big fan of your work on ZFS, and I'm so glad to have you here at The Changelog, because I'm a newcomer to ZFS.",
+      "id": "475:have you here",
+      "addedAt": "2026-11-06T06:02:21.052Z"
+    },
+    {
+      "text": "newcomer",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 177.96,
+      "speaker": "Adam Stacoviak",
+      "sentence": "Matt, I'm a big fan of your work on ZFS, and I'm so glad to have you here at The Changelog, because I'm a newcomer to ZFS.",
+      "id": "475:newcomer",
+      "addedAt": "2026-11-06T06:02:28.507Z"
+    },
+    {
+      "text": "co-creator",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 177.96,
+      "speaker": "Adam Stacoviak",
+      "sentence": "So as you know, because you're a co-creator of it, it's been around for a very long time.",
+      "id": "475:co-creator",
+      "addedAt": "2026-11-06T06:02:34.760Z"
+    },
+    {
+      "text": "scenario",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 177.96,
+      "speaker": "Adam Stacoviak",
+      "sentence": "It was created in 2001, and my first use of it was in a home lab production scenario powering my Plex server, basically, in the year of 2021.",
+      "id": "475:scenario",
+      "addedAt": "2026-11-06T06:02:58.732Z"
+    },
+    {
+      "text": "Plex server",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 177.96,
+      "speaker": "Adam Stacoviak",
+      "sentence": "It was created in 2001, and my first use of it was in a home lab production scenario powering my Plex server, basically, in the year of 2021.",
+      "id": "475:plex server",
+      "addedAt": "2026-11-06T06:03:08.492Z"
+    },
+    {
+      "text": "adoption",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 177.96,
+      "speaker": "Adam Stacoviak",
+      "sentence": "So I'm 20 years behind the adoption curve of ZFS.",
+      "id": "475:adoption",
+      "addedAt": "2026-11-06T06:03:24.372Z"
+    },
+    {
+      "text": "curve",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 177.96,
+      "speaker": "Adam Stacoviak",
+      "sentence": "So I'm 20 years behind the adoption curve of ZFS.",
+      "id": "475:curve",
+      "addedAt": "2026-11-06T06:03:26.274Z"
+    },
+    {
+      "text": "found out",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 177.96,
+      "speaker": "Adam Stacoviak",
+      "sentence": "But when I found out about it, I loved the file system, and I was like, \"You know what?",
+      "id": "475:found out",
+      "addedAt": "2026-11-06T06:03:34.214Z"
+    },
+    {
+      "text": "plugged into",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 223.7,
+      "speaker": "Matthew Ahrens",
+      "sentence": "I'm not really plugged into the tech podcast scene.",
+      "id": "475:plugged into",
+      "addedAt": "2026-11-06T06:04:22.105Z"
+    },
+    {
+      "text": "scene",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 223.7,
+      "speaker": "Matthew Ahrens",
+      "sentence": "I'm not really plugged into the tech podcast scene.",
+      "id": "475:scene",
+      "addedAt": "2026-11-06T06:04:25.642Z"
+    },
+    {
+      "text": "There's like Two and a Half Admins, I believe, out there",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 230.4,
+      "speaker": "Adam Stacoviak",
+      "sentence": "There's like Two and a Half Admins, I believe, out there.",
+      "id": "475:there's like two and a half admins, i believe, out there",
+      "addedAt": "2026-11-06T06:10:59.360Z"
+    },
+    {
+      "text": "hit me up",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 242,
+      "speaker": "Matthew Ahrens",
+      "sentence": "I know the hosts of that podcast, and they'll probably hit me up at some point.",
+      "id": "475:hit me up",
+      "addedAt": "2026-11-06T06:11:45.737Z"
+    },
+    {
+      "text": "get you on",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 246.06,
+      "speaker": "Adam Stacoviak",
+      "sentence": "But yeah, I wanted to get you on to talk about ZFS, because it's such a cool file system.",
+      "id": "475:get you on",
+      "addedAt": "2026-11-06T06:13:13.815Z"
+    },
+    {
+      "text": "roots in open source",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 246.06,
+      "speaker": "Adam Stacoviak",
+      "sentence": "It's got some interesting roots in open source, and it's obviously an OSI-approved license that it's listed as, but it's got some drama behind the scenes, and I figured, \"Who better to go through the back-story of its origination and the problem set and its history, and then to current, than you, as you're a co-creator of it?\" Back in 2001, it was a file system designed by you and by Jeff Bonwick…",
+      "id": "475:roots in open source",
+      "addedAt": "2026-11-06T06:21:41.663Z"
+    },
+    {
+      "text": "OSI-approved license",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 246.06,
+      "speaker": "Adam Stacoviak",
+      "sentence": "It's got some interesting roots in open source, and it's obviously an OSI-approved license that it's listed as, but it's got some drama behind the scenes, and I figured, \"Who better to go through the back-story of its origination and the problem set and its history, and then to current, than you, as you're a co-creator of it?\" Back in 2001, it was a file system designed by you and by Jeff Bonwick…",
+      "id": "475:osi-approved license",
+      "addedAt": "2026-11-06T06:21:49.780Z"
+    },
+    {
+      "text": "origination",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 246.06,
+      "speaker": "Adam Stacoviak",
+      "sentence": "It's got some interesting roots in open source, and it's obviously an OSI-approved license that it's listed as, but it's got some drama behind the scenes, and I figured, \"Who better to go through the back-story of its origination and the problem set and its history, and then to current, than you, as you're a co-creator of it?\" Back in 2001, it was a file system designed by you and by Jeff Bonwick…",
+      "id": "475:origination",
+      "addedAt": "2026-11-06T06:22:10.699Z"
+    },
+    {
+      "text": "drama",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 246.06,
+      "speaker": "Adam Stacoviak",
+      "sentence": "It's got some interesting roots in open source, and it's obviously an OSI-approved license that it's listed as, but it's got some drama behind the scenes, and I figured, \"Who better to go through the back-story of its origination and the problem set and its history, and then to current, than you, as you're a co-creator of it?\" Back in 2001, it was a file system designed by you and by Jeff Bonwick…",
+      "id": "475:drama",
+      "addedAt": "2026-11-06T06:22:35.086Z"
+    },
+    {
+      "text": "eventually",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 246.06,
+      "speaker": "Adam Stacoviak",
+      "sentence": "They were eventually acquired by Oracle.",
+      "id": "475:eventually",
+      "addedAt": "2026-11-06T06:22:45.699Z"
+    },
+    {
+      "text": "open it up",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 246.06,
+      "speaker": "Adam Stacoviak",
+      "sentence": "So open it up.",
+      "id": "475:open it up",
+      "addedAt": "2026-11-06T06:23:20.278Z"
+    }
+  ]
+}

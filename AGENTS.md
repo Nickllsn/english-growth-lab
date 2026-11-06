@@ -12,7 +12,7 @@
 
 ## 生词
 
-不要再预生成单词表。学习者在 Changelog 文字稿里选中不认识的单词或短语，写入进度的 `terms`。每一条必须留下原句 `sentence`、节目 `episodeId`、时间 `start`。导入导出都走 `english-progress.json`。拿到导出文件后，按那一条的原句说明这个词在该节目里的用法，不要脱离那一句另编场景。
+不要再预生成单词表。学习者在 Changelog 文字稿里选中不认识的单词或短语，写入进度的 `terms`。每一条必须留下原句 `sentence`、节目 `episodeId`、时间 `start`。导入导出都走 `english-progress.json`。拿到导出文件后，按那一条的原句说明这个词在该节目里的用法，不要脱离那一句另编场景。把交回来的文件更新到 `content/progress/english-progress.json`。浏览器没有本地记录时用这份作为起始进度，不要覆盖已经写在 localStorage 里的记录。
 
 ## Changelog 文字稿
 
