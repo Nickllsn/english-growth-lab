@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ListenPage } from "../src/pages/ListenPage";
 import { VocabPage } from "../src/pages/VocabPage";
 import { acceptSelection } from "../src/content/selection";
-import { addTerm, emptyProgress, termId } from "../src/progress/store";
+import { addTerm, emptyProgress, loadProgress, termId } from "../src/progress/store";
 
 beforeEach(() => {
   localStorage.clear();
@@ -19,6 +19,14 @@ describe("learning terms", () => {
       "the end of the suffering of storage"
     );
     expect(acceptSelection(Array.from({ length: 21 }, () => "word").join(" "))).toBeNull();
+  });
+
+  it("starts from the progress file saved in the project", () => {
+    const progress = loadProgress();
+
+    expect(progress.terms).toHaveLength(19);
+    expect(progress.terms.map((term) => term.text)).toContain("newcomer");
+    expect(progress.terms.map((term) => term.text)).toContain("open it up");
   });
 
   it("stores the sentence and episode with the selected word", () => {
@@ -70,8 +78,9 @@ describe("learning terms", () => {
     const saved = JSON.parse(localStorage.getItem("egl.progress.v1") ?? "{}") as {
       terms: { text: string; episodeId: string; sentence: string; start: number }[];
     };
-    expect(saved.terms[0]).toMatchObject({ text: "podcast", episodeId: "475" });
-    expect(saved.terms[0].sentence.length).toBeGreaterThan(10);
-    expect(saved.terms[0].start).toBeGreaterThan(0);
+    const podcast = saved.terms.find((term) => term.text === "podcast");
+    expect(podcast).toMatchObject({ text: "podcast", episodeId: "475" });
+    expect(podcast?.sentence.length).toBeGreaterThan(10);
+    expect(podcast?.start).toBeGreaterThan(0);
   });
 });

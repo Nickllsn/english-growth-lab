@@ -1,3 +1,4 @@
+import bundledProgress from "../../../../content/progress/english-progress.json";
 import { formatClock } from "../content/parse-transcript";
 import type { VocabItem, WeekPack } from "../content/types";
 
@@ -51,7 +52,7 @@ function stringList(value: unknown): string[] {
 
 export function loadProgress(): ProgressState {
   const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) return emptyProgress();
+  if (!raw) return parseProgress(JSON.stringify(bundledProgress));
   try {
     const parsed = JSON.parse(raw) as Partial<ProgressState>;
     return {
