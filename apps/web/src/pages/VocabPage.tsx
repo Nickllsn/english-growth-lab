@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { weeks } from "../content/load";
 import { formatClock } from "../content/parse-transcript";
+import { termNote } from "../content/term-notes";
+import { periodLabel, termPlacement, type StudyPeriod } from "../progress/placement";
 import {
   downloadProgress,
   loadProgress,
@@ -9,6 +12,43 @@ import {
   saveProgress,
   type ProgressState
 } from "../progress/store";
+
+const weekdays = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"];
+const periods: Array<Exclude<StudyPeriod, "home">> = ["morning", "noon", "evening"];
+
+function TermAnalysis({ sentence, id }: { sentence: string; id: string }) {
+  const note = termNote(id);
+  return (
+    <div className="term-note">
+      <p>
+        <span className="term-label">这句话是</span>
+        “{sentence}”
+      </p>
+      {note ? (
+        <>
+          <p>
+            <span className="term-label">它的意思是</span>
+            {note.meaning}
+          </p>
+          <div>
+            <span className="term-label">词义拆解</span>
+            <ul className="term-parts">
+              {note.parts.map((part) => (
+                <li key={part.text}>
+                  <strong>{part.text}</strong>
+                  <span>字面：{part.literal}</span>
+                  <span>这里：{part.here}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </>
+      ) : (
+        <p>这条还没有按原句写过学习分析。</p>
+      )}
+    </div>
+  );
+}
 
 function readFile(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -22,6 +62,9 @@ function readFile(file: File): Promise<string> {
 export function VocabPage() {
   const [progress, setProgress] = useState<ProgressState>(loadProgress);
   const [message, setMessage] = useState("");
+  const [weekId, setWeekId] = useState("");
+  const [weekday, setWeekday] = useState("");
+  const [period, setPeriod] = useState("");
 
   useEffect(() => {
     saveProgress(progress);
@@ -38,8 +81,15 @@ export function VocabPage() {
     }
   };
 
+  const visible = progress.terms.filter((term) => {
+    const place = termPlacement(term, weeks);
+    if (weekId && place.weekId !== weekId) return false;
+    if (weekday && place.weekday !== weekday) return false;
+    if (period && place.period !== period) return false;
+    return true;
+  });
   const groups = new Map<string, ProgressState["terms"]>();
-  for (const term of progress.terms) {
+  for (const term of visible) {
     const list = groups.get(term.episodeTitle) ?? [];
     list.push(term);
     groups.set(term.episodeTitle, list);
@@ -52,7 +102,7 @@ export function VocabPage() {
           <p className="eyebrow">从文字稿里自己选</p>
           <h1>学习记录</h1>
           <p>
-            这里是你在文字稿里选中、标成不认识的单词和短语。导出的 english-progress.json 里，每一条都有原句、节目和时间。把文件发回来，就可以按那一句说明这个词在节目里怎么用。
+            这里是你在文字稿里选中、标成不认识的单词、短语和句型。可以按周、周几和早中晚一起筛选。早中晚按加入时的上海时间：11 点前是早听，16 点前是午读，之后是晚听。在当天任务里新选的词，按当时打开的那一段记。
           </p>
         </div>
       </header>
@@ -70,7 +120,50 @@ export function VocabPage() {
           />
         </label>
       </div>
+      <div className="vocab-filters">
+        <label>
+          周
+          <select aria-label="周" onChange={(event) => setWeekId(event.target.value)} value={weekId}>
+            <option value="">全部</option>
+            {weeks.map((week) => (
+              <option key={week.id} value={week.id}>
+                {week.id} {week.title}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          周几
+          <select aria-label="周几" onChange={(event) => setWeekday(event.target.value)} value={weekday}>
+            <option value="">全部</option>
+            {weekdays.map((day) => (
+              <option key={day} value={day}>
+                {day}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          早中晚
+          <select aria-label="早中晚" onChange={(event) => setPeriod(event.target.value)} value={period}>
+            <option value="">全部</option>
+            {periods.map((item) => (
+              <option key={item} value={item}>
+                {periodLabel[item]}
+              </option>
+            ))}
+          </select>
+        </label>
+        <p>
+          {visible.length} / {progress.terms.length} 条
+        </p>
+      </div>
       {message && <p className="success-message">{message}</p>}
+      {progress.terms.length > 0 && visible.length === 0 && (
+        <section className="panel">
+          <p>这个范围里没有生词。</p>
+        </section>
+      )}
       {progress.terms.length === 0 && (
         <section className="panel">
           <p>还没有生词。打开今天的文字稿，选中一个单词或短语，点「加入不认识」。</p>
@@ -81,15 +174,21 @@ export function VocabPage() {
         <section className="panel" key={title}>
           <h2>{title}</h2>
           <ul className="term-list">
-            {terms.map((term) => (
+            {terms.map((term) => {
+              const note = termNote(term.id);
+              const place = termPlacement(term, weeks);
+              return (
               <li className="term-card" key={term.id}>
                 <div>
-                  <strong>{term.text}</strong>
+                  <p className="term-title">
+                    {note && <em className="term-kind">{note.kind}</em>}
+                    <strong>{term.text}</strong>
+                  </p>
                   <span>
-                    {formatClock(term.start)}
+                    {place.weekId ?? "未排进周课"} · {place.weekday} · {periodLabel[place.period]} · {formatClock(term.start)}
                     {term.speaker ? ` · ${term.speaker}` : ""}
                   </span>
-                  <p>{term.sentence}</p>
+                  <TermAnalysis sentence={term.sentence} id={term.id} />
                 </div>
                 <div className="button-row">
                   <Link to={`/listen/${term.episodeId}?t=${Math.floor(term.start)}`}>回到这一句</Link>
@@ -98,7 +197,8 @@ export function VocabPage() {
                   </button>
                 </div>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </section>
       ))}

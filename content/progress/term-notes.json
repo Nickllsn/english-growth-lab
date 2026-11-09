@@ -1,0 +1,439 @@
+{
+  "475:have you here": {
+    "kind": "短语",
+    "meaning": "很高兴你能来 The Changelog 做客。",
+    "parts": [
+      {
+        "text": "have you here",
+        "literal": "让你在这里。",
+        "here": "glad to have you here 是欢迎嘉宾的套话。here 是这档节目，不是随便一个地点。"
+      }
+    ]
+  },
+  "475:newcomer": {
+    "kind": "单词",
+    "meaning": "主持人说自己接触 ZFS 不久，还是这个领域的新人。",
+    "parts": [
+      {
+        "text": "newcomer",
+        "literal": "新来的人。",
+        "here": "a newcomer to ZFS 是 ZFS 的新手。to 后面接的是领域，不是公司。"
+      }
+    ]
+  },
+  "475:co-creator": {
+    "kind": "单词",
+    "meaning": "主持人说 Matt 是 ZFS 的共同创造者，所以请他来讲这段历史。",
+    "parts": [
+      {
+        "text": "co-",
+        "literal": "一起、共同。",
+        "here": "co-creator of it 的 it 就是 ZFS。"
+      },
+      {
+        "text": "creator",
+        "literal": "创造者。",
+        "here": "指做出这个文件系统的人，不是内容创作者。"
+      }
+    ]
+  },
+  "475:scenario": {
+    "kind": "单词",
+    "meaning": "他第一次用 ZFS，是在家用实验室里、接近正式使用的场景，拿来给 Plex 当存储。",
+    "parts": [
+      {
+        "text": "scenario",
+        "literal": "设想出来的情景。",
+        "here": "a home lab production scenario 是一种具体用法：家里的实验室，却按正式环境在跑。"
+      }
+    ]
+  },
+  "475:plex server": {
+    "kind": "专名",
+    "meaning": "他的 ZFS 当时在给自己的 Plex 媒体服务器提供存储。",
+    "parts": [
+      {
+        "text": "Plex",
+        "literal": "一款媒体服务器软件的名字。",
+        "here": "专名，不要按普通英文单词去拆。"
+      },
+      {
+        "text": "server",
+        "literal": "服务器，或跑这个服务的机器。",
+        "here": "Plex server 就是跑 Plex 的那台机器。"
+      }
+    ]
+  },
+  "475:adoption": {
+    "kind": "单词",
+    "meaning": "他觉得自己比别人晚了二十年才开始用 ZFS。",
+    "parts": [
+      {
+        "text": "adoption",
+        "literal": "收养。技术里常指开始采用。",
+        "here": "adoption curve 里的 adoption，是有多少人已经用上了 ZFS。"
+      }
+    ]
+  },
+  "475:curve": {
+    "kind": "单词",
+    "meaning": "这一句里的 curve 要和 adoption 连着看：采用过程形成的那条曲线。",
+    "parts": [
+      {
+        "text": "curve",
+        "literal": "曲线。",
+        "here": "behind the adoption curve 是比大多数人更晚开始用。"
+      }
+    ]
+  },
+  "475:found out": {
+    "kind": "短语",
+    "meaning": "他后来了解到 ZFS，就喜欢上了这个文件系统。",
+    "parts": [
+      {
+        "text": "found out",
+        "literal": "find out 的过去式，意思是发现、打听到。",
+        "here": "found out about it 是了解到 ZFS 这件事。这里的 found 不是“建立、创立”。"
+      }
+    ]
+  },
+  "475:plugged into": {
+    "kind": "短语",
+    "meaning": "我其实不太关注科技播客圈。",
+    "parts": [
+      {
+        "text": "be plugged into",
+        "literal": "插上电源，或把设备接进网络。",
+        "here": "对一个圈子很熟、消息灵通。not really plugged into the tech podcast scene 就是不怎么混在科技播客圈里。"
+      }
+    ]
+  },
+  "475:scene": {
+    "kind": "单词",
+    "meaning": "同一句里的 scene 是圈子：科技播客那一圈人和节目。",
+    "parts": [
+      {
+        "text": "scene",
+        "literal": "场景、现场。",
+        "here": "the tech podcast scene 是科技播客这个圈子，不是拍摄现场。"
+      }
+    ]
+  },
+  "475:there's like two and a half admins, i believe, out there": {
+    "kind": "句型",
+    "meaning": "好像有个叫 Two and a Half Admins 的播客，我记得外面是有这么一档。",
+    "parts": [
+      {
+        "text": "There's like",
+        "literal": "有一个。",
+        "here": "口语里 like 把话放软，相当于“好像有”。这里不是“喜欢”。"
+      },
+      {
+        "text": "Two and a Half Admins",
+        "literal": "两个半管理员。",
+        "here": "这是一档播客的名字，名字仿的是 Two and a Half Men。不要当成一般的数量说法。"
+      },
+      {
+        "text": "I believe",
+        "literal": "我相信。",
+        "here": "说话人记得不太满，留一点不确定。"
+      },
+      {
+        "text": "out there",
+        "literal": "在外面。",
+        "here": "在世上、在播客圈里存在着。"
+      }
+    ]
+  },
+  "475:hit me up": {
+    "kind": "短语",
+    "meaning": "那档播客的主持人以后大概会来联系他。",
+    "parts": [
+      {
+        "text": "hit me up",
+        "literal": "撞我一下。",
+        "here": "口语里是联系我、找我聊聊。they'll probably hit me up 是他们大概会来找我。"
+      }
+    ]
+  },
+  "475:get you on": {
+    "kind": "短语",
+    "meaning": "主持人想请 Matt 来节目里讲 ZFS。",
+    "parts": [
+      {
+        "text": "get you on",
+        "literal": "把你弄上去。",
+        "here": "get you on 后面省了 the show，就是请你来上节目。"
+      }
+    ]
+  },
+  "475:roots in open source": {
+    "kind": "短语",
+    "meaning": "ZFS 的来历和开源有关。",
+    "parts": [
+      {
+        "text": "roots",
+        "literal": "根。",
+        "here": "have roots in 是起源于、根基在。interesting roots in open source 是和开源有一段渊源。"
+      }
+    ]
+  },
+  "475:osi-approved license": {
+    "kind": "短语",
+    "meaning": "它用的许可证被 OSI 列成开源许可证，但这件事背后有过争议。",
+    "parts": [
+      {
+        "text": "OSI",
+        "literal": "Open Source Initiative，开放源代码促进会。",
+        "here": "专名，指认定开源许可证的那个组织。"
+      },
+      {
+        "text": "approved license",
+        "literal": "被认可的许可证。",
+        "here": "OSI-approved license 就是 OSI 认证过的开源许可证。"
+      }
+    ]
+  },
+  "475:origination": {
+    "kind": "单词",
+    "meaning": "主持人想听 ZFS 是怎么开始的，包括当初要解决的问题，以及后来怎么发展到现在。",
+    "parts": [
+      {
+        "text": "origination",
+        "literal": "起源、开始的过程。比 origin 更正式。",
+        "here": "the back-story of its origination 是它诞生的那段由来。"
+      }
+    ]
+  },
+  "475:drama": {
+    "kind": "单词",
+    "meaning": "开源许可证这件事，台面下有过争执。",
+    "parts": [
+      {
+        "text": "drama",
+        "literal": "戏剧。",
+        "here": "口语里是热闹的矛盾。drama behind the scenes 是背地里的风波，不是电视剧。"
+      }
+    ]
+  },
+  "475:eventually": {
+    "kind": "单词",
+    "meaning": "Sun 后来被 Oracle 收购了。",
+    "parts": [
+      {
+        "text": "eventually",
+        "literal": "经过一段时间之后。",
+        "here": "They were eventually acquired 是收购发生在后来，不是当时就发生的。"
+      }
+    ]
+  },
+  "475:open it up": {
+    "kind": "短语",
+    "meaning": "请 Matt 开始讲，话头由他来开。",
+    "parts": [
+      {
+        "text": "open it up",
+        "literal": "把它打开。",
+        "here": "这一句是请对方开讲。it 是这个话题，不是把代码开源。"
+      }
+    ]
+  },
+  "475:raidz expansion": {
+    "kind": "专名",
+    "meaning": "过了四年，话题转到 RAIDZ expansion 这个功能。",
+    "parts": [
+      {
+        "text": "RAIDZ expansion",
+        "literal": "给 RAIDZ 增加磁盘、把阵列扩容。",
+        "here": "这是 OpenZFS 的一个功能名。这一句是在说，这件事是四年之后才谈起来的。"
+      }
+    ]
+  },
+  "475:in terms of": {
+    "kind": "短语",
+    "meaning": "说到某个方面时，这件事还没落地，话在这里断了。",
+    "parts": [
+      {
+        "text": "in terms of",
+        "literal": "从某个方面来说。",
+        "here": "It's not landed in terms of-- 是“就……而言还没落地”。后面被打断，没有说出具体是哪一方面。"
+      }
+    ]
+  },
+  "475:cautious": {
+    "kind": "单词",
+    "meaning": "他不赞成把这件事说成已经定下的计划。",
+    "parts": [
+      {
+        "text": "cautious",
+        "literal": "谨慎的。",
+        "here": "be cautious about using the word plan 是用 plan 这个词要小心，因为并没有这样的计划。"
+      }
+    ]
+  },
+  "475:retainer": {
+    "kind": "单词",
+    "meaning": "OpenZFS 没有长期雇着的开发者。",
+    "parts": [
+      {
+        "text": "retainer",
+        "literal": "预付费用，把人长期留下来做事。",
+        "here": "developers on retainer 是签着长期聘约、随叫随到的开发者。"
+      }
+    ]
+  },
+  "475:tricky": {
+    "kind": "单词",
+    "meaning": "代码审查是大事，因为里面有很多很容易出错的代码。",
+    "parts": [
+      {
+        "text": "tricky",
+        "literal": "棘手、不好对付。",
+        "here": "very tricky code 是很容易写错、审查起来很费劲的代码。"
+      }
+    ]
+  },
+  "475:folks": {
+    "kind": "单词",
+    "meaning": "这样做能让社区里的其他人更相信它能正常工作，不会弄坏存储池。",
+    "parts": [
+      {
+        "text": "folks",
+        "literal": "人们。口语比 people 随意。",
+        "here": "other folks in the community 就是社区里的其他人。"
+      }
+    ]
+  },
+  "475:essentially": {
+    "kind": "单词",
+    "meaning": "在他这个用法里，基本上就是得自己买硬件和硬盘，再复制一套。",
+    "parts": [
+      {
+        "text": "essentially",
+        "literal": "本质上、基本上。",
+        "here": "replicate, essentially, in my scenario 是说，落到他的场景，其实就是自己复制一套。"
+      }
+    ]
+  },
+  "475:it's a matter of": {
+    "kind": "短语",
+    "meaning": "关键就是拿到那个未来分支，编译好，再装到机器上，这很费劲。",
+    "parts": [
+      {
+        "text": "it's a matter of",
+        "literal": "这是一件……的事。",
+        "here": "问题就在于 getting access，后面那几步才是真正要做的。"
+      }
+    ]
+  },
+  "475:picked up": {
+    "kind": "短语",
+    "meaning": "装上去还不够，系统还得真的选用这一份，而不是用已经在的内核模块。",
+    "parts": [
+      {
+        "text": "picked up",
+        "literal": "被捡起、被带走。",
+        "here": "gets picked up 是被系统加载、选用。不是把东西从地上捡起来。"
+      }
+    ]
+  },
+  "475:in preference to": {
+    "kind": "短语",
+    "meaning": "希望新装的模块被优先使用，排在 Ubuntu 自带的 ZFS 内核模块前面。",
+    "parts": [
+      {
+        "text": "in preference to",
+        "literal": "比起另一个，更愿意选这个。",
+        "here": "优先于已经在机器上的那些 kernel modules。"
+      }
+    ]
+  },
+  "475:well-tried": {
+    "kind": "单词",
+    "meaning": "这条路已经有很多人走过。",
+    "parts": [
+      {
+        "text": "well-tried",
+        "literal": "多次试过、靠得住。",
+        "here": "a well-tried road 是一条被人反复走过的路，不是第一次尝试。"
+      }
+    ]
+  },
+  "475:one-liner": {
+    "kind": "单词",
+    "meaning": "想帮忙的话，多半不是改一行就能完成，不过有很多人可以帮你。",
+    "parts": [
+      {
+        "text": "one-liner",
+        "literal": "一行就能写完的东西。",
+        "here": "might not be a one-liner 是这件事没那么小，不是一行命令或一行补丁就能做完。"
+      }
+    ]
+  },
+  "475:repository": {
+    "kind": "单词",
+    "meaning": "他在问志愿者该去代码仓库、issue，还是邮件列表报名。",
+    "parts": [
+      {
+        "text": "repository",
+        "literal": "仓库、存放处。",
+        "here": "这里是放代码的仓库。和 issue、mailing list 放在一起，是三个可以去说话的地方。"
+      }
+    ]
+  },
+  "475:as a willing participant": {
+    "kind": "短语",
+    "meaning": "他想以愿意参加的人的身份，至少先当最终用户来帮忙测试。",
+    "parts": [
+      {
+        "text": "willing participant",
+        "literal": "愿意参加的人。",
+        "here": "as a willing participant 是自我介绍的方式：我自愿来参加，不是被派来的。"
+      }
+    ]
+  },
+  "475:baked-in": {
+    "kind": "短语",
+    "meaning": "这个功能已经嵌在里面二十年了，所以他觉得太理所当然，刚才没提。",
+    "parts": [
+      {
+        "text": "baked-in",
+        "literal": "烤进去的、做到里面的。",
+        "here": "a baked-in 20-year feature 是存在了二十年、已经成了标配的功能。"
+      }
+    ]
+  },
+  "475:sort of": {
+    "kind": "短语",
+    "meaning": "这几样东西多少能让系统快一点。",
+    "parts": [
+      {
+        "text": "sort of",
+        "literal": "有点儿、算是。",
+        "here": "can sort of speed up 把话说软：有一点加速作用，不是绝对的承诺。"
+      }
+    ]
+  },
+  "475:speed up": {
+    "kind": "短语",
+    "meaning": "同一句里，这些东西是用来让系统变快的。",
+    "parts": [
+      {
+        "text": "speed up",
+        "literal": "加快。",
+        "here": "speed up systems 是让系统跑得更快。"
+      }
+    ]
+  },
+  "475:taking advantage of": {
+    "kind": "短语",
+    "meaning": "这正是他已经在用的一项。",
+    "parts": [
+      {
+        "text": "take advantage of",
+        "literal": "利用。",
+        "here": "I'm actually taking advantage of 是我确实已经在用它，不是只听说过。"
+      }
+    ]
+  }
+}

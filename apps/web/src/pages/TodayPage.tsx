@@ -93,7 +93,15 @@ export function TodayPage({ today = shanghaiToday() }: TodayPageProps) {
         <DayPanel
           day={day}
           done={progress.slots[day.date] ?? []}
-          onAdd={(draft) => setProgress((current) => addTerm(current, draft))}
+          onAdd={(draft) =>
+            setProgress((current) =>
+              addTerm(current, {
+                ...draft,
+                studiedOn: day.date,
+                period: activeSlot.id === "preview" || activeSlot.id === "review" ? undefined : activeSlot.id
+              })
+            )
+          }
           onReview={(text) =>
             setProgress((current) => ({
               ...current,

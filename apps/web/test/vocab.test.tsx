@@ -24,9 +24,62 @@ describe("learning terms", () => {
   it("starts from the progress file saved in the project", () => {
     const progress = loadProgress();
 
-    expect(progress.terms).toHaveLength(19);
+    expect(progress.terms).toHaveLength(37);
     expect(progress.terms.map((term) => term.text)).toContain("newcomer");
-    expect(progress.terms.map((term) => term.text)).toContain("open it up");
+    expect(progress.terms.map((term) => term.text)).toContain("RAIDZ expansion");
+    expect(progress.slots["2026-11-09"]).toEqual(["morning", "noon", "evening"]);
+  });
+
+  it("keeps local-only terms and adds terms missing from the returned file", () => {
+    localStorage.setItem(
+      "egl.progress.v1",
+      JSON.stringify({
+        slots: { "2026-11-09": ["morning"] },
+        reviews: {},
+        known: [],
+        unknown: [],
+        terms: [
+          {
+            id: "475:local only",
+            text: "local only",
+            episodeId: "475",
+            episodeTitle: "Making the ZFS file system",
+            start: 1,
+            speaker: null,
+            sentence: "local sentence",
+            addedAt: "2026-11-09T01:00:00.000Z"
+          }
+        ]
+      })
+    );
+
+    const progress = loadProgress();
+    expect(progress.terms.map((term) => term.text)).toContain("local only");
+    expect(progress.terms.map((term) => term.text)).toContain("RAIDZ expansion");
+    expect(progress.slots["2026-11-09"]).toEqual(["morning"]);
+  });
+
+  it("shows a sentence-based note for each imported term", () => {
+    render(
+      <MemoryRouter>
+        <VocabPage />
+      </MemoryRouter>
+    );
+
+    expect(screen.getByText("我其实不太关注科技播客圈。")).toBeInTheDocument();
+    expect(screen.getByText(/插上电源/)).toBeInTheDocument();
+    expect(screen.getByText("请 Matt 开始讲，话头由他来开。")).toBeInTheDocument();
+    expect(screen.getAllByText("这句话是").length).toBe(37);
+
+    fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周一" } });
+    fireEvent.change(screen.getByRole("combobox", { name: "早中晚" }), { target: { value: "morning" } });
+    expect(screen.getByText("1 / 37 条")).toBeInTheDocument();
+    expect(screen.getAllByText("RAIDZ expansion").length).toBeGreaterThan(0);
+    expect(screen.queryByText("in terms of")).not.toBeInTheDocument();
+    expect(screen.queryByText("have you here")).not.toBeInTheDocument();
+
+    fireEvent.change(screen.getByRole("combobox", { name: "周" }), { target: { value: "2026-W45" } });
+    expect(screen.getByText("这个范围里没有生词。")).toBeInTheDocument();
   });
 
   it("stores the sentence and episode with the selected word", () => {

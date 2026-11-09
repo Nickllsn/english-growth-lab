@@ -1,5 +1,11 @@
 {
-  "slots": {},
+  "slots": {
+    "2026-11-09": [
+      "morning",
+      "noon",
+      "evening"
+    ]
+  },
   "reviews": {},
   "known": [],
   "unknown": [],
@@ -193,6 +199,186 @@
       "sentence": "So open it up.",
       "id": "475:open it up",
       "addedAt": "2026-11-06T06:23:20.278Z"
+    },
+    {
+      "text": "RAIDZ expansion",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3626.7,
+      "speaker": "Adam Stacoviak",
+      "sentence": "So four years later though, RAIDZ expansion.",
+      "id": "475:raidz expansion",
+      "addedAt": "2026-11-09T00:54:25.770Z"
+    },
+    {
+      "text": "in terms of",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3641.06,
+      "speaker": "Adam Stacoviak",
+      "sentence": "It's not landed in terms of--",
+      "id": "475:in terms of",
+      "addedAt": "2026-11-09T04:23:59.821Z"
+    },
+    {
+      "text": "cautious",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3649.96,
+      "speaker": "Matthew Ahrens",
+      "sentence": "I would be cautious about using the word \"plan\" because we don't-- OpenZFS doesn't have developers on retainer, right?",
+      "id": "475:cautious",
+      "addedAt": "2026-11-09T04:29:09.683Z"
+    },
+    {
+      "text": "retainer",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3649.96,
+      "speaker": "Matthew Ahrens",
+      "sentence": "I would be cautious about using the word \"plan\" because we don't-- OpenZFS doesn't have developers on retainer, right?",
+      "id": "475:retainer",
+      "addedAt": "2026-11-09T04:30:31.363Z"
+    },
+    {
+      "text": "tricky",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3674.36,
+      "speaker": "Matthew Ahrens",
+      "sentence": "So we need people to do -- code reviews is the big one, and there's a lot of code there, a lot of very tricky code.",
+      "id": "475:tricky",
+      "addedAt": "2026-11-09T04:34:52.790Z"
+    },
+    {
+      "text": "folks",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3703.46,
+      "speaker": "Matthew Ahrens",
+      "sentence": "That'll help give confidence to other folks in the community that this is going to work right and not break their pools.",
+      "id": "475:folks",
+      "addedAt": "2026-11-09T04:37:12.272Z"
+    },
+    {
+      "text": "essentially",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3709.88,
+      "speaker": "Adam Stacoviak",
+      "sentence": "Obviously, I have to invest in the hardware and the drives and stuff and replicate, essentially, in my scenario.",
+      "id": "475:essentially",
+      "addedAt": "2026-11-09T04:40:36.202Z"
+    },
+    {
+      "text": "it's a matter of",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3709.88,
+      "speaker": "Adam Stacoviak",
+      "sentence": "But it's a matter of getting access to that future branch and being able to compile it and put it on their machine, which probably takes a lot of effort.",
+      "id": "475:it's a matter of",
+      "addedAt": "2026-11-09T04:45:04.147Z"
+    },
+    {
+      "text": "picked up",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3742.44,
+      "speaker": "Matthew Ahrens",
+      "sentence": "However, depending on the particulars of the system, getting it installed correctly in a way that it gets picked up, for example, in preference to the kernel modules that might already be there if you have an Ubuntu system that comes with ZFS kernel modules already; there can be some tricks there.",
+      "id": "475:picked up",
+      "addedAt": "2026-11-09T04:49:40.097Z"
+    },
+    {
+      "text": "in preference to",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3742.44,
+      "speaker": "Matthew Ahrens",
+      "sentence": "However, depending on the particulars of the system, getting it installed correctly in a way that it gets picked up, for example, in preference to the kernel modules that might already be there if you have an Ubuntu system that comes with ZFS kernel modules already; there can be some tricks there.",
+      "id": "475:in preference to",
+      "addedAt": "2026-11-09T04:52:45.891Z"
+    },
+    {
+      "text": "well-tried",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3742.44,
+      "speaker": "Matthew Ahrens",
+      "sentence": "But this is a well-tried road.",
+      "id": "475:well-tried",
+      "addedAt": "2026-11-09T04:53:02.847Z"
+    },
+    {
+      "text": "one-liner",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3742.44,
+      "speaker": "Matthew Ahrens",
+      "sentence": "So if you would like to help, it might not be a one-liner, but there are a lot of people that can help you.",
+      "id": "475:one-liner",
+      "addedAt": "2026-11-09T04:54:15.160Z"
+    },
+    {
+      "text": "repository",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3796.96,
+      "speaker": "Adam Stacoviak",
+      "sentence": "Would you say the repository, or would you say an issue, or the mailing list?",
+      "id": "475:repository",
+      "addedAt": "2026-11-09T04:56:31.227Z"
+    },
+    {
+      "text": "as a willing participant",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3796.96,
+      "speaker": "Adam Stacoviak",
+      "sentence": "What's a good place to say, \"Hey, as a willing participant, I'll help test this at least as an end-user\"?",
+      "id": "475:as a willing participant",
+      "addedAt": "2026-11-09T04:56:35.464Z"
+    },
+    {
+      "text": "baked-in",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3825.48,
+      "speaker": "Adam Stacoviak",
+      "sentence": "You didn't really mention it, because it's such a baked-in 20-year feature.",
+      "id": "475:baked-in",
+      "addedAt": "2026-11-09T05:02:12.301Z"
+    },
+    {
+      "text": "sort of",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3855.58,
+      "speaker": "Adam Stacoviak",
+      "sentence": "Those are a couple things that can sort of speed up systems.",
+      "id": "475:sort of",
+      "addedAt": "2026-11-09T06:14:30.822Z"
+    },
+    {
+      "text": "speed up",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3855.58,
+      "speaker": "Adam Stacoviak",
+      "sentence": "Those are a couple things that can sort of speed up systems.",
+      "id": "475:speed up",
+      "addedAt": "2026-11-09T06:14:36.209Z"
+    },
+    {
+      "text": "taking advantage of",
+      "episodeId": "475",
+      "episodeTitle": "Making the ZFS file system",
+      "start": 3855.58,
+      "speaker": "Adam Stacoviak",
+      "sentence": "That's one thing I'm actually taking advantage of.",
+      "id": "475:taking advantage of",
+      "addedAt": "2026-11-09T06:17:24.241Z"
     }
   ]
 }
