@@ -158,10 +158,37 @@ textarea:focus-visible {
   background: var(--primary-soft);
 }
 
+.workspace {
+  min-width: 0;
+}
+
 .content {
   width: min(1040px, 100%);
   margin: 0 auto;
-  padding: 54px 44px 80px;
+  padding: 28px 44px 80px;
+}
+
+.playback-bar {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  display: grid;
+  gap: 8px;
+  width: min(1040px, calc(100% - 88px));
+  margin: 16px auto 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.playback-bar[hidden] {
+  display: none;
+}
+
+.playback-bar audio {
+  width: 100%;
 }
 
 .page {
@@ -628,7 +655,12 @@ textarea {
   }
 
   .content {
-    padding: 32px 18px 56px;
+    padding: 20px 18px 56px;
+  }
+
+  .playback-bar {
+    width: auto;
+    margin: 12px 18px 0;
   }
 
   .page-header,

@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from "react";
 import { NavLink } from "react-router-dom";
+import { PlaybackBar } from "../playback/PlaybackBar";
 
 const links = [
   { to: "/", label: "今日" },
@@ -34,7 +35,10 @@ export function AppShell({ children }: PropsWithChildren) {
           ))}
         </nav>
       </aside>
-      <main className="content">{children}</main>
+      <div className="workspace">
+        <PlaybackBar />
+        <main className="content">{children}</main>
+      </div>
     </div>
   );
 }

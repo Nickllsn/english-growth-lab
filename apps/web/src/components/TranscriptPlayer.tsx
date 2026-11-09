@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import type { ChangelogEpisode } from "../content/changelog-episodes";
 import { activeCueIndex, formatClock, parseTranscript, segmentStop } from "../content/parse-transcript";
 import { acceptSelection, sentenceAround } from "../content/selection";
+import { claimEpisode, getAudio, getPlaybackSnapshot, playFrom, subscribePlayback } from "../playback/engine";
 import { termId, type TermDraft } from "../progress/store";
-
-const rates = ["0.75", "1", "1.25"];
 
 interface SelectionMenu {
   text: string | null;
@@ -19,29 +18,50 @@ export function TranscriptPlayer({
   start = 0,
   end,
   savedIds,
-  onAdd
+  onAdd,
+  manageAudio = true
 }: {
   episode: ChangelogEpisode;
   start?: number;
   end?: number;
   savedIds?: Set<string>;
   onAdd?: (draft: TermDraft) => void;
+  manageAudio?: boolean;
 }) {
-  const audioRef = useRef<HTMLAudioElement>(null);
   const activeRef = useRef<HTMLLIElement | null>(null);
   const followRef = useRef(false);
   const allCues = parseTranscript(episode.transcript, episode.cueStarts);
   const windowEnd = end ?? Number.POSITIVE_INFINITY;
   const stopAt = segmentStop(allCues, end);
-  const heldRef = useRef(false);
   const cues = allCues.filter((cue, index) => {
     const next = allCues[index + 1]?.start ?? Number.POSITIVE_INFINITY;
     return cue.start < windowEnd && next > start;
   });
-  const [seconds, setSeconds] = useState(start);
-  const [rate, setRate] = useState("1");
+  const playback = useSyncExternalStore(subscribePlayback, getPlaybackSnapshot, getPlaybackSnapshot);
+  const seconds = playback.episodeId === episode.id ? playback.seconds : start;
   const [menu, setMenu] = useState<SelectionMenu | null>(null);
   const active = activeCueIndex(cues, seconds);
+
+  useEffect(() => {
+    if (!manageAudio) return;
+    claimEpisode(episode, start, stopAt);
+  }, [episode, manageAudio, start, stopAt]);
+
+  useEffect(() => {
+    const audio = getAudio();
+    const onPlay = () => {
+      followRef.current = true;
+    };
+    const onPause = () => {
+      followRef.current = false;
+    };
+    audio.addEventListener("play", onPlay);
+    audio.addEventListener("pause", onPause);
+    return () => {
+      audio.removeEventListener("play", onPlay);
+      audio.removeEventListener("pause", onPause);
+    };
+  }, []);
 
   useEffect(() => {
     const node = activeRef.current;
@@ -49,33 +69,9 @@ export function TranscriptPlayer({
     node.scrollIntoView({ block: "nearest" });
   }, [active]);
 
-  function holdAtBoundary(audio: HTMLAudioElement) {
-    if (stopAt == null) return;
-    if (audio.currentTime < stopAt - 0.2) {
-      heldRef.current = false;
-      return;
-    }
-    if (!heldRef.current && audio.currentTime >= stopAt) {
-      heldRef.current = true;
-      audio.pause();
-      if (audio.currentTime > stopAt) audio.currentTime = stopAt;
-    }
-  }
-
   function seek(time: number) {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (stopAt == null || time < stopAt) heldRef.current = false;
     followRef.current = true;
-    const apply = () => {
-      audio.currentTime = time;
-      setSeconds(time);
-      void audio.play()?.catch(() => undefined);
-    };
-    apply();
-    if (audio.readyState < 1) {
-      audio.addEventListener("loadedmetadata", apply, { once: true });
-    }
+    playFrom(episode, time, stopAt);
   }
 
   function capture(paragraph: HTMLElement, cueStart: number, speaker: string | null, sentence: string) {
@@ -119,59 +115,13 @@ export function TranscriptPlayer({
 
   return (
     <div className="listen-layout">
-      <div className="listen-player">
-        <div className="listen-player-row">
-          <p>
-            正在听 <strong>{formatClock(seconds)}</strong>
-          </p>
-          <label>
-            语速
-            <select
-              aria-label="语速"
-              value={rate}
-              onChange={(event) => {
-                const next = event.target.value;
-                setRate(next);
-                if (audioRef.current) audioRef.current.playbackRate = Number(next);
-              }}
-            >
-              {rates.map((item) => (
-                <option key={item} value={item}>
-                  {item}×
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-        <audio
-          ref={audioRef}
-          aria-label={`${episode.title} 音频`}
-          controls
-          preload="metadata"
-          src={episode.audioUrl}
-          onTimeUpdate={(event) => {
-            holdAtBoundary(event.currentTarget);
-            setSeconds(event.currentTarget.currentTime);
-          }}
-          onSeeked={(event) => {
-            holdAtBoundary(event.currentTarget);
-            setSeconds(event.currentTarget.currentTime);
-          }}
-          onPlay={() => {
-            followRef.current = true;
-          }}
-          onPause={() => {
-            followRef.current = false;
-          }}
-        />
-        <div className="listen-player-row">
-          <button className="secondary-button" type="button" onClick={() => seek(start)}>
-            从 {formatClock(start)} 播放
-          </button>
-          <p className="listen-note">
-            点每段左边的时间才会播放。每一句的时间对着这句在音频里开始的位置。这段文字稿播完会自动暂停，要接着听后面再按播放。选中文字不会跳转，最多 20 个词，再点「加入不认识」。
-          </p>
-        </div>
+      <div className="listen-player-row">
+        <button className="secondary-button" type="button" onClick={() => seek(start)}>
+          从 {formatClock(start)} 播放
+        </button>
+        <p className="listen-note">
+          点每段左边的时间才会播放。每一句的时间对着这句在音频里开始的位置。这段文字稿播完会自动暂停，要接着听后面再按播放。换到本周、进度或生词时会接着播。手动暂停后，重新打开任务页再按播放，会从暂停的时间继续。选中文字不会跳转，最多 20 个词，再点「加入不认识」。
+        </p>
       </div>
       <ol className="cue-list">
         {cues.map((cue, index) => (

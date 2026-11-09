@@ -91,6 +91,7 @@ function DayCard({
           end={day.listen.end}
           episode={findEpisode(day.listen.episodeId)!}
           onAdd={onAdd}
+          manageAudio={false}
           savedIds={savedIds}
           start={day.listen.start}
         />
