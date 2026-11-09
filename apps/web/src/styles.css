@@ -1160,10 +1160,49 @@ textarea {
 
 .term-card {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  padding: 12px 0;
+  padding: 14px 0;
   border-top: 1px solid var(--border);
+}
+
+.term-kind {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  vertical-align: 1px;
+}
+
+.term-note {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.term-label {
+  display: inline;
+  margin-right: 6px;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.term-parts {
+  display: grid;
+  gap: 8px;
+  margin: 6px 0 0;
+  padding-left: 1.1rem;
+}
+
+.term-parts li strong {
+  color: var(--text);
 }
 
 .term-card p {
@@ -1172,7 +1211,8 @@ textarea {
   line-height: 1.6;
 }
 
-.term-card span {
+.term-card > div > span,
+.term-parts span {
   display: block;
   color: var(--text-muted);
   font-size: 0.85rem;
