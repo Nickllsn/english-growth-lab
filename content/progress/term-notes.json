@@ -237,5 +237,203 @@
         "here": "这一句是请对方开讲。it 是这个话题，不是把代码开源。"
       }
     ]
+  },
+  "475:raidz expansion": {
+    "kind": "专名",
+    "meaning": "过了四年，话题转到 RAIDZ expansion 这个功能。",
+    "parts": [
+      {
+        "text": "RAIDZ expansion",
+        "literal": "给 RAIDZ 增加磁盘、把阵列扩容。",
+        "here": "这是 OpenZFS 的一个功能名。这一句是在说，这件事是四年之后才谈起来的。"
+      }
+    ]
+  },
+  "475:in terms of": {
+    "kind": "短语",
+    "meaning": "说到某个方面时，这件事还没落地，话在这里断了。",
+    "parts": [
+      {
+        "text": "in terms of",
+        "literal": "从某个方面来说。",
+        "here": "It's not landed in terms of-- 是“就……而言还没落地”。后面被打断，没有说出具体是哪一方面。"
+      }
+    ]
+  },
+  "475:cautious": {
+    "kind": "单词",
+    "meaning": "他不赞成把这件事说成已经定下的计划。",
+    "parts": [
+      {
+        "text": "cautious",
+        "literal": "谨慎的。",
+        "here": "be cautious about using the word plan 是用 plan 这个词要小心，因为并没有这样的计划。"
+      }
+    ]
+  },
+  "475:retainer": {
+    "kind": "单词",
+    "meaning": "OpenZFS 没有长期雇着的开发者。",
+    "parts": [
+      {
+        "text": "retainer",
+        "literal": "预付费用，把人长期留下来做事。",
+        "here": "developers on retainer 是签着长期聘约、随叫随到的开发者。"
+      }
+    ]
+  },
+  "475:tricky": {
+    "kind": "单词",
+    "meaning": "代码审查是大事，因为里面有很多很容易出错的代码。",
+    "parts": [
+      {
+        "text": "tricky",
+        "literal": "棘手、不好对付。",
+        "here": "very tricky code 是很容易写错、审查起来很费劲的代码。"
+      }
+    ]
+  },
+  "475:folks": {
+    "kind": "单词",
+    "meaning": "这样做能让社区里的其他人更相信它能正常工作，不会弄坏存储池。",
+    "parts": [
+      {
+        "text": "folks",
+        "literal": "人们。口语比 people 随意。",
+        "here": "other folks in the community 就是社区里的其他人。"
+      }
+    ]
+  },
+  "475:essentially": {
+    "kind": "单词",
+    "meaning": "在他这个用法里，基本上就是得自己买硬件和硬盘，再复制一套。",
+    "parts": [
+      {
+        "text": "essentially",
+        "literal": "本质上、基本上。",
+        "here": "replicate, essentially, in my scenario 是说，落到他的场景，其实就是自己复制一套。"
+      }
+    ]
+  },
+  "475:it's a matter of": {
+    "kind": "短语",
+    "meaning": "关键就是拿到那个未来分支，编译好，再装到机器上，这很费劲。",
+    "parts": [
+      {
+        "text": "it's a matter of",
+        "literal": "这是一件……的事。",
+        "here": "问题就在于 getting access，后面那几步才是真正要做的。"
+      }
+    ]
+  },
+  "475:picked up": {
+    "kind": "短语",
+    "meaning": "装上去还不够，系统还得真的选用这一份，而不是用已经在的内核模块。",
+    "parts": [
+      {
+        "text": "picked up",
+        "literal": "被捡起、被带走。",
+        "here": "gets picked up 是被系统加载、选用。不是把东西从地上捡起来。"
+      }
+    ]
+  },
+  "475:in preference to": {
+    "kind": "短语",
+    "meaning": "希望新装的模块被优先使用，排在 Ubuntu 自带的 ZFS 内核模块前面。",
+    "parts": [
+      {
+        "text": "in preference to",
+        "literal": "比起另一个，更愿意选这个。",
+        "here": "优先于已经在机器上的那些 kernel modules。"
+      }
+    ]
+  },
+  "475:well-tried": {
+    "kind": "单词",
+    "meaning": "这条路已经有很多人走过。",
+    "parts": [
+      {
+        "text": "well-tried",
+        "literal": "多次试过、靠得住。",
+        "here": "a well-tried road 是一条被人反复走过的路，不是第一次尝试。"
+      }
+    ]
+  },
+  "475:one-liner": {
+    "kind": "单词",
+    "meaning": "想帮忙的话，多半不是改一行就能完成，不过有很多人可以帮你。",
+    "parts": [
+      {
+        "text": "one-liner",
+        "literal": "一行就能写完的东西。",
+        "here": "might not be a one-liner 是这件事没那么小，不是一行命令或一行补丁就能做完。"
+      }
+    ]
+  },
+  "475:repository": {
+    "kind": "单词",
+    "meaning": "他在问志愿者该去代码仓库、issue，还是邮件列表报名。",
+    "parts": [
+      {
+        "text": "repository",
+        "literal": "仓库、存放处。",
+        "here": "这里是放代码的仓库。和 issue、mailing list 放在一起，是三个可以去说话的地方。"
+      }
+    ]
+  },
+  "475:as a willing participant": {
+    "kind": "短语",
+    "meaning": "他想以愿意参加的人的身份，至少先当最终用户来帮忙测试。",
+    "parts": [
+      {
+        "text": "willing participant",
+        "literal": "愿意参加的人。",
+        "here": "as a willing participant 是自我介绍的方式：我自愿来参加，不是被派来的。"
+      }
+    ]
+  },
+  "475:baked-in": {
+    "kind": "短语",
+    "meaning": "这个功能已经嵌在里面二十年了，所以他觉得太理所当然，刚才没提。",
+    "parts": [
+      {
+        "text": "baked-in",
+        "literal": "烤进去的、做到里面的。",
+        "here": "a baked-in 20-year feature 是存在了二十年、已经成了标配的功能。"
+      }
+    ]
+  },
+  "475:sort of": {
+    "kind": "短语",
+    "meaning": "这几样东西多少能让系统快一点。",
+    "parts": [
+      {
+        "text": "sort of",
+        "literal": "有点儿、算是。",
+        "here": "can sort of speed up 把话说软：有一点加速作用，不是绝对的承诺。"
+      }
+    ]
+  },
+  "475:speed up": {
+    "kind": "短语",
+    "meaning": "同一句里，这些东西是用来让系统变快的。",
+    "parts": [
+      {
+        "text": "speed up",
+        "literal": "加快。",
+        "here": "speed up systems 是让系统跑得更快。"
+      }
+    ]
+  },
+  "475:taking advantage of": {
+    "kind": "短语",
+    "meaning": "这正是他已经在用的一项。",
+    "parts": [
+      {
+        "text": "take advantage of",
+        "literal": "利用。",
+        "here": "I'm actually taking advantage of 是我确实已经在用它，不是只听说过。"
+      }
+    ]
   }
 }
