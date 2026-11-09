@@ -165,7 +165,33 @@ textarea:focus-visible {
 .content {
   width: min(1040px, 100%);
   margin: 0 auto;
-  padding: 28px 44px 80px;
+  padding: 28px 44px 112px;
+}
+
+.page-jumps {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 7;
+  display: flex;
+  gap: 8px;
+}
+
+.page-jumps button {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgb(20 24 40 / 16%);
+  cursor: pointer;
+}
+
+.page-jumps button:disabled {
+  opacity: 0.4;
+  cursor: default;
 }
 
 .playback-bar {
@@ -655,7 +681,7 @@ textarea {
   }
 
   .content {
-    padding: 20px 18px 56px;
+    padding: 20px 18px 96px;
   }
 
   .playback-bar {
