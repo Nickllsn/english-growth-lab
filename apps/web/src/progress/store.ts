@@ -3,6 +3,10 @@ import { formatClock } from "../content/parse-transcript";
 import type { VocabItem, WeekPack } from "../content/types";
 
 const STORAGE_KEY = "egl.progress.v1";
+const MERGED_KEY = "egl.progress.merged";
+const BUNDLED_REVISION = "2026-11-09-37";
+
+export type StudyPeriod = "morning" | "noon" | "evening" | "home";
 
 export interface LearningTerm {
   id: string;
@@ -13,6 +17,8 @@ export interface LearningTerm {
   speaker: string | null;
   sentence: string;
   addedAt: string;
+  studiedOn?: string;
+  period?: StudyPeriod;
 }
 
 export interface TermDraft {
@@ -22,6 +28,8 @@ export interface TermDraft {
   start: number;
   speaker: string | null;
   sentence: string;
+  studiedOn?: string;
+  period?: StudyPeriod;
 }
 
 export interface ProgressState {
@@ -51,20 +59,42 @@ function stringList(value: unknown): string[] {
 }
 
 export function loadProgress(): ProgressState {
+  const bundled = parseProgress(JSON.stringify(bundledProgress));
   const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) return parseProgress(JSON.stringify(bundledProgress));
+  if (!raw) return bundled;
+  let local: ProgressState;
   try {
-    const parsed = JSON.parse(raw) as Partial<ProgressState>;
-    return {
-      slots: parsed.slots ?? {},
-      reviews: parsed.reviews ?? {},
-      known: stringList(parsed.known),
-      unknown: stringList(parsed.unknown),
-      terms: termList(parsed.terms)
-    };
+    local = parseStored(raw);
   } catch {
-    return emptyProgress();
+    return bundled;
   }
+  if (localStorage.getItem(MERGED_KEY) === BUNDLED_REVISION) return local;
+  const merged = mergeProgress(local, bundled);
+  saveProgress(merged);
+  localStorage.setItem(MERGED_KEY, BUNDLED_REVISION);
+  return merged;
+}
+
+function parseStored(raw: string): ProgressState {
+  const parsed = JSON.parse(raw) as Partial<ProgressState>;
+  return {
+    slots: parsed.slots ?? {},
+    reviews: parsed.reviews ?? {},
+    known: stringList(parsed.known),
+    unknown: stringList(parsed.unknown),
+    terms: termList(parsed.terms)
+  };
+}
+
+export function mergeProgress(local: ProgressState, bundled: ProgressState): ProgressState {
+  const seen = new Set(local.terms.map((term) => term.id));
+  return {
+    slots: { ...bundled.slots, ...local.slots },
+    reviews: { ...bundled.reviews, ...local.reviews },
+    known: [...new Set([...bundled.known, ...local.known])],
+    unknown: [...new Set([...bundled.unknown, ...local.unknown])],
+    terms: [...local.terms, ...bundled.terms.filter((term) => !seen.has(term.id))]
+  };
 }
 
 export function saveProgress(state: ProgressState): void {
