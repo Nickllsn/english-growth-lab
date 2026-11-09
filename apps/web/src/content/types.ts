@@ -45,7 +45,6 @@ export interface StudyDay {
   kind: "study" | "weekend";
   theme: string;
   objective: string;
-  archived?: boolean;
   listen?: ListenWindow;
   slots: SlotPlan[];
   chunks: Chunk[];

@@ -20,7 +20,7 @@ describe("ProgressPage", () => {
 
     render(<ProgressPage today="2026-11-04" />);
 
-    expect(screen.getByText("1 / 8")).toBeInTheDocument();
+    expect(screen.getByText("1 / 17")).toBeInTheDocument();
     expect(screen.getByText("1 天")).toBeInTheDocument();
     expect(screen.getByLabelText("2026-11-04：已完成")).toBeInTheDocument();
   });

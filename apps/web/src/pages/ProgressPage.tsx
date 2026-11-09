@@ -27,7 +27,7 @@ export function ProgressPage({ today = shanghaiToday() }: { today?: string }) {
   const [progress, setProgress] = useState<ProgressState>(loadProgress);
   const [message, setMessage] = useState("");
   const done = completedDates(weeks, progress);
-  const studyDays = weeks.flatMap((week) => week.days.filter((day) => day.kind === "study" && !day.archived));
+  const studyDays = weeks.flatMap((week) => week.days.filter((day) => day.kind === "study"));
   const finishedStudyDays = studyDays.filter((day) => done.has(day.date)).length;
 
   const update = (next: ProgressState) => {

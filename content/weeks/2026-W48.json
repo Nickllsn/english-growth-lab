@@ -1,0 +1,456 @@
+{
+  "id": "2026-W48",
+  "title": "Changelog：系统与排障",
+  "phase": "播客精听",
+  "startsOn": "2026-11-23",
+  "endsOn": "2026-11-29",
+  "goal": "Ship It 84 和 Go Time 156 各听 20 分钟，拆成每天 10 分钟。周五没有新片段。",
+  "days": [
+    {
+      "date": "2026-11-23",
+      "kind": "study",
+      "theme": "Talos 和更简单的机器",
+      "objective": "精听这一集的 0 到 10 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
+      "listen": {
+        "episodeId": "shipit-84",
+        "start": 0,
+        "end": 600
+      },
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "盲听这一段",
+          "steps": [
+            "不看文字，把这 10 分钟听完。",
+            "先抓住他们在讨论什么问题，先不查词。"
+          ],
+          "links": [
+            {
+              "title": "Bare metal meets Talos Linux",
+              "url": "https://changelog.com/shipit/84",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "noon",
+          "minutes": 10,
+          "place": "工位",
+          "title": "从文字稿里选生词",
+          "steps": [
+            "看着文字稿再听这 10 分钟。",
+            "选中不认识的单词或短语，点「加入不认识」。"
+          ],
+          "links": [
+            {
+              "title": "Bare metal meets Talos Linux",
+              "url": "https://changelog.com/shipit/84",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "evening",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "再听同一段",
+          "steps": [
+            "再听这 10 分钟，这次可以看着文字。",
+            "听到没把握的说法，再选进学习记录。"
+          ],
+          "links": [
+            {
+              "title": "Bare metal meets Talos Linux",
+              "url": "https://changelog.com/shipit/84",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "home",
+          "minutes": 10,
+          "place": "家里",
+          "title": "跟读并复述",
+          "steps": [
+            "跟读从这 10 分钟抽出的原句。",
+            "不看稿，用英语回答今天的问题。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Explain in English why they moved changelog.com onto a simpler setup."
+    },
+    {
+      "date": "2026-11-24",
+      "kind": "study",
+      "theme": "Talos 接着听",
+      "objective": "精听这一集的 10 到 20 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
+      "listen": {
+        "episodeId": "shipit-84",
+        "start": 600,
+        "end": 1200
+      },
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "盲听这一段",
+          "steps": [
+            "不看文字，把这 10 分钟听完。",
+            "先抓住他们在讨论什么问题，先不查词。"
+          ],
+          "links": [
+            {
+              "title": "Bare metal meets Talos Linux",
+              "url": "https://changelog.com/shipit/84",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "noon",
+          "minutes": 10,
+          "place": "工位",
+          "title": "从文字稿里选生词",
+          "steps": [
+            "看着文字稿再听这 10 分钟。",
+            "选中不认识的单词或短语，点「加入不认识」。"
+          ],
+          "links": [
+            {
+              "title": "Bare metal meets Talos Linux",
+              "url": "https://changelog.com/shipit/84",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "evening",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "再听同一段",
+          "steps": [
+            "再听这 10 分钟，这次可以看着文字。",
+            "听到没把握的说法，再选进学习记录。"
+          ],
+          "links": [
+            {
+              "title": "Bare metal meets Talos Linux",
+              "url": "https://changelog.com/shipit/84",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "home",
+          "minutes": 10,
+          "place": "家里",
+          "title": "跟读并复述",
+          "steps": [
+            "跟读从这 10 分钟抽出的原句。",
+            "不看稿，用英语回答今天的问题。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Explain in English one thing Talos takes away from a normal Linux install."
+    },
+    {
+      "date": "2026-11-25",
+      "kind": "study",
+      "theme": "分布式系统出错时",
+      "objective": "精听这一集的 0 到 10 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
+      "listen": {
+        "episodeId": "gotime-156",
+        "start": 0,
+        "end": 600
+      },
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "盲听这一段",
+          "steps": [
+            "不看文字，把这 10 分钟听完。",
+            "先抓住他们在讨论什么问题，先不查词。"
+          ],
+          "links": [
+            {
+              "title": "When distributed systems Go wrong",
+              "url": "https://changelog.com/gotime/156",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "noon",
+          "minutes": 10,
+          "place": "工位",
+          "title": "从文字稿里选生词",
+          "steps": [
+            "看着文字稿再听这 10 分钟。",
+            "选中不认识的单词或短语，点「加入不认识」。"
+          ],
+          "links": [
+            {
+              "title": "When distributed systems Go wrong",
+              "url": "https://changelog.com/gotime/156",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "evening",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "再听同一段",
+          "steps": [
+            "再听这 10 分钟，这次可以看着文字。",
+            "听到没把握的说法，再选进学习记录。"
+          ],
+          "links": [
+            {
+              "title": "When distributed systems Go wrong",
+              "url": "https://changelog.com/gotime/156",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "home",
+          "minutes": 10,
+          "place": "家里",
+          "title": "跟读并复述",
+          "steps": [
+            "跟读从这 10 分钟抽出的原句。",
+            "不看稿，用英语回答今天的问题。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Explain in English how you notice that a distributed system is failing."
+    },
+    {
+      "date": "2026-11-26",
+      "kind": "study",
+      "theme": "分布式系统接着排障",
+      "objective": "精听这一集的 10 到 20 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
+      "listen": {
+        "episodeId": "gotime-156",
+        "start": 600,
+        "end": 1200
+      },
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "盲听这一段",
+          "steps": [
+            "不看文字，把这 10 分钟听完。",
+            "先抓住他们在讨论什么问题，先不查词。"
+          ],
+          "links": [
+            {
+              "title": "When distributed systems Go wrong",
+              "url": "https://changelog.com/gotime/156",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "noon",
+          "minutes": 10,
+          "place": "工位",
+          "title": "从文字稿里选生词",
+          "steps": [
+            "看着文字稿再听这 10 分钟。",
+            "选中不认识的单词或短语，点「加入不认识」。"
+          ],
+          "links": [
+            {
+              "title": "When distributed systems Go wrong",
+              "url": "https://changelog.com/gotime/156",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "evening",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "再听同一段",
+          "steps": [
+            "再听这 10 分钟，这次可以看着文字。",
+            "听到没把握的说法，再选进学习记录。"
+          ],
+          "links": [
+            {
+              "title": "When distributed systems Go wrong",
+              "url": "https://changelog.com/gotime/156",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "home",
+          "minutes": 10,
+          "place": "家里",
+          "title": "跟读并复述",
+          "steps": [
+            "跟读从这 10 分钟抽出的原句。",
+            "不看稿，用英语回答今天的问题。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Explain in English one place you look after the first alert."
+    },
+    {
+      "date": "2026-11-28",
+      "kind": "weekend",
+      "theme": "预习下一周",
+      "objective": "把下一周每一段的前两分钟听一遍，并看一遍本周选出的生词。",
+      "slots": [
+        {
+          "id": "preview",
+          "minutes": 30,
+          "place": "家里",
+          "title": "预习",
+          "steps": [
+            "打开下一周每一天的节目。",
+            "每一段只听前两分钟，确认音频和文字稿都能打开。"
+          ],
+          "links": [],
+          "vocab": []
+        },
+        {
+          "id": "review",
+          "minutes": 30,
+          "place": "家里",
+          "title": "复盘",
+          "steps": [
+            "导出 english-progress.json。",
+            "用英语写本周复盘，不要写公司机密。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": ""
+    },
+    {
+      "date": "2026-11-29",
+      "kind": "weekend",
+      "theme": "复盘本周",
+      "objective": "导出学习记录，并用英语写下这一周听懂了什么。",
+      "slots": [
+        {
+          "id": "preview",
+          "minutes": 30,
+          "place": "家里",
+          "title": "预习",
+          "steps": [
+            "打开下一周每一天的节目。",
+            "每一段只听前两分钟，确认音频和文字稿都能打开。"
+          ],
+          "links": [],
+          "vocab": []
+        },
+        {
+          "id": "review",
+          "minutes": 30,
+          "place": "家里",
+          "title": "复盘",
+          "steps": [
+            "导出 english-progress.json。",
+            "用英语写本周复盘，不要写公司机密。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": ""
+    }
+  ]
+}

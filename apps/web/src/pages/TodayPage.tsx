@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { weeks } from "../content/load";
 import { findEpisode } from "../content/changelog-episodes";
-import { nextListenDay, nextWeek, resolveSession, shanghaiToday, weekdayLabel } from "../content/schedule";
+import { nextWeek, resolveSession, shanghaiToday, weekdayLabel } from "../content/schedule";
 import type { SlotPlan, StudyDay, WeekPack } from "../content/types";
 import { MaterialView } from "../components/MaterialView";
 import { ShadowTrainer } from "../components/ShadowTrainer";
@@ -30,9 +30,7 @@ interface TodayPageProps {
 
 export function TodayPage({ today = shanghaiToday() }: TodayPageProps) {
   const session = resolveSession(today, weeks);
-  const scheduled = session.mode === "day" ? session.day : undefined;
-  const ahead = scheduled?.archived ? nextListenDay(weeks, scheduled.date) : undefined;
-  const day = ahead ?? scheduled;
+  const day = session.mode === "day" ? session.day : undefined;
   const [progress, setProgress] = useState<ProgressState>(loadProgress);
   const [slotId, setSlotId] = useState<SlotPlan["id"]>(day?.slots[0].id ?? "preview");
 
@@ -48,17 +46,28 @@ export function TodayPage({ today = shanghaiToday() }: TodayPageProps) {
         <div>
           <p className="eyebrow">
             {session.week.id} · {session.week.phase} · 上海时间 {today}
-            {ahead ? ` · 正在看 ${ahead.date}` : ""}
           </p>
-          <h1>{session.mode === "day" ? day?.theme : `预习 ${session.week.title}`}</h1>
-          <p>{session.mode === "day" ? day?.objective : session.week.goal}</p>
+          <h1>
+            {session.mode === "day"
+              ? day?.theme
+              : session.mode === "none"
+                ? "这一天没有课"
+                : `预习 ${session.week.title}`}
+          </h1>
+          <p>
+            {session.mode === "day"
+              ? day?.objective
+              : session.mode === "none"
+                ? "今天没有安排新的 10 分钟片段。"
+                : session.week.goal}
+          </p>
         </div>
       </header>
 
-      {ahead && (
-        <p className="lesson-banner">
-          旧材料已经撤下。新课从 {ahead.date} 开始，下面就是这一天。今晚可以先选几个不认识的词。
-        </p>
+      {session.mode === "none" && (
+        <div className="panel">
+          <p>「{session.week.title}」这一周没有把今天排成新的 10 分钟。</p>
+        </div>
       )}
 
       {session.mode === "preview" && (
@@ -119,12 +128,12 @@ function PreviewPanel({
   onToggle: (taskId: string) => void;
 }) {
   const done = new Set(progress.slots[previewKey(week.id)] ?? []);
-  const studyDays = week.days.filter((day) => day.kind === "study" && !day.archived);
+  const studyDays = week.days.filter((day) => day.kind === "study");
 
   return (
     <div className="panel">
       <p>
-        距离 {week.startsOn} 还有 {daysUntil} 天。这个周末先听每一段的前两分钟，周一再按 20 分钟精听。
+        距离 {week.startsOn} 还有 {daysUntil} 天。这个周末先听每一段的前两分钟，周一再按 10 分钟精听。
       </p>
       <ul className="task-list">
         {previewTasks.map((task) => (
@@ -228,7 +237,7 @@ function DayPanel({
         {slot.id === "preview" && following && (
           <ol className="day-index">
             {following.days
-              .filter((item) => item.kind === "study" && !item.archived)
+              .filter((item) => item.kind === "study")
               .map((item) => (
                 <li key={item.date}>
                   <Link to={`/week?focus=${item.date}`}>{item.theme}</Link>

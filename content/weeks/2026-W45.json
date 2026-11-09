@@ -4,146 +4,26 @@
   "phase": "播客精听",
   "startsOn": "2026-11-02",
   "endsOn": "2026-11-08",
-  "goal": "从 11 月 4 日开始精听 Changelog 475。每天 20 分钟，只处理这一段，并把不认识的单词和短语从文字稿里选进学习记录。",
+  "goal": "从 11 月 4 日开始精听 Changelog 475。每天只处理 10 分钟，并把不认识的单词和短语从文字稿里选进学习记录。",
   "days": [
-    {
-      "date": "2026-11-02",
-      "kind": "study",
-      "archived": true,
-      "theme": "旧材料已撤下",
-      "objective": "这一天原来的材料已删除。Changelog 从 2026-11-04 开始。",
-      "slots": [
-        {
-          "id": "morning",
-          "minutes": 20,
-          "place": "地铁",
-          "title": "不排新课",
-          "steps": [
-            "这一天的旧视频和讲稿已经删除。",
-            "新的 Changelog 从 11 月 4 日开始。"
-          ],
-          "links": [],
-          "vocab": []
-        },
-        {
-          "id": "noon",
-          "minutes": 20,
-          "place": "工位",
-          "title": "不排新课",
-          "steps": [
-            "这一天的旧视频和讲稿已经删除。",
-            "新的 Changelog 从 11 月 4 日开始。"
-          ],
-          "links": [],
-          "vocab": []
-        },
-        {
-          "id": "evening",
-          "minutes": 20,
-          "place": "地铁",
-          "title": "不排新课",
-          "steps": [
-            "这一天的旧视频和讲稿已经删除。",
-            "新的 Changelog 从 11 月 4 日开始。"
-          ],
-          "links": [],
-          "vocab": []
-        },
-        {
-          "id": "home",
-          "minutes": 15,
-          "place": "家里",
-          "title": "不排新课",
-          "steps": [
-            "这一天的旧视频和讲稿已经删除。",
-            "新的 Changelog 从 11 月 4 日开始。"
-          ],
-          "links": [],
-          "vocab": []
-        }
-      ],
-      "chunks": [],
-      "shadow": [],
-      "speakPrompt": ""
-    },
-    {
-      "date": "2026-11-03",
-      "kind": "study",
-      "archived": true,
-      "theme": "旧材料已撤下",
-      "objective": "这一天原来的材料已删除。Changelog 从 2026-11-04 开始。",
-      "slots": [
-        {
-          "id": "morning",
-          "minutes": 20,
-          "place": "地铁",
-          "title": "不排新课",
-          "steps": [
-            "这一天的旧视频和讲稿已经删除。",
-            "新的 Changelog 从 11 月 4 日开始。"
-          ],
-          "links": [],
-          "vocab": []
-        },
-        {
-          "id": "noon",
-          "minutes": 20,
-          "place": "工位",
-          "title": "不排新课",
-          "steps": [
-            "这一天的旧视频和讲稿已经删除。",
-            "新的 Changelog 从 11 月 4 日开始。"
-          ],
-          "links": [],
-          "vocab": []
-        },
-        {
-          "id": "evening",
-          "minutes": 20,
-          "place": "地铁",
-          "title": "不排新课",
-          "steps": [
-            "这一天的旧视频和讲稿已经删除。",
-            "新的 Changelog 从 11 月 4 日开始。"
-          ],
-          "links": [],
-          "vocab": []
-        },
-        {
-          "id": "home",
-          "minutes": 15,
-          "place": "家里",
-          "title": "不排新课",
-          "steps": [
-            "这一天的旧视频和讲稿已经删除。",
-            "新的 Changelog 从 11 月 4 日开始。"
-          ],
-          "links": [],
-          "vocab": []
-        }
-      ],
-      "chunks": [],
-      "shadow": [],
-      "speakPrompt": ""
-    },
     {
       "date": "2026-11-04",
       "kind": "study",
       "theme": "ZFS 要解决什么",
-      "objective": "精听 Changelog 475 的前 20 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
+      "objective": "精听这一集的 0 到 10 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
       "listen": {
         "episodeId": "475",
         "start": 0,
-        "end": 1200
+        "end": 600
       },
       "slots": [
         {
           "id": "morning",
-          "minutes": 20,
+          "minutes": 10,
           "place": "地铁",
           "title": "盲听这一段",
           "steps": [
-            "不看文字，把这一段听完。",
+            "不看文字，把这 10 分钟听完。",
             "先抓住他们在讨论什么问题，先不查词。"
           ],
           "links": [
@@ -161,11 +41,11 @@
         },
         {
           "id": "noon",
-          "minutes": 20,
+          "minutes": 10,
           "place": "工位",
           "title": "从文字稿里选生词",
           "steps": [
-            "看着文字稿再听这一段。",
+            "看着文字稿再听这 10 分钟。",
             "选中不认识的单词或短语，点「加入不认识」。"
           ],
           "links": [
@@ -183,11 +63,11 @@
         },
         {
           "id": "evening",
-          "minutes": 20,
+          "minutes": 10,
           "place": "地铁",
           "title": "再听同一段",
           "steps": [
-            "再听这一段，这次可以看着文字。",
+            "再听这 10 分钟，这次可以看着文字。",
             "听到没把握的说法，再选进学习记录。"
           ],
           "links": [
@@ -205,11 +85,11 @@
         },
         {
           "id": "home",
-          "minutes": 15,
+          "minutes": 10,
           "place": "家里",
           "title": "跟读并复述",
           "steps": [
-            "跟读从这一段抽出的原句。",
+            "跟读从这 10 分钟抽出的原句。",
             "不看稿，用英语回答今天的问题。"
           ],
           "links": [],
@@ -223,21 +103,21 @@
     {
       "date": "2026-11-05",
       "kind": "study",
-      "theme": "校验和与冗余",
-      "objective": "继续 Changelog 475，听 20 到 40 分钟。重点听校验、冗余和为什么文件系统要管这些事。",
+      "theme": "ZFS 要解决什么，接着听",
+      "objective": "精听这一集的 10 到 20 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
       "listen": {
         "episodeId": "475",
-        "start": 1200,
-        "end": 2400
+        "start": 600,
+        "end": 1200
       },
       "slots": [
         {
           "id": "morning",
-          "minutes": 20,
+          "minutes": 10,
           "place": "地铁",
           "title": "盲听这一段",
           "steps": [
-            "不看文字，把这一段听完。",
+            "不看文字，把这 10 分钟听完。",
             "先抓住他们在讨论什么问题，先不查词。"
           ],
           "links": [
@@ -255,11 +135,11 @@
         },
         {
           "id": "noon",
-          "minutes": 20,
+          "minutes": 10,
           "place": "工位",
           "title": "从文字稿里选生词",
           "steps": [
-            "看着文字稿再听这一段。",
+            "看着文字稿再听这 10 分钟。",
             "选中不认识的单词或短语，点「加入不认识」。"
           ],
           "links": [
@@ -277,11 +157,11 @@
         },
         {
           "id": "evening",
-          "minutes": 20,
+          "minutes": 10,
           "place": "地铁",
           "title": "再听同一段",
           "steps": [
-            "再听这一段，这次可以看着文字。",
+            "再听这 10 分钟，这次可以看着文字。",
             "听到没把握的说法，再选进学习记录。"
           ],
           "links": [
@@ -299,11 +179,105 @@
         },
         {
           "id": "home",
-          "minutes": 15,
+          "minutes": 10,
           "place": "家里",
           "title": "跟读并复述",
           "steps": [
-            "跟读从这一段抽出的原句。",
+            "跟读从这 10 分钟抽出的原句。",
+            "不看稿，用英语回答今天的问题。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Explain in English one reason ZFS was meant to be easier to run."
+    },
+    {
+      "date": "2026-11-06",
+      "kind": "study",
+      "theme": "校验和与冗余",
+      "objective": "精听这一集的 20 到 30 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
+      "listen": {
+        "episodeId": "475",
+        "start": 1200,
+        "end": 1800
+      },
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "盲听这一段",
+          "steps": [
+            "不看文字，把这 10 分钟听完。",
+            "先抓住他们在讨论什么问题，先不查词。"
+          ],
+          "links": [
+            {
+              "title": "Making the ZFS file system",
+              "url": "https://changelog.com/podcast/475",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "noon",
+          "minutes": 10,
+          "place": "工位",
+          "title": "从文字稿里选生词",
+          "steps": [
+            "看着文字稿再听这 10 分钟。",
+            "选中不认识的单词或短语，点「加入不认识」。"
+          ],
+          "links": [
+            {
+              "title": "Making the ZFS file system",
+              "url": "https://changelog.com/podcast/475",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "evening",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "再听同一段",
+          "steps": [
+            "再听这 10 分钟，这次可以看着文字。",
+            "听到没把握的说法，再选进学习记录。"
+          ],
+          "links": [
+            {
+              "title": "Making the ZFS file system",
+              "url": "https://changelog.com/podcast/475",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "home",
+          "minutes": 10,
+          "place": "家里",
+          "title": "跟读并复述",
+          "steps": [
+            "跟读从这 10 分钟抽出的原句。",
             "不看稿，用英语回答今天的问题。"
           ],
           "links": [],
@@ -313,100 +287,6 @@
       "chunks": [],
       "shadow": [],
       "speakPrompt": "Explain in English why checksums and redundancy belong in the file system."
-    },
-    {
-      "date": "2026-11-06",
-      "kind": "study",
-      "theme": "快照为什么便宜",
-      "objective": "继续 Changelog 475，听 40 到 60 分钟。重点听 copy-on-write 和快照。",
-      "listen": {
-        "episodeId": "475",
-        "start": 2400,
-        "end": 3600
-      },
-      "slots": [
-        {
-          "id": "morning",
-          "minutes": 20,
-          "place": "地铁",
-          "title": "盲听这一段",
-          "steps": [
-            "不看文字，把这一段听完。",
-            "先抓住他们在讨论什么问题，先不查词。"
-          ],
-          "links": [
-            {
-              "title": "Making the ZFS file system",
-              "url": "https://changelog.com/podcast/475",
-              "formats": [
-                "text",
-                "audio"
-              ],
-              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
-            }
-          ],
-          "vocab": []
-        },
-        {
-          "id": "noon",
-          "minutes": 20,
-          "place": "工位",
-          "title": "从文字稿里选生词",
-          "steps": [
-            "看着文字稿再听这一段。",
-            "选中不认识的单词或短语，点「加入不认识」。"
-          ],
-          "links": [
-            {
-              "title": "Making the ZFS file system",
-              "url": "https://changelog.com/podcast/475",
-              "formats": [
-                "text",
-                "audio"
-              ],
-              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
-            }
-          ],
-          "vocab": []
-        },
-        {
-          "id": "evening",
-          "minutes": 20,
-          "place": "地铁",
-          "title": "再听同一段",
-          "steps": [
-            "再听这一段，这次可以看着文字。",
-            "听到没把握的说法，再选进学习记录。"
-          ],
-          "links": [
-            {
-              "title": "Making the ZFS file system",
-              "url": "https://changelog.com/podcast/475",
-              "formats": [
-                "text",
-                "audio"
-              ],
-              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
-            }
-          ],
-          "vocab": []
-        },
-        {
-          "id": "home",
-          "minutes": 15,
-          "place": "家里",
-          "title": "跟读并复述",
-          "steps": [
-            "跟读从这一段抽出的原句。",
-            "不看稿，用英语回答今天的问题。"
-          ],
-          "links": [],
-          "vocab": []
-        }
-      ],
-      "chunks": [],
-      "shadow": [],
-      "speakPrompt": "Explain in English how copy-on-write makes snapshots cheap."
     },
     {
       "date": "2026-11-07",
