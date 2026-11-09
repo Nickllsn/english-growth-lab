@@ -18,7 +18,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "Matt, I'm a big fan of your work on ZFS, and I'm so glad to have you here at The Changelog, because I'm a newcomer to ZFS.",
       "id": "475:have you here",
-      "addedAt": "2026-11-06T06:02:21.052Z"
+      "addedAt": "2026-11-06T06:02:21.052Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "newcomer",
@@ -28,7 +30,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "Matt, I'm a big fan of your work on ZFS, and I'm so glad to have you here at The Changelog, because I'm a newcomer to ZFS.",
       "id": "475:newcomer",
-      "addedAt": "2026-11-06T06:02:28.507Z"
+      "addedAt": "2026-11-06T06:02:28.507Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "co-creator",
@@ -38,7 +42,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "So as you know, because you're a co-creator of it, it's been around for a very long time.",
       "id": "475:co-creator",
-      "addedAt": "2026-11-06T06:02:34.760Z"
+      "addedAt": "2026-11-06T06:02:34.760Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "scenario",
@@ -48,7 +54,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "It was created in 2001, and my first use of it was in a home lab production scenario powering my Plex server, basically, in the year of 2021.",
       "id": "475:scenario",
-      "addedAt": "2026-11-06T06:02:58.732Z"
+      "addedAt": "2026-11-06T06:02:58.732Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "Plex server",
@@ -58,7 +66,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "It was created in 2001, and my first use of it was in a home lab production scenario powering my Plex server, basically, in the year of 2021.",
       "id": "475:plex server",
-      "addedAt": "2026-11-06T06:03:08.492Z"
+      "addedAt": "2026-11-06T06:03:08.492Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "adoption",
@@ -68,7 +78,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "So I'm 20 years behind the adoption curve of ZFS.",
       "id": "475:adoption",
-      "addedAt": "2026-11-06T06:03:24.372Z"
+      "addedAt": "2026-11-06T06:03:24.372Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "curve",
@@ -78,7 +90,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "So I'm 20 years behind the adoption curve of ZFS.",
       "id": "475:curve",
-      "addedAt": "2026-11-06T06:03:26.274Z"
+      "addedAt": "2026-11-06T06:03:26.274Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "found out",
@@ -88,7 +102,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "But when I found out about it, I loved the file system, and I was like, \"You know what?",
       "id": "475:found out",
-      "addedAt": "2026-11-06T06:03:34.214Z"
+      "addedAt": "2026-11-06T06:03:34.214Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "plugged into",
@@ -98,7 +114,9 @@
       "speaker": "Matthew Ahrens",
       "sentence": "I'm not really plugged into the tech podcast scene.",
       "id": "475:plugged into",
-      "addedAt": "2026-11-06T06:04:22.105Z"
+      "addedAt": "2026-11-06T06:04:22.105Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "scene",
@@ -108,7 +126,9 @@
       "speaker": "Matthew Ahrens",
       "sentence": "I'm not really plugged into the tech podcast scene.",
       "id": "475:scene",
-      "addedAt": "2026-11-06T06:04:25.642Z"
+      "addedAt": "2026-11-06T06:04:25.642Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "There's like Two and a Half Admins, I believe, out there",
@@ -118,7 +138,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "There's like Two and a Half Admins, I believe, out there.",
       "id": "475:there's like two and a half admins, i believe, out there",
-      "addedAt": "2026-11-06T06:10:59.360Z"
+      "addedAt": "2026-11-06T06:10:59.360Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "hit me up",
@@ -128,7 +150,9 @@
       "speaker": "Matthew Ahrens",
       "sentence": "I know the hosts of that podcast, and they'll probably hit me up at some point.",
       "id": "475:hit me up",
-      "addedAt": "2026-11-06T06:11:45.737Z"
+      "addedAt": "2026-11-06T06:11:45.737Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "get you on",
@@ -138,7 +162,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "But yeah, I wanted to get you on to talk about ZFS, because it's such a cool file system.",
       "id": "475:get you on",
-      "addedAt": "2026-11-06T06:13:13.815Z"
+      "addedAt": "2026-11-06T06:13:13.815Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "roots in open source",
@@ -148,7 +174,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "It's got some interesting roots in open source, and it's obviously an OSI-approved license that it's listed as, but it's got some drama behind the scenes, and I figured, \"Who better to go through the back-story of its origination and the problem set and its history, and then to current, than you, as you're a co-creator of it?\" Back in 2001, it was a file system designed by you and by Jeff Bonwick…",
       "id": "475:roots in open source",
-      "addedAt": "2026-11-06T06:21:41.663Z"
+      "addedAt": "2026-11-06T06:21:41.663Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "OSI-approved license",
@@ -158,7 +186,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "It's got some interesting roots in open source, and it's obviously an OSI-approved license that it's listed as, but it's got some drama behind the scenes, and I figured, \"Who better to go through the back-story of its origination and the problem set and its history, and then to current, than you, as you're a co-creator of it?\" Back in 2001, it was a file system designed by you and by Jeff Bonwick…",
       "id": "475:osi-approved license",
-      "addedAt": "2026-11-06T06:21:49.780Z"
+      "addedAt": "2026-11-06T06:21:49.780Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "origination",
@@ -168,7 +198,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "It's got some interesting roots in open source, and it's obviously an OSI-approved license that it's listed as, but it's got some drama behind the scenes, and I figured, \"Who better to go through the back-story of its origination and the problem set and its history, and then to current, than you, as you're a co-creator of it?\" Back in 2001, it was a file system designed by you and by Jeff Bonwick…",
       "id": "475:origination",
-      "addedAt": "2026-11-06T06:22:10.699Z"
+      "addedAt": "2026-11-06T06:22:10.699Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "drama",
@@ -178,7 +210,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "It's got some interesting roots in open source, and it's obviously an OSI-approved license that it's listed as, but it's got some drama behind the scenes, and I figured, \"Who better to go through the back-story of its origination and the problem set and its history, and then to current, than you, as you're a co-creator of it?\" Back in 2001, it was a file system designed by you and by Jeff Bonwick…",
       "id": "475:drama",
-      "addedAt": "2026-11-06T06:22:35.086Z"
+      "addedAt": "2026-11-06T06:22:35.086Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "eventually",
@@ -188,7 +222,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "They were eventually acquired by Oracle.",
       "id": "475:eventually",
-      "addedAt": "2026-11-06T06:22:45.699Z"
+      "addedAt": "2026-11-06T06:22:45.699Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "open it up",
@@ -198,7 +234,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "So open it up.",
       "id": "475:open it up",
-      "addedAt": "2026-11-06T06:23:20.278Z"
+      "addedAt": "2026-11-06T06:23:20.278Z",
+      "scheduledOn": "2026-11-04",
+      "weekId": "2026-W45"
     },
     {
       "text": "RAIDZ expansion",
@@ -208,7 +246,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "So four years later though, RAIDZ expansion.",
       "id": "475:raidz expansion",
-      "addedAt": "2026-11-09T00:54:25.770Z"
+      "addedAt": "2026-11-09T00:54:25.770Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "in terms of",
@@ -218,7 +258,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "It's not landed in terms of--",
       "id": "475:in terms of",
-      "addedAt": "2026-11-09T04:23:59.821Z"
+      "addedAt": "2026-11-09T04:23:59.821Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "cautious",
@@ -228,7 +270,9 @@
       "speaker": "Matthew Ahrens",
       "sentence": "I would be cautious about using the word \"plan\" because we don't-- OpenZFS doesn't have developers on retainer, right?",
       "id": "475:cautious",
-      "addedAt": "2026-11-09T04:29:09.683Z"
+      "addedAt": "2026-11-09T04:29:09.683Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "retainer",
@@ -238,7 +282,9 @@
       "speaker": "Matthew Ahrens",
       "sentence": "I would be cautious about using the word \"plan\" because we don't-- OpenZFS doesn't have developers on retainer, right?",
       "id": "475:retainer",
-      "addedAt": "2026-11-09T04:30:31.363Z"
+      "addedAt": "2026-11-09T04:30:31.363Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "tricky",
@@ -248,7 +294,9 @@
       "speaker": "Matthew Ahrens",
       "sentence": "So we need people to do -- code reviews is the big one, and there's a lot of code there, a lot of very tricky code.",
       "id": "475:tricky",
-      "addedAt": "2026-11-09T04:34:52.790Z"
+      "addedAt": "2026-11-09T04:34:52.790Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "folks",
@@ -258,7 +306,9 @@
       "speaker": "Matthew Ahrens",
       "sentence": "That'll help give confidence to other folks in the community that this is going to work right and not break their pools.",
       "id": "475:folks",
-      "addedAt": "2026-11-09T04:37:12.272Z"
+      "addedAt": "2026-11-09T04:37:12.272Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "essentially",
@@ -268,7 +318,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "Obviously, I have to invest in the hardware and the drives and stuff and replicate, essentially, in my scenario.",
       "id": "475:essentially",
-      "addedAt": "2026-11-09T04:40:36.202Z"
+      "addedAt": "2026-11-09T04:40:36.202Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "it's a matter of",
@@ -278,7 +330,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "But it's a matter of getting access to that future branch and being able to compile it and put it on their machine, which probably takes a lot of effort.",
       "id": "475:it's a matter of",
-      "addedAt": "2026-11-09T04:45:04.147Z"
+      "addedAt": "2026-11-09T04:45:04.147Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "picked up",
@@ -288,7 +342,9 @@
       "speaker": "Matthew Ahrens",
       "sentence": "However, depending on the particulars of the system, getting it installed correctly in a way that it gets picked up, for example, in preference to the kernel modules that might already be there if you have an Ubuntu system that comes with ZFS kernel modules already; there can be some tricks there.",
       "id": "475:picked up",
-      "addedAt": "2026-11-09T04:49:40.097Z"
+      "addedAt": "2026-11-09T04:49:40.097Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "in preference to",
@@ -298,7 +354,9 @@
       "speaker": "Matthew Ahrens",
       "sentence": "However, depending on the particulars of the system, getting it installed correctly in a way that it gets picked up, for example, in preference to the kernel modules that might already be there if you have an Ubuntu system that comes with ZFS kernel modules already; there can be some tricks there.",
       "id": "475:in preference to",
-      "addedAt": "2026-11-09T04:52:45.891Z"
+      "addedAt": "2026-11-09T04:52:45.891Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "well-tried",
@@ -308,7 +366,9 @@
       "speaker": "Matthew Ahrens",
       "sentence": "But this is a well-tried road.",
       "id": "475:well-tried",
-      "addedAt": "2026-11-09T04:53:02.847Z"
+      "addedAt": "2026-11-09T04:53:02.847Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "one-liner",
@@ -318,7 +378,9 @@
       "speaker": "Matthew Ahrens",
       "sentence": "So if you would like to help, it might not be a one-liner, but there are a lot of people that can help you.",
       "id": "475:one-liner",
-      "addedAt": "2026-11-09T04:54:15.160Z"
+      "addedAt": "2026-11-09T04:54:15.160Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "repository",
@@ -328,7 +390,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "Would you say the repository, or would you say an issue, or the mailing list?",
       "id": "475:repository",
-      "addedAt": "2026-11-09T04:56:31.227Z"
+      "addedAt": "2026-11-09T04:56:31.227Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "as a willing participant",
@@ -338,7 +402,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "What's a good place to say, \"Hey, as a willing participant, I'll help test this at least as an end-user\"?",
       "id": "475:as a willing participant",
-      "addedAt": "2026-11-09T04:56:35.464Z"
+      "addedAt": "2026-11-09T04:56:35.464Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "baked-in",
@@ -348,7 +414,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "You didn't really mention it, because it's such a baked-in 20-year feature.",
       "id": "475:baked-in",
-      "addedAt": "2026-11-09T05:02:12.301Z"
+      "addedAt": "2026-11-09T05:02:12.301Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "sort of",
@@ -358,7 +426,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "Those are a couple things that can sort of speed up systems.",
       "id": "475:sort of",
-      "addedAt": "2026-11-09T06:14:30.822Z"
+      "addedAt": "2026-11-09T06:14:30.822Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "speed up",
@@ -368,7 +438,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "Those are a couple things that can sort of speed up systems.",
       "id": "475:speed up",
-      "addedAt": "2026-11-09T06:14:36.209Z"
+      "addedAt": "2026-11-09T06:14:36.209Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     },
     {
       "text": "taking advantage of",
@@ -378,7 +450,9 @@
       "speaker": "Adam Stacoviak",
       "sentence": "That's one thing I'm actually taking advantage of.",
       "id": "475:taking advantage of",
-      "addedAt": "2026-11-09T06:17:24.241Z"
+      "addedAt": "2026-11-09T06:17:24.241Z",
+      "scheduledOn": "2026-11-12",
+      "weekId": "2026-W46"
     }
   ]
 }
