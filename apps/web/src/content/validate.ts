@@ -22,6 +22,11 @@ function addDays(iso: string, days: number): string {
   return date.toISOString().slice(0, 10);
 }
 
+function weekday(iso: string): number {
+  const [year, month, day] = iso.split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day)).getUTCDay();
+}
+
 function dayFormats(day: StudyDay): Set<string> {
   const formats = new Set(day.slots.flatMap((slot) => slot.links.flatMap((link) => link.formats)));
   if (day.shadow.length > 0) formats.add("text");
@@ -35,13 +40,19 @@ export function validateWeek(week: WeekPack): string[] {
   if (!/^20\d{2}-W\d{2}$/.test(week.id)) at("周编号需要像 2026-W44");
   if (!week.title.trim() || !week.goal.trim()) at("标题和目标不能为空");
   if (!isIsoDate(week.startsOn) || !isIsoDate(week.endsOn)) at("起止日期无效");
-  if (week.days.length !== 7) at("一周需要 7 天");
+  if (weekday(week.startsOn) !== 1 || addDays(week.startsOn, 6) !== week.endsOn) {
+    at("一周要从周一开始，到周日结束");
+  }
+  if (week.days.length === 0) at("一周至少要有一天");
 
   week.days.forEach((day, index) => {
-    const expected = addDays(week.startsOn, index);
-    if (day.date !== expected) at(`${day.date} 应该是 ${expected}`);
-    if (index < 5 && day.kind !== "study") at(`${day.date} 应该是学习日`);
-    if (index >= 5 && day.kind !== "weekend") at(`${day.date} 应该是周末`);
+    if (!isIsoDate(day.date) || day.date < week.startsOn || day.date > week.endsOn) {
+      at(`${day.date} 不在这一周里`);
+    }
+    if (index > 0 && day.date <= week.days[index - 1].date) at(`${day.date} 没有按日期排好`);
+    const isWeekend = weekday(day.date) === 0 || weekday(day.date) === 6;
+    if (isWeekend && day.kind !== "weekend") at(`${day.date} 应该是周末`);
+    if (!isWeekend && day.kind !== "study") at(`${day.date} 应该是学习日`);
 
     const expectedSlots = day.kind === "study" ? STUDY_SLOTS : WEEKEND_SLOTS;
     const actualSlots = day.slots.map((slot) => slot.id);
@@ -49,15 +60,10 @@ export function validateWeek(week: WeekPack): string[] {
       at(`${day.date} 的时段应为 ${expectedSlots.join("、")}`);
     }
 
-    if (day.archived && day.listen) at(`${day.date} 撤下的日子不该再排播客`);
-
     for (const slot of day.slots) {
       if (slot.steps.length < 2) at(`${day.date} ${slot.id} 至少两步`);
-      if (!day.archived && day.kind === "study" && slot.id !== "home" && slot.minutes !== 20) {
-        at(`${day.date} ${slot.id} 需要 20 分钟`);
-      }
-      if (!day.archived && slot.id === "home" && (slot.minutes < 10 || slot.minutes > 20)) {
-        at(`${day.date} 跟读需要 10 到 20 分钟`);
+      if (day.kind === "study" && slot.minutes !== 10) {
+        at(`${day.date} ${slot.id} 需要 10 分钟`);
       }
       if ((slot.vocab ?? []).length > 0) at(`${day.date} ${slot.id} 不再预放词表`);
       for (const link of slot.links) {
@@ -66,11 +72,9 @@ export function validateWeek(week: WeekPack): string[] {
       }
     }
 
-    if (day.archived) return;
-
     if (day.listen) {
       if (!day.listen.episodeId.trim()) at(`${day.date} 缺少节目`);
-      if (!(day.listen.start < day.listen.end)) at(`${day.date} 收听区间无效`);
+      if (day.listen.end - day.listen.start !== 600) at(`${day.date} 收听需要 10 分钟`);
       if (day.shadow.length < 6 || day.shadow.length > 10) at(`${day.date} 跟读稿需要 6 到 10 句`);
       if (!day.speakPrompt.trim()) at(`${day.date} 缺少开口问题`);
       if (!dayFormats(day).has("text") || !dayFormats(day).has("audio")) {
@@ -86,10 +90,6 @@ export function validateWeek(week: WeekPack): string[] {
       }
     }
   });
-
-  if (week.days[0]?.date !== week.startsOn || week.days[6]?.date !== week.endsOn) {
-    at("起止日期和每天的日期不一致");
-  }
 
   return errors;
 }

@@ -1,0 +1,550 @@
+{
+  "id": "2026-W47",
+  "title": "Changelog：Cantrill",
+  "phase": "播客精听",
+  "startsOn": "2026-11-16",
+  "endsOn": "2026-11-22",
+  "goal": "听完 ZFS 这集最后 10 分钟，再把 Changelog 592 的前 40 分钟分成四段，每天 10 分钟。",
+  "days": [
+    {
+      "date": "2026-11-16",
+      "kind": "study",
+      "theme": "ZFS 听到后面",
+      "objective": "精听这一集的 80 到 90 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
+      "listen": {
+        "episodeId": "475",
+        "start": 4800,
+        "end": 5400
+      },
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "盲听这一段",
+          "steps": [
+            "不看文字，把这 10 分钟听完。",
+            "先抓住他们在讨论什么问题，先不查词。"
+          ],
+          "links": [
+            {
+              "title": "Making the ZFS file system",
+              "url": "https://changelog.com/podcast/475",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "noon",
+          "minutes": 10,
+          "place": "工位",
+          "title": "从文字稿里选生词",
+          "steps": [
+            "看着文字稿再听这 10 分钟。",
+            "选中不认识的单词或短语，点「加入不认识」。"
+          ],
+          "links": [
+            {
+              "title": "Making the ZFS file system",
+              "url": "https://changelog.com/podcast/475",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "evening",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "再听同一段",
+          "steps": [
+            "再听这 10 分钟，这次可以看着文字。",
+            "听到没把握的说法，再选进学习记录。"
+          ],
+          "links": [
+            {
+              "title": "Making the ZFS file system",
+              "url": "https://changelog.com/podcast/475",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "home",
+          "minutes": 10,
+          "place": "家里",
+          "title": "跟读并复述",
+          "steps": [
+            "跟读从这 10 分钟抽出的原句。",
+            "不看稿，用英语回答今天的问题。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Explain in English one thing this last part of the ZFS interview adds."
+    },
+    {
+      "date": "2026-11-17",
+      "kind": "study",
+      "theme": "从 Sun 到 Oxide",
+      "objective": "精听这一集的 0 到 10 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
+      "listen": {
+        "episodeId": "592",
+        "start": 0,
+        "end": 600
+      },
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "盲听这一段",
+          "steps": [
+            "不看文字，把这 10 分钟听完。",
+            "先抓住他们在讨论什么问题，先不查词。"
+          ],
+          "links": [
+            {
+              "title": "From Sun to Oxide",
+              "url": "https://changelog.com/podcast/592",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "noon",
+          "minutes": 10,
+          "place": "工位",
+          "title": "从文字稿里选生词",
+          "steps": [
+            "看着文字稿再听这 10 分钟。",
+            "选中不认识的单词或短语，点「加入不认识」。"
+          ],
+          "links": [
+            {
+              "title": "From Sun to Oxide",
+              "url": "https://changelog.com/podcast/592",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "evening",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "再听同一段",
+          "steps": [
+            "再听这 10 分钟，这次可以看着文字。",
+            "听到没把握的说法，再选进学习记录。"
+          ],
+          "links": [
+            {
+              "title": "From Sun to Oxide",
+              "url": "https://changelog.com/podcast/592",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "home",
+          "minutes": 10,
+          "place": "家里",
+          "title": "跟读并复述",
+          "steps": [
+            "跟读从这 10 分钟抽出的原句。",
+            "不看稿，用英语回答今天的问题。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Explain in English one part of Bryan Cantrill's path from Sun toward Oxide."
+    },
+    {
+      "date": "2026-11-18",
+      "kind": "study",
+      "theme": "Cantrill 接着讲",
+      "objective": "精听这一集的 10 到 20 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
+      "listen": {
+        "episodeId": "592",
+        "start": 600,
+        "end": 1200
+      },
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "盲听这一段",
+          "steps": [
+            "不看文字，把这 10 分钟听完。",
+            "先抓住他们在讨论什么问题，先不查词。"
+          ],
+          "links": [
+            {
+              "title": "From Sun to Oxide",
+              "url": "https://changelog.com/podcast/592",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "noon",
+          "minutes": 10,
+          "place": "工位",
+          "title": "从文字稿里选生词",
+          "steps": [
+            "看着文字稿再听这 10 分钟。",
+            "选中不认识的单词或短语，点「加入不认识」。"
+          ],
+          "links": [
+            {
+              "title": "From Sun to Oxide",
+              "url": "https://changelog.com/podcast/592",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "evening",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "再听同一段",
+          "steps": [
+            "再听这 10 分钟，这次可以看着文字。",
+            "听到没把握的说法，再选进学习记录。"
+          ],
+          "links": [
+            {
+              "title": "From Sun to Oxide",
+              "url": "https://changelog.com/podcast/592",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "home",
+          "minutes": 10,
+          "place": "家里",
+          "title": "跟读并复述",
+          "steps": [
+            "跟读从这 10 分钟抽出的原句。",
+            "不看稿，用英语回答今天的问题。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Explain in English one technical choice described in this part of the interview."
+    },
+    {
+      "date": "2026-11-19",
+      "kind": "study",
+      "theme": "Cantrill 再听十分钟",
+      "objective": "精听这一集的 20 到 30 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
+      "listen": {
+        "episodeId": "592",
+        "start": 1200,
+        "end": 1800
+      },
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "盲听这一段",
+          "steps": [
+            "不看文字，把这 10 分钟听完。",
+            "先抓住他们在讨论什么问题，先不查词。"
+          ],
+          "links": [
+            {
+              "title": "From Sun to Oxide",
+              "url": "https://changelog.com/podcast/592",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "noon",
+          "minutes": 10,
+          "place": "工位",
+          "title": "从文字稿里选生词",
+          "steps": [
+            "看着文字稿再听这 10 分钟。",
+            "选中不认识的单词或短语，点「加入不认识」。"
+          ],
+          "links": [
+            {
+              "title": "From Sun to Oxide",
+              "url": "https://changelog.com/podcast/592",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "evening",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "再听同一段",
+          "steps": [
+            "再听这 10 分钟，这次可以看着文字。",
+            "听到没把握的说法，再选进学习记录。"
+          ],
+          "links": [
+            {
+              "title": "From Sun to Oxide",
+              "url": "https://changelog.com/podcast/592",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "home",
+          "minutes": 10,
+          "place": "家里",
+          "title": "跟读并复述",
+          "steps": [
+            "跟读从这 10 分钟抽出的原句。",
+            "不看稿，用英语回答今天的问题。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Explain in English one problem Bryan describes in this ten minutes."
+    },
+    {
+      "date": "2026-11-20",
+      "kind": "study",
+      "theme": "Cantrill 这一段的后十分钟",
+      "objective": "精听这一集的 30 到 40 分钟。先盲听，再从文字稿里把不认识的词选进学习记录。",
+      "listen": {
+        "episodeId": "592",
+        "start": 1800,
+        "end": 2400
+      },
+      "slots": [
+        {
+          "id": "morning",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "盲听这一段",
+          "steps": [
+            "不看文字，把这 10 分钟听完。",
+            "先抓住他们在讨论什么问题，先不查词。"
+          ],
+          "links": [
+            {
+              "title": "From Sun to Oxide",
+              "url": "https://changelog.com/podcast/592",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "noon",
+          "minutes": 10,
+          "place": "工位",
+          "title": "从文字稿里选生词",
+          "steps": [
+            "看着文字稿再听这 10 分钟。",
+            "选中不认识的单词或短语，点「加入不认识」。"
+          ],
+          "links": [
+            {
+              "title": "From Sun to Oxide",
+              "url": "https://changelog.com/podcast/592",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "evening",
+          "minutes": 10,
+          "place": "地铁",
+          "title": "再听同一段",
+          "steps": [
+            "再听这 10 分钟，这次可以看着文字。",
+            "听到没把握的说法，再选进学习记录。"
+          ],
+          "links": [
+            {
+              "title": "From Sun to Oxide",
+              "url": "https://changelog.com/podcast/592",
+              "formats": [
+                "text",
+                "audio"
+              ],
+              "note": "文字和音频在页面上。选中不认识的单词或短语即可加入学习记录。"
+            }
+          ],
+          "vocab": []
+        },
+        {
+          "id": "home",
+          "minutes": 10,
+          "place": "家里",
+          "title": "跟读并复述",
+          "steps": [
+            "跟读从这 10 分钟抽出的原句。",
+            "不看稿，用英语回答今天的问题。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": "Explain in English one tradeoff mentioned in this part."
+    },
+    {
+      "date": "2026-11-21",
+      "kind": "weekend",
+      "theme": "预习下一周",
+      "objective": "把下一周每一段的前两分钟听一遍，并看一遍本周选出的生词。",
+      "slots": [
+        {
+          "id": "preview",
+          "minutes": 30,
+          "place": "家里",
+          "title": "预习",
+          "steps": [
+            "打开下一周每一天的节目。",
+            "每一段只听前两分钟，确认音频和文字稿都能打开。"
+          ],
+          "links": [],
+          "vocab": []
+        },
+        {
+          "id": "review",
+          "minutes": 30,
+          "place": "家里",
+          "title": "复盘",
+          "steps": [
+            "导出 english-progress.json。",
+            "用英语写本周复盘，不要写公司机密。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": ""
+    },
+    {
+      "date": "2026-11-22",
+      "kind": "weekend",
+      "theme": "复盘本周",
+      "objective": "导出学习记录，并用英语写下这一周听懂了什么。",
+      "slots": [
+        {
+          "id": "preview",
+          "minutes": 30,
+          "place": "家里",
+          "title": "预习",
+          "steps": [
+            "打开下一周每一天的节目。",
+            "每一段只听前两分钟，确认音频和文字稿都能打开。"
+          ],
+          "links": [],
+          "vocab": []
+        },
+        {
+          "id": "review",
+          "minutes": 30,
+          "place": "家里",
+          "title": "复盘",
+          "steps": [
+            "导出 english-progress.json。",
+            "用英语写本周复盘，不要写公司机密。"
+          ],
+          "links": [],
+          "vocab": []
+        }
+      ],
+      "chunks": [],
+      "shadow": [],
+      "speakPrompt": ""
+    }
+  ]
+}

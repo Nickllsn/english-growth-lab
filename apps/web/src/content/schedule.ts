@@ -3,7 +3,8 @@ import type { StudyDay, WeekPack } from "./types";
 export type Session =
   | { mode: "day"; week: WeekPack; day: StudyDay }
   | { mode: "preview"; week: WeekPack; daysUntil: number }
-  | { mode: "waiting"; week: WeekPack };
+  | { mode: "waiting"; week: WeekPack }
+  | { mode: "none"; week: WeekPack };
 
 export function shanghaiToday(now = new Date()): string {
   return new Intl.DateTimeFormat("en-CA", {
@@ -47,9 +48,11 @@ export function resolveSession(today: string, weeks: WeekPack[]): Session {
     throw new Error("还没有周课");
   }
 
-  for (const week of ordered) {
-    const day = week.days.find((item) => item.date === today);
-    if (day) return { mode: "day", week, day };
+  const open = ordered.find((week) => week.startsOn <= today && today <= week.endsOn);
+  if (open) {
+    const day = open.days.find((item) => item.date === today);
+    if (day) return { mode: "day", week: open, day };
+    return { mode: "none", week: open };
   }
 
   const upcoming = ordered.find((week) => week.startsOn > today);
@@ -68,10 +71,4 @@ export function nextWeek(weeks: WeekPack[], current: WeekPack): WeekPack | undef
 
 export function previousStudyDays(week: WeekPack, date: string): StudyDay[] {
   return week.days.filter((day) => day.kind === "study" && day.date < date);
-}
-
-export function nextListenDay(weeks: WeekPack[], after: string): StudyDay | undefined {
-  return sortedWeeks(weeks)
-    .flatMap((week) => week.days)
-    .find((day) => day.listen && day.date > after);
 }

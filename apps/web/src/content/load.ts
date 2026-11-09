@@ -2,6 +2,8 @@ import type { WeekPack } from "./types";
 import curriculumJson from "../../../../content/curriculum.json";
 import week45 from "../../../../content/weeks/2026-W45.json";
 import week46 from "../../../../content/weeks/2026-W46.json";
+import week47 from "../../../../content/weeks/2026-W47.json";
+import week48 from "../../../../content/weeks/2026-W48.json";
 import { pickShadow } from "./shadow";
 import { validateWeek } from "./validate";
 import type { Curriculum } from "./types";
@@ -22,7 +24,7 @@ function prepareWeek(week: WeekPack): WeekPack {
   };
 }
 
-export const weeks = [week45, week46].map((week) => prepareWeek(week as WeekPack));
+export const weeks = [week45, week46, week47, week48].map((week) => prepareWeek(week as WeekPack));
 
 const errors = weeks.flatMap(validateWeek);
 if (errors.length > 0) {
