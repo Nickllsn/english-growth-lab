@@ -29,6 +29,19 @@ describe("learning terms", () => {
     expect(progress.terms.map((term) => term.text)).toContain("open it up");
   });
 
+  it("shows a sentence-based note for each imported term", () => {
+    render(
+      <MemoryRouter>
+        <VocabPage />
+      </MemoryRouter>
+    );
+
+    expect(screen.getByText("我其实不太关注科技播客圈。")).toBeInTheDocument();
+    expect(screen.getByText(/插上电源/)).toBeInTheDocument();
+    expect(screen.getByText("请 Matt 开始讲，话头由他来开。")).toBeInTheDocument();
+    expect(screen.getAllByText("这句话是").length).toBe(19);
+  });
+
   it("stores the sentence and episode with the selected word", () => {
     const next = addTerm(emptyProgress(), {
       text: "checksums",

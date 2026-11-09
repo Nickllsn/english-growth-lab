@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { formatClock } from "../content/parse-transcript";
+import { termNote } from "../content/term-notes";
 import {
   downloadProgress,
   loadProgress,
@@ -9,6 +10,40 @@ import {
   saveProgress,
   type ProgressState
 } from "../progress/store";
+
+function TermAnalysis({ sentence, id }: { sentence: string; id: string }) {
+  const note = termNote(id);
+  return (
+    <div className="term-note">
+      <p>
+        <span className="term-label">这句话是</span>
+        “{sentence}”
+      </p>
+      {note ? (
+        <>
+          <p>
+            <span className="term-label">它的意思是</span>
+            {note.meaning}
+          </p>
+          <div>
+            <span className="term-label">词义拆解</span>
+            <ul className="term-parts">
+              {note.parts.map((part) => (
+                <li key={part.text}>
+                  <strong>{part.text}</strong>
+                  <span>字面：{part.literal}</span>
+                  <span>这里：{part.here}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </>
+      ) : (
+        <p>这条还没有按原句写过学习分析。</p>
+      )}
+    </div>
+  );
+}
 
 function readFile(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -52,7 +87,7 @@ export function VocabPage() {
           <p className="eyebrow">从文字稿里自己选</p>
           <h1>学习记录</h1>
           <p>
-            这里是你在文字稿里选中、标成不认识的单词和短语。导出的 english-progress.json 里，每一条都有原句、节目和时间。把文件发回来，就可以按那一句说明这个词在节目里怎么用。
+            这里是你在文字稿里选中、标成不认识的单词、短语和句型。已经导入的条目按那一句写了学习分析：先看整句在说什么，再看这个说法的字面意思和在这句里的意思。新选的词会先出现在这里，分析随后补上。
           </p>
         </div>
       </header>
@@ -81,15 +116,20 @@ export function VocabPage() {
         <section className="panel" key={title}>
           <h2>{title}</h2>
           <ul className="term-list">
-            {terms.map((term) => (
+            {terms.map((term) => {
+              const note = termNote(term.id);
+              return (
               <li className="term-card" key={term.id}>
                 <div>
-                  <strong>{term.text}</strong>
+                  <strong>
+                    {note && <em className="term-kind">{note.kind}</em>}
+                    {term.text}
+                  </strong>
                   <span>
                     {formatClock(term.start)}
                     {term.speaker ? ` · ${term.speaker}` : ""}
                   </span>
-                  <p>{term.sentence}</p>
+                  <TermAnalysis sentence={term.sentence} id={term.id} />
                 </div>
                 <div className="button-row">
                   <Link to={`/listen/${term.episodeId}?t=${Math.floor(term.start)}`}>回到这一句</Link>
@@ -98,7 +138,8 @@ export function VocabPage() {
                   </button>
                 </div>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </section>
       ))}
