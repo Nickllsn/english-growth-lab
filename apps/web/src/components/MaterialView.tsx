@@ -1,4 +1,6 @@
+import { useEffect, useRef } from "react";
 import type { MaterialLink } from "../content/types";
+import { parkVideo, retainVideo } from "../playback/engine";
 
 function youtubeEmbed(url: string): { id: string; start: number } | undefined {
   let parsed: URL;
@@ -18,19 +20,22 @@ function youtubeEmbed(url: string): { id: string; start: number } | undefined {
 export function MaterialView({ link, showCaptions = false }: { link: MaterialLink; showCaptions?: boolean }) {
   const video = youtubeEmbed(link.url);
   const captionFlag = showCaptions ? "1" : "0";
+  const slotRef = useRef<HTMLDivElement>(null);
+  const src = video
+    ? `https://www.youtube-nocookie.com/embed/${video.id}?start=${video.start}&cc_load_policy=${captionFlag}&cc_lang_pref=en&rel=0`
+    : "";
+
+  useEffect(() => {
+    const slot = slotRef.current;
+    if (!src || !slot) return;
+    const frame = retainVideo(src, `${link.title}，英文字幕`);
+    slot.appendChild(frame);
+    return () => parkVideo(frame);
+  }, [link.title, src]);
 
   return (
     <article className="material-block">
-      {video && (
-        <div className="video-frame">
-          <iframe
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            src={`https://www.youtube-nocookie.com/embed/${video.id}?start=${video.start}&cc_load_policy=${captionFlag}&cc_lang_pref=en&rel=0`}
-            title={`${link.title}，英文字幕`}
-          />
-        </div>
-      )}
+      {video && <div className="video-frame" ref={slotRef} />}
       <a className="material-link" href={link.url} rel="noreferrer" target="_blank">
         <strong>{link.title}</strong>
         <span>{link.formats.join(" · ")}</span>
