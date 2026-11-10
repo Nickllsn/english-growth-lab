@@ -435,5 +435,291 @@
         "here": "I'm actually taking advantage of 是我确实已经在用它，不是只听说过。"
       }
     ]
+  },
+  "475:bother": {
+    "kind": "单词",
+    "meaning": "视频已经压过了，不必再费劲去压缩。",
+    "parts": [
+      {
+        "text": "bother",
+        "literal": "打扰、费心。",
+        "here": "Don't bother trying 是不必费这个劲。"
+      }
+    ]
+  },
+  "475:exceed": {
+    "kind": "单词",
+    "meaning": "这一份用途占用的空间永远不要超过某个量。",
+    "parts": [
+      {
+        "text": "exceed",
+        "literal": "超过。",
+        "here": "never exceed some amount 是不超过这个上限。"
+      }
+    ]
+  },
+  "475:fancy": {
+    "kind": "单词",
+    "meaning": "上面大概还有一层更花哨的网盘做法。",
+    "parts": [
+      {
+        "text": "fancy",
+        "literal": "花哨的、讲究的。",
+        "here": "some fancy Dropbox thing 是比普通存放更花哨的那一层，不是“喜欢”。"
+      }
+    ]
+  },
+  "475:quota": {
+    "kind": "单词",
+    "meaning": "给那一块设用量上限，比如不能超过五 TB。",
+    "parts": [
+      {
+        "text": "quota",
+        "literal": "配额。",
+        "here": "put a quota on that 是规定这块空间最多能用多少。"
+      }
+    ]
+  },
+  "475:terabytes": {
+    "kind": "单词",
+    "meaning": "五太字节，只是他随口举的上限。",
+    "parts": [
+      {
+        "text": "terabytes",
+        "literal": "太字节，大约一万亿字节。",
+        "here": "five terabytes or whatever 是大约五 TB，or whatever 表示数字只是举例。"
+      }
+    ]
+  },
+  "475:descendant": {
+    "kind": "单词",
+    "meaning": "预留的空间算上这个文件系统，以及它下面的子文件系统。",
+    "parts": [
+      {
+        "text": "descendant",
+        "literal": "后代。",
+        "here": "descendant file systems 是层级里挂在它下面的那些文件系统。"
+      }
+    ]
+  },
+  "475:hierarchically": {
+    "kind": "单词",
+    "meaning": "文件系统可以一层套一层地排。",
+    "parts": [
+      {
+        "text": "hierarchically",
+        "literal": "按层级地。",
+        "here": "arranged hierarchically 是父文件系统下面还有子文件系统。"
+      }
+    ]
+  },
+  "475:inherit": {
+    "kind": "单词",
+    "meaning": "子文件系统从父文件系统继承属性设置。",
+    "parts": [
+      {
+        "text": "inherit",
+        "literal": "继承。",
+        "here": "inherit property settings from the parents 是沿用上一层的设置。"
+      }
+    ]
+  },
+  "475:beneath": {
+    "kind": "单词",
+    "meaning": "在 movies 这一层设配额，会限制它下面所有文件系统加在一起用掉的空间。",
+    "parts": [
+      {
+        "text": "beneath",
+        "literal": "在下面。",
+        "here": "file systems beneath it 是层级中位于它之下的那些。"
+      }
+    ]
+  },
+  "475:depiction": {
+    "kind": "单词",
+    "meaning": "这样你才能准确看出自己到底有多少存储。",
+    "parts": [
+      {
+        "text": "depiction",
+        "literal": "描绘。",
+        "here": "an accurate depiction of what you have 是一份准确的呈现，不是画画。"
+      }
+    ]
+  },
+  "475:fluff": {
+    "kind": "单词",
+    "meaning": "快照这类管理细节，对普通用户来说是多余的。",
+    "parts": [
+      {
+        "text": "fluff",
+        "literal": "绒毛，引申为没用的东西。",
+        "here": "fluff to you 是对你来说无所谓的那堆东西。保存的句子从半句开始。"
+      }
+    ]
+  },
+  "475:richness": {
+    "kind": "单词",
+    "meaning": "人多的时候，这些属性分得很细，才用得上。",
+    "parts": [
+      {
+        "text": "richness",
+        "literal": "丰富。",
+        "here": "the detail and richness of these properties 是这些属性又细、信息又多。"
+      }
+    ]
+  },
+  "475:integrity": {
+    "kind": "单词",
+    "meaning": "他要的是数据完好，能核对，还能自动修复。",
+    "parts": [
+      {
+        "text": "integrity",
+        "literal": "完整、完好。",
+        "here": "data integrity 是数据没有损坏、仍然可信。"
+      }
+    ]
+  },
+  "475:fundamental": {
+    "kind": "单词",
+    "meaning": "这对 ZFS 太基本了，所以他们反而会忘了提。",
+    "parts": [
+      {
+        "text": "fundamental",
+        "literal": "根本的。",
+        "here": "so fundamental to ZFS 是 ZFS 离不开的基础。"
+      }
+    ]
+  },
+  "475:self-consistent": {
+    "kind": "单词",
+    "meaning": "数据随时都处于自身一致的状态。",
+    "parts": [
+      {
+        "text": "self-consistent",
+        "literal": "自洽的。",
+        "here": "always self-consistent 是任何时候读到的数据都对得上，不会停在写到一半。"
+      }
+    ]
+  },
+  "475:enabling data structure": {
+    "kind": "短语",
+    "meaning": "一种底层数据结构，让快照几乎不花额外成本，并让数据始终自洽。",
+    "parts": [
+      {
+        "text": "enabling data structure",
+        "literal": "起支撑作用的数据结构。",
+        "here": "enabling 是它让快照和数据自洽成为可能，不是页面上的启用按钮。"
+      }
+    ]
+  },
+  "475:hyper-specific": {
+    "kind": "单词",
+    "meaning": "只有窄到几乎只此一家的用途，才考虑关掉校验和。",
+    "parts": [
+      {
+        "text": "hyper-specific",
+        "literal": "极度具体的。",
+        "here": "hyper-specific use case 是极端狭窄的使用场景。"
+      }
+    ]
+  },
+  "475:as to": {
+    "kind": "短语",
+    "meaning": "接下来要说的是，当初为什么决定用它，还有谁在用。",
+    "parts": [
+      {
+        "text": "as to",
+        "literal": "关于、至于。",
+        "here": "as to how did we decide 是把话转到“至于当时怎么决定的”。"
+      }
+    ]
+  },
+  "475:proprietary": {
+    "kind": "单词",
+    "meaning": "当时另一个主要用途是 NetApp 的专有文件系统 WAFL。",
+    "parts": [
+      {
+        "text": "proprietary",
+        "literal": "专有的、不公开的。",
+        "here": "proprietary file system 是厂家私有、不开放的文件系统。"
+      }
+    ]
+  },
+  "475:at the time": {
+    "kind": "短语",
+    "meaning": "在他们做这个决定的那时，它的另一个主要用途是 WAFL。",
+    "parts": [
+      {
+        "text": "at the time",
+        "literal": "在那个时候。",
+        "here": "at the time 指当时，不是“按时”。"
+      }
+    ]
+  },
+  "475:excuse": {
+    "kind": "单词",
+    "meaning": "不给人们留下不用快照保护数据的借口。",
+    "parts": [
+      {
+        "text": "excuse",
+        "literal": "借口。",
+        "here": "no excuse for not protecting 是没有理由不去保护。"
+      }
+    ]
+  },
+  "475:trend": {
+    "kind": "单词",
+    "meaning": "他们已经看到硬盘越做越大这个趋势。",
+    "parts": [
+      {
+        "text": "trend",
+        "literal": "趋势。",
+        "here": "the trend of hard discs getting bigger 是硬盘容量一直变大这件事。"
+      }
+    ]
+  },
+  "475:incremental": {
+    "kind": "单词",
+    "meaning": "他们不想只在 fsck 上小修小补。",
+    "parts": [
+      {
+        "text": "incremental",
+        "literal": "一点一点增加的。",
+        "here": "incremental improvements 是每次只改进一点点。"
+      }
+    ]
+  },
+  "475:rather": {
+    "kind": "单词",
+    "meaning": "他们选择把问题设计掉，而不是去小修 fsck。",
+    "parts": [
+      {
+        "text": "rather",
+        "literal": "而不是。",
+        "here": "rather than 后面是被放弃的做法。"
+      }
+    ]
+  },
+  "475:out of existence": {
+    "kind": "短语",
+    "meaning": "从设计上让这个问题不再存在，这样硬盘变大也不用担心。",
+    "parts": [
+      {
+        "text": "out of existence",
+        "literal": "让它不复存在。",
+        "here": "design the problem out of existence 是设计时就把问题消掉。"
+      }
+    ]
+  },
+  "475:retrospect": {
+    "kind": "单词",
+    "meaning": "回头看，当时那么做是对的，因为现在存储实在太大了。",
+    "parts": [
+      {
+        "text": "retrospect",
+        "literal": "回顾。",
+        "here": "in retrospect 是事后回看。"
+      }
+    ]
   }
 }
