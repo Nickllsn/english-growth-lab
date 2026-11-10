@@ -2,19 +2,26 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { weeks } from "../content/load";
 import { formatClock } from "../content/parse-transcript";
+import { weekdayLabel } from "../content/schedule";
 import { termNote } from "../content/term-notes";
-import { periodLabel, termPlacement, type StudyPeriod } from "../progress/placement";
+import { contentSchedule } from "../progress/placement";
 import {
   downloadProgress,
   loadProgress,
   parseProgress,
   removeTerm,
   saveProgress,
+  type LearningTerm,
   type ProgressState
 } from "../progress/store";
 
 const weekdays = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"];
-const periods: Array<Exclude<StudyPeriod, "home">> = ["morning", "noon", "evening"];
+
+function placement(term: LearningTerm) {
+  return contentSchedule(term, weeks) ?? (term.scheduledOn && term.weekId
+    ? { date: term.scheduledOn, weekId: term.weekId, weekday: weekdayLabel(term.scheduledOn) }
+    : undefined);
+}
 
 function TermAnalysis({ sentence, id }: { sentence: string; id: string }) {
   const note = termNote(id);
@@ -64,7 +71,6 @@ export function VocabPage() {
   const [message, setMessage] = useState("");
   const [weekId, setWeekId] = useState("");
   const [weekday, setWeekday] = useState("");
-  const [period, setPeriod] = useState("");
 
   useEffect(() => {
     saveProgress(progress);
@@ -82,10 +88,9 @@ export function VocabPage() {
   };
 
   const visible = progress.terms.filter((term) => {
-    const place = termPlacement(term, weeks);
-    if (weekId && place.weekId !== weekId) return false;
-    if (weekday && place.weekday !== weekday) return false;
-    if (period && place.period !== period) return false;
+    const place = placement(term);
+    if (weekId && place?.weekId !== weekId) return false;
+    if (weekday && place?.weekday !== weekday) return false;
     return true;
   });
   const groups = new Map<string, ProgressState["terms"]>();
@@ -102,7 +107,7 @@ export function VocabPage() {
           <p className="eyebrow">从文字稿里自己选</p>
           <h1>学习记录</h1>
           <p>
-            这里是你在文字稿里选中、标成不认识的单词、短语和句型。可以按周、周几和早中晚一起筛选。早中晚按加入时的上海时间：11 点前是早听，16 点前是午读，之后是晚听。在当天任务里新选的词，按当时打开的那一段记。
+            这里是你在文字稿里选中、标成不认识的单词、短语和句型。每条生词按它所在的那段音频归到课表上的那一天，不按加入时间。同一天的早听、午读和晚听是同一段，所以按周和周几筛选。导出的进度里会写上这个日期。
           </p>
         </div>
       </header>
@@ -143,17 +148,6 @@ export function VocabPage() {
             ))}
           </select>
         </label>
-        <label>
-          早中晚
-          <select aria-label="早中晚" onChange={(event) => setPeriod(event.target.value)} value={period}>
-            <option value="">全部</option>
-            {periods.map((item) => (
-              <option key={item} value={item}>
-                {periodLabel[item]}
-              </option>
-            ))}
-          </select>
-        </label>
         <p>
           {visible.length} / {progress.terms.length} 条
         </p>
@@ -176,7 +170,7 @@ export function VocabPage() {
           <ul className="term-list">
             {terms.map((term) => {
               const note = termNote(term.id);
-              const place = termPlacement(term, weeks);
+              const place = placement(term);
               return (
               <li className="term-card" key={term.id}>
                 <div>
@@ -185,7 +179,7 @@ export function VocabPage() {
                     <strong>{term.text}</strong>
                   </p>
                   <span>
-                    {place.weekId ?? "未排进周课"} · {place.weekday} · {periodLabel[place.period]} · {formatClock(term.start)}
+                    {place ? `${place.weekId} · ${place.weekday} · ${place.date}` : "未排进周课"} · {formatClock(term.start)}
                     {term.speaker ? ` · ${term.speaker}` : ""}
                   </span>
                   <TermAnalysis sentence={term.sentence} id={term.id} />

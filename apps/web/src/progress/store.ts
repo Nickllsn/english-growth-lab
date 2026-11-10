@@ -1,12 +1,12 @@
 import bundledProgress from "../../../../content/progress/english-progress.json";
+import { weeks } from "../content/load";
 import { formatClock } from "../content/parse-transcript";
 import type { VocabItem, WeekPack } from "../content/types";
+import { contentSchedule } from "./placement";
 
 const STORAGE_KEY = "egl.progress.v1";
 const MERGED_KEY = "egl.progress.merged";
 const BUNDLED_REVISION = "2026-11-09-37";
-
-export type StudyPeriod = "morning" | "noon" | "evening" | "home";
 
 export interface LearningTerm {
   id: string;
@@ -17,8 +17,8 @@ export interface LearningTerm {
   speaker: string | null;
   sentence: string;
   addedAt: string;
-  studiedOn?: string;
-  period?: StudyPeriod;
+  scheduledOn?: string;
+  weekId?: string;
 }
 
 export interface TermDraft {
@@ -28,8 +28,6 @@ export interface TermDraft {
   start: number;
   speaker: string | null;
   sentence: string;
-  studiedOn?: string;
-  period?: StudyPeriod;
 }
 
 export interface ProgressState {
@@ -130,7 +128,7 @@ export function addTerm(state: ProgressState, draft: TermDraft, addedAt = new Da
   if (id.endsWith(":")) return state;
   return {
     ...state,
-    terms: [...state.terms, { ...draft, id, addedAt }]
+    terms: [...state.terms, scheduleTerm({ ...draft, id, addedAt })]
   };
 }
 
@@ -139,7 +137,8 @@ export function removeTerm(state: ProgressState, id: string): ProgressState {
 }
 
 export function downloadProgress(progress: ProgressState): void {
-  const blob = new Blob([JSON.stringify(progress, null, 2)], { type: "application/json" });
+  const payload = { ...progress, terms: progress.terms.map(scheduleTerm) };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
@@ -229,7 +228,31 @@ export function parseProgress(raw: string): ProgressState {
 
 function termList(value: unknown): LearningTerm[] {
   if (!Array.isArray(value)) return [];
-  return value.filter(isTerm);
+  return value.filter(isTerm).map(scheduleTerm);
+}
+
+export function scheduleTerm(term: LearningTerm): LearningTerm {
+  const place = contentSchedule(term, weeks);
+  const next: LearningTerm = {
+    id: term.id,
+    text: term.text,
+    episodeId: term.episodeId,
+    episodeTitle: term.episodeTitle,
+    start: term.start,
+    speaker: term.speaker,
+    sentence: term.sentence,
+    addedAt: term.addedAt
+  };
+  if (place) {
+    next.scheduledOn = place.date;
+    next.weekId = place.weekId;
+    return next;
+  }
+  if (term.scheduledOn && term.weekId) {
+    next.scheduledOn = term.scheduledOn;
+    next.weekId = term.weekId;
+  }
+  return next;
 }
 
 function isTerm(value: unknown): value is LearningTerm {

@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ListenPage } from "../src/pages/ListenPage";
 import { VocabPage } from "../src/pages/VocabPage";
 import { acceptSelection } from "../src/content/selection";
-import { addTerm, emptyProgress, loadProgress, termId } from "../src/progress/store";
+import { addTerm, emptyProgress, loadProgress, parseProgress, termId } from "../src/progress/store";
 
 beforeEach(() => {
   localStorage.clear();
@@ -71,15 +71,16 @@ describe("learning terms", () => {
     expect(screen.getByText("请 Matt 开始讲，话头由他来开。")).toBeInTheDocument();
     expect(screen.getAllByText("这句话是").length).toBe(37);
 
-    fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周一" } });
-    fireEvent.change(screen.getByRole("combobox", { name: "早中晚" }), { target: { value: "morning" } });
-    expect(screen.getByText("1 / 37 条")).toBeInTheDocument();
-    expect(screen.getAllByText("RAIDZ expansion").length).toBeGreaterThan(0);
-    expect(screen.queryByText("in terms of")).not.toBeInTheDocument();
-    expect(screen.queryByText("have you here")).not.toBeInTheDocument();
+    fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周三" } });
+    expect(screen.getByText("19 / 37 条")).toBeInTheDocument();
+    expect(screen.getAllByText(/2026-W45 · 周三 · 2026-11-04/)).toHaveLength(19);
+    expect(screen.queryByText(/2026-11-12/)).not.toBeInTheDocument();
 
-    fireEvent.change(screen.getByRole("combobox", { name: "周" }), { target: { value: "2026-W45" } });
-    expect(screen.getByText("这个范围里没有生词。")).toBeInTheDocument();
+    fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周四" } });
+    fireEvent.change(screen.getByRole("combobox", { name: "周" }), { target: { value: "2026-W46" } });
+    expect(screen.getByText("18 / 37 条")).toBeInTheDocument();
+    expect(screen.getAllByText(/2026-W46 · 周四 · 2026-11-12/)).toHaveLength(18);
+    expect(screen.queryByText(/2026-11-04/)).not.toBeInTheDocument();
   });
 
   it("stores the sentence and episode with the selected word", () => {
@@ -93,7 +94,34 @@ describe("learning terms", () => {
     }, "2026-11-04T02:00:00.000Z");
 
     expect(next.terms[0].id).toBe(termId("475", "checksums"));
+    expect(next.terms[0].scheduledOn).toBe("2026-11-04");
+    expect(next.terms[0].weekId).toBe("2026-W45");
     expect(addTerm(next, next.terms[0]).terms).toHaveLength(1);
+  });
+
+  it("keeps a late addition on the day whose audio window contains it", () => {
+    const raw = JSON.stringify({
+      slots: {},
+      reviews: {},
+      terms: [
+        {
+          id: "475:raidz expansion",
+          text: "RAIDZ expansion",
+          episodeId: "475",
+          episodeTitle: "Making the ZFS file system",
+          start: 3626.7,
+          speaker: "Adam Stacoviak",
+          sentence: "So four years later though, RAIDZ expansion.",
+          addedAt: "2026-11-09T00:54:25.770Z",
+          scheduledOn: "2026-11-09",
+          weekId: "2026-W46"
+        }
+      ]
+    });
+
+    const progress = parseProgress(raw);
+    expect(progress.terms[0].scheduledOn).toBe("2026-11-12");
+    expect(progress.terms[0].weekId).toBe("2026-W46");
   });
 
   it("adds a selected transcript word and lists it for export", () => {

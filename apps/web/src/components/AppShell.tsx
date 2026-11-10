@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from "react";
 import { NavLink } from "react-router-dom";
 import { PlaybackBar } from "../playback/PlaybackBar";
+import { PageJumps } from "./PageJumps";
 
 const links = [
   { to: "/", label: "今日" },
@@ -38,6 +39,7 @@ export function AppShell({ children }: PropsWithChildren) {
       <div className="workspace">
         <PlaybackBar />
         <main className="content">{children}</main>
+        <PageJumps />
       </div>
     </div>
   );
