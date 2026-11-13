@@ -721,5 +721,260 @@
         "here": "in retrospect 是事后回看。"
       }
     ]
+  },
+  "475:litigious larry": {
+    "kind": "专名",
+    "meaning": "主持人说 Linus 用 Litigious Larry 这个叫法来指 Oracle。",
+    "parts": [
+      {
+        "text": "Litigious",
+        "literal": "爱打官司的。",
+        "here": "同一小段接着说 He quotes him as Litigious Larry is Oracle，所以这个外号指的是 Oracle。"
+      },
+      {
+        "text": "Larry",
+        "literal": "人名 Larry。",
+        "here": "这里不是另一个随便叫 Larry 的人，是被他引用来称呼 Oracle 的那个 Larry。"
+      }
+    ]
+  },
+  "475:lawsuit": {
+    "kind": "单词",
+    "meaning": "Matt 说，十多年前 NetApp 和 Sun 打过一场官司，之后没有人因为用 ZFS 被起诉，那场官司也不了了之。",
+    "parts": [
+      {
+        "text": "lawsuit",
+        "literal": "诉讼、官司。",
+        "here": "the NetApp lawsuit 和 a NetApp Sun lawsuit 说的是同一场官司。"
+      }
+    ]
+  },
+  "475:suing you": {
+    "kind": "短语",
+    "meaning": "Matt 把 Linus 那句 Don't use ZFS 理解成：免得 Larry 来起诉你。",
+    "parts": [
+      {
+        "text": "suing",
+        "literal": "正在起诉。",
+        "here": "avoid Larry suing you 是他的解读。这一句里他说自己不是律师。"
+      },
+      {
+        "text": "you",
+        "literal": "你。",
+        "here": "you 是可能去用 ZFS 的人，不是在场的主持人。"
+      }
+    ]
+  },
+  "475:provocative": {
+    "kind": "单词",
+    "meaning": "主持人说自己提起 Linus 那句话，不是为了挑事。",
+    "parts": [
+      {
+        "text": "provocative",
+        "literal": "挑衅的，容易惹起争论的。",
+        "here": "less to be provocative 是不太想靠 “Linus says don't use ZFS” 来挑起争论。"
+      }
+    ]
+  },
+  "475:unavoidable tension": {
+    "kind": "短语",
+    "meaning": "他想谈的是开发者、开源之后的机会，以及挡在中间的那份许可证，这中间有一种躲不开的张力。",
+    "parts": [
+      {
+        "text": "unavoidable",
+        "literal": "躲不掉的。",
+        "here": "他不是在说某一次争吵，是说这层张力绕不开。"
+      },
+      {
+        "text": "tension",
+        "literal": "拉紧，紧张关系。",
+        "here": "后面那句 the license that stands between that opportunity 就是这股 tension 所在。"
+      }
+    ]
+  },
+  "475:tea-leaving here between lines": {
+    "kind": "短语",
+    "meaning": "他没有引用 Linus 的下一句，而是标明自己在猜没说出口的意思。这句话把看茶叶渣和从字里行间读意思揉在一起。",
+    "parts": [
+      {
+        "text": "tea-leaving",
+        "literal": "看茶叶渣。read the tea leaves 是凭痕迹猜测。",
+        "here": "I'm tea-leaving 是他自己承认这是猜测，不是 Linus 的原话。"
+      },
+      {
+        "text": "here between lines",
+        "literal": "在这些行与行之间。reading between the lines 是读出没写明的意思。",
+        "here": "稿子是 tea-leaving here between lines，不是 between the lines，也不是单独的 reading between the lines。他猜的是：Linus 似乎想把 ZFS 放进内核，但许可证让他做不到。"
+      }
+    ]
+  },
+  "475:super wild": {
+    "kind": "短语",
+    "meaning": "他觉得这段经历对一个做软件的人来说非常离奇：专有软件后来开源，社区还能一直用。",
+    "parts": [
+      {
+        "text": "super wild",
+        "literal": "超级野、非常离谱。",
+        "here": "super wild in terms of a journey 是在形容这条经历，不是野外。"
+      }
+    ]
+  },
+  "475:constraints": {
+    "kind": "单词",
+    "meaning": "开源让软件不必被某一家公司的生死或决定绑住。",
+    "parts": [
+      {
+        "text": "constraints",
+        "literal": "限制。",
+        "here": "the constraints of any one company living or dying or deciding to do whatever 是取决于某一家公司还在不在、想不想继续做。这句在 70 到 80 分钟。更早还有一句 constraints on my time，不是这一条。"
+      }
+    ]
+  },
+  "475:continue to be relevant": {
+    "kind": "短语",
+    "meaning": "软件有用，别人还能接着用、接着扩展，它就可以继续有人需要。",
+    "parts": [
+      {
+        "text": "continue to be relevant",
+        "literal": "继续保持用得上。",
+        "here": "它接在 people can continue using it and extending it 后面。"
+      }
+    ]
+  },
+  "475:unify": {
+    "kind": "单词",
+    "meaning": "他们做 OpenZFS，是要把 Illumos、FreeBSD 和 Linux 上的 ZFS 开发拢到一起，并给出一些方向。",
+    "parts": [
+      {
+        "text": "unify",
+        "literal": "统一、收拢。",
+        "here": "to unify and provide some kind of leadership around ZFS development。更早有一处 Unify 是产品名，不是这个动词。"
+      }
+    ]
+  },
+  "475:inception": {
+    "kind": "单词",
+    "meaning": "专有项目从 2001 年开始，到他算的那个节点大约隔了 12 年。",
+    "parts": [
+      {
+        "text": "inception",
+        "literal": "开始、起头。",
+        "here": "inception of the project 是项目的起点。12 years between inception 是从起点算起的那段时间。"
+      }
+    ]
+  },
+  "475:instilled": {
+    "kind": "单词",
+    "meaning": "他说 CDDL 是在做 OpenSolaris 那一步放进项目的，那是项目开始若干年之后。",
+    "parts": [
+      {
+        "text": "instilled",
+        "literal": "原义是逐渐灌输进去。",
+        "here": "the license was instilled 在这句里是许可证被确立、放进项目，不是在教一种价值观。"
+      }
+    ]
+  },
+  "475:bifurcated": {
+    "kind": "单词",
+    "meaning": "ZFS 的路在这里分成两条：OpenZFS，以及 Oracle 仍在做的闭源版本。",
+    "parts": [
+      {
+        "text": "bifurcated",
+        "literal": "分成两支。",
+        "here": "one that ended and bifurcated 接在 a fork in this road of ZFS 后面。"
+      }
+    ]
+  },
+  "475:baking off": {
+    "kind": "短语",
+    "meaning": "Matt 说几乎没有人真把 Linux 上的开源 ZFS 和 Oracle ZFS 拿来对打、比哪边更好。",
+    "parts": [
+      {
+        "text": "baking off",
+        "literal": "稿子里的写法。bake-off 是对比赛；这里用成 baking off A versus B。",
+        "here": "nobody's really baking off open source ZFS on Linux, versus Oracle ZFS。按这句的词来理解，是拿两边做对比，不换成别的说法。"
+      }
+    ]
+  },
+  "475:escape the clutches": {
+    "kind": "短语",
+    "meaning": "对已经被 Oracle 套住的人，问题不是哪个 ZFS 更好，而是能不能脱身。",
+    "parts": [
+      {
+        "text": "escape",
+        "literal": "逃脱。",
+        "here": "前面说 if they could get out，这里用 escape 再说一遍能不能出去。"
+      },
+      {
+        "text": "the clutches",
+        "literal": "抓住不放的控制。",
+        "here": "Can I escape the clutches or not 接在 locked in by Oracle 后面，clutches 就是那层套住。"
+      }
+    ]
+  },
+  "475:hit my radar": {
+    "kind": "短语",
+    "meaning": "这几个还没定的功能进入了他的注意范围，其中他点名的是对象存储上的 ZFS。",
+    "parts": [
+      {
+        "text": "hit my radar",
+        "literal": "撞上我的雷达。",
+        "here": "A couple that hit my radar 是进入他视线的那几个想法。同一段后面又说 that's what hit my radar，还是这几个功能。"
+      }
+    ]
+  },
+  "475:momentum": {
+    "kind": "单词",
+    "meaning": "年会、书和博客还在，这个项目后面仍有一股劲。",
+    "parts": [
+      {
+        "text": "momentum",
+        "literal": "冲劲、势头。",
+        "here": "a lot of momentum behind this project 是项目还在往前走。前面刚数过会议、书和博客。"
+      }
+    ]
+  },
+  "475:career trajectory": {
+    "kind": "短语",
+    "meaning": "主持人问，关于 Matt 的职业路径，还有没有没谈到的地方。",
+    "parts": [
+      {
+        "text": "career",
+        "literal": "职业。",
+        "here": "your career trajectory 是你的职业怎么走过来的。"
+      },
+      {
+        "text": "trajectory",
+        "literal": "轨迹、走向。",
+        "here": "这句是在问还有没有漏掉的问题，不是在算一条物理曲线。"
+      }
+    ]
+  },
+  "475:nine to five": {
+    "kind": "短语",
+    "meaning": "日常那份按时上下班的工作之外，怎样还能把回馈开源谈进和雇主的关系里。",
+    "parts": [
+      {
+        "text": "nine to five",
+        "literal": "从早上九点到下午五点。",
+        "here": "their daily nine to five with their job 是日常正职。beyond 后面才是正职以外的开源回馈。"
+      }
+    ]
+  },
+  "475:quantifiable benefit": {
+    "kind": "短语",
+    "meaning": "把改动交回上游，别人的贡献好合进来，社区也能帮忙测，这对公司是一件说得清的底层好处。",
+    "parts": [
+      {
+        "text": "quantifiable",
+        "literal": "可以数清楚、说得清的。",
+        "here": "这一句说的是 low-level, fundamental, quantifiable benefit。更后面还有一句 less quantifiable，不在这 10 分钟里。"
+      },
+      {
+        "text": "benefit",
+        "literal": "好处。",
+        "here": "benefit to the company 是对公司的好处，前面几句在说代码能工作、少合并冲突、有人帮忙测。"
+      }
+    ]
   }
 }
