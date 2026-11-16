@@ -976,5 +976,256 @@
         "here": "benefit to the company 是对公司的好处，前面几句在说代码能工作、少合并冲突、有人帮忙测。"
       }
     ]
+  },
+  "475:corporate branding": {
+    "kind": "短语",
+    "meaning": "Matt 说，开源带来的下一层好处差不多是公司品牌。",
+    "parts": [
+      {
+        "text": "corporate",
+        "literal": "公司的。",
+        "here": "corporate branding 是公司在外面呈现的形象。"
+      },
+      {
+        "text": "branding",
+        "literal": "做品牌、打形象。",
+        "here": "The next level of benefit is the corporate branding, almost. 这一句把品牌看成低层好处之上的下一层。"
+      }
+    ]
+  },
+  "475:mindshare": {
+    "kind": "单词",
+    "meaning": "这样做是为了在别人脑子里占一个位置：觉得 Delphix 是个挺酷的玩家。",
+    "parts": [
+      {
+        "text": "mindshare",
+        "literal": "心智占有，别人想到这个领域时会想起你。",
+        "here": "It creates mindshare around, \"Delphix is a cool play. 这一句的 mindshare 就是这个印象。"
+      }
+    ]
+  },
+  "475:masking": {
+    "kind": "单词",
+    "meaning": "这里的 masking 是 Delphix 产品里的数据遮蔽，不是面具或掩饰。",
+    "parts": [
+      {
+        "text": "masking",
+        "literal": "遮住、打码。",
+        "here": "database virtualization and masking 是他们的实际产品。这句说，就算不知道这个产品，开源工作也会让公司显得酷。"
+      }
+    ]
+  },
+  "475:bottom line": {
+    "kind": "短语",
+    "meaning": "他们要卖的对象大多不是开发者，所以这件事不会直接变成账上的利润。",
+    "parts": [
+      {
+        "text": "bottom line",
+        "literal": "账本最下面那一行，利润。",
+        "here": "doesn't go directly to our bottom line 是不会直接进利润。后面才说公司还做别的事，不只是拿货换钱。"
+      }
+    ]
+  },
+  "475:recruiting": {
+    "kind": "单词",
+    "meaning": "主持人接上一句，举了招聘作为公司除了买卖之外还会做的事。",
+    "parts": [
+      {
+        "text": "recruiting",
+        "literal": "招聘。",
+        "here": "Like recruiting. 就是这个例子。更早还有一处讲品牌和招聘，不在这 10 分钟里。"
+      }
+    ]
+  },
+  "475:serendipitous encounters": {
+    "kind": "短语",
+    "meaning": "团队里不少人来自开源社区，很多是碰上的，不是按计划找来的。",
+    "parts": [
+      {
+        "text": "serendipitous",
+        "literal": "意外碰上、恰好有收获的。",
+        "here": "他接着举的例子是问一个人有没有人选，旁边的人听见了。"
+      },
+      {
+        "text": "encounters",
+        "literal": "遇见、碰上。",
+        "here": "serendipitous encounters 是这些碰巧的见面，不是安排好的招聘会。"
+      }
+    ]
+  },
+  "475:overhear": {
+    "kind": "单词",
+    "meaning": "他问别人有没有能招的人，旁边另一个人听见了，自己说感兴趣。",
+    "parts": [
+      {
+        "text": "overhear",
+        "literal": "无意中听见。",
+        "here": "somebody else happened to overhear that 的 that 是前一句在问有没有人可招。"
+      }
+    ]
+  },
+  "475:pin directly on it": {
+    "kind": "短语",
+    "meaning": "品牌和名声带来的好处，很难直接算到这件事头上。",
+    "parts": [
+      {
+        "text": "pin directly on it",
+        "literal": "直接钉在它上面，也就是明确归到它头上。",
+        "here": "it's a lot harder to pin directly on it 的 it 是前面的 branding and reputation。这句只说难归算，不是一条到处都能用的固定说法。"
+      }
+    ]
+  },
+  "475:winded with": {
+    "kind": "短语",
+    "meaning": "主持人问他做了二十多年 ZFS，是不是已经没劲了。",
+    "parts": [
+      {
+        "text": "winded with",
+        "literal": "winded 常指喘不上气。这里和 with ZFS 连在一起。",
+        "here": "are you winded with ZFS 是这句里的问法，旁边还有 burnt on it 和 done with it。按这句理解成“是不是做累了”，不要把它当成一条固定习语去套别的句子。"
+      }
+    ]
+  },
+  "475:work-wise": {
+    "kind": "单词",
+    "meaning": "就工作而言，主持人猜他这些年几乎全在 ZFS 上。",
+    "parts": [
+      {
+        "text": "work-wise",
+        "literal": "从工作这个方面说。-wise 是“就某方面而言”。",
+        "here": "eat, sleep and breathe, work-wise, ZFS 是工作上满脑子都是 ZFS。"
+      }
+    ]
+  },
+  "475:burnt on it": {
+    "kind": "短语",
+    "meaning": "主持人接着问：你是不是已经厌烦 ZFS 了，还是比以前更有劲。",
+    "parts": [
+      {
+        "text": "burnt on it",
+        "literal": "字面是在它上面烧过。常见说法是 burnt out，稿子写的是 burnt on it。",
+        "here": "Are you burnt on it? 和 Are you done with it? 放在一起，这句里是问做腻了没有。不要把 burnt on 当成通用固定搭配去记。"
+      }
+    ]
+  },
+  "475:giving it some more legs": {
+    "kind": "短语",
+    "meaning": "对象存储上的 ZFS 让他觉得有意思，像是再给 ZFS 添一段能走的路，让它再有用十年。",
+    "parts": [
+      {
+        "text": "giving it some more legs",
+        "literal": "再给它几条腿。",
+        "here": "we're giving it some more legs that'll keep it relevant for another decade。it 是 ZFS。这是这句里的比喻，表示再撑一段时间，不是一条词形固定的习语。"
+      }
+    ]
+  },
+  "475:having a blast": {
+    "kind": "短语",
+    "meaning": "过去一年他和团队做这个、设计这个，做得非常开心。",
+    "parts": [
+      {
+        "text": "having a blast",
+        "literal": "玩得很痛快。blast 有爆炸、热闹的意思。",
+        "here": "having a blast the past year with the team, developing that and designing it。that 是前面说的对象存储上的 ZFS。"
+      }
+    ]
+  },
+  "475:userland": {
+    "kind": "单词",
+    "meaning": "这块新代码很多不在内核里，而在用户空间，并且用 Rust 写。",
+    "parts": [
+      {
+        "text": "userland",
+        "literal": "用户空间，相对内核。",
+        "here": "A lot of the code is actually in userland, writing in Rust. 这 10 分钟里后面还会再说 userland，这一条用的是这句。"
+      }
+    ]
+  },
+  "475:as it should be": {
+    "kind": "短语",
+    "meaning": "Rust 的安全感让他觉得安心，也让满篇裸指针的 C 显得可怕，而这种可怕是该有的。",
+    "parts": [
+      {
+        "text": "as it should be",
+        "literal": "就该是这样。",
+        "here": "feel scary, as it should be 的 it 是在 C 里到处对付裸指针这件事。"
+      }
+    ]
+  },
+  "475:comprehensive survey": {
+    "kind": "短语",
+    "meaning": "他没有把每种可能的语言都调查一遍，是因为 Rust 看起来和 C 一样偏底层。",
+    "parts": [
+      {
+        "text": "comprehensive",
+        "literal": "全面的。",
+        "here": "didn't do a comprehensive survey 是没有做一次全面排查。"
+      },
+      {
+        "text": "survey",
+        "literal": "调查、摸一遍。",
+        "here": "survey of every possible language 是把可能的语言过一遍，不是问卷调查。"
+      }
+    ]
+  },
+  "475:in-house": {
+    "kind": "单词",
+    "meaning": "公司其余软件是 Java，所以内部有一批 Java 开发者，Java 本来也可以是一个选项。",
+    "parts": [
+      {
+        "text": "in-house",
+        "literal": "在机构内部。",
+        "here": "in-house we have a bunch of Java developers 是 Delphix 自己人里有很多写 Java 的。更早还有一处 in-house system admins，不在这 10 分钟。"
+      }
+    ]
+  },
+  "475:clunking on": {
+    "kind": "短语",
+    "meaning": "他设想有人的 Plex 还在一台旧 Mac mini 上笨笨地跑着，想搬到带 ZFS 的 Linux 上。",
+    "parts": [
+      {
+        "text": "clunking on",
+        "literal": "哐当当地接着运行。clunk 是沉闷的碰撞声。",
+        "here": "still clunking on an old Mac mini 是这句的写法，机器还在旧电脑上凑合转。不要改成 clunking along，也不要当成固定习语。"
+      }
+    ]
+  },
+  "475:tinkering": {
+    "kind": "单词",
+    "meaning": "如果喜欢自己折腾，他就建议装一个自带 ZFS 的系统，然后从建池开始试。",
+    "parts": [
+      {
+        "text": "tinkering",
+        "literal": "摆弄、小修小改。",
+        "here": "if you like tinkering 后面就是 install Ubuntu or another OS，再跑 zpool create。"
+      }
+    ]
+  },
+  "475:packaged solution": {
+    "kind": "短语",
+    "meaning": "如果不想钻进系统内部去折腾，他觉得像 FreeNAS 这样更现成的方案也合适。",
+    "parts": [
+      {
+        "text": "packaged",
+        "literal": "包装好的、现成的。",
+        "here": "a more packaged solution 是相对自己装系统、自己敲命令而言。"
+      },
+      {
+        "text": "solution",
+        "literal": "解决方案。",
+        "here": "like FreeNAS 是这句举的例子。"
+      }
+    ]
+  },
+  "475:that's my take on it": {
+    "kind": "短语",
+    "meaning": "主持人说完自己更喜欢用终端管 ZFS，这是他至少目前的看法。",
+    "parts": [
+      {
+        "text": "take",
+        "literal": "看法、判断。",
+        "here": "So that's my take on it, at least. it 是前面说的用终端而不是界面来管 ZFS。"
+      }
+    ]
   }
 }
