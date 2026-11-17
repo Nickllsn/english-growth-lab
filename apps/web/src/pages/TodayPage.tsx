@@ -193,6 +193,7 @@ function DayPanel({
           end={day.listen.end}
           episode={episode}
           onAdd={onAdd}
+          showLoop
           savedIds={new Set(progress.terms.map((term) => term.id))}
           start={day.listen.start}
         />

@@ -2,7 +2,14 @@ import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import type { ChangelogEpisode } from "../content/changelog-episodes";
 import { activeCueIndex, formatClock, parseTranscript, segmentStop } from "../content/parse-transcript";
 import { acceptSelection, sentenceAround } from "../content/selection";
-import { claimEpisode, getAudio, getPlaybackSnapshot, playFrom, subscribePlayback } from "../playback/engine";
+import {
+  claimEpisode,
+  getAudio,
+  getPlaybackSnapshot,
+  playFrom,
+  setSegmentLoop,
+  subscribePlayback
+} from "../playback/engine";
 import { termId, type TermDraft } from "../progress/store";
 
 interface SelectionMenu {
@@ -19,7 +26,8 @@ export function TranscriptPlayer({
   end,
   savedIds,
   onAdd,
-  manageAudio = true
+  manageAudio = true,
+  showLoop = false
 }: {
   episode: ChangelogEpisode;
   start?: number;
@@ -27,6 +35,7 @@ export function TranscriptPlayer({
   savedIds?: Set<string>;
   onAdd?: (draft: TermDraft) => void;
   manageAudio?: boolean;
+  showLoop?: boolean;
 }) {
   const activeRef = useRef<HTMLLIElement | null>(null);
   const followRef = useRef(false);
@@ -44,8 +53,8 @@ export function TranscriptPlayer({
 
   useEffect(() => {
     if (!manageAudio) return;
-    claimEpisode(episode, start, stopAt);
-  }, [episode, manageAudio, start, stopAt]);
+    claimEpisode(episode, start, stopAt, showLoop);
+  }, [episode, manageAudio, showLoop, start, stopAt]);
 
   useEffect(() => {
     const audio = getAudio();
@@ -119,8 +128,22 @@ export function TranscriptPlayer({
         <button className="secondary-button" type="button" onClick={() => seek(start)}>
           从 {formatClock(start)} 播放
         </button>
+        {showLoop && (
+          <button
+            aria-pressed={playback.looping}
+            className="secondary-button"
+            type="button"
+            onClick={() => setSegmentLoop(!playback.looping)}
+          >
+            循环播放
+          </button>
+        )}
         <p className="listen-note">
-          点每段左边的时间才会播放。每一句的时间对着这句在音频里开始的位置。这段文字稿播完会自动暂停，要接着听后面再按播放。换到本周、进度或生词时会接着播。手动暂停后，重新打开任务页再按播放，会从暂停的时间继续。选中文字不会跳转，最多 20 个词，再点「加入不认识」。
+          点每段左边的时间才会播放。每一句的时间对着这句在音频里开始的位置。
+          {showLoop
+            ? "这段文字稿播完会自动暂停。打开循环播放后，会从这段开头再听。"
+            : "这段文字稿播完会自动暂停，要接着听后面再按播放。"}
+          换到本周、进度或生词时会接着播。手动暂停后，重新打开任务页再按播放，会从暂停的时间继续。选中文字不会跳转，最多 20 个词，再点「加入不认识」。
         </p>
       </div>
       <ol className="cue-list">

@@ -113,6 +113,29 @@ describe("playback", () => {
     expect(pause).not.toHaveBeenCalled();
   });
 
+  it("repeats today's window from the start when loop is on", () => {
+    const play = vi.fn(() => Promise.resolve());
+    const pause = vi.fn();
+    HTMLMediaElement.prototype.play = play;
+    HTMLMediaElement.prototype.pause = pause;
+    renderToday("2026-11-04");
+    const audio = screen.getByLabelText("Making the ZFS file system 音频") as HTMLAudioElement;
+    fireEvent.loadedMetadata(audio);
+    fireEvent.click(screen.getByRole("button", { name: "循环播放" }));
+    expect(screen.getByRole("button", { name: "循环播放" })).toHaveAttribute("aria-pressed", "true");
+
+    const episode = findEpisode("475")!;
+    const stop = segmentStop(parseTranscript(episode.transcript, episode.cueStarts), 600)!;
+    play.mockClear();
+    audio.currentTime = stop + 0.4;
+    fireEvent.timeUpdate(audio);
+
+    expect(pause).not.toHaveBeenCalled();
+    expect(audio.currentTime).toBe(0);
+    expect(play).toHaveBeenCalled();
+    expect(JSON.parse(localStorage.getItem(PLAYBACK_KEY) ?? "{}")).toMatchObject({ loop: true });
+  });
+
   it("keeps a video frame mounted after leaving the page", () => {
     const view = (
       <>
