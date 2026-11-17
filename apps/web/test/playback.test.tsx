@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { App } from "../src/App";
 import { MaterialView } from "../src/components/MaterialView";
 import { findEpisode } from "../src/content/changelog-episodes";
@@ -12,6 +12,10 @@ import { MemoryRouter } from "react-router-dom";
 beforeEach(() => {
   localStorage.clear();
   HTMLMediaElement.prototype.play = () => Promise.resolve();
+});
+
+afterEach(() => {
+  vi.useRealTimers();
 });
 
 function renderToday(today: string) {
@@ -27,6 +31,8 @@ describe("playback", () => {
   it("keeps the same audio playing across the week, vocab, and progress pages", () => {
     const pause = vi.fn();
     HTMLMediaElement.prototype.pause = pause;
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(new Date("2026-11-04T04:00:00.000Z"));
     window.location.hash = "#/?today=2026-11-04";
     render(<App />);
 
