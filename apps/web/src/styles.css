@@ -1026,9 +1026,15 @@ textarea {
 
 .listen-player-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+}
+
+.secondary-button[aria-pressed="true"] {
+  color: var(--primary);
+  background: var(--primary-soft);
 }
 
 .listen-player-row p,

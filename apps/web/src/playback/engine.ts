@@ -7,6 +7,7 @@ export interface PlaybackRecord {
   time: number;
   rate: number;
   held: boolean;
+  loop: boolean;
 }
 
 export interface PlaybackSnapshot {
@@ -15,6 +16,7 @@ export interface PlaybackSnapshot {
   seconds: number;
   rate: string;
   parkedVideos: number;
+  looping: boolean;
 }
 
 const rates = ["0.75", "1", "1.25"];
@@ -31,9 +33,13 @@ let snapshot: PlaybackSnapshot = {
   title: "",
   seconds: 0,
   rate: "1",
-  parkedVideos: 0
+  parkedVideos: 0,
+  looping: false
 };
 let stopAt: number | null = null;
+let windowStart = 0;
+let loopEnabled = false;
+let loopable = false;
 let held = false;
 let applying = false;
 let lastWrite = 0;
@@ -60,7 +66,8 @@ function readRecord(): PlaybackRecord | null {
       episodeId: parsed.episodeId,
       time: parsed.time,
       rate: typeof parsed.rate === "number" && Number.isFinite(parsed.rate) ? parsed.rate : 1,
-      held: Boolean(parsed.held)
+      held: Boolean(parsed.held),
+      loop: Boolean(parsed.loop)
     };
   } catch {
     return null;
@@ -74,7 +81,8 @@ function remember() {
     episodeId: audio.dataset.episodeId,
     time: audio.currentTime,
     rate: audio.playbackRate,
-    held
+    held,
+    loop: loopEnabled
   };
   localStorage.setItem(PLAYBACK_KEY, JSON.stringify(record));
   lastWrite = Date.now();
@@ -104,14 +112,16 @@ function publish() {
     title: audio?.dataset.title ?? "",
     seconds: audio?.currentTime || 0,
     rate: nearestRate(audio?.playbackRate || 1),
-    parkedVideos: parked.size
+    parkedVideos: parked.size,
+    looping: loopEnabled && loopable
   };
   if (
     next.episodeId === snapshot.episodeId &&
     next.title === snapshot.title &&
     next.seconds === snapshot.seconds &&
     next.rate === snapshot.rate &&
-    next.parkedVideos === snapshot.parkedVideos
+    next.parkedVideos === snapshot.parkedVideos &&
+    next.looping === snapshot.looping
   ) {
     return;
   }
@@ -124,6 +134,15 @@ function holdAtBoundary() {
   if (!audio || stopAt == null) return;
   if (audio.currentTime < stopAt - 0.2) {
     held = false;
+    return;
+  }
+  if (loopEnabled && loopable) {
+    held = false;
+    if (audio.currentTime >= stopAt) {
+      audio.currentTime = windowStart;
+      const pending = audio.play?.();
+      void pending?.catch(() => undefined);
+    }
     return;
   }
   if (!held && audio.currentTime >= stopAt) {
@@ -184,11 +203,19 @@ export function mountAudio(host: HTMLElement) {
   host.appendChild(getAudio());
 }
 
-export function claimEpisode(episode: ChangelogEpisode, start: number, boundary: number | null) {
+export function claimEpisode(
+  episode: ChangelogEpisode,
+  start: number,
+  boundary: number | null,
+  loopableClaim = false
+) {
   const audio = getAudio();
   const saved = readRecord();
   const same = audio.dataset.episodeId === episode.id && Boolean(audio.getAttribute("src"));
   stopAt = boundary;
+  windowStart = start;
+  loopable = loopableClaim;
+  if (saved) loopEnabled = saved.loop;
   label(audio, episode);
   if (same) {
     if (!applying && (boundary == null || audio.currentTime < boundary - 0.2)) held = false;
@@ -233,6 +260,13 @@ export function playFrom(episode: ChangelogEpisode, time: number, boundary: numb
   }
   audio.dataset.episodeId = episode.id;
   start();
+}
+
+export function setSegmentLoop(enabled: boolean) {
+  loopEnabled = enabled;
+  if (enabled) holdAtBoundary();
+  remember();
+  publish();
 }
 
 export function setPlaybackRate(rate: string) {
@@ -288,6 +322,9 @@ export function resetPlaybackForTests() {
   delete audioNode.dataset.title;
   audioNode.removeAttribute("aria-label");
   stopAt = null;
+  windowStart = 0;
+  loopEnabled = false;
+  loopable = false;
   held = false;
   lastWrite = 0;
   for (const frame of videos.values()) frame.remove();
