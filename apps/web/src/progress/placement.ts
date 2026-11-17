@@ -22,3 +22,25 @@ export function contentSchedule(
   }
   return undefined;
 }
+
+export function studyDate(term: { episodeId: string; start: number; scheduledOn?: string }, weeks: WeekPack[]): string {
+  return contentSchedule(term, weeks)?.date ?? term.scheduledOn ?? "";
+}
+
+export function byNewestStudyDay<T extends { episodeId: string; start: number; scheduledOn?: string; addedAt?: string }>(
+  terms: T[],
+  weeks: WeekPack[]
+): T[] {
+  return [...terms].sort((left, right) => {
+    const leftDate = studyDate(left, weeks);
+    const rightDate = studyDate(right, weeks);
+    if (leftDate !== rightDate) {
+      if (!leftDate) return 1;
+      if (!rightDate) return -1;
+      return rightDate.localeCompare(leftDate);
+    }
+    const added = (right.addedAt ?? "").localeCompare(left.addedAt ?? "");
+    if (added !== 0) return added;
+    return right.start - left.start;
+  });
+}

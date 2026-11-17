@@ -4,7 +4,7 @@ import { weeks } from "../content/load";
 import { formatClock } from "../content/parse-transcript";
 import { weekdayLabel } from "../content/schedule";
 import { termNote } from "../content/term-notes";
-import { contentSchedule } from "../progress/placement";
+import { byNewestStudyDay, contentSchedule } from "../progress/placement";
 import {
   downloadProgress,
   loadProgress,
@@ -87,12 +87,15 @@ export function VocabPage() {
     }
   };
 
-  const visible = progress.terms.filter((term) => {
-    const place = placement(term);
-    if (weekId && place?.weekId !== weekId) return false;
-    if (weekday && place?.weekday !== weekday) return false;
-    return true;
-  });
+  const visible = byNewestStudyDay(
+    progress.terms.filter((term) => {
+      const place = placement(term);
+      if (weekId && place?.weekId !== weekId) return false;
+      if (weekday && place?.weekday !== weekday) return false;
+      return true;
+    }),
+    weeks
+  );
   const groups = new Map<string, ProgressState["terms"]>();
   for (const term of visible) {
     const list = groups.get(term.episodeTitle) ?? [];
@@ -107,7 +110,7 @@ export function VocabPage() {
           <p className="eyebrow">从文字稿里自己选</p>
           <h1>学习记录</h1>
           <p>
-            这里是你在文字稿里选中、标成不认识的单词、短语和句型。每条生词按它所在的那段音频归到课表上的那一天，不按加入时间。同一天的早听、午读和晚听是同一段，所以按周和周几筛选。导出的进度里会写上这个日期。
+            这里是你在文字稿里选中、标成不认识的单词、短语和句型。每条生词按它所在的那段音频归到课表上的那一天，不按加入时间。列表按学习日倒序，最新一天排在最前；同一天里后选的词排在前面。文件里的先后不影响这个顺序。同一天的早听、午读和晚听是同一段，所以按周和周几筛选。
           </p>
         </div>
       </header>
