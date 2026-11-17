@@ -4,6 +4,8 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ListenPage } from "../src/pages/ListenPage";
 import { VocabPage } from "../src/pages/VocabPage";
 import { acceptSelection } from "../src/content/selection";
+import { weeks } from "../src/content/load";
+import { byNewestStudyDay } from "../src/progress/placement";
 import { addTerm, emptyProgress, loadProgress, parseProgress, termId } from "../src/progress/store";
 
 beforeEach(() => {
@@ -72,6 +74,8 @@ describe("learning terms", () => {
     expect(screen.getByText(/插上电源/)).toBeInTheDocument();
     expect(screen.getByText("请 Matt 开始讲，话头由他来开。")).toBeInTheDocument();
     expect(screen.getAllByText("这句话是").length).toBe(141);
+    const pageText = document.body.textContent ?? "";
+    expect(pageText.indexOf("2026-11-17")).toBeLessThan(pageText.indexOf("2026-11-04"));
 
     fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周三" } });
     expect(screen.getByText("19 / 141 条")).toBeInTheDocument();
@@ -99,6 +103,46 @@ describe("learning terms", () => {
     expect(screen.getByText("20 / 141 条")).toBeInTheDocument();
     expect(screen.getAllByText(/2026-W47 · 周二 · 2026-11-17/)).toHaveLength(20);
     expect(screen.queryByText(/2026-11-16/)).not.toBeInTheDocument();
+  });
+
+  it("lists a later study day before an earlier one no matter the file order", () => {
+    const earlier = {
+      id: "475:earlier",
+      text: "earlier",
+      episodeId: "475",
+      episodeTitle: "Making the ZFS file system",
+      start: 100,
+      speaker: null,
+      sentence: "earlier sentence",
+      addedAt: "2026-11-18T08:00:00.000Z",
+      scheduledOn: "2026-11-04",
+      weekId: "2026-W45"
+    };
+    const later = {
+      ...earlier,
+      id: "592:later",
+      text: "later",
+      episodeId: "592",
+      start: 30,
+      sentence: "later sentence",
+      addedAt: "2026-11-17T02:00:00.000Z",
+      scheduledOn: "2026-11-17",
+      weekId: "2026-W47"
+    };
+    const sameDayOlder = {
+      ...later,
+      id: "592:older-pick",
+      text: "older pick",
+      start: 400,
+      addedAt: "2026-11-17T01:00:00.000Z"
+    };
+
+    expect(byNewestStudyDay([earlier, sameDayOlder, later], weeks).map((term) => term.text)).toEqual([
+      "later",
+      "older pick",
+      "earlier"
+    ]);
+    expect(byNewestStudyDay([later, earlier], weeks).map((term) => term.text)).toEqual(["later", "earlier"]);
   });
 
   it("stores the sentence and episode with the selected word", () => {
