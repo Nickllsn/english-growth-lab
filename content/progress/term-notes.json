@@ -1227,5 +1227,240 @@
         "here": "So that's my take on it, at least. it 是前面说的用终端而不是界面来管 ZFS。"
       }
     ]
+  },
+  "592:preamble": {
+    "kind": "单词",
+    "meaning": "正式开录之前，他们先谈过能不能休息、能不能录很久。",
+    "parts": [
+      {
+        "text": "preamble",
+        "literal": "正文前面的开场白。",
+        "here": "talked in the preamble 是录之前那一段，不是这句本身。"
+      }
+    ]
+  },
+  "592:nerd famous": {
+    "kind": "短语",
+    "meaning": "孩子说爸爸不算大众意义上的有名，但在极客圈子里有名。",
+    "parts": [
+      {
+        "text": "nerd famous",
+        "literal": "在书呆子、极客圈里有名。",
+        "here": "you're not famous, but you are nerd famous 是孩子的原话。famous 和 nerd famous 在这句里对着说。"
+      }
+    ]
+  },
+  "592:the perfect level of fame": {
+    "kind": "短语",
+    "meaning": "Bryan 觉得这种程度的名气刚好，不多也不少。",
+    "parts": [
+      {
+        "text": "the perfect level of fame",
+        "literal": "刚刚好的名气程度。",
+        "here": "it's kind of like the perfect level of fame 接在 nerd famous 后面，是他对那种名气的评价。"
+      }
+    ]
+  },
+  "592:embarrass myself": {
+    "kind": "短语",
+    "meaning": "他描述有人会冲上去，宁可有点不好意思，也要拍到一张自拍。",
+    "parts": [
+      {
+        "text": "embarrass myself",
+        "literal": "让自己难堪。",
+        "here": "comfortable enough to embarrass myself just enough 是尴尬到刚好能开口要自拍。"
+      }
+    ]
+  },
+  "592:in quotes": {
+    "kind": "短语",
+    "meaning": "他说“认识”要加引号，因为他们其实一直没见过面。",
+    "parts": [
+      {
+        "text": "in quotes",
+        "literal": "加上引号来说。",
+        "here": "in quotes \"know somebody\" 是这个“认识”不能按字面理解。"
+      }
+    ]
+  },
+  "592:post show": {
+    "kind": "短语",
+    "meaning": "Bryan 的名字是最近在正片之后的那段里被提起的。",
+    "parts": [
+      {
+        "text": "post show",
+        "literal": "节目正文之后的部分。",
+        "here": "in the post show 是这句的写法，没有连成 post-show。这句只说他最近在那里被提到。"
+      }
+    ]
+  },
+  "592:videographer": {
+    "kind": "单词",
+    "meaning": "对着服务器喊的不是 Bryan，他当时是在拍。",
+    "parts": [
+      {
+        "text": "videographer",
+        "literal": "摄像的人。",
+        "here": "I am the videographer 接着 So it's actually not me，喊的人是 Brendan Gregg。"
+      }
+    ]
+  },
+  "592:very present in my memory": {
+    "kind": "短语",
+    "meaning": "他说那段回忆现在还非常清楚。",
+    "parts": [
+      {
+        "text": "very present in my memory",
+        "literal": "在记忆里还很近、很清楚。",
+        "here": "That is very present in my memory 的 that 是对着服务器喊、拍下来的那件事。"
+      }
+    ]
+  },
+  "592:latency outlier": {
+    "kind": "短语",
+    "meaning": "几周前他们在查一台 JBOD 里延迟特别出格的一块盘。",
+    "parts": [
+      {
+        "text": "latency",
+        "literal": "延迟。",
+        "here": "debug a latency outlier 是在查这块延迟不正常的盘。"
+      },
+      {
+        "text": "outlier",
+        "literal": "离群的一个。",
+        "here": "后面同一段说 a single disk that was an outlier。9 分 51 秒那段还有复数 latency outliers，这一条用的是这里的单数。"
+      }
+    ]
+  },
+  "592:perplexing": {
+    "kind": "单词",
+    "meaning": "这块盘为什么比别的盘慢，当时让他们想不明白。",
+    "parts": [
+      {
+        "text": "perplexing",
+        "literal": "让人困惑的。",
+        "here": "it was very perplexing 的 it 是这块延迟出格的盘。"
+      }
+    ]
+  },
+  "592:exhibiting worse latency": {
+    "kind": "短语",
+    "meaning": "他们盯着这块盘，想弄清它为什么表现出来的延迟比每块别的盘都差。",
+    "parts": [
+      {
+        "text": "exhibiting",
+        "literal": "表现出来。",
+        "here": "exhibiting worse latency 是延迟表现得更差，不是硬盘在展览。"
+      },
+      {
+        "text": "worse latency",
+        "literal": "更差的延迟。",
+        "here": "worse ... than every other drive 是比同一组里的其他盘都差。"
+      }
+    ]
+  },
+  "592:object lesson": {
+    "kind": "短语",
+    "meaning": "去看一眼硬盘这件事，成了一个实例：查问题时要愿意问自己以为已经知道答案的问题。",
+    "parts": [
+      {
+        "text": "object lesson",
+        "literal": "用一件具体的事给出的教训。",
+        "here": "one of these interesting object lessons 后面就是 that 从句：你可能因此学到东西。"
+      }
+    ]
+  },
+  "592:worked their way out": {
+    "kind": "短语",
+    "meaning": "支架上的螺丝自己松脱了，硬盘只挂在接口上。",
+    "parts": [
+      {
+        "text": "worked their way out",
+        "literal": "一点点自己挪出来。",
+        "here": "all of the screws in the bracket had worked their way out 是螺丝松掉了，不是有人把它们拧出来。"
+      }
+    ]
+  },
+  "592:sensitive to vibe": {
+    "kind": "短语",
+    "meaning": "机械硬盘对振动很敏感。这句里的 vibe 是振动，不是气氛。",
+    "parts": [
+      {
+        "text": "sensitive to",
+        "literal": "对……敏感。",
+        "here": "They're very sensitive to vibe 的 they 是刚说的那种旋转硬盘。"
+      },
+      {
+        "text": "vibe",
+        "literal": "常指气氛。",
+        "here": "这句把 vibe 和 thermals 并列，指的是振动。不要把它当成“对气氛敏感”那条固定说法。"
+      }
+    ]
+  },
+  "592:sensitive to thermals": {
+    "kind": "短语",
+    "meaning": "同一句里，这种硬盘对温度也很敏感。",
+    "parts": [
+      {
+        "text": "thermals",
+        "literal": "热、温度方面的情况。",
+        "here": "sensitive to thermals 和 sensitive to vibe 并列，说的是温度，不是热力学课程。"
+      }
+    ]
+  },
+  "592:eye-opening": {
+    "kind": "单词",
+    "meaning": "让他们吃惊的是，硬盘没有报错，只是报了这些延迟异常。",
+    "parts": [
+      {
+        "text": "eye-opening",
+        "literal": "让人睁开眼、忽然看清的。",
+        "here": "it was very eye-opening, because the drive was not reporting any errors。后面还有别的集里的 eye-opening，这一条是这句。"
+      }
+    ]
+  },
+  "592:marveling at": {
+    "kind": "短语",
+    "meaning": "他们看着这件事发愣：换上螺丝之后，硬盘就正常了。",
+    "parts": [
+      {
+        "text": "marveling at",
+        "literal": "盯着看并感到惊讶。",
+        "here": "marveling at this 的 this 是螺丝松了、硬盘只报延迟不报错这件事。同一句稍后又说 marveling about it。"
+      }
+    ]
+  },
+  "592:induce vibration": {
+    "kind": "短语",
+    "meaning": "Brendan 想再造出那个问题，于是试着用办法把振动引出来。",
+    "parts": [
+      {
+        "text": "induce",
+        "literal": "引起、诱发。",
+        "here": "ways to induce vibration 是想人为弄出振动，好把刚才的问题再演示一遍。"
+      }
+    ]
+  },
+  "592:resonant frequency": {
+    "kind": "短语",
+    "meaning": "他写了个 Python 程序发不同的声音，想碰上硬盘的共振频率。",
+    "parts": [
+      {
+        "text": "resonant frequency",
+        "literal": "共振频率，物体特别容易跟着振起来的那个频率。",
+        "here": "hit a resonant frequency of a drive 是想用声音让这块盘共振。这句末尾是 or something，他还没说死。"
+      }
+    ]
+  },
+  "592:recreate that problem": {
+    "kind": "短语",
+    "meaning": "Brendan 觉得要是能把那个问题再造出来，就可以再演示一次。",
+    "parts": [
+      {
+        "text": "recreate",
+        "literal": "重新制造出来。",
+        "here": "let's recreate that problem, so we can actually show it again。that problem 是螺丝松了引起的延迟异常。"
+      }
+    ]
   }
 }
