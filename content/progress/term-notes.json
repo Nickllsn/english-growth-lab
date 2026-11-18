@@ -1462,5 +1462,219 @@
         "here": "let's recreate that problem, so we can actually show it again。that problem 是螺丝松了引起的延迟异常。"
       }
     ]
+  },
+  "592:storage appliance": {
+    "kind": "短语",
+    "meaning": "他们上传那条视频时，只想展示一下自己在存储设备上做过的东西。",
+    "parts": [
+      {
+        "text": "storage appliance",
+        "literal": "存储设备、存储一体机。",
+        "here": "the storage appliance 是这句里他们想在视频里展示的东西。"
+      }
+    ]
+  },
+  "592:a video that's endured": {
+    "kind": "短语",
+    "meaning": "这条视频没有很快过气，后来还一直被人看。",
+    "parts": [
+      {
+        "text": "endured",
+        "literal": "熬过来、持续下去。",
+        "here": "So it's a video that's endured 是这条视频还留着、还被看见。后面才用 Sun 的其他宣传材料来比观看量。"
+      }
+    ]
+  },
+  "592:ill-advised": {
+    "kind": "单词",
+    "meaning": "他说 Sun 投过一些很不明智的超级碗广告。",
+    "parts": [
+      {
+        "text": "ill-advised",
+        "literal": "考虑不周、不该那么做的。",
+        "here": "very ill-advised Super Bowl ads 是他对那些广告的评价。"
+      }
+    ]
+  },
+  "592:it didn't even occur to me": {
+    "kind": "短语",
+    "meaning": "在当时的 Sun，他根本没想到上传之前要先去请示。",
+    "parts": [
+      {
+        "text": "occur to me",
+        "literal": "我想到。",
+        "here": "it didn't even occur to me to like ask permission 是连请示这个念头都没有出现。"
+      }
+    ]
+  },
+  "592:a one-trick kind of pony": {
+    "kind": "短语",
+    "meaning": "YouTube 把他当成早期网红，他想说自己只会这一招。",
+    "parts": [
+      {
+        "text": "a one-trick kind of pony",
+        "literal": "常见说法是 a one-trick pony，只会一招的小马。稿子是 a one-trick kind of pony。",
+        "here": "we're a one-trick kind of pony here 是他在跟 YouTube 说：我们就这一条视频，不是持续产出的人。kind of 在中间，不要改成没有 kind of 的固定说法。"
+      }
+    ]
+  },
+  "592:fumbled your own future": {
+    "kind": "短语",
+    "meaning": "孩子说他本来可以当早期 YouTuber，却把这个前途弄丢了。",
+    "parts": [
+      {
+        "text": "fumbled",
+        "literal": "没接住、搞砸。",
+        "here": "you fumbled your own future 是孩子的话，指他没有接住当早期 YouTuber 的机会。"
+      }
+    ]
+  },
+  "592:a dismal failure": {
+    "kind": "短语",
+    "meaning": "孩子觉得他很失败，因为他没有把那次早期成功接着做下去。",
+    "parts": [
+      {
+        "text": "dismal",
+        "literal": "惨淡的、很糟的。",
+        "here": "I'm a dismal failure 是他转述孩子的看法，原因在 because 后面：没去 capitalize on this early success。"
+      }
+    ]
+  },
+  "592:capitalize on this early success": {
+    "kind": "短语",
+    "meaning": "孩子怪他没有利用那条视频的早期成功再往下做。",
+    "parts": [
+      {
+        "text": "capitalize on",
+        "literal": "利用某件事取得好处。",
+        "here": "didn't actually capitalize on this early success 的 this early success 就是那条被大量观看的视频。"
+      }
+    ]
+  },
+  "592:on screen talent": {
+    "kind": "短语",
+    "meaning": "他提醒说，出镜的是 Brendan，自己只是拿着摄像机。",
+    "parts": [
+      {
+        "text": "on screen talent",
+        "literal": "出镜的人。常见写法是 on-screen，稿子是 on screen，没有连字符。",
+        "here": "Brendan was the on screen talent. I was just the one holding the video camera."
+      }
+    ]
+  },
+  "592:non-repetitive runout": {
+    "kind": "短语",
+    "meaning": "声波把磁头推离磁道，出现的是不随每圈重复的定位偏差，不是磁头已经坏了的证据。",
+    "parts": [
+      {
+        "text": "non-repetitive",
+        "literal": "不重复的。",
+        "here": "这种偏差不是每一圈都回到同一个位置。"
+      },
+      {
+        "text": "runout",
+        "literal": "旋转件偏离应有位置的量。",
+        "here": "a non-repetitive runout 接在 moving the head out of alignment 后面，是磁头偏离磁道。下一句才说磁头还能重新找回去。"
+      }
+    ]
+  },
+  "592:vulnerable to": {
+    "kind": "短语",
+    "meaning": "磁头飞行高度极低，所以很容易受这类扰动影响。",
+    "parts": [
+      {
+        "text": "vulnerable to",
+        "literal": "容易受到……伤害。",
+        "here": "it's really vulnerable to these kinds of things 的 these kinds of things 是前一句说的把磁头推离磁道这类干扰。"
+      }
+    ]
+  },
+  "592:retrack": {
+    "kind": "单词",
+    "meaning": "磁头被撞离磁道之后，还能自己找回去，再把数据读出来。",
+    "parts": [
+      {
+        "text": "retrack",
+        "literal": "重新找到磁道。",
+        "here": "I'm able to retrack myself and perform the read。同一句前面是 they get retracked。这是重新对准，不是把盘修好。"
+      }
+    ]
+  },
+  "592:mechanically finnicky": {
+    "kind": "短语",
+    "meaning": "硬盘正在被闪存换掉，因为机械结构又敏感又难伺候。",
+    "parts": [
+      {
+        "text": "mechanically finnicky",
+        "literal": "机械上很挑剔、很娇气。常见拼写是 finicky，稿子写成 finnicky。",
+        "here": "they are so mechanically finnicky 是硬盘被闪存取代的原因。按这句理解成机械设计敏感、要求高，不要改掉稿子里的拼写。"
+      }
+    ]
+  },
+  "592:diminishing returns": {
+    "kind": "短语",
+    "meaning": "他们多年把转速越做越快，收益却越来越小。",
+    "parts": [
+      {
+        "text": "diminishing returns",
+        "literal": "投入继续增加，但多出来的好处越来越少。",
+        "here": "making that rotational velocity faster, but that has gotten really diminishing returns。that 是把转速做快这件事。"
+      }
+    ]
+  },
+  "592:blow a drive": {
+    "kind": "短语",
+    "meaning": "如果一块盘真的坏掉，把里面的数据全部读出来要花很久。",
+    "parts": [
+      {
+        "text": "blow a drive",
+        "literal": "把一块盘搞坏、报废。",
+        "here": "if you actually blow a drive 就是这句的动词形式，不是 blew 或 blowing。后面接的是 resilvering 要花很长时间。"
+      }
+    ]
+  },
+  "592:resilvering": {
+    "kind": "单词",
+    "meaning": "用冗余把缺失的数据重新同步、重建出来。不限于坏盘，换盘或扩容之后也可以做；这句说的是盘坏了之后这一步太久。",
+    "parts": [
+      {
+        "text": "resilvering",
+        "literal": "按其余副本把缺掉的数据补写回去。",
+        "here": "resilvering takes a prohibitively long period of time 接在 if you actually blow a drive 后面。它是冗余重建，不是只表示“硬盘坏了”这件事本身。"
+      }
+    ]
+  },
+  "592:a prohibitively long period of time": {
+    "kind": "短语",
+    "meaning": "把整块大容量盘里的数据重建出来，时间长到几乎不可接受。",
+    "parts": [
+      {
+        "text": "prohibitively",
+        "literal": "贵或难到让人做不下去。",
+        "here": "a prohibitively long period of time 是这段时间长得让这件事不划算。这句里它修饰 resilvering 要花的时间。"
+      }
+    ]
+  },
+  "592:on the way out": {
+    "kind": "短语",
+    "meaning": "他心里还留着机械硬盘的位置，但觉得它大概正在退出。",
+    "parts": [
+      {
+        "text": "on the way out",
+        "literal": "正在离开、正在被淘汰。",
+        "here": "it is probably on the way out 的 it 是机械硬盘。这句接着说他其实也没有那么怀念。"
+      }
+    ]
+  },
+  "592:the demise of the drive": {
+    "kind": "短语",
+    "meaning": "他预言机械硬盘要消亡已经说了 15 年，所以它可能还会再留一阵。",
+    "parts": [
+      {
+        "text": "demise",
+        "literal": "终结、消亡。",
+        "here": "predicting the demise of the drive 是预言这种盘的终结。also for 15 years 说明这个预言已经说了很久。"
+      }
+    ]
   }
 }
