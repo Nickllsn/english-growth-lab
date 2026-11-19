@@ -1676,5 +1676,230 @@
         "here": "predicting the demise of the drive 是预言这种盘的终结。also for 15 years 说明这个预言已经说了很久。"
       }
     ]
+  },
+  "592:hindsight a bit is 20/20": {
+    "kind": "短语",
+    "meaning": "事后看，机械硬盘会被换掉这件事很清楚，但他当时已经在这行里很久了。",
+    "parts": [
+      {
+        "text": "Hindsight a bit is 20/20",
+        "literal": "常见习语是 hindsight is 20/20：事后看，视力是 20/20，什么都清楚。稿子多了 a bit。",
+        "here": "Hindsight a bit is 20/20 in that case 的 that case 是机械硬盘正在退出。不要把 a bit 删掉。"
+      }
+    ]
+  },
+  "592:common ground": {
+    "kind": "短语",
+    "meaning": "主持人说自己和 Bryan 的交集是从 Fishworks 这段开始的。",
+    "parts": [
+      {
+        "text": "common ground",
+        "literal": "双方都站得住的那块地方，共同点。",
+        "here": "I began there, with Fishworks and this sort of common ground 是他用来接 Bryan 经历的共同点。"
+      }
+    ]
+  },
+  "592:bumbling and mumbling": {
+    "kind": "短语",
+    "meaning": "主持人说这段人生 Bryan 自己讲更清楚，自己讲只会结结巴巴、含含糊糊。",
+    "parts": [
+      {
+        "text": "bumbling",
+        "literal": "笨手笨脚、讲不利索。",
+        "here": "better than me bumbling and mumbling through it 的 it 是 Bryan 的经历。"
+      },
+      {
+        "text": "mumbling",
+        "literal": "含糊地说。",
+        "here": "两个 -ing 叠在一起，是主持人说自己讲不好。"
+      }
+    ]
+  },
+  "592:mortgage its future to": {
+    "kind": "短语",
+    "meaning": "1996 年除了 Sun，别的计算机公司都把前途押给了微软和 Windows。",
+    "parts": [
+      {
+        "text": "mortgage its future to",
+        "literal": "把未来抵押给某人。",
+        "here": "mortgage its future to Microsoft and Windows 是比喻：把以后的路交给微软。its 是那些计算机公司。"
+      }
+    ]
+  },
+  "592:on its deathbed": {
+    "kind": "短语",
+    "meaning": "他说那时 Unix 已经奄奄一息。",
+    "parts": [
+      {
+        "text": "on its deathbed",
+        "literal": "躺在临终的床上。",
+        "here": "Unix was on its deathbed 是 Unix 快不行了，不是某个人病了。"
+      }
+    ]
+  },
+  "592:hobbyist project": {
+    "kind": "短语",
+    "meaning": "那时候 Linux 还主要是爱好者在做的项目。",
+    "parts": [
+      {
+        "text": "hobbyist",
+        "literal": "业余爱好者。",
+        "here": "Linux was still very much a hobbyist project 是还没变成后来那种主流系统。"
+      }
+    ]
+  },
+  "592:mired in": {
+    "kind": "短语",
+    "meaning": "BSD 当时陷在官司里。这里选的是陷住，不是已经单独记过的 lawsuit。",
+    "parts": [
+      {
+        "text": "mired in",
+        "literal": "陷在泥里。",
+        "here": "BSD was mired in lawsuits 是被官司拖住。lawsuits 是另一条生词，这一条是 mired in。"
+      }
+    ]
+  },
+  "592:the height of": {
+    "kind": "短语",
+    "meaning": "微软那时正处在 Gates 和 Ballmer 时期的高点。",
+    "parts": [
+      {
+        "text": "the height of",
+        "literal": "最高的那段。",
+        "here": "in kind of the height of its Gates and Ballmer era 的 its 是微软。"
+      }
+    ]
+  },
+  "592:an absolute bolt of energy": {
+    "kind": "短语",
+    "meaning": "和 Jeff Bonwick 谈话让他觉得对面是一道很猛的能量。",
+    "parts": [
+      {
+        "text": "an absolute bolt of energy",
+        "literal": "一道十足的能量。bolt 可以是闪电、栓。",
+        "here": "it was just an absolute bolt of energy to talk to Bonwick。这是这句里的生动说法，不是一条必须照搬的固定习语。"
+      }
+    ]
+  },
+  "592:reached out to": {
+    "kind": "短语",
+    "meaning": "他看到 Jeff 在 comp.unix.solaris 上讲 Solaris 2.5 的新东西，就主动去联系了 Jeff。",
+    "parts": [
+      {
+        "text": "reached out to",
+        "literal": "伸手够到，引申为主动联系。",
+        "here": "I had reached out to him after seeing that 的 him 是 Jeff，that 是那篇帖子。"
+      }
+    ]
+  },
+  "592:a transformational moment": {
+    "kind": "短语",
+    "meaning": "当面见到 Jeff，是他生活里一个把方向改掉的时刻。",
+    "parts": [
+      {
+        "text": "transformational",
+        "literal": "造成转变的。",
+        "here": "meeting Jeff in person was a transformational moment in my life。原因在 because 后面：他见到一个比自己大十岁、对系统软件有热情的人。"
+      }
+    ]
+  },
+  "592:zeal for": {
+    "kind": "短语",
+    "meaning": "Jeff 对系统软件开发有一种真的热劲。",
+    "parts": [
+      {
+        "text": "zeal for",
+        "literal": "对某件事的热忱。",
+        "here": "a real energy and zeal for system software development。zeal 和 energy 并列，对象是系统软件开发。"
+      }
+    ]
+  },
+  "592:chips on his shoulder": {
+    "kind": "短语",
+    "meaning": "Jeff 心里有几块没被当回事的疙瘩，推着他要去证明自己，不是泛泛的上进心。",
+    "parts": [
+      {
+        "text": "chips on his shoulder",
+        "literal": "常见说法是 a chip on one's shoulder：觉得被轻视，因此较劲。稿子这里是复数 chips。",
+        "here": "Jeff had a couple of chips on his shoulder。同一段稍后还有 a big chip on our shoulder、a chip on my shoulder，下一段是 my chip on the shoulder。这一条用的是第一处 chips on his shoulder，不另加那几处。"
+      }
+    ]
+  },
+  "592:exhilarating": {
+    "kind": "单词",
+    "meaning": "有人那么年轻就觉得前途是敞开的，那种感觉让人非常兴奋。",
+    "parts": [
+      {
+        "text": "exhilarating",
+        "literal": "令人振奋的。",
+        "here": "a really exhilarating feeling, to feel like kind of the future was open to someone who was so young。这 10 分钟里后面还有 exhilarating for us on DTrace，这一条用的是这句。"
+      }
+    ]
+  },
+  "592:a fresh grad": {
+    "kind": "短语",
+    "meaning": "他看出 Jeff 需要的是一个刚毕业、很有才华、有劲、能和他绑在一起干活的人，而不是一个大团队。",
+    "parts": [
+      {
+        "text": "a fresh grad",
+        "literal": "刚毕业的人。grad 是 graduate。",
+        "here": "someone who is a fresh grad, who is remarkably talented, who's energized。这句说的是 Jeff 需要的那种人。"
+      }
+    ]
+  },
+  "592:odyssey": {
+    "kind": "单词",
+    "meaning": "Matt 和 Adam 进 Sun，是一段非常非常非常长的旅程的开头。",
+    "parts": [
+      {
+        "text": "odyssey",
+        "literal": "漫长而曲折的远行。",
+        "here": "the beginning of a very, very, very long odyssey。选的是 odyssey 这个词，原文是这一整段。"
+      }
+    ]
+  },
+  "592:hubris": {
+    "kind": "单词",
+    "meaning": "现在回头看，在那么年轻的人身上看出这种潜力，有傲慢，也有过分的自信。",
+    "parts": [
+      {
+        "text": "hubris",
+        "literal": "过分的骄傲，觉得自己不会错。",
+        "here": "the arrogance and the hubris about seeing that kind of potential in someone so young。下一句他说那潜力是真的。"
+      }
+    ]
+  },
+  "592:the dotcom bust": {
+    "kind": "短语",
+    "meaning": "这些工作发生在互联网泡沫破裂之后，时间点有点反讽。",
+    "parts": [
+      {
+        "text": "the dotcom bust",
+        "literal": "dotcom 是早期互联网公司；bust 是破裂、崩掉。",
+        "here": "it was after the dotcom bust 是 2000 年前后科技泡沫垮掉之后。Adam 后来又说 the dotcom bust was literally in tech，这一条用的是 Bryan 这句。"
+      }
+    ]
+  },
+  "592:economic wipeout": {
+    "kind": "短语",
+    "meaning": "他说人们并不知道一场把经济抹平的崩塌长什么样。",
+    "parts": [
+      {
+        "text": "wipeout",
+        "literal": "被彻底冲掉、抹掉。",
+        "here": "what an economic wipeout looks like 接在 dotcom bust 后面，是那场崩溃的规模。"
+      }
+    ]
+  },
+  "592:the eeriest thing": {
+    "kind": "短语",
+    "meaning": "当时在硅谷的人会说，最让人不安的是路上的车流消失了。",
+    "parts": [
+      {
+        "text": "eeriest",
+        "literal": "eerie 的最高级：最诡异、最让人不安的。",
+        "here": "the eeriest thing was that the traffic disappeared。不是恐怖故事，是街上忽然空了那种不安。"
+      }
+    ]
   }
 }
