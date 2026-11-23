@@ -1901,5 +1901,258 @@
         "here": "the eeriest thing was that the traffic disappeared。不是恐怖故事，是街上忽然空了那种不安。"
       }
     ]
+  },
+  "592:forward expectations": {
+    "kind": "短语",
+    "meaning": "泡沫破裂改掉的是人们对以后的预期，不只是当时的账。",
+    "parts": [
+      {
+        "text": "forward expectations",
+        "literal": "往前看时对以后的预期。",
+        "here": "it just affected forward expectations so much 接在 It was in tech 后面，是科技业里的预期被打下去。"
+      }
+    ]
+  },
+  "592:heady thinking": {
+    "kind": "短语",
+    "meaning": "九十年代末那种让人兴奋、有点 intoxicating 的想法，当时被当成显然错了，后来看大多只是太早。",
+    "parts": [
+      {
+        "text": "heady thinking",
+        "literal": "令人兴奋、冲昏头的想法。heady 像酒意上头。",
+        "here": "all of this kind of heady thinking of the late '90s was just obviously wrong。这句后面又说它们并不真的错，只是远远走在时间前面。heady 不是“本身就是错的”。"
+      }
+    ]
+  },
+  "592:layoff after layoff": {
+    "kind": "短语",
+    "meaning": "Sun 最有创造力的那段，恰恰是一轮接一轮裁员的时候。",
+    "parts": [
+      {
+        "text": "layoff after layoff",
+        "literal": "裁员接着裁员。",
+        "here": "Sun went through layoff after layoff after layoff during that period。原文连说了三次 after layoff，这一条取的是这个重复结构。"
+      }
+    ]
+  },
+  "592:the focus that desperation gives you": {
+    "kind": "短语",
+    "meaning": "他觉得最有意思的工作，有一部分来自绝境逼出来的专注。",
+    "parts": [
+      {
+        "text": "the focus that desperation gives you",
+        "literal": "走投无路时给你的那种专注。",
+        "here": "maybe it was the focus that desperation gives you。紧接着就是 ZFS 和 DTrace 出现的那段。"
+      }
+    ]
+  },
+  "592:trapped in a corporate vessel that's going to sink": {
+    "kind": "短语",
+    "meaning": "他担心自己做出来要用的工具，会被关进一艘正在下沉的公司船里。",
+    "parts": [
+      {
+        "text": "trapped in a corporate vessel that's going to sink",
+        "literal": "困在一艘要沉的公司船里。",
+        "here": "it's going to be trapped in a corporate vessel that's going to sink。vessel 是那家公司，不是真的船。这是这句里的比喻。"
+      }
+    ]
+  },
+  "592:pining about the tech": {
+    "kind": "短语",
+    "meaning": "他最不想变成那种只能怀念自己再也碰不到的技术的人。",
+    "parts": [
+      {
+        "text": "pining about the tech",
+        "literal": "pine 是苦苦思念。about the tech 是这句的搭配。",
+        "here": "pining about the tech that they no longer can have。按这句理解，不是另造一个固定说法。"
+      }
+    ]
+  },
+  "592:tumultuous times": {
+    "kind": "短语",
+    "meaning": "他是在公司里、在从没见过的技术时代里的动荡年月，还在用这个工具。",
+    "parts": [
+      {
+        "text": "tumultuous times",
+        "literal": "动荡的年月。",
+        "here": "to be in tumultuous times in a company, in an era of tech that's never been seen before。"
+      }
+    ]
+  },
+  "592:licensing-wise": {
+    "kind": "单词",
+    "meaning": "就许可证而言，OpenZFS 有一段历史，让它在 Ubuntu 或 Linux 上用起来比较麻烦。",
+    "parts": [
+      {
+        "text": "licensing-wise",
+        "literal": "从许可证这方面说。-wise 是“就某方面而言”。",
+        "here": "there's some history there licensing-wise that makes ZFS a little challenging。"
+      }
+    ]
+  },
+  "592:enduring meaning": {
+    "kind": "短语",
+    "meaning": "开源让工程师做出的东西还能留下来，从而得到持久的意义。",
+    "parts": [
+      {
+        "text": "enduring meaning",
+        "literal": "能够持续下去的意义。",
+        "here": "open source is what allows engineers to achieve enduring meaning。这句说的是他心里觉得重要、却不常被谈起的那一层。"
+      }
+    ]
+  },
+  "592:pour your soul into": {
+    "kind": "短语",
+    "meaning": "你把整个人投进做出的东西里；公司把它撞毁之后，那样东西就不再是你的。",
+    "parts": [
+      {
+        "text": "pour your soul into",
+        "literal": "把灵魂倒进去。",
+        "here": "the thing that you created, that you pour your soul into。这句接在 flown into the side of the mountain 后面。"
+      }
+    ]
+  },
+  "592:flown into the side of the mountain": {
+    "kind": "短语",
+    "meaning": "专有创新被别人拥有，再被撞毁，你就失去了自己做出来的东西。",
+    "parts": [
+      {
+        "text": "flown into the side of the mountain",
+        "literal": "飞机撞上山壁。",
+        "here": "when that thing is flown into the side of the mountain。that thing 是你做出来、却归别人所有的东西。这是毁了它的比喻，不是真的坠机。"
+      }
+    ]
+  },
+  "592:chip away at your soul": {
+    "kind": "短语",
+    "meaning": "失去那样东西，会一点一点把人的劲磨掉。",
+    "parts": [
+      {
+        "text": "chip away at your soul",
+        "literal": "一下一下把你的灵魂削掉。",
+        "here": "that can really chip away at your soul, to kind of lose that。that 是前一句说的、被撞毁后不再属于你的创作。是士气被慢慢磨掉，不是一下子碎掉。"
+      }
+    ]
+  },
+  "592:bluntly transcendent": {
+    "kind": "短语",
+    "meaning": "他很直白地说，二十多年后还在用并感激这项技术，那种感觉超出寻常。",
+    "parts": [
+      {
+        "text": "bluntly transcendent",
+        "literal": "bluntly 是说得很直；transcendent 是超出平常。",
+        "here": "it feels to me bluntly transcendent to be able to have this technology that I am using 20+ years after its creation。这是这句里的说法，不是一条固定习语。"
+      }
+    ]
+  },
+  "592:deeply gratifying": {
+    "kind": "短语",
+    "meaning": "这项技术还能这么容易、这么稳地用，让他非常满足。",
+    "parts": [
+      {
+        "text": "deeply gratifying",
+        "literal": "深深让人满足的。",
+        "here": "That is deeply, deeply, deeply gratifying。原文把 deeply 说了三次。that 是还能这么容易、这么稳地使用它。"
+      }
+    ]
+  },
+  "592:longer view": {
+    "kind": "短语",
+    "meaning": "把开源的重要性放在更长的时间里看，会改变一个人的态度。",
+    "parts": [
+      {
+        "text": "longer view",
+        "literal": "看得更远的看法。",
+        "here": "have that longer view about the importance of open source。后面说这样工程师才能有更深的意义。"
+      }
+    ]
+  },
+  "592:for posterity's sake": {
+    "kind": "短语",
+    "meaning": "他猜 Bryan 听那集，是为了给以后留一份记录，也为了单纯的享受。",
+    "parts": [
+      {
+        "text": "posterity",
+        "literal": "后人，以后的记录。",
+        "here": "listening for posterity's sake, for just sheer enjoyment。posterity 是留给以后，不是私人怀旧。"
+      }
+    ]
+  },
+  "592:brainchild": {
+    "kind": "单词",
+    "meaning": "Matt 说 ZFS 真正是别人想出来的，他自己只是在对的时间在场帮忙。",
+    "parts": [
+      {
+        "text": "brainchild",
+        "literal": "从某人脑子里想出来的成果。",
+        "here": "this was the brainchild of somebody else。somebody else 在这句里是 Jeff。"
+      }
+    ]
+  },
+  "592:characteristically self-effacing": {
+    "kind": "短语",
+    "meaning": "Bryan 觉得 Matt 又一次把自己的角色说小了，这是他一贯的样子。",
+    "parts": [
+      {
+        "text": "self-effacing",
+        "literal": "把自己抹淡，不突出自己。",
+        "here": "Matt is being characteristically self-effacing。characteristically 是他一向如此。下一小段他又说 He's being self-effacing。"
+      }
+    ]
+  },
+  "592:terrific acumen and insight": {
+    "kind": "短语",
+    "meaning": "Matt 带来的不只是热情，还有很敏锐的判断和见解。",
+    "parts": [
+      {
+        "text": "acumen",
+        "literal": "敏锐的判断力。",
+        "here": "not just enthusiasm, but terrific acumen and insight。insight 是他自己看出来的东西。"
+      }
+    ]
+  },
+  "592:micromanage": {
+    "kind": "单词",
+    "meaning": "Jeff 没有不得不去管 Matt 的每一步，这点让 Bryan 觉得很好。",
+    "parts": [
+      {
+        "text": "micromanage",
+        "literal": "管到很细的每一步。",
+        "here": "he hadn't had to like micromanage us。后面是 Jeff 只给了一个大概方向，Matt 自己弄出很多东西。"
+      }
+    ]
+  },
+  "592:invigorating": {
+    "kind": "单词",
+    "meaning": "站在 Bryan 看到的位置上，Matt 那样干活对 Jeff 是一种提神。",
+    "parts": [
+      {
+        "text": "invigorating",
+        "literal": "让人有精神、有劲。",
+        "here": "you have no idea how invigorating this is for Jeff。this 是 Matt 自己把事情做出来。"
+      }
+    ]
+  },
+  "592:load-bearing": {
+    "kind": "单词",
+    "meaning": "他们在 Crucible 里用 ZFS 的方式和做卷管理不一样，但对他们是承重的。",
+    "parts": [
+      {
+        "text": "load-bearing",
+        "literal": "承重的，拿掉就会塌。",
+        "here": "using ZFS in a slightly different capacity, but very load-bearing for us。这是比喻：ZFS 在撑他们的存储服务。后面还有一处 load-bearing infrastructure software，不在这 10 分钟。"
+      }
+    ]
+  },
+  "592:sticks out": {
+    "kind": "短语",
+    "meaning": "他见过几次 ZFS 报数据损坏的事，其中一件特别突出，让他记得住。",
+    "parts": [
+      {
+        "text": "sticks out",
+        "literal": "伸出来，因而显眼。",
+        "here": "one that really sticks out。one 是那几次里特别记得住的一件，后面才讲 DMA 控制器。"
+      }
+    ]
   }
 }
