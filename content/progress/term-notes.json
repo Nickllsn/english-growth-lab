@@ -2154,5 +2154,269 @@
         "here": "one that really sticks out。one 是那几次里特别记得住的一件，后面才讲 DMA 控制器。"
       }
     ]
+  },
+  "shipit-84:droplets": {
+    "kind": "单词",
+    "meaning": "他手头还有一些云上的虚拟机实例，上面主要跑着 PHP 和 MySQL。",
+    "parts": [
+      {
+        "text": "droplets",
+        "literal": "小水滴。云厂商用它称呼虚拟机实例。",
+        "here": "some bunch of droplets lying around ... with various workloads, mostly PHP and MySQL。这句里就是这些还放着的云主机。"
+      }
+    ]
+  },
+  "shipit-84:due a refresh": {
+    "kind": "短语",
+    "meaning": "这些还在跑 PHP 和 MySQL 的机器，到了该更新、该换代的时候。",
+    "parts": [
+      {
+        "text": "due a refresh",
+        "literal": "到期该刷新一次。",
+        "here": "that are due a refresh 接在那些 droplets 和上面的负载后面。"
+      }
+    ]
+  },
+  "shipit-84:dig into that": {
+    "kind": "短语",
+    "meaning": "他说这个话题后面会再往下挖。",
+    "parts": [
+      {
+        "text": "dig into that",
+        "literal": "往里面挖。",
+        "here": "Well, we will dig into that. that 是他们刚说到、还没展开的那件事。"
+      }
+    ]
+  },
+  "shipit-84:seed investors": {
+    "kind": "短语",
+    "meaning": "Steve 是 Andrew 公司最早那轮的投资人之一。",
+    "parts": [
+      {
+        "text": "seed investors",
+        "literal": "种子轮投资人，公司很早时出钱的人。",
+        "here": "I was one of the initial seed investors in Andrew's company。"
+      }
+    ]
+  },
+  "shipit-84:angel investors": {
+    "kind": "短语",
+    "meaning": "Steve 把他介绍给了他们的另一位天使投资人。",
+    "parts": [
+      {
+        "text": "angel investors",
+        "literal": "天使投资人，通常在公司更早、更个人的阶段出钱。",
+        "here": "another one of our angel investors, Saïd Ziouani。"
+      }
+    ]
+  },
+  "shipit-84:put me in touch with": {
+    "kind": "短语",
+    "meaning": "Steve 帮他把人和那位投资人接上了。",
+    "parts": [
+      {
+        "text": "put me in touch with",
+        "literal": "让我和某人联系上。",
+        "here": "Steve put me in touch with him。him 是前一句说的那位投资人。"
+      }
+    ]
+  },
+  "shipit-84:gym rat": {
+    "kind": "短语",
+    "meaning": "他用调侃的口气说，对方本可以嫌他只是个成天泡健身房的柔术家伙，不肯把他介绍给朋友。",
+    "parts": [
+      {
+        "text": "gym rat",
+        "literal": "老鼠一样泡在健身房里的人。",
+        "here": "you're just a gym rat jujitsu guy。这是设想对方拒绝时会说的话，是调侃，不是正式头衔。"
+      }
+    ]
+  },
+  "shipit-84:challenge match": {
+    "kind": "短语",
+    "meaning": "Steve 说那是一场挑战赛，他输了，所以当了 CEO。",
+    "parts": [
+      {
+        "text": "challenge match",
+        "literal": "挑战赛，一方来挑战现有的人。",
+        "here": "It was a challenge match, but I lost, so I got to be CEO。"
+      }
+    ]
+  },
+  "shipit-84:mixed martial arts": {
+    "kind": "短语",
+    "meaning": "Andrew 说他当时在打综合格斗。",
+    "parts": [
+      {
+        "text": "mixed martial arts",
+        "literal": "综合格斗，把几种格斗技放在一个比赛里。",
+        "here": "I was competing in mixed martial arts。这 10 分钟里他后来又说自己离开了这项运动，这一条用的是这句。"
+      }
+    ]
+  },
+  "shipit-84:long story short": {
+    "kind": "短语",
+    "meaning": "他把中间的经过略过，直接说到自己决定回学校、进了 UCSB 学物理。",
+    "parts": [
+      {
+        "text": "long story short",
+        "literal": "长话短说。",
+        "here": "And long story short, I ended up deciding that I'm going to go back to school。"
+      }
+    ]
+  },
+  "shipit-84:dealing with a bit of depression": {
+    "kind": "短语",
+    "meaning": "他开始有些抑郁，因为作为选手的身份占了很大一块。",
+    "parts": [
+      {
+        "text": "dealing with a bit of depression",
+        "literal": "在应对一点抑郁。",
+        "here": "I started dealing with a bit of depression, because your identity as a fighter - it's a big thing。"
+      }
+    ]
+  },
+  "shipit-84:renowned": {
+    "kind": "单词",
+    "meaning": "那家馆子是世界级的，名声很大。",
+    "parts": [
+      {
+        "text": "renowned",
+        "literal": "有名望的、被广泛知道的。",
+        "here": "a really world-class and renowned, well-known gym。renowned 和 well-known 叠在一起。"
+      }
+    ]
+  },
+  "shipit-84:tall, lanky": {
+    "kind": "短语",
+    "meaning": "馆里有个又高又瘦、很壮的澳大利亚人。",
+    "parts": [
+      {
+        "text": "tall, lanky",
+        "literal": "高，而且瘦长。",
+        "here": "this tall, lanky, really strong Australian guy。lanky 是瘦而长，不是矮。"
+      }
+    ]
+  },
+  "shipit-84:competition days are well past": {
+    "kind": "短语",
+    "meaning": "他说自己的比赛日子早就过去了。",
+    "parts": [
+      {
+        "text": "competition days are well past",
+        "literal": "比赛的那些日子已经过去很远。",
+        "here": "Yeah, competition days are well past。well past 是早就过了，不是刚结束。"
+      }
+    ]
+  },
+  "shipit-84:settle it by": {
+    "kind": "短语",
+    "meaning": "主持人问，他们俩吵架时会不会用柔术来解决。",
+    "parts": [
+      {
+        "text": "settle it by",
+        "literal": "用某种方式把事情了结。",
+        "here": "settle it by jujitsu ... between the two of you。it 是 an argument。"
+      }
+    ]
+  },
+  "shipit-84:avoid confrontation": {
+    "kind": "短语",
+    "meaning": "柔术教的是自信，以及怎样不去硬碰硬。",
+    "parts": [
+      {
+        "text": "avoid confrontation",
+        "literal": "避开正面冲突。",
+        "here": "how to be confident, how to avoid confrontation。"
+      }
+    ]
+  },
+  "shipit-84:brown belt": {
+    "kind": "短语",
+    "meaning": "Steve 和 Andrew 都是巴西柔术的棕带。",
+    "parts": [
+      {
+        "text": "brown belt",
+        "literal": "棕色腰带。在巴西柔术里是黑带前面的一级。",
+        "here": "Steve's a brown belt, I'm a brown belt。这句说的是两个人的段位。"
+      }
+    ]
+  },
+  "shipit-84:navigate": {
+    "kind": "单词",
+    "meaning": "柔术帮他们设法处理好既是朋友、又一起做公司这件事。",
+    "parts": [
+      {
+        "text": "navigate",
+        "literal": "导航、穿过。",
+        "here": "navigate how to be friends, and also run a business together。这句是把复杂关系处理好，不是开导航。后面还有一句 navigate Talos OS，这一条用的是这句。"
+      }
+    ]
+  },
+  "shipit-84:intimidated by no one": {
+    "kind": "短语",
+    "meaning": "柔术给他的短说法是：尊重每一个人，但谁也不怕、不被镇住。",
+    "parts": [
+      {
+        "text": "intimidated by no one",
+        "literal": "不被任何人吓住。",
+        "here": "you respect everyone but you're intimidated by no one。尊重和不怕放在一起。"
+      }
+    ]
+  },
+  "shipit-84:embody": {
+    "kind": "单词",
+    "meaning": "这种尊重每个人、但不被吓住的态度，是他们想让公司体现出来的。",
+    "parts": [
+      {
+        "text": "embody",
+        "literal": "把某样东西体现在身上。",
+        "here": "that's what we want to embody in the company。that 是前一句说的柔术教的那件事。"
+      }
+    ]
+  },
+  "shipit-84:sparring partners": {
+    "kind": "短语",
+    "meaning": "主持人觉得有意思：从柔术对练的搭档、或同一家馆，走到了一起。",
+    "parts": [
+      {
+        "text": "sparring partners",
+        "literal": "对练搭档，练习时互相攻防的人。",
+        "here": "from jujitsu sparring partners, or sharing the same gym。Andrew 下一句说 you could call it sparring partners，这一条用的是这句。"
+      }
+    ]
+  },
+  "shipit-84:give a shout-out to": {
+    "kind": "短语",
+    "meaning": "他要公开感谢两个帮他弄懂 Talos OS 的人。",
+    "parts": [
+      {
+        "text": "give a shout-out to",
+        "literal": "大声点名感谢或打招呼。",
+        "here": "I want to give a shout-out to two people that helped me navigate Talos OS。"
+      }
+    ]
+  },
+  "shipit-84:years in the making": {
+    "kind": "短语",
+    "meaning": "他说这件事已经酝酿了好多年。",
+    "parts": [
+      {
+        "text": "years in the making",
+        "literal": "花了多年才做成。",
+        "here": "this has been, as I mentioned, years in the making。this 是他刚说的这件事。"
+      }
+    ]
+  },
+  "shipit-84:spot on": {
+    "kind": "短语",
+    "meaning": "他感谢 Noel 在 Slack 里的帮助，并说有些回答完全说到了点子上。",
+    "parts": [
+      {
+        "text": "spot on",
+        "literal": "正打在点上。",
+        "here": "some of those answers were spot on。those answers 是 Noel 在 Slack 里的回答。这句在 590.84 秒那段感谢里。"
+      }
+    ]
   }
 }
