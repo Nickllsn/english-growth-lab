@@ -2418,5 +2418,192 @@
         "here": "some of those answers were spot on。those answers 是 Noel 在 Slack 里的回答。这句在 590.84 秒那段感谢里。"
       }
     ]
+  },
+  "shipit-84:genuinely concerned about": {
+    "kind": "短语",
+    "meaning": "做开源就应该真的在意用你产品的人。",
+    "parts": [
+      {
+        "text": "genuinely concerned about",
+        "literal": "真心地关心。",
+        "here": "you should be genuinely concerned about the people that are using your product。"
+      }
+    ]
+  },
+  "shipit-84:theatrics": {
+    "kind": "单词",
+    "meaning": "否则开源就变成做戏、摆样子。",
+    "parts": [
+      {
+        "text": "theatrics",
+        "literal": "戏剧化的表演。",
+        "here": "Otherwise, open source becomes theatrics。这句是说只做个姿态，不是真的在意用户。"
+      }
+    ]
+  },
+  "shipit-84:conundrum": {
+    "kind": "单词",
+    "meaning": "他回到自己那个实际难题：这套东西不是事先搭好的。",
+    "parts": [
+      {
+        "text": "conundrum",
+        "literal": "难解的实际问题。",
+        "here": "So back to my conundrum。这是他要讲的困境，不是脑筋急转弯。"
+      }
+    ]
+  },
+  "shipit-84:tech-savvy": {
+    "kind": "单词",
+    "meaning": "他要看看他们三个人对技术有多在行。",
+    "parts": [
+      {
+        "text": "tech-savvy",
+        "literal": "懂技术、玩得转技术的。",
+        "here": "how tech-savvy we are among the three of us。"
+      }
+    ]
+  },
+  "shipit-84:shoehorn that into our paradigm": {
+    "kind": "短语",
+    "meaning": "把那样东西硬塞进他们自己那套做法里，过程很别扭。",
+    "parts": [
+      {
+        "text": "shoehorn that into our paradigm",
+        "literal": "用鞋拔把脚硬塞进鞋里。paradigm 是一套做法。",
+        "here": "trying to shoehorn that into our paradigm。that 是他们想塞进去的东西，paradigm 是他们自己的那套。"
+      }
+    ]
+  },
+  "shipit-84:self-hosted kubernetes": {
+    "kind": "短语",
+    "meaning": "当时是 Kubernetes 自己托管自己。",
+    "parts": [
+      {
+        "text": "self-hosted Kubernetes",
+        "literal": "自己把自己托管起来。",
+        "here": "It was self-hosted Kubernetes。下一句就是拆掉旧的 pod，让 Kubernetes 管理它自己。"
+      }
+    ]
+  },
+  "shipit-84:tear down": {
+    "kind": "短语",
+    "meaning": "然后把旧的 pod 拆掉，让 Kubernetes 来管理它自己。",
+    "parts": [
+      {
+        "text": "tear down",
+        "literal": "拆掉。",
+        "here": "you'd tear down the old pods。这里是拆掉旧 pod，不是把人累垮。"
+      }
+    ]
+  },
+  "shipit-84:go away from that entirely": {
+    "kind": "短语",
+    "meaning": "看起来很酷，做起来很痛苦，所以他们决定彻底离开那种做法。",
+    "parts": [
+      {
+        "text": "go away from that entirely",
+        "literal": "完全离开那件事。",
+        "here": "we decided to go away from that entirely。that 是前面说的 self-hosted Kubernetes。"
+      }
+    ]
+  },
+  "shipit-84:paradigm shift": {
+    "kind": "短语",
+    "meaning": "他们做的范式转变很大，而且他们认为变得更好。",
+    "parts": [
+      {
+        "text": "paradigm shift",
+        "literal": "整套做法换了，范式转变。",
+        "here": "the paradigm shift that we've made - it is pretty drastic, and we think for the better。"
+      }
+    ]
+  },
+  "shipit-84:pretty drastic": {
+    "kind": "短语",
+    "meaning": "这个转变相当剧烈。",
+    "parts": [
+      {
+        "text": "pretty drastic",
+        "literal": "相当剧烈、幅度很大。",
+        "here": "it is pretty drastic 的 it 是 the paradigm shift that we've made。"
+      }
+    ]
+  },
+  "shipit-84:from the ground up": {
+    "kind": "短语",
+    "meaning": "现有工具跟他们配不上，所以他们把一切从头重写。",
+    "parts": [
+      {
+        "text": "from the ground up",
+        "literal": "从地面、从根基往上。",
+        "here": "we rewrote everything from the ground up。"
+      }
+    ]
+  },
+  "shipit-84:under the hood": {
+    "kind": "短语",
+    "meaning": "表面很简单，是因为引擎盖下面做了很多事。",
+    "parts": [
+      {
+        "text": "under the hood",
+        "literal": "在引擎盖下面。",
+        "here": "there's a lot going on under the hood to make it that simple。it 是那个看起来简单的系统。"
+      }
+    ]
+  },
+  "shipit-84:redesigned from scratch": {
+    "kind": "短语",
+    "meaning": "操作系统被从头设计成面向 Kubernetes。",
+    "parts": [
+      {
+        "text": "redesigned from scratch",
+        "literal": "从零重新设计。",
+        "here": "having the operating system redesigned from scratch to be Kubernetes。"
+      }
+    ]
+  },
+  "shipit-84:getting humans off of the box": {
+    "kind": "短语",
+    "meaning": "不让人登录到机器上，情感牵绊就被切断了。",
+    "parts": [
+      {
+        "text": "getting humans off of the box",
+        "literal": "把人从那台机器上弄下去。",
+        "here": "by just simply getting humans off of the box。box 是服务器。这句说的是不让人登录上去操作。"
+      }
+    ]
+  },
+  "shipit-84:cut that emotional tie": {
+    "kind": "短语",
+    "meaning": "人不在机器上动手之后，对那台机器的情感牵绊就断了。",
+    "parts": [
+      {
+        "text": "cut that emotional tie",
+        "literal": "切断那条情感纽带。",
+        "here": "we've already kind of cut that emotional tie。that 接在 getting humans off of the box 后面。"
+      }
+    ]
+  },
+  "shipit-84:way back in the day": {
+    "kind": "短语",
+    "meaning": "Steve 说他很早以前就用配置管理，从还很小的 CFEngine 开始。",
+    "parts": [
+      {
+        "text": "way back in the day",
+        "literal": "老早以前。",
+        "here": "I started with configuration management tools way back in the day of CFEngine。"
+      }
+    ]
+  },
+  "shipit-84:superficially work": {
+    "kind": "短语",
+    "meaning": "有人改了一下，表面能用，下次升级就坏。",
+    "parts": [
+      {
+        "text": "superficially work",
+        "literal": "表面上能工作。",
+        "here": "that is going to superficially work and then break on the next upgrade。that 是配置管理没管到、被管理员改过的东西。"
+      }
+    ]
   }
 }

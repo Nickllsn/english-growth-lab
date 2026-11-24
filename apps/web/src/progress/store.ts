@@ -6,7 +6,7 @@ import { contentSchedule } from "./placement";
 
 const STORAGE_KEY = "egl.progress.v1";
 const MERGED_KEY = "egl.progress.merged";
-const BUNDLED_REVISION = "2026-11-23-227";
+const BUNDLED_REVISION = "2026-11-24-244";
 
 export interface LearningTerm {
   id: string;
