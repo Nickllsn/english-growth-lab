@@ -2605,5 +2605,203 @@
         "here": "that is going to superficially work and then break on the next upgrade。that 是配置管理没管到、被管理员改过的东西。"
       }
     ]
+  },
+  "gotime-156:the og": {
+    "kind": "短语",
+    "meaning": "Johnny 介绍 Carlisia 是回来的成员，也是 Go Time 从一开始就在的元老。",
+    "parts": [
+      {
+        "text": "the OG",
+        "literal": "original gangster，最初的那一个。",
+        "here": "the OG Go Time podcast panelist 是从这档节目一开始就在的人，不是泛指老人。"
+      }
+    ]
+  },
+  "gotime-156:hold it down": {
+    "kind": "短语",
+    "meaning": "他们想把节目撑住，尽量做到她当年那么好。",
+    "parts": [
+      {
+        "text": "hold it down",
+        "literal": "把东西按住、撑住。",
+        "here": "we're trying to hold it down, trying to do as good a job as you did back then。it 是这档节目。"
+      }
+    ]
+  },
+  "gotime-156:everybody's got a lot going on": {
+    "kind": "短语",
+    "meaning": "大家都有很多事缠身，所以不容易凑齐。",
+    "parts": [
+      {
+        "text": "everybody's got a lot going on",
+        "literal": "每个人都有很多事情在进行。",
+        "here": "But everybody's got a lot going on, so... 这句用来解释为什么人难凑齐。"
+      }
+    ]
+  },
+  "gotime-156:last, but certainly not least": {
+    "kind": "短语",
+    "meaning": "最后介绍 Stevenson，但同样重要。",
+    "parts": [
+      {
+        "text": "last, but certainly not least",
+        "literal": "最后提到，但绝不是最不重要。",
+        "here": "And last, but certainly not least, is Stevenson Jean-Pierre。certainly 把 not least 说得更重。"
+      }
+    ]
+  },
+  "gotime-156:my heart skips a beat": {
+    "kind": "短语",
+    "meaning": "他一看到 PagerDuty 的通知，心就咯噔一下。",
+    "parts": [
+      {
+        "text": "my heart skips a beat",
+        "literal": "心跳漏了一拍。",
+        "here": "every time I see that notification come in, my heart skips a beat when I'm on call。这里是值班时被通知吓一跳，不是浪漫。"
+      }
+    ]
+  },
+  "gotime-156:on call": {
+    "kind": "短语",
+    "meaning": "他在轮值待命时，一看到那个通知心就咯噔一下。",
+    "parts": [
+      {
+        "text": "on call",
+        "literal": "随叫随到、轮值待命。",
+        "here": "when I'm on call 是他值班的时候。同一句里的通知来自 PagerDuty。"
+      }
+    ]
+  },
+  "gotime-156:given the circumstances": {
+    "kind": "短语",
+    "meaning": "考虑到当时世界上正在发生的事，他们没法都聚在一起。",
+    "parts": [
+      {
+        "text": "given the circumstances",
+        "literal": "考虑到这些情况。",
+        "here": "we're not all together, given the circumstances of what's going on around the world。"
+      }
+    ]
+  },
+  "gotime-156:hot takes": {
+    "kind": "短语",
+    "meaning": "他邀请听众来拿他们每天抛出来的、比较冲的看法。",
+    "parts": [
+      {
+        "text": "hot takes",
+        "literal": "刚出炉、比较冲的观点。",
+        "here": "Get our hot takes daily dosage。hot 是观点冲、即时，不是温度。"
+      }
+    ]
+  },
+  "gotime-156:daily dosage": {
+    "kind": "短语",
+    "meaning": "他把这些观点说成每天的一剂，是调侃。",
+    "parts": [
+      {
+        "text": "daily dosage",
+        "literal": "每天的剂量。",
+        "here": "hot takes daily dosage 把观点说成每天要吃的一剂。"
+      }
+    ]
+  },
+  "gotime-156:it's not a matter of if, but a matter of when": {
+    "kind": "句型",
+    "meaning": "出问题不是会不会，而是什么时候。",
+    "parts": [
+      {
+        "text": "it's not a matter of if, but a matter of when",
+        "literal": "不是“是否”的问题，而是“何时”的问题。",
+        "here": "it's not a matter of if, but a matter of when things will go wrong。things will go wrong 是这句里一定会发生的事。"
+      }
+    ]
+  },
+  "gotime-156:from a monitoring standpoint": {
+    "kind": "短语",
+    "meaning": "他问：从监控的角度看，该从哪里讲起。",
+    "parts": [
+      {
+        "text": "from a monitoring standpoint",
+        "literal": "站在监控这个立场上。",
+        "here": "Where do I start, from a monitoring standpoint? 这句是在选一个切入点。"
+      }
+    ]
+  },
+  "gotime-156:earliest exposure": {
+    "kind": "短语",
+    "meaning": "Kelsey 说自己最早接触他们所谓的监控，大约是 2010 年前后的 Nagios。",
+    "parts": [
+      {
+        "text": "earliest exposure",
+        "literal": "最早的一次接触。",
+        "here": "my earliest exposure to this thing they call monitoring。后面点名的工具是 Nagios。"
+      }
+    ]
+  },
+  "gotime-156:the holy grail": {
+    "kind": "短语",
+    "meaning": "对多数人来说，监控里最想找到的是：我到底该关心什么。",
+    "parts": [
+      {
+        "text": "the Holy Grail",
+        "literal": "圣杯，引申为最想得到的那一件。",
+        "here": "the Holy Grail for most people ... is \"What do I care about?\" 这句里的终极追求就是这个问题。"
+      }
+    ]
+  },
+  "gotime-156:manifested in": {
+    "kind": "短语",
+    "meaning": "“我该不该关心”这个问题，会落实成 SRE、SLA 和 SLO 这些做法。",
+    "parts": [
+      {
+        "text": "manifested in",
+        "literal": "显现为、落实在。",
+        "here": "that question could be manifested in practices like SRE, this thing around SLA's and SLO's。"
+      }
+    ]
+  },
+  "gotime-156:clue you in on": {
+    "kind": "短语",
+    "meaning": "这些做法会给你线索，让你明白真正需要哪些指标，以及警报响了该做什么。",
+    "parts": [
+      {
+        "text": "clue you in on",
+        "literal": "给你线索，让你明白。",
+        "here": "help clue you in on trying to figure out what metrics and monitoring do you actually need。"
+      }
+    ]
+  },
+  "gotime-156:in the forefront": {
+    "kind": "短语",
+    "meaning": "做取舍之前，先把“数据才是金子”放在最前面。",
+    "parts": [
+      {
+        "text": "in the forefront",
+        "literal": "在最前头。",
+        "here": "if you have in mind, in the forefront, that data is the gold here。in the forefront 和 in mind 并列，是最先考虑。"
+      }
+    ]
+  },
+  "gotime-156:in a timely manner": {
+    "kind": "短语",
+    "meaning": "包裹里也许是生日礼物，你希望它按时送到。",
+    "parts": [
+      {
+        "text": "in a timely manner",
+        "literal": "以及时的方式。",
+        "here": "you want to get there in a timely manner。there 是礼物该到的时候。这句在 Kelsey 的包裹类比里。"
+      }
+    ]
+  },
+  "gotime-156:sorting facility": {
+    "kind": "短语",
+    "meaning": "快递给你一个编号，但不告诉你包裹在哪辆车上、进了哪个分拣中心。",
+    "parts": [
+      {
+        "text": "sorting facility",
+        "literal": "分拣中心，把包裹分类转运的地方。",
+        "here": "they won't leak what truck it's on, what sorting facility it goes to。这句在 592.94 秒的类比里。下一段还有一次 sorting facility，属于下一课，没有另加。"
+      }
+    ]
   }
 }
