@@ -26,7 +26,7 @@ describe("learning terms", () => {
   it("starts from the progress file saved in the project", () => {
     const progress = loadProgress();
 
-    expect(progress.terms).toHaveLength(244);
+    expect(progress.terms).toHaveLength(262);
     expect(progress.terms.map((term) => term.text)).toContain("newcomer");
     expect(progress.terms.map((term) => term.text)).toContain("RAIDZ expansion");
     expect(progress.slots["2026-11-09"]).toEqual(["morning", "noon", "evening"]);
@@ -73,63 +73,69 @@ describe("learning terms", () => {
     expect(screen.getByText("我其实不太关注科技播客圈。")).toBeInTheDocument();
     expect(screen.getByText(/插上电源/)).toBeInTheDocument();
     expect(screen.getByText("请 Matt 开始讲，话头由他来开。")).toBeInTheDocument();
-    expect(screen.getAllByText("这句话是").length).toBe(244);
+    expect(screen.getAllByText("这句话是").length).toBe(262);
     const pageText = document.body.textContent ?? "";
     expect(pageText.indexOf("2026-11-17")).toBeLessThan(pageText.indexOf("2026-11-04"));
 
     fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周三" } });
-    expect(screen.getByText("38 / 244 条")).toBeInTheDocument();
+    expect(screen.getByText("56 / 262 条")).toBeInTheDocument();
     expect(screen.getAllByText(/2026-W45 · 周三 · 2026-11-04/)).toHaveLength(19);
     expect(screen.getAllByText(/2026-W47 · 周三 · 2026-11-18/)).toHaveLength(19);
+    expect(screen.getAllByText(/2026-W48 · 周三 · 2026-11-25/)).toHaveLength(18);
     expect(screen.queryByText(/2026-11-12/)).not.toBeInTheDocument();
 
     fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周四" } });
     fireEvent.change(screen.getByRole("combobox", { name: "周" }), { target: { value: "2026-W46" } });
-    expect(screen.getByText("35 / 244 条")).toBeInTheDocument();
+    expect(screen.getByText("35 / 262 条")).toBeInTheDocument();
     expect(screen.getAllByText(/2026-W46 · 周四 · 2026-11-12/)).toHaveLength(35);
     expect(screen.queryByText(/2026-11-04/)).not.toBeInTheDocument();
 
     fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周五" } });
-    expect(screen.getByText("20 / 244 条")).toBeInTheDocument();
+    expect(screen.getByText("20 / 262 条")).toBeInTheDocument();
     expect(screen.getAllByText(/2026-W46 · 周五 · 2026-11-13/)).toHaveLength(20);
     expect(screen.queryByText(/2026-11-12/)).not.toBeInTheDocument();
 
     fireEvent.change(screen.getByRole("combobox", { name: "周" }), { target: { value: "2026-W47" } });
     fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周一" } });
-    expect(screen.getByText("21 / 244 条")).toBeInTheDocument();
+    expect(screen.getByText("21 / 262 条")).toBeInTheDocument();
     expect(screen.getAllByText(/2026-W47 · 周一 · 2026-11-16/)).toHaveLength(21);
     expect(screen.queryByText(/2026-11-13/)).not.toBeInTheDocument();
 
     fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周二" } });
-    expect(screen.getByText("20 / 244 条")).toBeInTheDocument();
+    expect(screen.getByText("20 / 262 条")).toBeInTheDocument();
     expect(screen.getAllByText(/2026-W47 · 周二 · 2026-11-17/)).toHaveLength(20);
     expect(screen.queryByText(/2026-11-16/)).not.toBeInTheDocument();
 
     fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周三" } });
-    expect(screen.getByText("19 / 244 条")).toBeInTheDocument();
+    expect(screen.getByText("19 / 262 条")).toBeInTheDocument();
     expect(screen.getAllByText(/2026-W47 · 周三 · 2026-11-18/)).toHaveLength(19);
     expect(screen.queryByText(/2026-11-17/)).not.toBeInTheDocument();
 
     fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周四" } });
-    expect(screen.getByText("20 / 244 条")).toBeInTheDocument();
+    expect(screen.getByText("20 / 262 条")).toBeInTheDocument();
     expect(screen.getAllByText(/2026-W47 · 周四 · 2026-11-19/)).toHaveLength(20);
     expect(screen.queryByText(/2026-11-18/)).not.toBeInTheDocument();
 
     fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周五" } });
-    expect(screen.getByText("23 / 244 条")).toBeInTheDocument();
+    expect(screen.getByText("23 / 262 条")).toBeInTheDocument();
     expect(screen.getAllByText(/2026-W47 · 周五 · 2026-11-20/)).toHaveLength(23);
     expect(screen.queryByText(/2026-11-19/)).not.toBeInTheDocument();
 
     fireEvent.change(screen.getByRole("combobox", { name: "周" }), { target: { value: "2026-W48" } });
     fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周一" } });
-    expect(screen.getByText("24 / 244 条")).toBeInTheDocument();
+    expect(screen.getByText("24 / 262 条")).toBeInTheDocument();
     expect(screen.getAllByText(/2026-W48 · 周一 · 2026-11-23/)).toHaveLength(24);
     expect(screen.queryByText(/2026-11-20/)).not.toBeInTheDocument();
 
     fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周二" } });
-    expect(screen.getByText("17 / 244 条")).toBeInTheDocument();
+    expect(screen.getByText("17 / 262 条")).toBeInTheDocument();
     expect(screen.getAllByText(/2026-W48 · 周二 · 2026-11-24/)).toHaveLength(17);
     expect(screen.queryByText(/2026-11-23/)).not.toBeInTheDocument();
+
+    fireEvent.change(screen.getByRole("combobox", { name: "周几" }), { target: { value: "周三" } });
+    expect(screen.getByText("18 / 262 条")).toBeInTheDocument();
+    expect(screen.getAllByText(/2026-W48 · 周三 · 2026-11-25/)).toHaveLength(18);
+    expect(screen.queryByText(/2026-11-24/)).not.toBeInTheDocument();
   });
 
   it("lists a later study day before an earlier one no matter the file order", () => {
